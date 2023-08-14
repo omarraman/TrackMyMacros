@@ -1,0 +1,22 @@
+﻿using Microsoft.EntityFrameworkCore;
+using TrackMyMacros.Application.Contracts.Persistence;
+using TrackMyMacros.Domain;
+using TrackMyMacros.Persistance.Repositories;
+
+namespace TrackMyMacros.Persistance;
+
+public static class PersistenceServiceRegistration
+{
+    public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddDbContext<AppDbContext>(options =>
+            options.UseNpgsql(configuration.GetConnectionString("MacrosConnectionString")));
+
+        services.AddScoped<IFoodRepository, FoodRepository>();
+        services.AddScoped<IMealRepository, MealRepository>();
+        services.AddScoped<IUomRepository, UomRepository>();
+        services.AddScoped<IDayRepository, DayRepository>();
+
+        return services;    
+    }
+}

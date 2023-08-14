@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "DUJuOxd1vLiopl+2AyFVpZa7xUvUjgLBpt7AJ+tQefZ0c/tR3n7zbJpWn1kQ11TJGAt4hCetvx4oC3fJvIv4ZQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Domain\\TrackMyMacros.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\ardalis.guardclauses\\4.0.1\\ardalis.guardclauses.4.0.1.nupkg.sha512",
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\jetbrains.annotations\\2021.3.0\\jetbrains.annotations.2021.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,59 @@
+﻿@if (!Saved)
+{
+    <div class="modal fade show d-block" id="exampleModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <EditForm Model="@NewFood" OnValidSubmit="@HandleValidSubmit" id="test">
+                    <RadzenCard>
+                        <RadzenTextBox @bind-Value="NewFood.Name" TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Name</RadzenTextBox>
+                    </RadzenCard>
+                    @* <ValidationMessage For="@(() => NewFood.Name)"></ValidationMessage> *@
+                    <RadzenCard>
+                        <RadzenNumeric TValue="double" @bind-Value="NewFood.Fat">Fat</RadzenNumeric>
+                    </RadzenCard>
+                    <RadzenCard>
+                        <RadzenNumeric TValue="double" @bind-Value="NewFood.Protein">Protein</RadzenNumeric>
+                    </RadzenCard>
+                    <RadzenCard>
+                        <RadzenNumeric TValue="double" @bind-Value="NewFood.Carbohydrate">Carbohydrate</RadzenNumeric>
+                    </RadzenCard>
+                    <RadzenCard>
+                        <RadzenNumeric TValue="double" @bind-Value="NewFood.Quantity">Quantity</RadzenNumeric>
+                    </RadzenCard>
+                    <RadzenCard>
+                        <RadzenNumeric TValue="double" @bind-Value="NewFood.Fat">Fat</RadzenNumeric>
+                    </RadzenCard>
+
+                    <RadzenCard>
+                        <div class="rz-p-sm-12 rz-text-align-center">
+                            @if (Uoms != null)
+                            {
+                                <RadzenDropDown @bind-Value=@NewFood.UomId Data=@Uoms TextProperty="Name" ValueProperty="Id" Style="width: 100%; max-width: 400px;"/>
+                            }
+                            else
+                            {
+                                <div>Loading</div>
+                            }
+                        </div>
+
+                    </RadzenCard>
+                    <ValidationSummary></ValidationSummary>
+                    <DataAnnotationsValidator></DataAnnotationsValidator>
+                </EditForm>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" form="test">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+}

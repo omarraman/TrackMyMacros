@@ -1,0 +1,328 @@
+2023-05-21 07:35:59.820 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 07:35:59.842 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 07:35:59.846 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 07:35:59.847 +02:00 [INF] Hosting environment: Development
+2023-05-21 07:35:59.848 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 07:36:00.787 +02:00 [INF] HTTP GET / responded 404 in 1.3156 ms
+2023-05-21 07:36:09.639 +02:00 [INF] HTTP GET /api/Food responded 200 in 279.3538 ms
+2023-05-21 07:36:17.989 +02:00 [INF] HTTP GET /api/Uom responded 200 in 12.0783 ms
+2023-05-21 07:37:43.023 +02:00 [INF] HTTP POST /api/Food responded 400 in 58.8331 ms
+2023-05-21 07:40:36.923 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 07:40:36.949 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 07:40:36.952 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 07:40:36.954 +02:00 [INF] Hosting environment: Development
+2023-05-21 07:40:36.955 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 07:40:37.348 +02:00 [INF] HTTP GET / responded 404 in 1.0516 ms
+2023-05-21 07:40:43.750 +02:00 [INF] HTTP GET /api/Food responded 200 in 200.2116 ms
+2023-05-21 07:40:53.875 +02:00 [INF] HTTP GET /api/Uom responded 200 in 11.6066 ms
+2023-05-21 07:46:06.133 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 07:46:06.149 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 07:46:06.152 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 07:46:06.153 +02:00 [INF] Hosting environment: Development
+2023-05-21 07:46:06.153 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 07:46:06.670 +02:00 [INF] HTTP GET / responded 404 in 1.1583 ms
+2023-05-21 07:46:13.431 +02:00 [INF] HTTP GET /api/Food responded 200 in 283.2490 ms
+2023-05-21 07:46:15.222 +02:00 [INF] HTTP GET /api/Uom responded 200 in 13.7686 ms
+2023-05-21 07:50:26.191 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 07:50:26.209 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 07:50:26.213 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 07:50:26.214 +02:00 [INF] Hosting environment: Development
+2023-05-21 07:50:26.214 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 07:50:26.980 +02:00 [INF] HTTP GET / responded 404 in 3.0124 ms
+2023-05-21 07:50:27.425 +02:00 [INF] HTTP GET /api/Food responded 200 in 364.4214 ms
+2023-05-21 07:50:34.275 +02:00 [INF] HTTP GET /api/Uom responded 200 in 12.1630 ms
+2023-05-21 07:51:35.478 +02:00 [INF] HTTP POST /api/Food responded 200 in 43596.1112 ms
+2023-05-21 07:56:16.949 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 07:56:16.969 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 07:56:16.973 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 07:56:16.974 +02:00 [INF] Hosting environment: Development
+2023-05-21 07:56:16.975 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 07:56:17.281 +02:00 [INF] HTTP GET / responded 404 in 2.3803 ms
+2023-05-21 07:56:17.788 +02:00 [INF] HTTP GET /api/Food responded 200 in 515.0492 ms
+2023-05-21 07:56:25.074 +02:00 [INF] HTTP GET /api/Uom responded 200 in 12.9588 ms
+2023-05-21 07:59:38.314 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 07:59:38.330 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 07:59:38.332 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 07:59:38.333 +02:00 [INF] Hosting environment: Development
+2023-05-21 07:59:38.334 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 07:59:38.877 +02:00 [INF] HTTP GET / responded 404 in 1.0904 ms
+2023-05-21 07:59:45.773 +02:00 [INF] HTTP GET /api/Food responded 200 in 207.1206 ms
+2023-05-21 07:59:47.492 +02:00 [INF] HTTP GET /api/Uom responded 200 in 16.5005 ms
+2023-05-21 08:07:18.260 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 08:07:18.283 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 08:07:18.287 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 08:07:18.288 +02:00 [INF] Hosting environment: Development
+2023-05-21 08:07:18.289 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 08:07:18.775 +02:00 [INF] HTTP GET / responded 404 in 1.0838 ms
+2023-05-21 08:08:25.622 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 08:08:25.642 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 08:08:25.646 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 08:08:25.647 +02:00 [INF] Hosting environment: Development
+2023-05-21 08:08:25.648 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 08:08:26.084 +02:00 [INF] HTTP GET / responded 404 in 1.4945 ms
+2023-05-21 08:08:37.800 +02:00 [INF] HTTP GET /api/Food responded 200 in 370.4613 ms
+2023-05-21 08:08:39.326 +02:00 [INF] HTTP GET /api/Uom responded 200 in 14.3013 ms
+2023-05-21 08:09:15.443 +02:00 [INF] HTTP POST /api/Food responded 200 in 18665.4373 ms
+2023-05-21 08:30:31.957 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 08:30:32.041 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 08:30:32.063 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 08:30:32.071 +02:00 [INF] Hosting environment: Development
+2023-05-21 08:30:32.076 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 08:30:32.230 +02:00 [INF] HTTP GET / responded 404 in 1.2039 ms
+2023-05-21 08:30:32.286 +02:00 [INF] HTTP GET / responded 404 in 0.0939 ms
+2023-05-21 08:30:59.382 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 08:30:59.427 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 08:30:59.434 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 08:30:59.437 +02:00 [INF] Hosting environment: Development
+2023-05-21 08:30:59.441 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 08:30:59.960 +02:00 [INF] HTTP GET / responded 404 in 2.1716 ms
+2023-05-21 08:31:00.045 +02:00 [INF] HTTP GET / responded 404 in 0.0558 ms
+2023-05-21 20:10:23.482 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 20:10:23.509 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 20:10:23.513 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 20:10:23.515 +02:00 [INF] Hosting environment: Development
+2023-05-21 20:10:23.516 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 20:10:24.216 +02:00 [INF] HTTP GET / responded 404 in 1.2879 ms
+2023-05-21 20:10:34.333 +02:00 [INF] HTTP GET /api/Uom responded 200 in 308.0276 ms
+2023-05-21 20:11:10.195 +02:00 [INF] HTTP POST /api/Food responded 200 in 333.5237 ms
+2023-05-21 20:12:00.792 +02:00 [INF] HTTP POST /api/Food responded 200 in 22.3389 ms
+2023-05-21 20:12:20.236 +02:00 [INF] HTTP GET /api/Food responded 200 in 9.4192 ms
+2023-05-21 20:12:21.151 +02:00 [INF] HTTP GET /api/Uom responded 200 in 1.3784 ms
+2023-05-21 20:12:22.141 +02:00 [INF] HTTP GET /api/Food responded 200 in 0.9333 ms
+2023-05-21 20:12:30.109 +02:00 [INF] HTTP GET /api/Uom responded 200 in 1.5447 ms
+2023-05-21 20:12:51.276 +02:00 [INF] HTTP POST /api/Food responded 200 in 18.3025 ms
+2023-05-21 20:15:28.783 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 20:15:28.810 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 20:15:28.816 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 20:15:28.817 +02:00 [INF] Hosting environment: Development
+2023-05-21 20:15:28.818 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 20:15:29.501 +02:00 [INF] HTTP GET / responded 404 in 1.6129 ms
+2023-05-21 20:15:36.329 +02:00 [INF] HTTP GET /api/Uom responded 200 in 292.0464 ms
+2023-05-21 20:15:45.565 +02:00 [INF] HTTP POST /api/Food responded 200 in 291.3417 ms
+2023-05-21 20:24:34.929 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 20:24:34.956 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 20:24:34.960 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 20:24:34.962 +02:00 [INF] Hosting environment: Development
+2023-05-21 20:24:34.963 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 20:24:35.411 +02:00 [INF] HTTP GET / responded 404 in 1.3007 ms
+2023-05-21 20:24:41.059 +02:00 [INF] HTTP GET /api/Uom responded 200 in 423.2367 ms
+2023-05-21 20:24:51.649 +02:00 [INF] HTTP POST /api/Food responded 200 in 251.9947 ms
+2023-05-21 20:25:33.012 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 20:25:33.060 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 20:25:33.067 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 20:25:33.069 +02:00 [INF] Hosting environment: Development
+2023-05-21 20:25:33.071 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 20:25:33.638 +02:00 [INF] HTTP GET /api/Uom responded 200 in 436.4429 ms
+2023-05-21 20:25:33.734 +02:00 [INF] HTTP GET / responded 404 in 0.1195 ms
+2023-05-21 20:25:53.851 +02:00 [INF] HTTP POST /api/Food responded 200 in 382.7610 ms
+2023-05-21 20:26:15.174 +02:00 [INF] Application is shutting down...
+2023-05-21 20:26:27.986 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 20:26:28.012 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 20:26:28.015 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 20:26:28.016 +02:00 [INF] Hosting environment: Development
+2023-05-21 20:26:28.017 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 20:26:28.680 +02:00 [INF] HTTP GET / responded 404 in 1.6666 ms
+2023-05-21 20:26:29.313 +02:00 [INF] HTTP GET /api/Uom responded 200 in 570.6971 ms
+2023-05-21 20:27:06.396 +02:00 [INF] HTTP POST /api/Food responded 200 in 256.1168 ms
+2023-05-21 20:28:57.293 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 20:28:57.323 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 20:28:57.327 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 20:28:57.329 +02:00 [INF] Hosting environment: Development
+2023-05-21 20:28:57.330 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 20:28:57.741 +02:00 [INF] HTTP GET / responded 404 in 1.2492 ms
+2023-05-21 20:28:59.377 +02:00 [INF] HTTP GET /api/Uom responded 200 in 300.0883 ms
+2023-05-21 20:29:13.541 +02:00 [INF] HTTP POST /api/Food responded 200 in 278.6196 ms
+2023-05-21 20:30:05.348 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-21 20:30:05.377 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-21 20:30:05.381 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-21 20:30:05.383 +02:00 [INF] Hosting environment: Development
+2023-05-21 20:30:05.384 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-21 20:30:05.957 +02:00 [INF] HTTP GET / responded 404 in 1.3415 ms
+2023-05-21 20:30:06.823 +02:00 [INF] HTTP GET /api/Uom responded 200 in 343.1327 ms
+2023-05-21 20:30:16.343 +02:00 [INF] HTTP POST /api/Food responded 200 in 300.7664 ms
+2023-05-21 20:30:31.589 +02:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[@p0='?' (DbType = Double), @p1='?', @p2='?' (DbType = DateTime), @p3='?' (DbType = Double), @p4='?', @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = Double), @p8='?' (DbType = Double), @p9='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Food" ("Carbohydrate", "CreatedBy", "CreatedDate", "Fat", "LastModifiedBy", "LastModifiedDate", "Name", "Protein", "Quantity", "UomId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)
+RETURNING "Id";
+2023-05-21 20:30:31.633 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'TrackMyMacros.Persistance.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "Food" violates foreign key constraint "FK_Food_Uoms_UomId"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "Food" violates foreign key constraint "FK_Food_Uoms_UomId"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Food
+    ConstraintName: FK_Food_Uoms_UomId
+    File: ri_triggers.c
+    Line: 2607
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "Food" violates foreign key constraint "FK_Food_Uoms_UomId"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "Food" violates foreign key constraint "FK_Food_Uoms_UomId"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Food
+    ConstraintName: FK_Food_Uoms_UomId
+    File: ri_triggers.c
+    Line: 2607
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-05-21 20:30:50.145 +02:00 [ERR] HTTP POST /api/Food responded 500 in 18585.6489 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "Food" violates foreign key constraint "FK_Food_Uoms_UomId"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "Food" violates foreign key constraint "FK_Food_Uoms_UomId"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Food
+    ConstraintName: FK_Food_Uoms_UomId
+    File: ri_triggers.c
+    Line: 2607
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at TrackMyMacros.Persistance.Repositories.FoodRepository.AddAsync(Food entity) in C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Persistance\Repositories\FoodRepository.cs:line 35
+   at TrackMyMacros.Application.Features.Food.Commands.CreateFood.CreateFoodCommandHandler.Handle(CreateFoodCommand request, CancellationToken cancellationToken) in C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\Features\Food\Commands\CreateFood\CreateFoodCommandHandler.cs:line 30
+   at TrackMyMacros.Api.Controllers.FoodController.AddFood(CreateFoodDto createFoodDto) in C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\Controllers\FoodController.cs:line 37
+   at lambda_method60(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-05-21 20:30:50.167 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23503: insert or update on table "Food" violates foreign key constraint "FK_Food_Uoms_UomId"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23503
+    MessageText: insert or update on table "Food" violates foreign key constraint "FK_Food_Uoms_UomId"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: Food
+    ConstraintName: FK_Food_Uoms_UomId
+    File: ri_triggers.c
+    Line: 2607
+    Routine: ri_ReportViolation
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at TrackMyMacros.Persistance.Repositories.FoodRepository.AddAsync(Food entity) in C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Persistance\Repositories\FoodRepository.cs:line 35
+   at TrackMyMacros.Application.Features.Food.Commands.CreateFood.CreateFoodCommandHandler.Handle(CreateFoodCommand request, CancellationToken cancellationToken) in C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\Features\Food\Commands\CreateFood\CreateFoodCommandHandler.cs:line 30
+   at TrackMyMacros.Api.Controllers.FoodController.AddFood(CreateFoodDto createFoodDto) in C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\Controllers\FoodController.cs:line 37
+   at lambda_method60(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-05-21 20:30:55.549 +02:00 [INF] HTTP GET /api/Food responded 200 in 11.5273 ms
+2023-05-21 20:31:02.504 +02:00 [INF] HTTP GET /api/Uom responded 200 in 1.3672 ms
+2023-05-21 20:31:11.235 +02:00 [INF] HTTP POST /api/Food responded 200 in 9.3023 ms
+2023-05-21 20:31:23.371 +02:00 [INF] HTTP POST /api/Food responded 200 in 9.0561 ms
+2023-05-21 20:31:35.810 +02:00 [INF] HTTP POST /api/Food responded 200 in 8.2730 ms
+2023-05-21 20:31:58.027 +02:00 [INF] HTTP GET /api/Food responded 200 in 1.1353 ms
+2023-05-21 20:32:00.376 +02:00 [INF] HTTP GET /api/Uom responded 200 in 1.6748 ms
+2023-05-21 20:32:24.286 +02:00 [INF] HTTP GET /api/Uom responded 200 in 0.7251 ms
+2023-05-21 20:32:50.993 +02:00 [INF] HTTP POST /api/Food responded 200 in 10.3232 ms
+2023-05-21 20:33:09.851 +02:00 [INF] HTTP POST /api/Food responded 200 in 9.8443 ms

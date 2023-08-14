@@ -1,0 +1,17 @@
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\bin\Debug\net6.0\TrackMyMacros.Application.deps.json
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\bin\Debug\net6.0\TrackMyMacros.Application.dll
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\bin\Debug\net6.0\TrackMyMacros.Application.pdb
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\bin\Debug\net6.0\TrackMyMacros.Domain.dll
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\bin\Debug\net6.0\TrackMyMacros.Domain.pdb
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\obj\Debug\net6.0\TrackMyMacros.Application.csproj.AssemblyReference.cache
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\obj\Debug\net6.0\TrackMyMacros.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\obj\Debug\net6.0\TrackMyMacros.Application.AssemblyInfoInputs.cache
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\obj\Debug\net6.0\TrackMyMacros.Application.AssemblyInfo.cs
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\obj\Debug\net6.0\TrackMyMacros.Application.csproj.CoreCompileInputs.cache
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\obj\Debug\net6.0\TrackMyMacros.Application.csproj.CopyComplete
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\obj\Debug\net6.0\TrackMyMacros.Application.dll
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\obj\Debug\net6.0\refint\TrackMyMacros.Application.dll
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\obj\Debug\net6.0\TrackMyMacros.Application.pdb
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\obj\Debug\net6.0\ref\TrackMyMacros.Application.dll
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\bin\Debug\net6.0\TrackMyMacros.Dtos.dll
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\bin\Debug\net6.0\TrackMyMacros.Dtos.pdb

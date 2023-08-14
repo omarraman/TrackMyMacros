@@ -1,0 +1,16 @@
+2023-06-05 22:11:37.300 +02:00 [WRN] The foreign key property 'Meal.DayId1' was created in shadow state because a conflicting property with the simple name 'DayId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-06-05 22:11:40.301 +02:00 [WRN] The foreign key property 'Meal.DayId1' was created in shadow state because a conflicting property with the simple name 'DayId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-06-05 22:11:43.233 +02:00 [INF] Now listening on: https://localhost:7115
+2023-06-05 22:11:43.239 +02:00 [INF] Now listening on: http://localhost:5044
+2023-06-05 22:11:43.256 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-05 22:11:43.266 +02:00 [INF] Hosting environment: Development
+2023-06-05 22:11:43.270 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-06-05 22:11:44.529 +02:00 [INF] HTTP GET / responded 404 in 1.8026 ms
+2023-06-05 22:18:06.032 +02:00 [WRN] The foreign key property 'Meal.DayId1' was created in shadow state because a conflicting property with the simple name 'DayId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-06-05 22:18:08.112 +02:00 [WRN] The foreign key property 'Meal.DayId1' was created in shadow state because a conflicting property with the simple name 'DayId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-06-05 22:18:11.579 +02:00 [INF] Now listening on: https://localhost:7115
+2023-06-05 22:18:11.589 +02:00 [INF] Now listening on: http://localhost:5044
+2023-06-05 22:18:11.703 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-05 22:18:11.734 +02:00 [INF] Hosting environment: Development
+2023-06-05 22:18:11.804 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-06-05 22:18:12.184 +02:00 [INF] HTTP GET / responded 404 in 2.3211 ms

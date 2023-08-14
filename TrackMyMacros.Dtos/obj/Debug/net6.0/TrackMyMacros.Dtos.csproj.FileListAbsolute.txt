@@ -1,0 +1,12 @@
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Dtos\bin\Debug\net6.0\TrackMyMacros.Dtos.deps.json
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Dtos\bin\Debug\net6.0\TrackMyMacros.Dtos.dll
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Dtos\bin\Debug\net6.0\TrackMyMacros.Dtos.pdb
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Dtos\obj\Debug\net6.0\TrackMyMacros.Dtos.csproj.AssemblyReference.cache
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Dtos\obj\Debug\net6.0\TrackMyMacros.Dtos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Dtos\obj\Debug\net6.0\TrackMyMacros.Dtos.AssemblyInfoInputs.cache
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Dtos\obj\Debug\net6.0\TrackMyMacros.Dtos.AssemblyInfo.cs
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Dtos\obj\Debug\net6.0\TrackMyMacros.Dtos.csproj.CoreCompileInputs.cache
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Dtos\obj\Debug\net6.0\TrackMyMacros.Dtos.dll
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Dtos\obj\Debug\net6.0\refint\TrackMyMacros.Dtos.dll
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Dtos\obj\Debug\net6.0\TrackMyMacros.Dtos.pdb
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Dtos\obj\Debug\net6.0\ref\TrackMyMacros.Dtos.dll

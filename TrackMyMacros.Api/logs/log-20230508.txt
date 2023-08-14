@@ -1,0 +1,201 @@
+2023-05-08 12:42:45.060 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-08 12:42:45.086 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-08 12:42:45.090 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-08 12:42:45.091 +02:00 [INF] Hosting environment: Development
+2023-05-08 12:42:45.103 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-08 12:42:45.316 +02:00 [INF] HTTP GET / responded 404 in 0.2868 ms
+2023-05-08 12:42:54.497 +02:00 [INF] HTTP GET /api/Food responded 200 in 9256.9570 ms
+2023-05-08 12:44:17.498 +02:00 [INF] HTTP GET /api/Food responded 200 in 2.2286 ms
+2023-05-08 12:46:35.580 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-08 12:46:35.601 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-08 12:46:35.604 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-08 12:46:35.605 +02:00 [INF] Hosting environment: Development
+2023-05-08 12:46:35.606 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-08 12:46:35.887 +02:00 [INF] HTTP GET / responded 404 in 0.6954 ms
+2023-05-08 12:47:31.211 +02:00 [INF] HTTP GET /api/Food responded 200 in 193.5633 ms
+2023-05-08 12:50:33.237 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-08 12:50:33.262 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-08 12:50:33.266 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-08 12:50:33.267 +02:00 [INF] Hosting environment: Development
+2023-05-08 12:50:33.268 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-08 12:50:33.415 +02:00 [INF] HTTP GET / responded 404 in 0.5446 ms
+2023-05-08 12:50:39.217 +02:00 [INF] HTTP GET /api/Food responded 200 in 225.2820 ms
+2023-05-08 12:51:06.575 +02:00 [INF] HTTP GET /api/Food responded 200 in 1.7117 ms
+2023-05-08 12:51:46.232 +02:00 [INF] HTTP GET /api/Food responded 200 in 2.9015 ms
+2023-05-08 12:51:59.436 +02:00 [INF] HTTP GET /api/Food responded 200 in 1.5989 ms
+2023-05-08 12:53:03.382 +02:00 [INF] HTTP GET /api/Food responded 200 in 1.1052 ms
+2023-05-08 12:53:14.317 +02:00 [INF] HTTP GET /api/Food responded 200 in 1.0407 ms
+2023-05-08 12:53:40.385 +02:00 [INF] Application is shutting down...
+2023-05-08 12:54:27.998 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-08 12:54:28.019 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-08 12:54:28.022 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-08 12:54:28.024 +02:00 [INF] Hosting environment: Development
+2023-05-08 12:54:28.027 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-08 12:54:28.576 +02:00 [INF] HTTP GET / responded 404 in 0.7216 ms
+2023-05-08 12:54:42.101 +02:00 [INF] HTTP GET /api/Food responded 200 in 170.2013 ms
+2023-05-08 12:57:11.516 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-08 12:57:11.534 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-08 12:57:11.537 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-08 12:57:11.538 +02:00 [INF] Hosting environment: Development
+2023-05-08 12:57:11.539 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-08 12:57:11.700 +02:00 [INF] HTTP GET / responded 404 in 0.6307 ms
+2023-05-08 12:57:43.583 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-08 12:57:43.605 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-08 12:57:43.609 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-08 12:57:43.610 +02:00 [INF] Hosting environment: Development
+2023-05-08 12:57:43.611 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-08 12:57:44.143 +02:00 [INF] HTTP GET / responded 404 in 0.5956 ms
+2023-05-08 12:57:50.951 +02:00 [INF] HTTP GET /api/Food responded 200 in 264.3542 ms
+2023-05-08 12:58:30.933 +02:00 [INF] Application is shutting down...
+2023-05-08 12:58:49.986 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-08 12:58:50.001 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-08 12:58:50.004 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-08 12:58:50.004 +02:00 [INF] Hosting environment: Development
+2023-05-08 12:58:50.005 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-08 12:58:50.550 +02:00 [INF] HTTP GET / responded 404 in 0.5150 ms
+2023-05-08 12:59:04.501 +02:00 [INF] HTTP GET /api/Food responded 200 in 198.6322 ms
+2023-05-08 13:01:24.710 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-08 13:01:24.725 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-08 13:01:24.727 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-08 13:01:24.728 +02:00 [INF] Hosting environment: Development
+2023-05-08 13:01:24.728 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-08 13:01:25.007 +02:00 [INF] HTTP GET / responded 404 in 0.7324 ms
+2023-05-08 13:01:26.301 +02:00 [INF] HTTP GET /api/Food responded 200 in 202.5042 ms
+2023-05-08 21:29:21.149 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-08 21:29:21.205 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-08 21:29:21.212 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-08 21:29:21.214 +02:00 [INF] Hosting environment: Development
+2023-05-08 21:29:21.216 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-08 21:29:21.419 +02:00 [INF] HTTP GET / responded 404 in 1.0443 ms
+2023-05-08 21:30:20.620 +02:00 [INF] HTTP GET /api/Food responded 200 in 295.1743 ms
+2023-05-08 21:33:42.460 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-08 21:33:42.498 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-08 21:33:42.510 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-08 21:33:42.513 +02:00 [INF] Hosting environment: Development
+2023-05-08 21:33:42.517 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-08 21:33:43.210 +02:00 [INF] HTTP GET / responded 404 in 0.6494 ms
+2023-05-08 21:34:16.116 +02:00 [INF] HTTP GET /api/Food responded 200 in 393.7847 ms
+2023-05-08 21:45:15.871 +02:00 [INF] Application is shutting down...
+2023-05-08 21:45:27.591 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-08 21:45:27.650 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-08 21:45:27.658 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-08 21:45:27.661 +02:00 [INF] Hosting environment: Development
+2023-05-08 21:45:27.662 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-08 21:45:28.423 +02:00 [INF] HTTP GET / responded 404 in 0.9688 ms
+2023-05-08 21:45:35.460 +02:00 [INF] HTTP GET /api/Food responded 200 in 459.6025 ms
+2023-05-08 21:45:43.636 +02:00 [INF] HTTP GET /api/Food responded 200 in 3.1293 ms
+2023-05-08 21:46:55.025 +02:00 [INF] HTTP GET /api/Food responded 200 in 6.1591 ms
+2023-05-08 21:47:59.293 +02:00 [INF] Application is shutting down...
+2023-05-08 21:48:11.322 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-08 21:48:11.381 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-08 21:48:11.390 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-08 21:48:11.393 +02:00 [INF] Hosting environment: Development
+2023-05-08 21:48:11.397 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-08 21:48:12.063 +02:00 [INF] HTTP GET / responded 404 in 2.6389 ms
+2023-05-08 21:48:36.714 +02:00 [INF] HTTP GET /api/Food responded 200 in 505.1571 ms
+2023-05-08 21:51:17.211 +02:00 [INF] HTTP GET /api/Food responded 200 in 4.4541 ms
+2023-05-08 21:51:17.287 +02:00 [ERR] HTTP GET /api/Uom responded 500 in 16.5920 ms
+Npgsql.PostgresException (0x80004005): 42P01: relation "public.Uom" does not exist
+
+POSITION: 15
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at TrackMyMacros.Application.Features.Uom.Queries.GetUomList.GetUomListQueryHandler.Handle(GetUomListQuery request, CancellationToken cancellationToken) in C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\Features\Uom\Queries\GetUomList\GetUomListQueryHandler.cs:line 30
+   at TrackMyMacros.Api.Controllers.UomController.Get() in C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\Controllers\UomController.cs:line 25
+   at lambda_method60(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "public.Uom" does not exist
+    Position: 15
+    File: parse_relation.c
+    Line: 1374
+    Routine: parserOpenTable
+2023-05-08 21:51:17.403 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Npgsql.PostgresException (0x80004005): 42P01: relation "public.Uom" does not exist
+
+POSITION: 15
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryImpl[T](IDbConnection cnn, CommandDefinition command, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.cs:line 1094
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.Query[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Boolean buffered, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 734
+   at TrackMyMacros.Application.Features.Uom.Queries.GetUomList.GetUomListQueryHandler.Handle(GetUomListQuery request, CancellationToken cancellationToken) in C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Application\Features\Uom\Queries\GetUomList\GetUomListQueryHandler.cs:line 30
+   at TrackMyMacros.Api.Controllers.UomController.Get() in C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\Controllers\UomController.cs:line 25
+   at lambda_method60(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "public.Uom" does not exist
+    Position: 15
+    File: parse_relation.c
+    Line: 1374
+    Routine: parserOpenTable
+2023-05-08 21:52:10.174 +02:00 [INF] Application is shutting down...
+2023-05-08 21:52:24.635 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-08 21:52:24.684 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-08 21:52:24.692 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-08 21:52:24.695 +02:00 [INF] Hosting environment: Development
+2023-05-08 21:52:24.698 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-08 21:52:25.098 +02:00 [INF] HTTP GET / responded 404 in 1.3659 ms
+2023-05-08 21:52:40.625 +02:00 [INF] Application is shutting down...
+2023-05-08 21:54:48.536 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-08 21:54:48.566 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-08 21:54:48.571 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-08 21:54:48.574 +02:00 [INF] Hosting environment: Development
+2023-05-08 21:54:48.575 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-08 21:54:48.968 +02:00 [INF] HTTP GET / responded 404 in 0.8346 ms
+2023-05-08 21:54:52.475 +02:00 [INF] HTTP GET /api/Food responded 200 in 483.0486 ms
+2023-05-08 21:54:56.128 +02:00 [INF] HTTP GET /api/Uom responded 200 in 23.9193 ms
+2023-05-08 21:55:14.709 +02:00 [INF] HTTP GET /api/Food responded 200 in 3.1685 ms
+2023-05-08 21:55:16.552 +02:00 [INF] HTTP GET /api/Uom responded 200 in 1.3119 ms

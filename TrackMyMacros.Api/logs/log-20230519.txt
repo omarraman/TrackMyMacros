@@ -1,0 +1,22 @@
+2023-05-19 20:25:20.971 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-19 20:25:20.998 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-19 20:25:21.004 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-19 20:25:21.006 +02:00 [INF] Hosting environment: Development
+2023-05-19 20:25:21.008 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-19 20:25:22.242 +02:00 [INF] HTTP GET / responded 404 in 2.0585 ms
+2023-05-19 20:25:34.489 +02:00 [INF] HTTP GET /api/Food responded 200 in 286.7092 ms
+2023-05-19 20:25:35.882 +02:00 [INF] HTTP GET /api/Uom responded 200 in 17.5947 ms
+2023-05-19 20:34:53.109 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-19 20:34:53.135 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-19 20:34:53.143 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-19 20:34:53.150 +02:00 [INF] Hosting environment: Development
+2023-05-19 20:34:53.156 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-19 20:34:53.770 +02:00 [INF] HTTP GET / responded 404 in 1.4201 ms
+2023-05-19 20:36:12.083 +02:00 [INF] Now listening on: https://localhost:7115
+2023-05-19 20:36:12.113 +02:00 [INF] Now listening on: http://localhost:5044
+2023-05-19 20:36:12.123 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-19 20:36:12.125 +02:00 [INF] Hosting environment: Development
+2023-05-19 20:36:12.126 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
+2023-05-19 20:36:12.895 +02:00 [INF] HTTP GET / responded 404 in 1.0581 ms
+2023-05-19 20:36:13.637 +02:00 [INF] HTTP GET /api/Food responded 200 in 406.4995 ms
+2023-05-19 20:36:15.522 +02:00 [INF] HTTP GET /api/Uom responded 200 in 20.4695 ms

@@ -1,0 +1,31 @@
+﻿using Microsoft.EntityFrameworkCore;
+using TrackMyMacros.Domain;
+using TrackMyMacros.Domain.Aggregates.Day;
+
+namespace TrackMyMacros.Persistance;
+
+public class AppDbContext:DbContext
+{
+    public DbSet<Food> Food { get; set; }
+    public DbSet<Uom> Uoms { get; set; }
+    public DbSet<Day> Days { get; set; }
+
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+        : base(options)
+    {
+        
+    }
+
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+    }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.LogTo(Console.WriteLine);
+        base.OnConfiguring(optionsBuilder);
+    }
+}

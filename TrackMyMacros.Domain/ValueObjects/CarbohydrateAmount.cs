@@ -1,0 +1,10 @@
+using Ardalis.GuardClauses;
+
+namespace TrackMyMacros.Domain;
+
+public class CarbohydrateAmount: MacroNutrientAmount
+{
+    public CarbohydrateAmount(double quantity):base(MacroNutrient2.Carbohydrate , quantity)
+    {
+    }
+}
