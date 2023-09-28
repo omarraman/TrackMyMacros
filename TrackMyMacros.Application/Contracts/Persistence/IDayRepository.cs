@@ -5,5 +5,6 @@ namespace TrackMyMacros.Application.Contracts.Persistence;
 
 public interface IDayRepository
 {
-    Task<Maybe<Day>> GetByDateAsync(DateTime date);
+    Task<Maybe<Day>> GetByDateAsync(DateOnly date);
+    Task UpdateAsync(Day day);
 }

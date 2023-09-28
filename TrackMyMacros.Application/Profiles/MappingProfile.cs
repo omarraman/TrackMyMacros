@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using TrackMyMacros.Application.Features.Day.Commands;
 using TrackMyMacros.Application.Features.Food;
 using TrackMyMacros.Application.Features.Food.Commands.CreateFood;
 using TrackMyMacros.Domain;
@@ -20,6 +21,13 @@ public class MappingProfile:Profile
         
         CreateMap<Meal, GetMealDto>();
         CreateMap<FoodAmount, GetFoodAmountDto>();
+
+        CreateMap<UpdateDayCommand, Day>().ForMember(m=>m.Meals,
+            opt=>opt.MapFrom(udc=>udc.Meals));
+        CreateMap<UpdateDayCommand.UpdateMeal, Meal>();
+        CreateMap<UpdateDayCommand.UpdateFoodAmount, FoodAmount>();
+
+
         // CreateMap<FoodAmount, GetFoodAmountDto>().ForMember(gfad=>gfad.GetFoodDto,
         //         opt=>opt.MapFrom(gfa=>gfa.Food)
         //     );

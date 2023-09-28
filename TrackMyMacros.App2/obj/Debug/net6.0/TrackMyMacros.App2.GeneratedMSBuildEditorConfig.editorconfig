@@ -5,10 +5,8 @@ build_property.UsingMicrosoftNETSdkWeb =
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = false
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = browser
-build_property.EnableSingleFileAnalyzer = 
-build_property.EnableTrimAnalyzer = true
-build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = TrackMyMacros.App2
 build_property.RootNamespace = TrackMyMacros.App2
 build_property.ProjectDir = C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.App2\
@@ -30,12 +28,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNZWFsQ29tcG9uZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/OmarRaman/RiderProjects/TrackMyMacros/TrackMyMacros.App2/Components/MealFoodItemComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNZWFsRm9vZEl0ZW1Db21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/OmarRaman/RiderProjects/TrackMyMacros/TrackMyMacros.App2/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/OmarRaman/RiderProjects/TrackMyMacros/TrackMyMacros.App2/Pages/CreateFood.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlRm9vZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/OmarRaman/RiderProjects/TrackMyMacros/TrackMyMacros.App2/Pages/Day.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGF5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/OmarRaman/RiderProjects/TrackMyMacros/TrackMyMacros.App2/Pages/FetchData.razor]

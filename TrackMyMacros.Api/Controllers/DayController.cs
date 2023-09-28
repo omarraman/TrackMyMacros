@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using CSharpFunctionalExtensions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using TrackMyMacros.Application.Features.Day.Commands;
 using TrackMyMacros.Application.Features.Day.Queries;
 using TrackMyMacros.Dtos;
 
@@ -23,13 +25,28 @@ public class DayController : ControllerBase
     [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
     public async Task<ActionResult<GetDayDto>> Get([FromQuery] DateTime date)
     {
-
-        var dayOrNone = await _mediator.Send(new GetDayQuery { Date = date });
+        var dayOrNone = await _mediator.Send(new GetDayQuery { Date = DateOnly.FromDateTime(date) });
         if (dayOrNone.HasNoValue)
         {
             return NotFound();
         }
-        
+
         return dayOrNone.Value;
+    }
+    
+    [HttpPost(Name = "Update")]
+    [ProducesResponseType(statusCode: StatusCodes.Status204NoContent)]
+    [ProducesResponseType(statusCode: StatusCodes.Status500InternalServerError)]
+    public async Task<ActionResult> Update([FromBody] UpdateDayDto updateDayDto)
+    {
+        var command = _mapper.Map<UpdateDayCommand>(updateDayDto);
+        var result =   await _mediator.Send(command);
+
+        if (result.IsFailure)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, result.Error);
+        }
+        return NoContent();
+
     }
 }

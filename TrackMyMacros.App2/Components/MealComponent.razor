@@ -1,5 +1,6 @@
-﻿<h3>MealComponent</h3>
-
-@code {
-    
+﻿@using System.Diagnostics
+@foreach( var foodAmount in @Meal.FoodAmounts)
+{
+    Debug.WriteLine(foodAmount.Quantity);
+    <MealFoodItemComponent @Quantity="@foodAmount.Quantity" @FoodId="foodAmount"></MealFoodItemComponent>
 }

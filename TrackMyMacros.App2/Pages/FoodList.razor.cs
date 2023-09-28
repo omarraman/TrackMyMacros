@@ -16,7 +16,7 @@ public partial class FoodList
         Foods = await FoodDataService.GetFoods();
     }
 
-    public IReadOnlyList<FoodListViewModel> Foods { get; set; }
+    public IReadOnlyList<FoodListItemViewModel> Foods { get; set; }
 
     public void Show()
     {

@@ -1,0 +1,25 @@
+﻿@page "/Day"
+@using System.Diagnostics
+
+@if (_day == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+@foreach (var meal in @_day.Meals)
+{
+    <MealComponent2 @ref="ComponentRef" Meal="@meal" FoodList="@_foodList"></MealComponent2>
+}
+}
+
+
+<RadzenButton Click="@OnSave" Text="Save" ButtonStyle="ButtonStyle.Primary"/>
+
+
+@if (_noFoodIdSelectedOnOneOrMoreFoodItems)
+{
+    <div>Please select a food before saving</div>
+}

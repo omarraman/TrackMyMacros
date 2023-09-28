@@ -1,0 +1,27 @@
+﻿@using System.Xml
+@if (Food.HasValue)
+{
+    <RadzenCard>
+        <div>
+            <RadzenDropDown @bind-Value=@FoodId Data=@FoodList TextProperty="Name" ValueProperty="Id" Placeholder="Select Food" Style="width: 100%; max-width: 400px;"/>
+            @Food.Value.Name :<RadzenNumeric @bind-Value=@Quantity/> g
+            <span>
+                <strong>P</strong>@(Food.Value.ProteinAmount * @Quantity / 100)
+            </span>
+            <span>
+                <strong>F</strong>@(Food.Value.FatAmount * Quantity / 100)
+            </span>
+            <span>
+                <strong>C</strong>@(Food.Value.CarbohydrateAmount * @Quantity / 100)
+            </span>
+        </div>
+        <RadzenButton Click="@OnRemoveFood" Text="Add Food" ButtonStyle="ButtonStyle.Primary"/>
+
+    </RadzenCard>
+}
+else
+{
+    <div>
+        N/A
+    </div>
+}

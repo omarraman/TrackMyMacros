@@ -9,7 +9,7 @@ namespace TrackMyMacros.App2.Services;
 
 public interface IFoodDataService
 {
-    Task<IReadOnlyList<FoodListViewModel>> GetFoods( );
+    Task<IReadOnlyList<FoodListItemViewModel>> GetFoods( );
     Task AddFood(CreateFoodViewModel dto);
 }
 
@@ -23,7 +23,7 @@ public class FoodDataService :IFoodDataService
     }
 
 
-    public async Task<IReadOnlyList<FoodListViewModel>> GetFoods( )
+    public async Task<IReadOnlyList<FoodListItemViewModel>> GetFoods( )
     {
         
         // headers.Add("ApiKey",_options.Value.ApiKey);
@@ -34,8 +34,8 @@ public class FoodDataService :IFoodDataService
             
         var uri =  "https://localhost:7115/api/Food";
         var foods = await uri
-            .GetJsonAsync<IReadOnlyList<FoodListViewModel>>();
-        var mappedFoods = _mapper.Map<IReadOnlyList<FoodListViewModel>>(foods);
+            .GetJsonAsync<IReadOnlyList<FoodListItemViewModel>>();
+        var mappedFoods = _mapper.Map<IReadOnlyList<FoodListItemViewModel>>(foods);
 
         return mappedFoods;
 

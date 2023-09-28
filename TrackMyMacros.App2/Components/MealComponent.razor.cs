@@ -1,15 +1,12 @@
-﻿namespace TrackMyMacros.App2.Components;
+﻿using Microsoft.AspNetCore.Components;
+using TrackMyMacros.App2.ViewModels;
+
+namespace TrackMyMacros.App2.Components;
 
 public partial class MealComponent
 {
-    public double Type { get; set; }
-    public List<FoodItem> FoodItems { get; set; } = new List<FoodItem>();
-    
-    
-}
+    [Parameter] public MealViewModel Meal { get; set; }
+    [Parameter] public IReadOnlyList<FoodListItemViewModel> FoodList { get; set; }
 
-public class FoodItem
-{
-    public double Quantity { get; set; }
-    public int FoodId { get; set; }
+    
 }

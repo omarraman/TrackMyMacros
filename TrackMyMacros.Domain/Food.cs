@@ -2,7 +2,7 @@
 
 namespace TrackMyMacros.Domain;
 
-public class Food : Entity
+public class Food 
 {
     public int Id { get; set; }
     public string Name { get; set; }

@@ -42,7 +42,7 @@ public class DayConfiguration : IEntityTypeConfiguration<Day>
                     .IsRequired();
                 foodAmounts.HasData(new {MealDayId=newGuid, MealId= 1,Id=1,FoodId = 1, Quantity = 100D});
             });
-        }).HasData(new {Id = newGuid, Date =DateTime.Today });
+        }).HasData(new {Id = newGuid, Date = DateOnly.FromDateTime(DateTime.Today), CreatedDate = DateTime.Now});
         
         /*builder.OwnsOne(m => m.Meal, meals =>
         {

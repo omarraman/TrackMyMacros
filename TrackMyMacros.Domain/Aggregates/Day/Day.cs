@@ -1,9 +1,11 @@
-﻿namespace TrackMyMacros.Domain.Aggregates.Day;
+﻿using TrackMyMacros.Domain.Common;
+
+namespace TrackMyMacros.Domain.Aggregates.Day;
 
 public class Day
 {
     public Guid Id { get; set; }
-    public DateTime Date { get; set; }
+    public DateOnly Date { get; set; }
     public List<Meal> Meals { get; set; } = new();
     
     public void AddMeal(Meal meal)

@@ -8,7 +8,7 @@ namespace TrackMyMacros.Application.Features.Day.Queries;
 
 public class GetDayQuery:IRequest<Maybe<GetDayDto>>
 {
-    public DateTime Date { get; set; }
+    public DateOnly Date { get; set; }
 }
 
 public class GetDayQueryHandler : IRequestHandler<GetDayQuery, Maybe<GetDayDto>>

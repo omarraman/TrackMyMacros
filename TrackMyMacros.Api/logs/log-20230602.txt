@@ -1,6 +1,0 @@
-2023-06-02 21:58:28.770 +02:00 [INF] Now listening on: https://localhost:7115
-2023-06-02 21:58:28.810 +02:00 [INF] Now listening on: http://localhost:5044
-2023-06-02 21:58:28.816 +02:00 [INF] Application started. Press Ctrl+C to shut down.
-2023-06-02 21:58:28.820 +02:00 [INF] Hosting environment: Development
-2023-06-02 21:58:28.821 +02:00 [INF] Content root path: C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Api\
-2023-06-02 21:58:29.673 +02:00 [INF] HTTP GET / responded 404 in 1.3209 ms

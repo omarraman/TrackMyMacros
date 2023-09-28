@@ -17,15 +17,15 @@
           "C:\\Users\\OmarRaman\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/DoctrinAB/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
               "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Dtos\\TrackMyMacros.Dtos.csproj": {
                 "projectPath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Dtos\\TrackMyMacros.Dtos.csproj"
@@ -40,8 +40,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -53,7 +53,11 @@
             },
             "Blazored.LocalStorage": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.4.0, )"
+            },
+            "CSharpFunctionalExtensions": {
+              "target": "Package",
+              "version": "[2.40.0, )"
             },
             "Flurl.Http": {
               "target": "Package",
@@ -61,24 +65,36 @@
             },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
-              "version": "[6.0.16, )"
+              "version": "[7.0.10, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.16, )"
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Microsoft.Extensions.Http": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[7.0.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "Polly": {
+              "target": "Package",
+              "version": "[8.0.0-alpha.8, )"
+            },
+            "Polly.Caching.Memory": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
             "Radzen.Blazor": {
               "target": "Package",
-              "version": "[4.10.1, )"
+              "version": "[4.15.7, )"
             },
             "System.Net.Http": {
               "target": "Package",
@@ -86,7 +102,7 @@
             },
             "bootstrap": {
               "target": "Package",
-              "version": "[5.3.0-alpha3, )"
+              "version": "[5.3.1, )"
             }
           },
           "imports": [
@@ -103,7 +119,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[6.0.21, 6.0.21]"
+              "version": "[7.0.11, 7.0.11]"
             }
           ],
           "frameworkReferences": {
@@ -111,7 +127,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -133,15 +149,15 @@
           "C:\\Users\\OmarRaman\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.pkg.github.com/DoctrinAB/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -152,8 +168,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "imports": [
             "net461",
             "net462",
@@ -170,7 +186,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

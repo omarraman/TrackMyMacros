@@ -17,7 +17,7 @@ else
 }
 
 
-<RadzenDataList Data="@Foods" TItem="FoodListViewModel" PageSize="5" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
+<RadzenDataList Data="@Foods" TItem="FoodListItemViewModel" PageSize="5" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
     <Template Context="food">
         <RadzenCard Style="width: 100%; padding: 0;">
             <RadzenRow Gap="0">
@@ -28,15 +28,15 @@ else
                     <RadzenRow Gap="0">
                         <RadzenColumn Size="12" SizeMD="6" SizeLG="2">
                             <RadzenText TextStyle="TextStyle.H6" TagName="TagName.H5" Class="rz-mb-0">Carbs</RadzenText>
-                            <RadzenText TextStyle="TextStyle.Body2">@(food.Carbohydrate)</RadzenText>
+                            <RadzenText TextStyle="TextStyle.Body2">@(food.CarbohydrateAmount)</RadzenText>
                         </RadzenColumn>
                         <RadzenColumn Size="12" SizeMD="6" SizeLG="2">
                             <RadzenText TextStyle="TextStyle.H6" TagName="TagName.H5" Class="rz-mb-0">Protein</RadzenText>
-                            <RadzenText TextStyle="TextStyle.Body2">@(food.Protein)</RadzenText>
+                            <RadzenText TextStyle="TextStyle.Body2">@(food.ProteinAmount)</RadzenText>
                         </RadzenColumn>
                         <RadzenColumn Size="12" SizeMD="6" SizeLG="5">
                             <RadzenText TextStyle="TextStyle.H6" TagName="TagName.H5" Class="rz-mb-0">Fat</RadzenText>
-                            <RadzenText TextStyle="TextStyle.Body2">@(food.Fat)</RadzenText>
+                            <RadzenText TextStyle="TextStyle.Body2">@(food.FatAmount)</RadzenText>
                         </RadzenColumn>
                         <RadzenColumn Size="12" SizeMD="6" SizeLG="5">
                             <RadzenText TextStyle="TextStyle.H6" TagName="TagName.H5" Class="rz-mb-0">Quantity</RadzenText>
