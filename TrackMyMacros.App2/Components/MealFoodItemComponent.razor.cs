@@ -10,10 +10,12 @@ public partial class MealFoodItemComponent
     [Inject] public IFoodDataRepository FoodDataRepository { get; set; }
     [Parameter] public double Quantity { get; set; }
     [Parameter] public int FoodId { get; set; }
-    [Parameter]
-    public EventCallback OnRemove { get; set; }
+    [Parameter] public string Guid { get; set; }
+    [Parameter] public EventCallback<string> OnRemove { get; set; }
     public IReadOnlyList<FoodListItemViewModel> FoodList { get; set; }
 
+
+    // public string Guid { get;  }= System.Guid.NewGuid().ToString();
 
     public MealFoodItemComponent()
     {
@@ -36,11 +38,10 @@ public partial class MealFoodItemComponent
             Quantity = Quantity
         };
     }
-    
 
 
-    private async Task ButtonClicked()
+    private async Task RemoveFood()
     {
-        await OnRemove.InvokeAsync();
+        await OnRemove.InvokeAsync(this.Guid);
     }
 }

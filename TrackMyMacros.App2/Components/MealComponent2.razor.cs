@@ -7,9 +7,11 @@ public partial class MealComponent2
 {
     [Parameter] public MealViewModel Meal { get; set; }
     [Parameter] public IReadOnlyList<FoodListItemViewModel> FoodList { get; set; }
-    
+
     List<MealFoodItemComponent> ComponentRefs = new List<MealFoodItemComponent>();
-    MealFoodItemComponent ComponentRef {
+
+    MealFoodItemComponent ComponentRef
+    {
         set { ComponentRefs.Add(value); }
     }
 
@@ -24,15 +26,18 @@ public partial class MealComponent2
             }).ToList()
         };
     }
-    
+
     private void OnAddFood()
     {
-        Meal.FoodAmounts.Add(new FoodAmountViewModel{ FoodId =-1, Quantity = 100});
+        Meal.FoodAmounts.Add(new FoodAmountViewModel { FoodId = -1, Quantity = 10 });
         StateHasChanged();
     }
 
-    private void RemoveFoodItem()
+    private void RemoveFoodItem(string guid)
     {
-        throw new NotImplementedException();
+        Meal.FoodAmounts.RemoveAll(x => x.Guid == guid);
+        var toRemove = ComponentRefs.Single(m => m.Guid == guid);
+        ComponentRefs.Remove(toRemove);
+        StateHasChanged();
     }
 }

@@ -2,7 +2,7 @@
 @foreach( var foodAmount in @Meal.FoodAmounts)
 {
     Debug.WriteLine(foodAmount.Quantity);
-    <MealFoodItemComponent @ref="ComponentRef" OnRemove="RemoveFoodItem" Quantity="@foodAmount.Quantity" FoodId="@foodAmount.FoodId"></MealFoodItemComponent>
+    <MealFoodItemComponent @ref="ComponentRef" OnRemove="RemoveFoodItem" Quantity="@foodAmount.Quantity" FoodId="@foodAmount.FoodId" Guid="@foodAmount.Guid"></MealFoodItemComponent>
 }
 
 <RadzenButton Click="@OnAddFood"  Text="Add Food" ButtonStyle="ButtonStyle.Primary" />

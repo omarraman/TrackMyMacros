@@ -20,6 +20,7 @@ public class MealViewModel
 }
 public class FoodAmountViewModel
 {
+    public string Guid { get; } = System.Guid.NewGuid().ToString();
     public int FoodId { get; set; }
     public double Quantity { get; set; }
 }
