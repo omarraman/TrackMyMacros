@@ -1,8 +1,9 @@
 ﻿@using System.Diagnostics
-@foreach( var foodAmount in @Meal.FoodAmounts)
-{
-    Debug.WriteLine(foodAmount.Quantity);
-    <MealFoodItemComponent @ref="ComponentRef" OnRemove="RemoveFoodItem" Quantity="@foodAmount.Quantity" FoodId="@foodAmount.FoodId" Guid="@foodAmount.Guid"></MealFoodItemComponent>
-}
+<RadzenCard>
+    @foreach (var foodAmount in @Meal.FoodAmounts)
+    {
+        <MealFoodItemComponent OnRemove="RemoveFoodItem" FoodAmount="@foodAmount"></MealFoodItemComponent>
+    }
+    <RadzenButton Click="@OnAddFood" Text="Add Food" ButtonStyle="ButtonStyle.Primary"/>
 
-<RadzenButton Click="@OnAddFood"  Text="Add Food" ButtonStyle="ButtonStyle.Primary" />
+</RadzenCard>

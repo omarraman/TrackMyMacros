@@ -1,23 +1,21 @@
 ﻿@using System.Xml
-@if (Food.HasValue)
+@if (SelectedFood.HasValue)
 {
-    <RadzenCard>
         <div>
-            <RadzenDropDown @bind-Value=@FoodId Data=@FoodList TextProperty="Name" ValueProperty="Id" Placeholder="Select Food" Style="width: 100%; max-width: 400px;"/>
-            @Food.Value.Name :<RadzenNumeric @bind-Value=@Quantity/> g
+            <RadzenDropDown @bind-Value=@FoodAmount.FoodId Data=@FoodList TextProperty="Name" ValueProperty="Id" Placeholder="Select Food" Style="width: 100%; max-width: 400px;"/>
+            @SelectedFood.Value.Name :<RadzenNumeric @bind-Value=@FoodAmount.Quantity></RadzenNumeric> g
             <span>
-                <strong>P</strong>@(Food.Value.ProteinAmount * @Quantity / 100)
+                <strong>P</strong>@(SelectedFood.Value.ProteinAmount * FoodAmount.Quantity / 100)
             </span>
             <span>
-                <strong>F</strong>@(Food.Value.FatAmount * Quantity / 100)
+                <strong>F</strong>@(SelectedFood.Value.FatAmount * FoodAmount.Quantity / 100)
             </span>
             <span>
-                <strong>C</strong>@(Food.Value.CarbohydrateAmount * @Quantity / 100)
+                <strong>C</strong>@(SelectedFood.Value.CarbohydrateAmount * FoodAmount.Quantity / 100)
             </span>
             <RadzenButton Click="@RemoveFood" Text="Remove" ButtonStyle="ButtonStyle.Primary"/>
         </div>
 
-    </RadzenCard>
 }
 else
 {

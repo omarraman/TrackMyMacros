@@ -16,11 +16,21 @@ public class DayViewModel
 
 public class MealViewModel
 {
-    public List<FoodAmountViewModel> FoodAmounts { get; set; } 
+    public List<FoodAmountViewModel> FoodAmounts { get; set; }
+
+    public Double TotalProtein {
+        get
+        {
+            return FoodAmounts.ForEach(m=>m.)
+        }
+    }
 }
+
 public class FoodAmountViewModel
 {
-    public string Guid { get; } = System.Guid.NewGuid().ToString();
     public int FoodId { get; set; }
     public double Quantity { get; set; }
+
+    public decimal Protein { get; set; }
+    
 }

@@ -14,8 +14,8 @@ public partial class Day
 
     private IReadOnlyList<FoodListItemViewModel> _foodList;
     public DayViewModel _day;
-    
-    private bool _noFoodIdSelectedOnOneOrMoreFoodItems=false;
+
+    private bool _noFoodIdSelectedOnOneOrMoreFoodItems = false;
 
     public Day()
     {
@@ -28,14 +28,14 @@ public partial class Day
         set { ComponentRefs.Add(value); }
     }
 
-    public DayViewModel GetDayViewModel()
-    {
-        return new DayViewModel()
-        {
-            Date = _day.Date,
-            Meals = ComponentRefs.Select(x => x.GetMealViewModel()).ToList()
-        };
-    }
+    // public DayViewModel GetDayViewModel()
+    // {
+    //     return new DayViewModel()
+    //     {
+    //         Date = _day.Date,
+    //         Meals = ComponentRefs.Select(x => x.GetMealViewModel()).ToList()
+    //     };
+    // }
 
     protected override async Task OnInitializedAsync()
     {
@@ -43,14 +43,14 @@ public partial class Day
         _day = await DayDataService.GetDay(DateOnly.FromDateTime(DateTime.Now));
         await base.OnInitializedAsync();
     }
-    
+
     private async Task OnSave()
     {
-        var day = GetDayViewModel();
-        if (day.IsValid())
+        // var day = GetDayViewModel();
+        if (_day.IsValid())
         {
             _noFoodIdSelectedOnOneOrMoreFoodItems = false;
-            await DayDataService.UpdateDay(day);
+            await DayDataService.UpdateDay(_day);
         }
         else
         {
@@ -58,8 +58,18 @@ public partial class Day
         }
     }
 
-    private async Task OnSave2()
+    private async Task OnAddMeal()
     {
-
+        _day.Meals.Add(new MealViewModel
+        {
+            FoodAmounts = new List<FoodAmountViewModel>
+            {
+                new FoodAmountViewModel
+                {
+                    FoodId = -1,
+                    Quantity = 10
+                }
+            }
+        });
     }
 }

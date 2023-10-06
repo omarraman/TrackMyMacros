@@ -6,16 +6,17 @@ namespace TrackMyMacros.App2.Components;
 
 public partial class MealFoodItemComponent
 {
-    private Maybe<FoodListItemViewModel> Food { get; set; }
+    
+    private Maybe<FoodListItemViewModel> SelectedFood { get; set; }
     [Inject] public IFoodDataRepository FoodDataRepository { get; set; }
     [Parameter] public double Quantity { get; set; }
-    [Parameter] public int FoodId { get; set; }
+    
     [Parameter] public string Guid { get; set; }
-    [Parameter] public EventCallback<string> OnRemove { get; set; }
+    [Parameter] public EventCallback<FoodAmountViewModel> OnRemove { get; set; }
     public IReadOnlyList<FoodListItemViewModel> FoodList { get; set; }
 
+    [Parameter] public FoodAmountViewModel FoodAmount { get; set; }
 
-    // public string Guid { get;  }= System.Guid.NewGuid().ToString();
 
     public MealFoodItemComponent()
     {
@@ -25,7 +26,7 @@ public partial class MealFoodItemComponent
     {
         FoodList = await FoodDataRepository.GetFoodList();
 
-        Food = FoodDataRepository.GetFood(FoodId);
+        SelectedFood = FoodDataRepository.GetFood(FoodAmount.FoodId);
 
         return base.OnInitializedAsync();
     }
@@ -34,7 +35,7 @@ public partial class MealFoodItemComponent
     {
         return new FoodAmountViewModel()
         {
-            FoodId = FoodId,
+            FoodId = FoodAmount.FoodId,
             Quantity = Quantity
         };
     }
@@ -42,6 +43,6 @@ public partial class MealFoodItemComponent
 
     private async Task RemoveFood()
     {
-        await OnRemove.InvokeAsync(this.Guid);
+        await OnRemove.InvokeAsync(this.FoodAmount);
     }
 }
