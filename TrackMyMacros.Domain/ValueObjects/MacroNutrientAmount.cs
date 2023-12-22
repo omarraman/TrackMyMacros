@@ -1,7 +1,7 @@
 ﻿using Ardalis.GuardClauses;
 using TrackMyMacros.Domain.Common;
 
-namespace TrackMyMacros.Domain;
+namespace TrackMyMacros.Domain.ValueObjects;
 
 public class MacroNutrientAmount:ValueObject<MacroNutrientAmount>
 {
@@ -15,11 +15,11 @@ public class MacroNutrientAmount:ValueObject<MacroNutrientAmount>
     }
     protected override bool EqualsCore(MacroNutrientAmount other)
     {
-        throw new NotImplementedException();
+        return Quantity== other.Quantity && MacroNutrient == other.MacroNutrient;
     }
 
     protected override int GetHashCodeCore()
     {
-        throw new NotImplementedException();
+        return  this.Quantity.GetHashCode() +  this.MacroNutrient.CaloriesPerGram.GetHashCode() * 17;
     }
 }

@@ -25,7 +25,7 @@ public class CreateFoodCommandHandler:IRequestHandler<CreateFoodCommand,Result<i
         if (validationResult.Errors.Count > 0)
             return  Result.Failure<int>(validationResult.ToString(","));
 
-        var food = _mapper.Map<Domain.Food>(request);
+        var food = _mapper.Map<Domain.Aggregates.Food>(request);
 
         food = await _foodRepository.AddAsync(food);
 

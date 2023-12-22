@@ -1,6 +1,11 @@
 ﻿@page "/Day"
 @using System.Diagnostics
 
+<div>
+    <RadzenDatePicker DateFormat="MM/dd/yyyy" @bind-Value=@CurrentDate  Change="@(args => OnDateCHanged(args))"/>
+</div>
+
+
 @if (_day == null)
 {
     <p>
@@ -9,12 +14,36 @@
 }
 else
 {
-@foreach (var meal in @_day.Meals)
-{
-    <MealComponent2 @ref="ComponentRef" Meal="@meal" FoodList="@_foodList"></MealComponent2>
-}
-}
+    @foreach (var meal in @_day.Meals)
+    {
+        <MealComponent2 OnMealMacrosChanged="OnMealMacrosChanged" @ref="ComponentRef" Meal="@meal" FoodList="@_foodList"></MealComponent2>
+    }
 
+
+}
+@if (_day != null)
+{
+    <span>Total Protein : @Double.Round(@_day.Protein,2)</span>
+    <span>Total Carbs :  @Double.Round(@_day.Carbohydrate,2)</span>
+    <span>Total Fat :  @Double.Round(@_day.Fat,2)</span>
+    <span>Total Cals :  @Double.Round(@_day.Calories,2)</span>
+
+    if (_dailyLimits.IsSuccess)
+    {
+        <div>
+                    <span>Remaining Protein : @Double.Round((_dailyLimits.Value.Protein-@_day.Protein)/ @_dailyLimits.Value.Protein,2)</span>
+                    <span>Remaining Carbs : @Double.Round((_dailyLimits.Value.Carbohydrate-@_day.Carbohydrate)/@_dailyLimits.Value.Carbohydrate,2)</span>
+                    <span>Remaining Fat :@Double.Round((_dailyLimits.Value.Fat-@_day.Fat)/ @_dailyLimits.Value.Fat),2)</span>
+                    <span>Remaining Cals :@System.Double.Round((_dailyLimits.Value.Calories-@_day.Calories)/ @_dailyLimits.Value.Calories,2)</span>
+        </div>
+
+    }
+    else
+    {
+        <span>Daily Limits not available</span>
+    }
+
+}
 
 <RadzenButton Click="@OnSave" Text="Save" ButtonStyle="ButtonStyle.Primary"/>
 <RadzenButton Click="@OnAddMeal" Text="Add Meal" ButtonStyle="ButtonStyle.Primary"/>

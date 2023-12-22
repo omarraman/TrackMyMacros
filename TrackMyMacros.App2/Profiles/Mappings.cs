@@ -24,5 +24,8 @@ public class Mappings : Profile
                 opt=>opt.MapFrom(src=>src.Meals));
         CreateMap<MealViewModel, UpdateDayDto.Meal>();
         CreateMap<FoodAmountViewModel, UpdateDayDto.FoodAmount>();
+        CreateMap<FoodListItemViewModel, UpdateFoodDto>();
+        
+        CreateMap<GetDailyLimitsDto, DailyLimitsViewModel>();
     }
 }

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using System.Runtime.CompilerServices;
+using CSharpFunctionalExtensions;
+using Microsoft.AspNetCore.Components;
 using Radzen.Blazor.Rendering;
 using TrackMyMacros.App2.Components;
 using TrackMyMacros.App2.Services;
@@ -11,10 +13,14 @@ public partial class Day
     [Inject] public IFoodDataRepository FoodDataRepository { get; set; }
 
     [Inject] public DayDataService DayDataService { get; set; }
+    [Inject] public IDailyLimitsDataService DailyLimitsDataService { get; set; }
 
     private IReadOnlyList<FoodListItemViewModel> _foodList;
     public DayViewModel _day;
 
+    public DateTime CurrentDate { get; set; } = DateTime.Now;
+    
+    
     private bool _noFoodIdSelectedOnOneOrMoreFoodItems = false;
 
     public Day()
@@ -22,26 +28,38 @@ public partial class Day
     }
 
     List<MealComponent2> ComponentRefs = new List<MealComponent2>();
+    private Result<DailyLimitsViewModel> _dailyLimits;
 
     MealComponent2 ComponentRef
     {
         set { ComponentRefs.Add(value); }
     }
 
-    // public DayViewModel GetDayViewModel()
-    // {
-    //     return new DayViewModel()
-    //     {
-    //         Date = _day.Date,
-    //         Meals = ComponentRefs.Select(x => x.GetMealViewModel()).ToList()
-    //     };
-    // }
-
     protected override async Task OnInitializedAsync()
     {
+        _dailyLimits = await DailyLimitsDataService.GetDailyLimits();
+
+        // CurrentDate = DateOnly.FromDateTime(DateTime.Now);
         _foodList = await FoodDataRepository.GetFoodList();
-        _day = await DayDataService.GetDay(DateOnly.FromDateTime(DateTime.Now));
+        await Refresh();
         await base.OnInitializedAsync();
+    }
+
+    private async Task Refresh()
+    {
+        var getDay = await DayDataService.GetDay(DateOnly.FromDateTime(CurrentDate));
+        if (getDay.IsFailure)
+        {
+            _day= new DayViewModel
+            {
+                Date = DateOnly.FromDateTime(CurrentDate),
+                Meals = new List<MealViewModel>()
+            };
+        }
+        else
+        {
+            _day = getDay.Value;
+        }
     }
 
     private async Task OnSave()
@@ -71,5 +89,20 @@ public partial class Day
                 }
             }
         });
+    }    
+    private void OnMealMacrosChanged()
+    {
+        _day.RefreshTotals();
+
+        StateHasChanged();
     }
+    
+    private async Task OnDateCHanged(DateTime? date)
+    {
+        CurrentDate = date?? DateTime.Now;
+        await Refresh();
+        StateHasChanged();
+    }   
+    
+    
 }

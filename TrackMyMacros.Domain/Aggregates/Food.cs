@@ -1,6 +1,4 @@
-﻿using TrackMyMacros.Domain.Common;
-
-namespace TrackMyMacros.Domain;
+﻿namespace TrackMyMacros.Domain.Aggregates;
 
 public class Food 
 {
@@ -12,6 +10,8 @@ public class Food
 
     public double Quantity { get; set; }
     public int QuantityInGrams { get; set; }
+
+    public double? DefaultQuantity { get; set; }
 
     public int UomId { get; set; }
 

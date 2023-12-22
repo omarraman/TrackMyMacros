@@ -6,6 +6,7 @@ using Polly.Caching;
 using Polly.Registry;
 using Radzen;
 using TrackMyMacros.App2;
+using TrackMyMacros.App2.Interfaces;
 using TrackMyMacros.App2.Services;
 
 IPolicyRegistry<string> _myRegistry;
@@ -21,6 +22,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 builder.Services.AddSingleton<DayDataService>();
 builder.Services.AddSingleton<IFoodDataService,FoodDataService>();
+builder.Services.AddSingleton<IDailyLimitsDataService,DailyLimitsDataService>();
 builder.Services.AddScoped<IUomDataService, UomDataService>();
 
 builder.Services.AddScoped<DialogService>();

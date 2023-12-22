@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CSharpFunctionalExtensions;
 using Flurl.Http;
 using TrackMyMacros.App2.ViewModels;
 using TrackMyMacros.Dtos;
@@ -19,7 +20,7 @@ public class DayDataService
         }
 
 
-        public async Task<DayViewModel> GetDay(DateOnly date )
+        public async Task<Result<DayViewModel>> GetDay(DateOnly date )
         {
 
             try
@@ -37,8 +38,7 @@ public class DayDataService
             }
             catch (FlurlHttpException e)
             {
-                Console.WriteLine("Bollox " + e);
-                throw;  
+                return Result.Failure<DayViewModel>("Failed to get day data.");
             }
         }
         

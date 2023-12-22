@@ -1,3 +1,5 @@
+using TrackMyMacros.Domain.ValueObjects;
+
 namespace TrackMyMacros.Domain;
 
 public class FatAmount: MacroNutrientAmount

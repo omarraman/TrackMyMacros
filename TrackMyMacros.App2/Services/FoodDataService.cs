@@ -2,16 +2,11 @@
 using Blazored.LocalStorage;
 using Flurl.Http;
 using TrackMyMacros.App2.Components;
+using TrackMyMacros.App2.Interfaces;
 using TrackMyMacros.App2.ViewModels;
 using TrackMyMacros.Dtos;
 
 namespace TrackMyMacros.App2.Services;
-
-public interface IFoodDataService
-{
-    Task<IReadOnlyList<FoodListItemViewModel>> GetFoods( );
-    Task AddFood(CreateFoodViewModel dto);
-}
 
 public class FoodDataService :IFoodDataService
 {
@@ -37,7 +32,7 @@ public class FoodDataService :IFoodDataService
             .GetJsonAsync<IReadOnlyList<FoodListItemViewModel>>();
         var mappedFoods = _mapper.Map<IReadOnlyList<FoodListItemViewModel>>(foods);
 
-        return mappedFoods;
+        return mappedFoods.OrderBy(m=>m.Name).ToList();
 
     }
 
@@ -48,8 +43,16 @@ public class FoodDataService :IFoodDataService
          await uri
             .PostJsonAsync(dto);
         
-        
     }
 
+    
+    public async Task UpdateFood(FoodListItemViewModel model)
+    {
+        var dto = _mapper.Map<UpdateFoodDto>(model);
+        var uri =  "https://localhost:7115/api/Food";
+        await uri
+            .PutJsonAsync(dto);
+        
+    }
 
 }

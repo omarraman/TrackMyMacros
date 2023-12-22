@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TrackMyMacros.Domain;
+using TrackMyMacros.Domain.Aggregates;
 
 namespace TrackMyMacros.Persistance.Repositories;
 

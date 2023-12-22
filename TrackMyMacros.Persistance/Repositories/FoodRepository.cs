@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using TrackMyMacros.Application.Contracts.Persistence;
 using TrackMyMacros.Domain;
+using TrackMyMacros.Domain.Aggregates;
 
 namespace TrackMyMacros.Persistance.Repositories;
 
@@ -14,9 +15,9 @@ public class FoodRepository:IFoodRepository
             _dbContext = dbContext;
         }
 
-        public virtual async Task<Maybe<Food>> GetByIdAsync(Guid id)
+        public virtual async Task<Maybe<Food>> GetByIdAsync(int id)
         {
-            return await _dbContext.Set<Food>().FindAsync(id);
+            return await _dbContext.Set<Food>().FindAsync(id) ?? Maybe<Food>.None;
         }
 
         public async Task<IReadOnlyList<Food>> ListAllAsync()
@@ -37,10 +38,17 @@ public class FoodRepository:IFoodRepository
             return entity;
         }
 
-        public async Task UpdateAsync(Food entity)
+        public async Task<Result> UpdateAsync(Food entity)
         {
-            _dbContext.Entry(entity).State = EntityState.Modified;
-            await _dbContext.SaveChangesAsync();
+            var foodInDb= await _dbContext.Set<Food>().FindAsync(entity.Id);
+            _dbContext.Entry(foodInDb).CurrentValues.SetValues(entity);
+            var updatedCount =await _dbContext.SaveChangesAsync();
+            if (updatedCount == 0)
+            {
+                return Result.Failure("Failed to update food");
+            }
+
+            return Result.Success();
         }
 
         public async Task DeleteAsync(Food entity)

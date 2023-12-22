@@ -6,6 +6,10 @@ public class GetDayDto
 
     public List<GetMealDto> GetMealDtos { get; set; }
     
+    public double Protein { get; set; }
+    public double Carbohydrate { get; set; }
+    public double Fat { get; set; }
+    
 }
 
 public class GetMealDto
@@ -13,6 +17,10 @@ public class GetMealDto
     // public int Id { get; set; }
     
     public List<GetFoodAmountDto> FoodAmounts { get; set; } 
+    
+    public double Protein { get; set; }
+    public double Carbohydrate { get; set; }
+    public double Fat { get; set; }
 }
 
 public class GetUomDto
@@ -25,6 +33,9 @@ public class GetFoodAmountDto
 {
     public int FoodId { get; set; }
     public double Quantity { get; set; }
+    public double Protein { get; set; }
+    public double Carbohydrate { get; set; }
+    public double Fat { get; set; }
 }
 
 public class GetFoodDto

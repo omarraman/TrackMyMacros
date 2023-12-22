@@ -1,4 +1,5 @@
-﻿using TrackMyMacros.Domain.Common;
+﻿using Ardalis.GuardClauses;
+using TrackMyMacros.Domain.Common;
 
 namespace TrackMyMacros.Domain.Aggregates.Day;
 
@@ -22,4 +23,21 @@ public class Day
     {
         return Meals.AsReadOnly();
     }
+    public double Protein { get; set; }
+    public double Carbohydrate { get; set; }
+    public double Fat { get; set; }
+    
+    public Day()
+    {
+        
+    }
+    // public Day(double protein,double carbohydrate, double fat)
+    // {
+    //     Guard.Against.NegativeOrZero(protein, nameof(protein));
+    //     Guard.Against.NegativeOrZero(carbohydrate, nameof(carbohydrate));
+    //     Guard.Against.NegativeOrZero(fat, nameof(fat));
+    //     Protein= protein;
+    //     Carbohydrate= carbohydrate;
+    //     Fat= fat;
+    // }
 }

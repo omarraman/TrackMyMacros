@@ -11,9 +11,5 @@ public class CreateFoodCommandValidator:AbstractValidator<CreateFoodCommand>
             .NotNull();
     }
 
-    //todo add this
-    // private async Task<bool> EventNameAndDateUnique(CreateEventCommand e, CancellationToken token)
-    // {
-    //     return !(await _eventRepository.IsEventNameAndDateUnique(e.Name, e.Date));
-    // }
+
 }

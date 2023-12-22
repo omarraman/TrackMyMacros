@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using Radzen;
 using Radzen.Blazor;
+using TrackMyMacros.App2.Interfaces;
 using TrackMyMacros.App2.Services;
 using TrackMyMacros.App2.ViewModels;
 using Timer = System.Timers.Timer;

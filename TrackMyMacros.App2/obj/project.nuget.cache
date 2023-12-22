@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HJlIgaJq7j6/EJBd0I+BJP3l7IrjwW9VQ1BlLUT/lYRqCLVYzodN1LDIGyPQ8x0U6/+mvtuEViJgzrWp8+GWgA==",
+  "dgSpecHash": "jwekTCMPg+HvVcPVnWnt7oP8a56zxoYlEzGtEwzc+shtx9sfWBqkWkqtPZf/5V2+z/TkEsW99RLH2WJajlNbMA==",
   "success": true,
   "projectFilePath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.App2\\TrackMyMacros.App2.csproj",
   "expectedPackageFiles": [
@@ -112,7 +112,7 @@
     "C:\\Users\\OmarRaman\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.11\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.11.nupkg.sha512"
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.14\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.14.nupkg.sha512"
   ],
   "logs": []
 }

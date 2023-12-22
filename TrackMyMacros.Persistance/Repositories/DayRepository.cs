@@ -42,9 +42,16 @@ public class DayRepository:IDayRepository
 //
          public async Task UpdateAsync(Day dayToAdd)
          {
-             var dayToRemove=_dbContext.Days.Single(m => m.Date == dayToAdd.Date);
-             _dbContext.Days.Remove(dayToRemove);
-             _dbContext.Days.Update(dayToAdd);
+             var dayToRemove=_dbContext.Days.SingleOrDefault(m => m.Date == dayToAdd.Date);
+             if (dayToRemove!=default)
+             {
+                 _dbContext.Days.Remove(dayToRemove);
+                 _dbContext.Days.Update(dayToAdd);
+             }
+             else
+             {
+                 _dbContext.Days.Add(dayToAdd);
+             }
              await _dbContext.SaveChangesAsync();
          }
 //

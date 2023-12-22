@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TrackMyMacros.Domain;
 using TrackMyMacros.Domain.Aggregates.Day;
@@ -10,14 +10,17 @@ public class DayConfiguration : IEntityTypeConfiguration<Day>
 {
     public void Configure(EntityTypeBuilder<Day> builder)
     {
-        var newGuid = Guid.NewGuid();
+        var newDayGuid = Guid.NewGuid();
+        var newMealGuid = Guid.NewGuid();
+        var newFoodAmountGuid = Guid.NewGuid();
+        
         // var foodAmounts = new List<object>()
         // {
         //     new { DayId=newGuid,Id=newGuid, Date1= DateOnly.FromDateTime(DateTime.Today) ,FoodId = 1, Quantity = 100 }
         // };
         var foodAmounts = new List<object>()
         {
-            new { DayId=newGuid, Id= 1,FoodId = 1, Quantity = 100 }
+            new { DayId=newDayGuid, Id= 1,  Protein = 10D, Carbohydrate = 10D, Fat = 10D}
         };
         // builder.HasData(new
         // {
@@ -34,15 +37,17 @@ public class DayConfiguration : IEntityTypeConfiguration<Day>
             // meals.Property<Guid>("Id");
             // meals.HasKey("DayId", "Id");
             meals.HasData(foodAmounts);
+            // meals.HasData(new {DayId= newDayGuid, Id = newMealGuid, FoodAmounts = foodAmounts,  Protein = 10D, Carbohydrate = 10D, Fat = 10D});
             meals.OwnsMany(f => f.FoodAmounts, foodAmounts =>
             {
                 foodAmounts.Property(m => m.Quantity)
                     .IsRequired();
                 foodAmounts.Property(m => m.FoodId)
                     .IsRequired();
-                foodAmounts.HasData(new {MealDayId=newGuid, MealId= 1,Id=1,FoodId = 1, Quantity = 100D});
+                foodAmounts.HasData(new {MealDayId=newDayGuid, MealId= 1,Id=1,FoodId = 1, Quantity = 100D,Protein =10D, Carbohydrate=10D, Fat=10D});
             });
-        }).HasData(new {Id = newGuid, Date = DateOnly.FromDateTime(DateTime.Today), CreatedDate = DateTime.Now});
+        }).HasData(new {Id = newDayGuid, Date = DateOnly.FromDateTime(DateTime.Today), CreatedDate = DateTime.Now, Protein = 10D, Carbohydrate = 10D, Fat = 10D});
+        // }).HasData(new {Id = newFoodAmountGuid,DayId = newDayGuid, MealId = newMealGuid,  Date = DateOnly.FromDateTime(DateTime.Today), CreatedDate = DateTime.Now, Protein = 10D, Carbohydrate = 10D, Fat = 10D});
         
         /*builder.OwnsOne(m => m.Meal, meals =>
         {

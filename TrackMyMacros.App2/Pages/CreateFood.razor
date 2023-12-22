@@ -1,39 +1,35 @@
 ﻿@page "/CreateFood"
-<h3>CreateFood</h3>
+<h3>Add Food</h3>
 
 
 <EditForm Model="@NewFood" OnValidSubmit="@HandleValidSubmit" id="test">
     <RadzenCard>
-        <RadzenTextBox @bind-Value="NewFood.Name" TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Name</RadzenTextBox>
+        Name <RadzenTextBox @bind-Value="NewFood.Name" TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Name</RadzenTextBox>
     </RadzenCard>
     @* <ValidationMessage For="@(() => NewFood.Name)"></ValidationMessage> *@
     <RadzenCard>
-        <RadzenNumeric TValue="double" @bind-Value="NewFood.Fat">Fat</RadzenNumeric>
+        Fat <RadzenNumeric TValue="double" @bind-Value="NewFood.Fat">Fat</RadzenNumeric>
     </RadzenCard>
     <RadzenCard>
-        <RadzenNumeric TValue="double" @bind-Value="NewFood.Protein">Protein</RadzenNumeric>
+        Protein <RadzenNumeric TValue="double" @bind-Value="NewFood.Protein">Protein</RadzenNumeric>
     </RadzenCard>
     <RadzenCard>
-        <RadzenNumeric TValue="double" @bind-Value="NewFood.Carbohydrate">Carbohydrate</RadzenNumeric>
+        Carbohydrate <RadzenNumeric TValue="double" @bind-Value="NewFood.Carbohydrate">Carbohydrate</RadzenNumeric>
     </RadzenCard>
     <RadzenCard>
-        <RadzenNumeric TValue="double" @bind-Value="NewFood.Quantity">Quantity</RadzenNumeric>
-    </RadzenCard>
-    <RadzenCard>
-        <RadzenNumeric TValue="double" @bind-Value="NewFood.Fat">Fat</RadzenNumeric>
+        Quantity <RadzenNumeric TValue="double" @bind-Value="NewFood.Quantity">Quantity</RadzenNumeric>
     </RadzenCard>
 
     <RadzenCard>
-        <div class="rz-p-sm-12 rz-text-align-center">
-            @if (Uoms != null)
-            {
-                <RadzenDropDown @bind-Value=@NewFood.UomId Data=@Uoms TextProperty="Name" ValueProperty="Id" Style="width: 100%; max-width: 400px;"/>
-            }
-            else
-            {
-                <div>Loading</div>
-            }
-        </div>
+        UOM :
+        @if (Uoms != null)
+        {
+            <RadzenDropDown @bind-Value=@NewFood.UomId Data=@Uoms TextProperty="Name" ValueProperty="Id" Style="width: 100%; max-width: 400px;"/>
+        }
+        else
+        {
+            <div>Loading</div>
+        }
 
     </RadzenCard>
     <ValidationSummary></ValidationSummary>
@@ -44,10 +40,9 @@
 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 @* <button type="button" class="btn btn-secondary" @onclick="@Add" >add</button> *@
 
-@foreach(var alert in AlertMessages)
+@foreach (var alert in AlertMessages)
 {
-    <RadzenAlert AlertStyle="AlertStyle.Warning" Variant="Variant.Flat" Shade="Shade.Lighter" >
+    <RadzenAlert AlertStyle="AlertStyle.Warning" Variant="Variant.Flat" Shade="Shade.Lighter">
         Record saved
     </RadzenAlert>
-
 }

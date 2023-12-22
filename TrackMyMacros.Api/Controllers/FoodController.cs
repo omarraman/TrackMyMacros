@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using TrackMyMacros.Application.Features.Food;
 using TrackMyMacros.Application.Features.Food.Commands.CreateFood;
+using TrackMyMacros.Application.Features.Food.Commands.UpdateFood;
 using TrackMyMacros.Application.Features.Food.Queries;
 using TrackMyMacros.Application.Features.Food.Queries.GetFoodList;
 using TrackMyMacros.Dtos;
@@ -36,5 +38,13 @@ public class FoodController:ControllerBase
     {
        var result =  await _mediator.Send(_mapper.Map<CreateFoodCommand>(createFoodDto));
          return result.Value;
+    }
+    
+    [HttpPut(Name = "UpdateFood")]
+    [ProducesResponseType(statusCode:StatusCodes.Status200OK)]
+    public async Task<IActionResult> UpdateFood(UpdateFoodDto createFoodDto)
+    {
+        await _mediator.Send(_mapper.Map<UpdateFoodCommand>(createFoodDto));
+        return Ok();
     }
 }

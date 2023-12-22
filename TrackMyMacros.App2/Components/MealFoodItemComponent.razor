@@ -2,16 +2,19 @@
 @if (SelectedFood.HasValue)
 {
         <div>
-            <RadzenDropDown @bind-Value=@FoodAmount.FoodId Data=@FoodList TextProperty="Name" ValueProperty="Id" Placeholder="Select Food" Style="width: 100%; max-width: 400px;"/>
-            @SelectedFood.Value.Name :<RadzenNumeric @bind-Value=@FoodAmount.Quantity></RadzenNumeric> g
+            <RadzenDropDown  size="" @bind-Value=@SelectedFoodId Data=@FoodList TextProperty="Name" ValueProperty="Id" Change="@(o => OnChangeFood(o))"  FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" FilterOperator="StringFilterOperator.StartsWith" AllowFiltering="true" Placeholder="Select Food" Style="width: 100%; max-width: 400px;"/>
+            <RadzenNumeric  Change=@OnChangeQuantity TValue="double"  @bind-Value=@FoodAmount.Quantity></RadzenNumeric> g
             <span>
-                <strong>P</strong>@(SelectedFood.Value.ProteinAmount * FoodAmount.Quantity / 100)
+                <strong>P</strong>@Double.Round(@FoodAmount.Protein,1)
             </span>
             <span>
-                <strong>F</strong>@(SelectedFood.Value.FatAmount * FoodAmount.Quantity / 100)
+                <strong>F</strong>@Double.Round(@FoodAmount.Fat,1)
             </span>
             <span>
-                <strong>C</strong>@(SelectedFood.Value.CarbohydrateAmount * FoodAmount.Quantity / 100)
+                <strong>C</strong>@Double.Round(@FoodAmount.Carbohydrate,1)
+            </span>
+            <span>
+                <strong>Cals</strong>@Double.Round(@FoodAmount.Calories,1)
             </span>
             <RadzenButton Click="@RemoveFood" Text="Remove" ButtonStyle="ButtonStyle.Primary"/>
         </div>

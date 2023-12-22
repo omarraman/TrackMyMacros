@@ -1,8 +1,13 @@
 ﻿using AutoMapper;
+using TrackMyMacros.Application.Features.DailyLimits.Commands.CreateDailyLimits;
+using TrackMyMacros.Application.Features.DailyLimits.Commands.UpdateDailyLimits;
 using TrackMyMacros.Application.Features.Day.Commands;
 using TrackMyMacros.Application.Features.Food;
 using TrackMyMacros.Application.Features.Food.Commands.CreateFood;
+using TrackMyMacros.Application.Features.Food.Commands.UpdateFood;
 using TrackMyMacros.Domain;
+using TrackMyMacros.Domain.Aggregates;
+using TrackMyMacros.Domain.Aggregates.DailyLimit;
 using TrackMyMacros.Domain.Aggregates.Day;
 using TrackMyMacros.Domain.ValueObjects;
 using TrackMyMacros.Dtos;
@@ -14,7 +19,18 @@ public class MappingProfile:Profile
     public MappingProfile()
     {
         CreateMap<Food, FoodListItemDto>().ReverseMap();
-        CreateMap<CreateFoodCommand, Food>();
+        CreateMap<CreateFoodCommand, Food>()
+            .ForMember(m => m.CarbohydrateAmount, opt => opt.MapFrom(src => new CarbohydrateAmount(src.Carbohydrate)))
+            .ForMember(m => m.ProteinAmount, opt => opt.MapFrom(src => new ProteinAmount(src.Protein)))
+            .ForMember(m => m.FatAmount, opt => opt.MapFrom(src => new FatAmount(src.Fat)));
+        
+        CreateMap<UpdateFoodCommand, Food>()
+            .ForMember(m => m.CarbohydrateAmount, opt => opt.MapFrom(src => new CarbohydrateAmount(src.Carbohydrate)))
+            .ForMember(m => m.ProteinAmount, opt => opt.MapFrom(src => new ProteinAmount(src.Protein)))
+            .ForMember(m => m.FatAmount, opt => opt.MapFrom(src => new FatAmount(src.Fat)));
+
+        CreateMap<CreateDailyLimitsCommand, DailyLimits>();
+        CreateMap<UpdateDailyLimitsCommand, DailyLimits>();
 
         CreateMap<Day, GetDayDto>().ForMember(gdd=>gdd.GetMealDtos,
             o=>o.MapFrom(gd=>gd.GetMeals()));

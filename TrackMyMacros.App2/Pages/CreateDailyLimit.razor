@@ -1,0 +1,48 @@
+﻿@page "/CreateFood"
+<h3>Add Food</h3>
+
+
+<EditForm Model="@NewFood" OnValidSubmit="@HandleValidSubmit" id="test">
+    <RadzenCard>
+        Name <RadzenTextBox @bind-Value="NewFood.Name" TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Name</RadzenTextBox>
+    </RadzenCard>
+    @* <ValidationMessage For="@(() => NewFood.Name)"></ValidationMessage> *@
+    <RadzenCard>
+        Fat <RadzenNumeric TValue="double" @bind-Value="NewFood.Fat">Fat</RadzenNumeric>
+    </RadzenCard>
+    <RadzenCard>
+        Protein <RadzenNumeric TValue="double" @bind-Value="NewFood.Protein">Protein</RadzenNumeric>
+    </RadzenCard>
+    <RadzenCard>
+        Carbohydrate <RadzenNumeric TValue="double" @bind-Value="NewFood.Carbohydrate">Carbohydrate</RadzenNumeric>
+    </RadzenCard>
+    <RadzenCard>
+        Quantity <RadzenNumeric TValue="double" @bind-Value="NewFood.Quantity">Quantity</RadzenNumeric>
+    </RadzenCard>
+
+    <RadzenCard>
+        UOM :
+        @if (DailyLimits != null)
+        {
+            <RadzenDropDown @bind-Value=@NewFood.UomId Data=@DailyLimits TextProperty="Name" ValueProperty="Id" Style="width: 100%; max-width: 400px;"/>
+        }
+        else
+        {
+            <div>Loading</div>
+        }
+
+    </RadzenCard>
+    <ValidationSummary></ValidationSummary>
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+</EditForm>
+
+<button type="submit" class="btn btn-primary" form="test">Save changes</button>
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+@* <button type="button" class="btn btn-secondary" @onclick="@Add" >add</button> *@
+
+@foreach (var alert in AlertMessages)
+{
+    <RadzenAlert AlertStyle="AlertStyle.Warning" Variant="Variant.Flat" Shade="Shade.Lighter">
+        Record saved
+    </RadzenAlert>
+}
