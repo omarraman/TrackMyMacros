@@ -3,7 +3,7 @@ using MediatR;
 
 namespace TrackMyMacros.Application.Features.DailyLimits.Commands.CreateDailyLimits;
 
-public class CreateDailyLimitsCommand:IRequest<Result<Guid>>
+public class CreateDailyLimitsCommand:RequestBase<Result<Guid>>
 {
     public int Carbohydrate { get; set; }
     public int Protein { get; set; }

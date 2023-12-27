@@ -6,7 +6,7 @@ using TrackMyMacros.Dtos;
 
 namespace TrackMyMacros.Application.Features.Day.Queries;
 
-public class GetDayQuery:IRequest<Maybe<GetDayDto>>
+public class GetDayQuery:RequestBase<Maybe<GetDayDto>>
 {
     public DateOnly Date { get; set; }
 }

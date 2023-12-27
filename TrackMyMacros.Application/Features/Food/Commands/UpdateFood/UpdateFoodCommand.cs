@@ -3,7 +3,7 @@ using MediatR;
 
 namespace TrackMyMacros.Application.Features.Food.Commands.UpdateFood;
 
-public class UpdateFoodCommand:IRequest<Result>
+public class UpdateFoodCommand:RequestBase<Result>
 {
     public int Id { get; set; }
     public string Name { get; set; }

@@ -64,9 +64,17 @@
               "target": "Package",
               "version": "[7.0.10, )"
             },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[8.0.0-preview.4, )"
+            },
+            "Scrutor.AspNetCore": {
+              "target": "Package",
+              "version": "[3.3.0, )"
             },
             "Serilog": {
               "target": "Package",
@@ -189,6 +197,10 @@
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[11.1.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Npgsql": {
               "target": "Package",

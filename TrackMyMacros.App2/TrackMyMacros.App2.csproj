@@ -36,10 +36,12 @@
 
     <ItemGroup>
       <Content Remove="Components\FoodItemComponent.razor" />
+      <Content Remove="Pages\CreateDailyLimit.razor" />
     </ItemGroup>
 
     <ItemGroup>
       <Compile Remove="Components\FoodItemComponent.razor.cs" />
+      <Compile Remove="Pages\CreateDailyLimit.razor.cs" />
     </ItemGroup>
 
 

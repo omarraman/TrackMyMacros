@@ -1,6 +1,8 @@
 ﻿using CSharpFunctionalExtensions;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Scrutor;
 using TrackMyMacros.Application;
 using TrackMyMacros.Application.Utils;
 using TrackMyMacros.Persistance;
@@ -13,7 +15,16 @@ namespace TrackMyMacros.Api
         this WebApplicationBuilder builder, IConfiguration configuration)
         {
             AddSwagger(builder.Services);
+            
+            builder.Services.AddLogging(config =>
+            {
+                config.AddDebug();
+                config.AddConsole();
+                //etc
+            });
 
+            // Additional code to register the ILogger as a ILogger<T> where T is the Startup class
+            builder.Services.AddSingleton(typeof(ILogger), typeof(Logger<Program>)); 
             builder.Services.AddApplicationServices();
             // builder.Services.AddInfrastructureServices(builder.Configuration);
             builder.Services.AddPersistenceServices(builder.Configuration);
@@ -27,7 +38,10 @@ namespace TrackMyMacros.Api
             {
                 options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
+            
 
+
+            builder.Services.AddDecoratorServices(typeof(Program));
 
             var connectionString = configuration.GetConnectionString("MacrosConnectionString");
             builder.Services.AddSingleton(new ConnectionString(connectionString));
@@ -127,6 +141,28 @@ namespace TrackMyMacros.Api
                 // var logger = scope.ServiceProvider.GetRequiredService<ILogger>();
                 // logger.LogError(ex, "An error occurred while migrating the database.");
             }
+        }
+        
+        public static void AddDecoratorServices(this IServiceCollection services,Type t)
+        {
+            services.Scan(scan =>
+            {
+                scan.FromAssembliesOf(t)
+                    .RegisterHandlers(typeof(IRequestHandler<,>));
+            });
+
+            services.Decorate(typeof(IRequestHandler<,>), typeof(LoggingDecorator<,>));
+        }
+        
+        public static IImplementationTypeSelector RegisterHandlers(this IImplementationTypeSelector selector, Type type)
+        {
+            return selector.AddClasses(c =>
+                    c.AssignableTo(type)
+                        .Where(t => t != typeof(LoggingDecorator<,>))
+                )
+                .UsingRegistrationStrategy(RegistrationStrategy.Append)
+                .AsImplementedInterfaces()
+                .WithTransientLifetime();
         }
     }
 }

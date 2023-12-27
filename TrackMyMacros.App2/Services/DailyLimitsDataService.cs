@@ -40,9 +40,9 @@ public class DailyLimitsDataService : IDailyLimitsDataService
             {
                 
             }
-            var y = Result.Failure<>()
-            var y = new  Error
-            var x = new Result<DailyLimitsViewModel,>();
+            // var y = Result.Failure<>()
+            // var y = new  Error
+            // var x = new Result<DailyLimitsViewModel,>();
             return Result.Failure<DailyLimitsViewModel>("Failed to get daily limits.");
         }
     }

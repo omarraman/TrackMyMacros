@@ -3,7 +3,7 @@ using MediatR;
 
 namespace TrackMyMacros.Application.Features.Day.Commands;
 
-public class UpdateDayCommand:IRequest<Result>
+public class UpdateDayCommand:RequestBase<Result>
 {
     public DateOnly Date {get; set; }
 

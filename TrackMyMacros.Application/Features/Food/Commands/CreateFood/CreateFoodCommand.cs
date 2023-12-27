@@ -3,7 +3,7 @@ using MediatR;
 
 namespace TrackMyMacros.Application.Features.Food.Commands.CreateFood;
 
-public class CreateFoodCommand:IRequest<Result<int>>
+public class CreateFoodCommand:RequestBase<Result<int>>
 {
     public string Name { get; set; }
     public double Carbohydrate { get; set; }
