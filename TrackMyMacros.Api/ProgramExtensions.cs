@@ -1,6 +1,5 @@
-﻿using CSharpFunctionalExtensions;
+﻿
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Scrutor;
 using TrackMyMacros.Application;

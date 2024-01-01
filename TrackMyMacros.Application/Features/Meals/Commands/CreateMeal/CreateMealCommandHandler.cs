@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CSharpFunctionalExtensions;
+
 using MediatR;
 using TrackMyMacros.Application.Contracts.Persistence;
 using TrackMyMacros.Domain.Aggregates.Day;
@@ -23,13 +23,14 @@ public class CreateMealCommandHandler:IRequestHandler<CreateMealCommand,Result<i
         var validationResult = await validator.ValidateAsync(request);
         
         if (validationResult.Errors.Count > 0)
-            return  Result.Failure<int>(validationResult.ToString(","));
+            throw new Exception(validationResult.ToString(","));
 
         var Meal = _mapper.Map<Meal>(request);
 
         Meal = await _MealRepository.AddAsync(Meal);
 
-        return 1;
+        //todo
+        return new SuccessResult<int>(1);
 
     }
 }

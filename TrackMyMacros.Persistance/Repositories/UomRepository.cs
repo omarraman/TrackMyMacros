@@ -1,7 +1,8 @@
-﻿using CSharpFunctionalExtensions;
+﻿
 using Microsoft.EntityFrameworkCore;
 using TrackMyMacros.Application.Contracts.Persistence;
 using TrackMyMacros.Domain;
+using TrackMyMacros.Infrastructure;
 
 namespace TrackMyMacros.Persistance.Repositories;
 

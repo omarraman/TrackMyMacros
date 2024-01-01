@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CSharpFunctionalExtensions;
+
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using TrackMyMacros.Application.Features.Day.Commands;
@@ -40,12 +40,8 @@ public class DayController : ControllerBase
     public async Task<ActionResult> Update([FromBody] UpdateDayDto updateDayDto)
     {
         var command = _mapper.Map<UpdateDayCommand>(updateDayDto);
-        var result =   await _mediator.Send(command);
+        await _mediator.Send(command);
 
-        if (result.IsFailure)
-        {
-            return StatusCode(StatusCodes.Status500InternalServerError, result.Error);
-        }
         return NoContent();
 
     }

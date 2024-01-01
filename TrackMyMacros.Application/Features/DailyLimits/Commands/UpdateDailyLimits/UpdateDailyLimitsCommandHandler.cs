@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CSharpFunctionalExtensions;
+
 using MediatR;
 using TrackMyMacros.Application.Contracts.Persistence;
 
@@ -19,17 +19,27 @@ public class UpdateDailyLimitsCommandHandler:IRequestHandler<UpdateDailyLimitsCo
 
     public async Task<Result> Handle(UpdateDailyLimitsCommand request, CancellationToken cancellationToken)
     {
-        var validator = new UpdateDailyLimitsCommandValidator();
-        var validationResult = await validator.ValidateAsync(request);
-        
-        if (validationResult.Errors.Count > 0)
-            return  Result.Failure<Guid>(validationResult.ToString(","));
+        // var validator = new UpdateDailyLimitsCommandValidator();
+        // var validationResult = await validator.ValidateAsync(request);
+        //
+        // if (validationResult.Errors.Count > 0)
+        //     throw new Exception(validationResult.ToString(","));
+        //
+        // var dailyLimits = _mapper.Map<Domain.Aggregates.DailyLimit.DailyLimits>(request);
 
-        var dailyLimits = _mapper.Map<Domain.Aggregates.DailyLimit.DailyLimits>(request);
-
+        Domain.Aggregates.DailyLimit.DailyLimits dailyLimits;
+        try
+        {
+            dailyLimits = new Domain.Aggregates.DailyLimit.DailyLimits(request.Calories, request.Protein,
+                request.Fat, request.Carbohydrate);
+        }
+        catch (ArgumentException e)
+        {
+            return new UpdateDailyLimitsInvalidArgumentsResult(e.Message);
+        }
         await _dailyLimitsRepository.UpdateAsync(dailyLimits);
 
-        return Result.Success();
+        return new SuccessResult();
 
     }
 }

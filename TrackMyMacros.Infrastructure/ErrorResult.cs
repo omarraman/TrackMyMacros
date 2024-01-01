@@ -9,7 +9,7 @@ public class ErrorResult : Result, IErrorResult
     public ErrorResult(string message, IReadOnlyCollection<Error> errors)
     {
         Message = message;
-        Success = false;
+        IsSuccess = false;
         Errors = errors ?? Array.Empty<Error>();
     }
 
@@ -26,7 +26,7 @@ public class ErrorResult<T> : Result<T>, IErrorResult
     public ErrorResult(string message, IReadOnlyCollection<Error> errors) : base(default)
     {
         Message = message;
-        Success = false;
+        IsSuccess = false;
         Errors = errors ?? Array.Empty<Error>();
     }
 

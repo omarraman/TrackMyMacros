@@ -13,12 +13,8 @@ public class DailyLimitsConfiguration : IEntityTypeConfiguration<DailyLimits>
             .IsRequired();
 
         builder.HasData(
-            new DailyLimits
-            {
-                Calories = 2400,
-                Protein = 100,
-                Carbohydrate = 70,
-                Fat = 70,
-            });
+            new DailyLimits(2185, 145, 65, 255));
+
+        ;
     }
 }

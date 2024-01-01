@@ -1,5 +1,3 @@
-using CSharpFunctionalExtensions;
-using MediatR;
 
 namespace TrackMyMacros.Application.Features.Food.Commands.UpdateFood;
 

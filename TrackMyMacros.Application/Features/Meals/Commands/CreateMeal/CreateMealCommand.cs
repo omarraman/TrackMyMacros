@@ -1,8 +1,4 @@
-﻿using CSharpFunctionalExtensions;
-using MediatR;
-using TrackMyMacros.Domain;
-
-namespace TrackMyMacros.Application.Features.Meals.Commands.CreateMeal;
+﻿namespace TrackMyMacros.Application.Features.Meals.Commands.CreateMeal;
 
 public class CreateMealCommand:RequestBase<Result<int>>
 {

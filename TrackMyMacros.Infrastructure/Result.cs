@@ -1,21 +1,21 @@
 ﻿public abstract class Result
 {
-    public bool Success { get; protected set; }
-    public bool Failure => !Success;
+    public bool IsSuccess { get; protected set; }
+    public bool IsFailure => !IsSuccess;
 }
 
 public abstract class Result<T> : Result
 {
     private T _data;
 
-    protected Result(T data)
+    protected Result(T value)
     {
-        Data = data;
+        Value = value;
     }
 
-    public T Data
+    public T Value
     {
-        get => Success ? _data : throw new Exception($"You can't access .{nameof(Data)} when .{nameof(Success)} is false");
+        get => IsSuccess ? _data : throw new Exception($"You can't access .{nameof(Value)} when .{nameof(IsSuccess)} is false");
         set => _data = value;
     }
 }

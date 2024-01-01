@@ -1,7 +1,7 @@
-﻿using CSharpFunctionalExtensions;
+﻿
 using TrackMyMacros.App2.Interfaces;
-using TrackMyMacros.App2.Services;
 using TrackMyMacros.App2.ViewModels;
+using TrackMyMacros.Infrastructure;
 
 public interface IFoodDataRepository
 {

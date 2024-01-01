@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
-using CSharpFunctionalExtensions;
+
 using MediatR;
 using TrackMyMacros.Application.Contracts.Persistence;
-using TrackMyMacros.Application.Features.Food.Commands.CreateFood;
 
 namespace TrackMyMacros.Application.Features.Day.Commands;
 
@@ -24,12 +23,12 @@ public class UpdateDayCommandHandler : IRequestHandler<UpdateDayCommand, Result>
         var validationResult = await validator.ValidateAsync(command);
 
         if (validationResult.Errors.Count > 0)
-            return Result.Failure(validationResult.ToString(","));
+            throw new Exception(validationResult.ToString(","));
 
         var day = _mapper.Map<Domain.Aggregates.Day.Day>(command);
 
         await _dayRepository.UpdateAsync(day);
 
-        return Result.Success();
+        return new SuccessResult();
     }
 }

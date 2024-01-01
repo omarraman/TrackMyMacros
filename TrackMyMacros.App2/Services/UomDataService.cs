@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Blazored.LocalStorage;
 using Flurl.Http;
 using TrackMyMacros.App2.ViewModels;
 

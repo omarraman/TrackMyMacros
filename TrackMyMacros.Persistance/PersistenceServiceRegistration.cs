@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TrackMyMacros.Application.Contracts.Persistence;
-using TrackMyMacros.Domain;
 using TrackMyMacros.Persistance.Repositories;
 
 namespace TrackMyMacros.Persistance;

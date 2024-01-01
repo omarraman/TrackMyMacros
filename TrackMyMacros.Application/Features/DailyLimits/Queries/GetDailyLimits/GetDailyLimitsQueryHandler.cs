@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
-using CSharpFunctionalExtensions;
+
 using Dapper;
 using MediatR;
 using Npgsql;
 using TrackMyMacros.Application.Utils;
 using TrackMyMacros.Dtos;
+using TrackMyMacros.Infrastructure;
 
 namespace TrackMyMacros.Application.Features.DailyLimits.Queries.GetDailyLimits;
 

@@ -1,8 +1,8 @@
-﻿using CSharpFunctionalExtensions;
+﻿
 using Microsoft.EntityFrameworkCore;
 using TrackMyMacros.Application.Contracts.Persistence;
-using TrackMyMacros.Domain;
 using TrackMyMacros.Domain.Aggregates;
+using TrackMyMacros.Infrastructure;
 
 namespace TrackMyMacros.Persistance.Repositories;
 
@@ -45,10 +45,10 @@ public class FoodRepository:IFoodRepository
             var updatedCount =await _dbContext.SaveChangesAsync();
             if (updatedCount == 0)
             {
-                return Result.Failure("Failed to update food");
+                throw new Exception("Failed to update food");
             }
 
-            return Result.Success();
+            return new SuccessResult();
         }
 
         public async Task DeleteAsync(Food entity)

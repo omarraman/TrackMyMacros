@@ -2,13 +2,13 @@ public class SuccessResult : Result
 {
     public SuccessResult()
     {
-        Success = true;
+        IsSuccess = true;
     }
 }
 public class SuccessResult<T> : Result<T>
 {
-    public SuccessResult(T data) : base(data)
+    public SuccessResult(T value) : base(value)
     {
-        Success = true;
+        IsSuccess = true;
     }
 }

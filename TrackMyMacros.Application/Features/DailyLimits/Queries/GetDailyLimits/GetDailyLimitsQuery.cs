@@ -1,6 +1,5 @@
-﻿using CSharpFunctionalExtensions;
-using MediatR;
-using TrackMyMacros.Dtos;
+﻿using TrackMyMacros.Dtos;
+using TrackMyMacros.Infrastructure;
 
 namespace TrackMyMacros.Application.Features.DailyLimits.Queries.GetDailyLimits;
 

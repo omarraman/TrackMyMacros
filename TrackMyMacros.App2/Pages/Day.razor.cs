@@ -1,9 +1,7 @@
-﻿using System.Runtime.CompilerServices;
-using CSharpFunctionalExtensions;
-using Microsoft.AspNetCore.Components;
-using Radzen.Blazor.Rendering;
+﻿using Microsoft.AspNetCore.Components;
 using TrackMyMacros.App2.Components;
 using TrackMyMacros.App2.Services;
+using TrackMyMacros.App2.Services.DailyLimitsDataService;
 using TrackMyMacros.App2.ViewModels;
 
 namespace TrackMyMacros.App2.Pages;
@@ -28,7 +26,7 @@ public partial class Day
     }
 
     List<MealComponent2> ComponentRefs = new List<MealComponent2>();
-    private Result<DailyLimitsViewModel> _dailyLimits;
+    private Result<DailyLimitsViewModel> _dailyLimitsResult;
 
     MealComponent2 ComponentRef
     {
@@ -37,7 +35,8 @@ public partial class Day
 
     protected override async Task OnInitializedAsync()
     {
-        _dailyLimits = await DailyLimitsDataService.GetDailyLimits();
+        _dailyLimitsResult = await DailyLimitsDataService.GetDailyLimits();
+
 
         // CurrentDate = DateOnly.FromDateTime(DateTime.Now);
         _foodList = await FoodDataRepository.GetFoodList();

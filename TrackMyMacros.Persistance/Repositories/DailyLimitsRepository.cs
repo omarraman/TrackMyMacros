@@ -1,8 +1,8 @@
-﻿using CSharpFunctionalExtensions;
+﻿
 using Microsoft.EntityFrameworkCore;
 using TrackMyMacros.Application.Contracts.Persistence;
-using TrackMyMacros.Domain;
 using TrackMyMacros.Domain.Aggregates.DailyLimit;
+using TrackMyMacros.Infrastructure;
 
 namespace TrackMyMacros.Persistance.Repositories;
 
@@ -41,8 +41,11 @@ public class DailyLimitsRepository:IDailyLimitsRepository
 
         public async Task UpdateAsync(DailyLimits entity)
         {
-            var first = _dbContext.Set<DailyLimits>().First();
-            _dbContext.Set<DailyLimits>().Remove(first);
+            var first = await _dbContext.Set<DailyLimits>().FirstOrDefaultAsync();
+            if (first!=null)
+            {
+                _dbContext.Set<DailyLimits>().Remove(first);
+            }
             entity.Id = new Guid();
             await _dbContext.Set<DailyLimits>().AddAsync(entity);
             await _dbContext.SaveChangesAsync();

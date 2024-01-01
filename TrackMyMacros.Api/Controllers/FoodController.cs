@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using TrackMyMacros.Application.Features.Food;
 using TrackMyMacros.Application.Features.Food.Commands.CreateFood;
 using TrackMyMacros.Application.Features.Food.Commands.UpdateFood;
-using TrackMyMacros.Application.Features.Food.Queries;
 using TrackMyMacros.Application.Features.Food.Queries.GetFoodList;
 using TrackMyMacros.Dtos;
 

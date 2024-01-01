@@ -1,16 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "0/4CAu/w38ML8LviQY0I1yKsgbI2upydXxr26Vzwy9P4R2ZvaRC4+VqGNkWM29awlbeE0MVxg11CzdmzHHc9iQ==",
+  "dgSpecHash": "GAFjC+HRT+MWY+IMvF2IsQsgV/TY0gH9U6bYARvSNeoXZ4PxWNKSknJaDvSS0oKEns6TZCUyjw7jn2UBRvziLA==",
   "success": true,
   "projectFilePath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\TrackMyMacros.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\OmarRaman\\.nuget\\packages\\ardalis.guardclauses\\4.1.1\\ardalis.guardclauses.4.1.1.nupkg.sha512",
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\ardalis.guardclauses\\4.2.0\\ardalis.guardclauses.4.2.0.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
-    "C:\\Users\\OmarRaman\\.nuget\\packages\\csharpfunctionalextensions\\2.40.0\\csharpfunctionalextensions.2.40.0.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\dapper\\2.0.151\\dapper.2.0.151.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
-    "C:\\Users\\OmarRaman\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -27,7 +26,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 12.1.1 was resolved.",
+      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 12.2.0 was resolved.",
       "libraryId": "MediatR",
       "targetGraphs": [
         "net7.0"

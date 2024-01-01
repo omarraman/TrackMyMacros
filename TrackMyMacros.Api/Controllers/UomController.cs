@@ -1,7 +1,5 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using TrackMyMacros.Application.Features.Uom;
-using TrackMyMacros.Application.Features.Uom.Queries;
 using TrackMyMacros.Application.Features.Uom.Queries.GetUomList;
 using TrackMyMacros.Dtos;
 

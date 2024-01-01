@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
-using CSharpFunctionalExtensions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using TrackMyMacros.Application.Features.DailyLimits.Commands.CreateDailyLimits;
 using TrackMyMacros.Application.Features.DailyLimits.Commands.UpdateDailyLimits;
 using TrackMyMacros.Application.Features.DailyLimits.Queries.GetDailyLimits;
-using TrackMyMacros.Domain.Aggregates.DailyLimit;
 using TrackMyMacros.Dtos;
 
 namespace TrackMyMacros.Api.Controllers;
@@ -35,7 +33,7 @@ public class DailyLimitsController:ControllerBase
     }
     
     
-    [HttpPost(Name = "CreateDailyLimits")]
+    // [HttpPost(Name = "CreateDailyLimits")]
     [ProducesResponseType(statusCode:StatusCodes.Status200OK)]
     public async Task<Result<Guid>> Post(CreateDailyLimitsDto dto)
     {
@@ -43,12 +41,18 @@ public class DailyLimitsController:ControllerBase
         return await _mediator.Send(command);
     }
     
-    [HttpPut(Name = "UpdateDailyLimits")]
+    [HttpPut]
     [ProducesResponseType(statusCode:StatusCodes.Status200OK)]
-    public async Task<Result> Update(UpdateDailyLimitsDto dto)
+    public async Task<IActionResult> Update(UpdateDailyLimitsDto dto)
     {
         var command = _mapper.Map<UpdateDailyLimitsCommand>(dto);
-        return await _mediator.Send(command);
+        var result = await _mediator.Send(command);
+        if (result is UpdateDailyLimitsInvalidArgumentsResult)
+        {
+            var errorResult = (ErrorResult)result;
+            return BadRequest(errorResult.Message);
+        }
+        return NoContent();
     }
 
 }

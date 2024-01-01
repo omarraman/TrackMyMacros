@@ -9,7 +9,6 @@
     <ItemGroup>
         <PackageReference Include="Blazored.LocalStorage" Version="4.4.0" />
         <PackageReference Include="bootstrap" Version="5.3.1" />
-        <PackageReference Include="CSharpFunctionalExtensions" Version="2.40.0" />
         <PackageReference Include="Flurl.Http" Version="4.0.0-pre3" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.10" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.10" PrivateAssets="all" />
@@ -26,6 +25,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\TrackMyMacros.Dtos\TrackMyMacros.Dtos.csproj" />
+      <ProjectReference Include="..\TrackMyMacros.Infrastructure\TrackMyMacros.Infrastructure.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -36,12 +36,10 @@
 
     <ItemGroup>
       <Content Remove="Components\FoodItemComponent.razor" />
-      <Content Remove="Pages\CreateDailyLimit.razor" />
     </ItemGroup>
 
     <ItemGroup>
       <Compile Remove="Components\FoodItemComponent.razor.cs" />
-      <Compile Remove="Pages\CreateDailyLimit.razor.cs" />
     </ItemGroup>
 
 

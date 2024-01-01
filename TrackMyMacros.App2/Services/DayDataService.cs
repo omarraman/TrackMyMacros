@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CSharpFunctionalExtensions;
+
 using Flurl.Http;
 using TrackMyMacros.App2.ViewModels;
 using TrackMyMacros.Dtos;
@@ -22,24 +22,15 @@ public class DayDataService
 
         public async Task<Result<DayViewModel>> GetDay(DateOnly date )
         {
+            var uri =  $"https://localhost:7115/api/Day?date={date.ToString("yyyy-MM-dd")}";
 
-            try
-            {
-                // var uri =  "https://localhost:7115/api/Day?date=2023-09-26";
-                var uri =  $"https://localhost:7115/api/Day?date={date.ToString("yyyy-MM-dd")}";
-
-                var day2 = await uri
-                    .GetStringAsync();
-                var day = await uri
-                    .GetJsonAsync<GetDayDto>();
-                var dayViewModel = _mapper.Map<DayViewModel>(day);
+            var day2 = await uri
+                .GetStringAsync();
+            var day = await uri
+                .GetJsonAsync<GetDayDto>();
+            var dayViewModel = _mapper.Map<DayViewModel>(day);
             
-                return dayViewModel;
-            }
-            catch (FlurlHttpException e)
-            {
-                return Result.Failure<DayViewModel>("Failed to get day data.");
-            }
+            return new SuccessResult<DayViewModel>(dayViewModel);
         }
         
         public async Task UpdateDay(DayViewModel dayViewModel )

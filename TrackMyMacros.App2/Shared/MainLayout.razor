@@ -11,7 +11,19 @@
         </div>
 
         <article class="content px-4">
-            @Body
+            <ErrorBoundary>
+                <ChildContent>
+                     @Body
+                </ChildContent>
+                <ErrorContent Context="ex">
+                    <p>An unhandled error has occurred</p>
+                    <p>@ex.Message</p>
+                    <p>@ex.StackTrace</p>
+                </ErrorContent>
+            </ErrorBoundary>
+            
+
+   
             <RadzenDialog/>
         </article>
     </main>

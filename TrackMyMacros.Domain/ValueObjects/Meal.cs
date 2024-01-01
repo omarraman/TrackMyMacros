@@ -1,5 +1,4 @@
-﻿using Ardalis.GuardClauses;
-using TrackMyMacros.Domain.Common;
+﻿using TrackMyMacros.Domain.Common;
 using TrackMyMacros.Domain.ValueObjects;
 
 namespace TrackMyMacros.Domain.Aggregates.Day;

@@ -32,6 +32,9 @@
               },
               "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Dtos\\TrackMyMacros.Dtos.csproj": {
                 "projectPath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Dtos\\TrackMyMacros.Dtos.csproj"
+              },
+              "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Infrastructure\\TrackMyMacros.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Infrastructure\\TrackMyMacros.Infrastructure.csproj"
               }
             }
           }
@@ -54,10 +57,6 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
-            "CSharpFunctionalExtensions": {
-              "target": "Package",
-              "version": "[2.40.0, )"
-            },
             "Dapper": {
               "target": "Package",
               "version": "[2.0.151, )"
@@ -68,7 +67,7 @@
             },
             "MediatR": {
               "target": "Package",
-              "version": "[12.1.1, )"
+              "version": "[12.2.0, )"
             },
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
@@ -197,6 +196,74 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Infrastructure\\TrackMyMacros.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Infrastructure\\TrackMyMacros.Infrastructure.csproj",
+        "projectName": "TrackMyMacros.Infrastructure",
+        "projectPath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Infrastructure\\TrackMyMacros.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\OmarRaman\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\OmarRaman\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/DoctrinAB/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Ardalis.GuardClauses": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.2.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

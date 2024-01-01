@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "Ardalis.GuardClauses/4.1.1": {
+      "Ardalis.GuardClauses/4.2.0": {
         "type": "package",
         "compile": {
           "lib/net7.0/Ardalis.GuardClauses.dll": {
@@ -44,19 +44,6 @@
           "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
-      "CSharpFunctionalExtensions/2.40.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/CSharpFunctionalExtensions.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/CSharpFunctionalExtensions.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Dapper/2.0.151": {
         "type": "package",
         "compile": {
@@ -83,11 +70,11 @@
           }
         }
       },
-      "MediatR/12.1.1": {
+      "MediatR/12.2.0": {
         "type": "package",
         "dependencies": {
           "MediatR.Contracts": "[2.0.1, 3.0.0)",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
         },
         "compile": {
           "lib/net6.0/MediatR.dll": {
@@ -410,15 +397,15 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-          "CSharpFunctionalExtensions": "2.40.0",
           "Dapper": "2.0.151",
           "FluentValidation": "11.7.1",
-          "MediatR": "12.1.1",
+          "MediatR": "12.2.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
           "Microsoft.Extensions.Logging": "8.0.0",
           "Npgsql": "8.0.0-preview.4",
           "TrackMyMacros.Domain": "1.0.0",
-          "TrackMyMacros.Dtos": "1.0.0"
+          "TrackMyMacros.Dtos": "1.0.0",
+          "TrackMyMacros.Infrastructure": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TrackMyMacros.Application.dll": {}
@@ -449,20 +436,35 @@
         "runtime": {
           "bin/placeholder/TrackMyMacros.Dtos.dll": {}
         }
+      },
+      "TrackMyMacros.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Ardalis.GuardClauses": "4.2.0",
+          "MediatR": "12.2.0",
+          "Microsoft.Extensions.Logging": "8.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TrackMyMacros.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrackMyMacros.Infrastructure.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "Ardalis.GuardClauses/4.1.1": {
-      "sha512": "+UcJ2s+gf2wMNrwadCaHZV2DMcGgBU1t22A+jm40P4MHQRLy9hcleGy5xdVWd4dXZPa5Vlp4TG5xU2rhoDYrBA==",
+    "Ardalis.GuardClauses/4.2.0": {
+      "sha512": "2mDznNQkPRNpTVGrThEVhBTtxBUsCMobLnfOXnhehznwIEDjT0PG+1cedYzVhHHPfzU1OGc/2ubEkFAyoBi4LQ==",
       "type": "package",
-      "path": "ardalis.guardclauses/4.1.1",
+      "path": "ardalis.guardclauses/4.2.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
         "README.md",
-        "ardalis.guardclauses.4.1.1.nupkg.sha512",
+        "ardalis.guardclauses.4.2.0.nupkg.sha512",
         "ardalis.guardclauses.nuspec",
         "icon.png",
         "lib/net7.0/Ardalis.GuardClauses.dll",
@@ -470,7 +472,10 @@
         "lib/net7.0/Ardalis.GuardClauses.xml",
         "lib/netstandard2.0/Ardalis.GuardClauses.dll",
         "lib/netstandard2.0/Ardalis.GuardClauses.pdb",
-        "lib/netstandard2.0/Ardalis.GuardClauses.xml"
+        "lib/netstandard2.0/Ardalis.GuardClauses.xml",
+        "lib/netstandard2.1/Ardalis.GuardClauses.dll",
+        "lib/netstandard2.1/Ardalis.GuardClauses.pdb",
+        "lib/netstandard2.1/Ardalis.GuardClauses.xml"
       ]
     },
     "AutoMapper/12.0.1": {
@@ -500,35 +505,6 @@
         "automapper.extensions.microsoft.dependencyinjection.nuspec",
         "icon.png",
         "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
-      ]
-    },
-    "CSharpFunctionalExtensions/2.40.0": {
-      "sha512": "Xo3BSUMuRCSp4/SeTn0G/ZgahCNXzrh28gprzYpqPPKisDbXqGQeDumhnrlhUSMHVyatXJniezuO7W8vPHt3Ww==",
-      "type": "package",
-      "path": "csharpfunctionalextensions/2.40.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "csharpfunctionalextensions.2.40.0.nupkg.sha512",
-        "csharpfunctionalextensions.nuspec",
-        "lib/net40/CSharpFunctionalExtensions.dll",
-        "lib/net40/CSharpFunctionalExtensions.pdb",
-        "lib/net40/CSharpFunctionalExtensions.xml",
-        "lib/net45/CSharpFunctionalExtensions.dll",
-        "lib/net45/CSharpFunctionalExtensions.pdb",
-        "lib/net45/CSharpFunctionalExtensions.xml",
-        "lib/net461/CSharpFunctionalExtensions.dll",
-        "lib/net461/CSharpFunctionalExtensions.pdb",
-        "lib/net461/CSharpFunctionalExtensions.xml",
-        "lib/net5.0/CSharpFunctionalExtensions.dll",
-        "lib/net5.0/CSharpFunctionalExtensions.pdb",
-        "lib/net5.0/CSharpFunctionalExtensions.xml",
-        "lib/net6.0/CSharpFunctionalExtensions.dll",
-        "lib/net6.0/CSharpFunctionalExtensions.pdb",
-        "lib/net6.0/CSharpFunctionalExtensions.xml",
-        "lib/netstandard2.0/CSharpFunctionalExtensions.dll",
-        "lib/netstandard2.0/CSharpFunctionalExtensions.pdb",
-        "lib/netstandard2.0/CSharpFunctionalExtensions.xml"
       ]
     },
     "Dapper/2.0.151": {
@@ -572,10 +548,10 @@
         "lib/netstandard2.1/FluentValidation.xml"
       ]
     },
-    "MediatR/12.1.1": {
-      "sha512": "1AbwzzeS6gn4NdcO6A9LfKS5TXXgAiUQM3J18dREHa7O7TrdCXJ5dNFeRBpzPZY7UWl5Kby+n9pWrPJe3SDiMA==",
+    "MediatR/12.2.0": {
+      "sha512": "8TUFrHapKi6D74PhnSNEguRsH91HNGyP3R4ZQdgDorJgl9Wac5Prh0vA33QfrniAaS6L2xNNhc6vxzg+5AIbwA==",
       "type": "package",
-      "path": "mediatr/12.1.1",
+      "path": "mediatr/12.2.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -584,7 +560,7 @@
         "lib/net6.0/MediatR.xml",
         "lib/netstandard2.0/MediatR.dll",
         "lib/netstandard2.0/MediatR.xml",
-        "mediatr.12.1.1.nupkg.sha512",
+        "mediatr.12.2.0.nupkg.sha512",
         "mediatr.nuspec"
       ]
     },
@@ -1122,11 +1098,15 @@
       "type": "project",
       "path": "../TrackMyMacros.Dtos/TrackMyMacros.Dtos.csproj",
       "msbuildProject": "../TrackMyMacros.Dtos/TrackMyMacros.Dtos.csproj"
+    },
+    "TrackMyMacros.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../TrackMyMacros.Infrastructure/TrackMyMacros.Infrastructure.csproj",
+      "msbuildProject": "../TrackMyMacros.Infrastructure/TrackMyMacros.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "CSharpFunctionalExtensions >= 2.40.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 7.0.4",
       "TrackMyMacros.Application >= 1.0.0"
     ]
@@ -1173,10 +1153,6 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
-          "CSharpFunctionalExtensions": {
-            "target": "Package",
-            "version": "[2.40.0, )"
-          },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
             "version": "[7.0.4, )"
@@ -1210,7 +1186,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 12.1.1 was resolved.",
+      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 12.2.0 was resolved.",
       "libraryId": "MediatR",
       "targetGraphs": [
         "net7.0"

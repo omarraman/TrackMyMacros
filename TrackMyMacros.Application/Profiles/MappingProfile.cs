@@ -2,7 +2,6 @@
 using TrackMyMacros.Application.Features.DailyLimits.Commands.CreateDailyLimits;
 using TrackMyMacros.Application.Features.DailyLimits.Commands.UpdateDailyLimits;
 using TrackMyMacros.Application.Features.Day.Commands;
-using TrackMyMacros.Application.Features.Food;
 using TrackMyMacros.Application.Features.Food.Commands.CreateFood;
 using TrackMyMacros.Application.Features.Food.Commands.UpdateFood;
 using TrackMyMacros.Domain;

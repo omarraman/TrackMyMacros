@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using TrackMyMacros.App2.Components;
 using TrackMyMacros.App2.ViewModels;
 using TrackMyMacros.Dtos;
 
@@ -27,5 +26,6 @@ public class Mappings : Profile
         CreateMap<FoodListItemViewModel, UpdateFoodDto>();
         
         CreateMap<GetDailyLimitsDto, DailyLimitsViewModel>();
+        CreateMap<DailyLimitsViewModel,UpdateDailyLimitsDto>();
     }
 }

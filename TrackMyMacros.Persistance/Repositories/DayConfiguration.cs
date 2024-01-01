@@ -1,10 +1,8 @@
 ﻿ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TrackMyMacros.Domain;
-using TrackMyMacros.Domain.Aggregates.Day;
-using TrackMyMacros.Domain.ValueObjects;
+ using TrackMyMacros.Domain.Aggregates.Day;
 
-namespace TrackMyMacros.Persistance.Repositories;
+ namespace TrackMyMacros.Persistance.Repositories;
 
 public class DayConfiguration : IEntityTypeConfiguration<Day>
 {

@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
-using CSharpFunctionalExtensions;
+
 using MediatR;
 using TrackMyMacros.Application.Contracts.Persistence;
 using TrackMyMacros.Dtos;
+using TrackMyMacros.Infrastructure;
 
 namespace TrackMyMacros.Application.Features.Day.Queries;
 

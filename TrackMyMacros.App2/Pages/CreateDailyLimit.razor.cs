@@ -1,12 +1,7 @@
-﻿using System.Timers;
-using CSharpFunctionalExtensions;
-using Microsoft.AspNetCore.Components;
-using Radzen;
-using Radzen.Blazor;
-using TrackMyMacros.App2.Interfaces;
+﻿using Microsoft.AspNetCore.Components;
 using TrackMyMacros.App2.Services;
+using TrackMyMacros.App2.Services.DailyLimitsDataService;
 using TrackMyMacros.App2.ViewModels;
-using Timer = System.Timers.Timer;
 
 namespace TrackMyMacros.App2.Pages;
 
@@ -14,38 +9,48 @@ public partial class CreateDailyLimit
 {
     [Inject] public IDailyLimitsDataService DailyLimitsDataService { get; set; }
 
-
     public List<string> AlertMessages { get; set; } = new List<string>();
 
-    [Inject] public IFoodDataService FoodDataService { get; set; }
-    public CreateFoodViewModel NewFood { get; set; } = new CreateFoodViewModel();
+    // [Inject] public IFoodDataService FoodDataService { get; set; }
+    // public CreateFoodViewModel NewFood { get; set; } = new CreateFoodViewModel();
 
-    protected async override Task OnInitializedAsync()
+    public DailyLimitsViewModel DailyLimits { get; set; }
+
+    protected override async Task OnInitializedAsync()
     {
-        DailyLimits = await DailyLimitsDataService.GetDailyLimits();
-        if (DailyLimits.IsFailure)
-        {
-            
-        }
-        InitializeFood();
-    }
+        var dailyLimitsResult = await DailyLimitsDataService.GetDailyLimits();
 
-    public Result<DailyLimitsViewModel> DailyLimits { get; set; }
+        if (dailyLimitsResult.IsFailure && dailyLimitsResult is NoDailyLimitRecordFoundErrorResult)
+        {
+            DailyLimits = new DailyLimitsViewModel
+            {
+                Calories = 2030,
+                Carbohydrate = 250,
+                Protein = 145
+            };
+        }
+        else
+        {
+            DailyLimits = dailyLimitsResult.Value;
+        }
+
+        // InitializeFood();
+    }
 
     private async Task HandleValidSubmit()
     {
-        await FoodDataService.AddFood(NewFood);
-        NewFood = new CreateFoodViewModel();
+        
+        var result = await DailyLimitsDataService.UpdateDailyLimits(DailyLimits);
+        if (result is BadArgumentErrorResult)   
+        {
+            AlertMessages.Add("There was an error saving. Please check your data and try again.");
+            StateHasChanged();
+            return;
+        }
+
+        
         AlertMessages.Add("Food Added");
         StateHasChanged();
-    }
-
-    private void InitializeFood()
-    {
-        NewFood = new CreateFoodViewModel
-        {
-            UomId = 1
-        };
     }
 
 }

@@ -1,6 +1,5 @@
-﻿using CSharpFunctionalExtensions;
-using TrackMyMacros.Domain;
-using TrackMyMacros.Domain.Aggregates.Day;
+﻿using TrackMyMacros.Domain.Aggregates.Day;
+using TrackMyMacros.Infrastructure;
 
 namespace TrackMyMacros.Application.Contracts.Persistence;
 

@@ -1,13 +1,12 @@
 using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Polly;
-using Polly.Caching;
 using Polly.Registry;
 using Radzen;
 using TrackMyMacros.App2;
 using TrackMyMacros.App2.Interfaces;
 using TrackMyMacros.App2.Services;
+using TrackMyMacros.App2.Services.DailyLimitsDataService;
 
 IPolicyRegistry<string> _myRegistry;
 

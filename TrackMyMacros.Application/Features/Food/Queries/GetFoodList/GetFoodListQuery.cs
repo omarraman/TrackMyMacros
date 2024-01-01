@@ -1,5 +1,4 @@
-﻿using MediatR;
-using TrackMyMacros.Dtos;
+﻿using TrackMyMacros.Dtos;
 
 namespace TrackMyMacros.Application.Features.Food.Queries.GetFoodList;
 
