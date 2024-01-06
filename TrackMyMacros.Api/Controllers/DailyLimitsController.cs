@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using TrackMyMacros.Application.Features.DailyLimits.Commands.CreateDailyLimits;
 using TrackMyMacros.Application.Features.DailyLimits.Commands.UpdateDailyLimits;
 using TrackMyMacros.Application.Features.DailyLimits.Queries.GetDailyLimits;
 using TrackMyMacros.Dtos;
@@ -34,12 +33,12 @@ public class DailyLimitsController:ControllerBase
     
     
     // [HttpPost(Name = "CreateDailyLimits")]
-    [ProducesResponseType(statusCode:StatusCodes.Status200OK)]
-    public async Task<Result<Guid>> Post(CreateDailyLimitsDto dto)
-    {
-        var command = _mapper.Map<CreateDailyLimitsCommand>(dto);
-        return await _mediator.Send(command);
-    }
+    // [ProducesResponseType(statusCode:StatusCodes.Status200OK)]
+    // public async Task<Result<Guid>> Post(CreateDailyLimitsDto dto)
+    // {
+    //     var command = _mapper.Map<CreateDailyLimitsCommand>(dto);
+    //     return await _mediator.Send(command);
+    // }
     
     [HttpPut]
     [ProducesResponseType(statusCode:StatusCodes.Status200OK)]

@@ -6,12 +6,7 @@ public class UpdateDailyLimitsCommandValidator:AbstractValidator<UpdateDailyLimi
 {
     public UpdateDailyLimitsCommandValidator()
     {
-        RuleFor(p => p.Carbohydrate)
-            .GreaterThan(0);
-        RuleFor(p => p.Fat)
-            .GreaterThan(0);
-        RuleFor(p => p.Protein)
-            .GreaterThan(0);
+
         RuleFor(p => p.Calories)
             .GreaterThan(0);
     }

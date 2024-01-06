@@ -25,10 +25,19 @@
 
     <ItemGroup>
       <Compile Remove="Features\Food\FoodListDto.cs" />
+      <Compile Remove="Features\DailyLimits\Commands\CreateDailyLimits\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Aggregates" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Features\DailyLimits\Commands\CreateDailyLimits\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Features\DailyLimits\Commands\CreateDailyLimits\**" />
     </ItemGroup>
 
 </Project>

@@ -18,7 +18,7 @@ var app = builder
 
 app.UseSerilogRequestLogging();
 
-await app.ResetDatabaseAsync();
+// await app.ResetDatabaseAsync();
 
 
 app.Run();

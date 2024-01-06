@@ -3,9 +3,6 @@ namespace TrackMyMacros.Application.Features.DailyLimits.Commands.UpdateDailyLim
 
 public class UpdateDailyLimitsCommand:RequestBase<Result>
 {
-    public int Carbohydrate { get; set; }
-    public int Protein { get; set; }
-    public int Fat { get; set; }
     public int Calories { get; set; }
-
+    public double WeightInKg { get; set; }
 }

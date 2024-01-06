@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using TrackMyMacros.Application.Features.DailyLimits.Commands.CreateDailyLimits;
 using TrackMyMacros.Application.Features.DailyLimits.Commands.UpdateDailyLimits;
 using TrackMyMacros.Application.Features.Day.Commands;
 using TrackMyMacros.Application.Features.Food.Commands.CreateFood;
@@ -28,7 +27,6 @@ public class MappingProfile:Profile
             .ForMember(m => m.ProteinAmount, opt => opt.MapFrom(src => new ProteinAmount(src.Protein)))
             .ForMember(m => m.FatAmount, opt => opt.MapFrom(src => new FatAmount(src.Fat)));
 
-        CreateMap<CreateDailyLimitsCommand, DailyLimits>();
         CreateMap<UpdateDailyLimitsCommand, DailyLimits>();
 
         CreateMap<Day, GetDayDto>().ForMember(gdd=>gdd.GetMealDtos,

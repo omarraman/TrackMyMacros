@@ -47,7 +47,7 @@ public partial class Day
     private async Task Refresh()
     {
         var getDay = await DayDataService.GetDay(DateOnly.FromDateTime(CurrentDate));
-        if (getDay.IsFailure)
+        if (getDay.HasNoValue)
         {
             _day= new DayViewModel
             {

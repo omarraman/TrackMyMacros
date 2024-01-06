@@ -137,8 +137,8 @@ namespace TrackMyMacros.Api
             }
             catch (Exception ex)
             {
-                // var logger = scope.ServiceProvider.GetRequiredService<ILogger>();
-                // logger.LogError(ex, "An error occurred while migrating the database.");
+                var logger = scope.ServiceProvider.GetRequiredService<ILogger>();
+                logger.LogError(ex, "An error occurred while migrating the database.");
             }
         }
         

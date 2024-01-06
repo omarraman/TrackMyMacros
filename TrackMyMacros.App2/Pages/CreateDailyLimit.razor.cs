@@ -24,9 +24,7 @@ public partial class CreateDailyLimit
         {
             DailyLimits = new DailyLimitsViewModel
             {
-                Calories = 2030,
-                Carbohydrate = 250,
-                Protein = 145
+                Calories = 2030,WeightInKg = 75.9
             };
         }
         else

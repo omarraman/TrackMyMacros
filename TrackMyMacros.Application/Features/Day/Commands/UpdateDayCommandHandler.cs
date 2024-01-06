@@ -2,6 +2,7 @@
 
 using MediatR;
 using TrackMyMacros.Application.Contracts.Persistence;
+using TrackMyMacros.Domain.ValueObjects;
 
 namespace TrackMyMacros.Application.Features.Day.Commands;
 
@@ -26,6 +27,7 @@ public class UpdateDayCommandHandler : IRequestHandler<UpdateDayCommand, Result>
             throw new Exception(validationResult.ToString(","));
 
         var day = _mapper.Map<Domain.Aggregates.Day.Day>(command);
+      
 
         await _dayRepository.UpdateAsync(day);
 

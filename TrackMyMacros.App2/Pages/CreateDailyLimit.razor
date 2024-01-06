@@ -8,16 +8,16 @@
     <EditForm Model="@DailyLimits" OnValidSubmit="@HandleValidSubmit" id="test">
 
         <RadzenCard>
-            Calories <RadzenNumeric TValue="int" @bind-Value="DailyLimits.Calories">Quantity</RadzenNumeric>
+            Calories <RadzenNumeric TValue="int" @bind-Value="DailyLimits.Calories">Calories</RadzenNumeric>
         </RadzenCard>
         <RadzenCard>
-            Weight (kg) <RadzenNumeric TValue="int" @bind-Value="DailyLimits.WeightInKg">Quantity</RadzenNumeric>
+            Weight (kg) <RadzenNumeric TValue="double" @bind-Value="DailyLimits.WeightInKg">Quantity</RadzenNumeric>
         </RadzenCard>
         <RadzenCard>
-            Protein <RadzenNumeric TValue="int" @bind-Value="DailyLimits.Protein">Protein</RadzenNumeric>
+            Protein @DailyLimits.Protein
         </RadzenCard>
         <RadzenCard>
-            Carbohydrate <RadzenNumeric TValue="int" @bind-Value="DailyLimits.Carbohydrate">Carbohydrate</RadzenNumeric>
+            Carbohydrate @DailyLimits.Carbohydrate
         </RadzenCard>
         <RadzenCard>
             Fat @DailyLimits.Fat
