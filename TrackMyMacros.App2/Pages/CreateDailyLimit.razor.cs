@@ -20,11 +20,11 @@ public partial class CreateDailyLimit
     {
         var dailyLimitsResult = await DailyLimitsDataService.GetDailyLimits();
 
-        if (dailyLimitsResult.IsFailure && dailyLimitsResult is NoDailyLimitRecordFoundErrorResult)
+        if (dailyLimitsResult.HasNoValue)
         {
             DailyLimits = new DailyLimitsViewModel
             {
-                Calories = 2030,WeightInKg = 75.9
+                Calories = 2030,WeightInKg = 75.9,WeekdaysMealsPerDay = 5,WeekendMealsPerDay = 5
             };
         }
         else

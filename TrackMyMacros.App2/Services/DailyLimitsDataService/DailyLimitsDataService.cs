@@ -1,43 +1,48 @@
 ﻿using System.Net;
 using AutoMapper;
 using Flurl.Http;
+using Microsoft.Extensions.Options;
 using TrackMyMacros.App2.ViewModels;
 using TrackMyMacros.Dtos;
+using TrackMyMacros.Infrastructure;
 
 namespace TrackMyMacros.App2.Services.DailyLimitsDataService;
 
 public interface IDailyLimitsDataService
 {
-    public Task<Result<DailyLimitsViewModel>> GetDailyLimits();
+    public Task<Maybe<DailyLimitsViewModel>> GetDailyLimits();
     Task<Result> UpdateDailyLimits(DailyLimitsViewModel dailyLimitsViewModel);
 }
 
 public class DailyLimitsDataService : IDailyLimitsDataService
 {
     private readonly IMapper _mapper;
+    private readonly string? _baseUrl;
 
-    public DailyLimitsDataService(IMapper mapper)
+    public DailyLimitsDataService(IMapper mapper,IConfiguration configuration)
     {
+        _baseUrl = configuration["BackendUrl"];
+
         _mapper = mapper;
     }
 
 
-    public async Task<Result<DailyLimitsViewModel>> GetDailyLimits()
+    public async Task<Maybe<DailyLimitsViewModel>> GetDailyLimits()
     {
-        var uri = "https://localhost:7115/api/DailyLimits";
+        var uri = _baseUrl + "/api/DailyLimits";
         try
         {
             var dailyLimits = await uri
                 .GetJsonAsync<GetDailyLimitsDto>();
             var mappedDailyLimitss = _mapper.Map<DailyLimitsViewModel>(dailyLimits);
 
-            return new SuccessResult<DailyLimitsViewModel>(mappedDailyLimitss);
+            return mappedDailyLimitss;
         }
         catch (FlurlHttpException ex)
         {
-            if (ex.Call?.Response.StatusCode == 404)
+            if (ex.Call?.Response?.StatusCode == 404)
             {
-                return new NoDailyLimitRecordFoundErrorResult("No daily limit record found.");
+                return Maybe<DailyLimitsViewModel>.None;
             }
 
             throw ex;
@@ -49,7 +54,8 @@ public class DailyLimitsDataService : IDailyLimitsDataService
 
         try
         {
-            var uri = "https://localhost:7115/api/DailyLimits";
+            var uri = _baseUrl + "/api/DailyLimits";
+
             var dto = _mapper.Map<UpdateDailyLimitsDto>(dailyLimitsViewModel);
             await uri
                 .PutJsonAsync(dto);

@@ -3,6 +3,7 @@ using TrackMyMacros.App2.Components;
 using TrackMyMacros.App2.Services;
 using TrackMyMacros.App2.Services.DailyLimitsDataService;
 using TrackMyMacros.App2.ViewModels;
+using TrackMyMacros.Infrastructure;
 
 namespace TrackMyMacros.App2.Pages;
 
@@ -26,7 +27,7 @@ public partial class Day
     }
 
     List<MealComponent2> ComponentRefs = new List<MealComponent2>();
-    private Result<DailyLimitsViewModel> _dailyLimitsResult;
+    private Maybe<DailyLimitsViewModel> _dailyLimitsResult;
 
     MealComponent2 ComponentRef
     {
@@ -46,9 +47,10 @@ public partial class Day
 
     private async Task Refresh()
     {
-        var getDay = await DayDataService.GetDay(DateOnly.FromDateTime(CurrentDate));
+        var getDay = await DayDataService.GetDay<DayViewModel>(DateOnly.FromDateTime(CurrentDate));
         if (getDay.HasNoValue)
         {
+           
             _day= new DayViewModel
             {
                 Date = DateOnly.FromDateTime(CurrentDate),
@@ -77,17 +79,7 @@ public partial class Day
 
     private async Task OnAddMeal()
     {
-        _day.Meals.Add(new MealViewModel
-        {
-            FoodAmounts = new List<FoodAmountViewModel>
-            {
-                new FoodAmountViewModel
-                {
-                    FoodId = -1,
-                    Quantity = 10
-                }
-            }
-        });
+        _day.Meals.Add(new MealViewModel(Maybe<int>.None, Maybe<int>.None, Maybe<int>.None));
     }    
     private void OnMealMacrosChanged()
     {

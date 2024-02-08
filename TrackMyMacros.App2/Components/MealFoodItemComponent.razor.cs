@@ -13,15 +13,16 @@ public partial class MealFoodItemComponent
     [Inject] public IFoodDataRepository FoodDataRepository { get; set; }
     [Parameter] public double Quantity { get; set; }
 
-    [Parameter] public string Guid { get; set; }
     [Parameter] public EventCallback<FoodAmountViewModel> OnRemove { get; set; }
     [Parameter] public EventCallback OnQuantitiesChanged { get; set; }
 
     public IReadOnlyList<FoodListItemViewModel> FoodList { get; set; }
 
     [Parameter] public FoodAmountViewModel FoodAmount { get; set; }
+    
+    
 
-    public int SelectedFoodId  { get; set; }
+    [Parameter] public int SelectedFoodId  { get; set; }
 
     public MealFoodItemComponent()
     {
@@ -29,10 +30,11 @@ public partial class MealFoodItemComponent
 
     protected override async Task<Task> OnInitializedAsync()
     {
-        SelectedFoodId = FoodAmount.FoodId;
+        // SelectedFoodId = FoodAmount.FoodId;
         FoodList = await FoodDataRepository.GetFoodList();
 
         SelectedFood = FoodDataRepository.GetFood(FoodAmount.FoodId);
+        StateHasChanged();
 
         return base.OnInitializedAsync();
     }

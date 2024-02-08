@@ -46,7 +46,7 @@ public class DayRepository:IDayRepository
              if (dayToRemove!=default)
              {
                  _dbContext.Days.Remove(dayToRemove);
-                 _dbContext.Days.Update(dayToAdd);
+                 _dbContext.Days.Add(dayToAdd);
              }
              else
              {

@@ -2,12 +2,18 @@
 <RadzenCard>
     @foreach (var foodAmount in @Meal.FoodAmounts)
     {
-        <MealFoodItemComponent OnQuantitiesChanged="@OnQuantitiesChanged" OnRemove="RemoveFoodItem" FoodAmount="@foodAmount"></MealFoodItemComponent>
+        <MealFoodItemComponent SelectedFoodId="@foodAmount.FoodId" OnQuantitiesChanged="@OnQuantitiesChanged" OnRemove="RemoveFoodItem" FoodAmount="@foodAmount"></MealFoodItemComponent>
     }
     <RadzenButton Click="@OnAddFood" Text="Add Food" ButtonStyle="ButtonStyle.Primary"/>
 
-    Total Protein: @Double.Round(@Meal.Protein,2)
-    Total Carbs: @Double.Round(Meal.Carbohydrate,2)
-    Total Fat: @Double.Round(Meal.Fat,2)
-    Total Calories: @Double.Round(Meal.Calories,2)
+    Total Protein: @Double.Round(@Meal.Protein, 2)
+    <text>/</text>
+    @AllowedProtein.Value
+    Carbs: @Double.Round(Meal.Carbohydrate, 2)
+    <text>/</text>
+    @AllowedCarbohydrate.Value
+    Fat: @Double.Round(Meal.Fat, 2)
+    <text>/</text>
+    @AllowedFat.Value
+    Calories: @Double.Round(Meal.Calories, 2)
 </RadzenCard>

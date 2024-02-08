@@ -27,7 +27,7 @@
             <span>Total Fat :  @Double.Round(@_day.Fat,2)</span>
             <span>Total Cals :  @Double.Round(@_day.Calories,2)</span>
         
-            if (_dailyLimitsResult.IsSuccess)
+            if (_dailyLimitsResult.HasValue)
             {
                 <div>
                     <span>Remaining Protein : @Double.Round((_dailyLimitsResult.Value.Protein-@_day.Protein),2) / @_dailyLimitsResult.Value.Protein</span>

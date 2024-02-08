@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Ardalis.GuardClauses;
+using AutoMapper;
 using Flurl.Http;
 using TrackMyMacros.App2.ViewModels;
 
@@ -12,9 +13,12 @@ public interface IUomDataService
 public class UomDataService :IUomDataService
 {
      private readonly IMapper _mapper;
+     private readonly string? _baseUrl;
 
-    public UomDataService( IMapper mapper) 
+     public UomDataService( IMapper mapper,IConfiguration configuration) 
     {
+        _baseUrl = Guard.Against.NullOrEmpty(configuration["BackendUrl"]) ;
+        
         _mapper = mapper;
     }
 
@@ -28,7 +32,8 @@ public class UomDataService :IUomDataService
         //     headers.Add("host",_options.Value.Host);
         // }
             
-        var uri =  "https://localhost:7115/api/Uom";
+        var uri =  _baseUrl + "/api/Uom";
+        // var uri =  "https://localhost:7115/api/Uom";
         var foods = await uri
             .GetJsonAsync<IReadOnlyList<UomViewModel>>();
         var mappedUoms = _mapper.Map<IReadOnlyList<UomViewModel>>(foods);

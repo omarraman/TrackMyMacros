@@ -22,7 +22,12 @@
         <RadzenCard>
             Fat @DailyLimits.Fat
         </RadzenCard>
-
+        <RadzenCard>
+            Weekday meals per day <RadzenNumeric TValue="int" @bind-Value="DailyLimits.WeekdaysMealsPerDay">Quantity</RadzenNumeric>
+        </RadzenCard>
+        <RadzenCard>
+            Weekend meals per day <RadzenNumeric TValue="int" @bind-Value="DailyLimits.WeekendMealsPerDay">Quantity</RadzenNumeric>
+        </RadzenCard>
         <ValidationSummary></ValidationSummary>
         <DataAnnotationsValidator></DataAnnotationsValidator>
     </EditForm>

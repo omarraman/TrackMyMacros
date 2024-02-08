@@ -9,11 +9,19 @@ namespace TrackMyMacros.App2.Services;
 public class FoodDataService :IFoodDataService
 {
      private readonly IMapper _mapper;
+     private IConfiguration _configuration;
+     private readonly string? _baseUrl;
 
-    public FoodDataService( IMapper mapper) 
-    {
-        _mapper = mapper;
-    }
+     public FoodDataService( IMapper mapper,IConfiguration configuration)
+     {
+         _baseUrl = configuration["BackendUrl"];
+         if (_baseUrl==null)
+         {
+             throw new ArgumentNullException(nameof(_baseUrl));
+         }
+         
+         _mapper = mapper;
+     }
 
 
     public async Task<IReadOnlyList<FoodListItemViewModel>> GetFoods( )
@@ -25,7 +33,7 @@ public class FoodDataService :IFoodDataService
         //     headers.Add("host",_options.Value.Host);
         // }
             
-        var uri =  "https://localhost:7115/api/Food";
+        var uri =  _baseUrl + "/api/Food";
         var foods = await uri
             .GetJsonAsync<IReadOnlyList<FoodListItemViewModel>>();
         var mappedFoods = _mapper.Map<IReadOnlyList<FoodListItemViewModel>>(foods);
@@ -37,7 +45,7 @@ public class FoodDataService :IFoodDataService
     public async Task AddFood(CreateFoodViewModel model)
     {
         var dto = _mapper.Map<CreateFoodDto>(model);
-        var uri =  "https://localhost:7115/api/Food";
+        var uri =  _baseUrl + "/api/Food";
          await uri
             .PostJsonAsync(dto);
         
@@ -47,7 +55,7 @@ public class FoodDataService :IFoodDataService
     public async Task UpdateFood(FoodListItemViewModel model)
     {
         var dto = _mapper.Map<UpdateFoodDto>(model);
-        var uri =  "https://localhost:7115/api/Food";
+        var uri =  _baseUrl + "/api/Food";
         await uri
             .PutJsonAsync(dto);
         

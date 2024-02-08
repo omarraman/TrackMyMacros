@@ -13,7 +13,8 @@ public class DailyLimitsConfiguration : IEntityTypeConfiguration<DailyLimits>
             .IsRequired();
 
         builder.HasData(
-            new DailyLimits(2400, 75.9));
+            new DailyLimits(2400, 75.9, 5, 5));
+
 
         ;
     }

@@ -35,7 +35,9 @@ public class Meal : ValueObject<Meal>
     public double Protein { get; set; }
     public double Carbohydrate { get; set; }
     public double Fat { get; set; }
-
+    public int AllowedProtein { get; set; }
+    public int AllowedCarbohydrate { get; set; }
+    public int AllowedFat { get; set; }
     // public Meal(double protein,double carbohydrate, double fat)
     // {
     //     Guard.Against.NegativeOrZero(protein, nameof(protein));

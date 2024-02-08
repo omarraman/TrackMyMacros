@@ -5,7 +5,7 @@ namespace TrackMyMacros.Persistance;
 
 public class SeedData
 {
-    private static Guid _dayId=Guid.NewGuid();
+    private static Guid _dayId = Guid.NewGuid();
 
     public static IReadOnlyList<Food> Foods()
     {
@@ -33,7 +33,8 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            new Food
+            },
+            new Food
             {
                 Id = 3,
                 Name = "Apple",
@@ -43,17 +44,19 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            new Food
+            },
+            new Food
             {
                 Id = 4,
-                Name = "Arrabiata Sauce Barilla", 
+                Name = "Arrabiata Sauce Barilla",
                 CarbohydrateAmount = new CarbohydrateAmount(5.5),
                 ProteinAmount = new ProteinAmount(1.4),
                 FatAmount = new FatAmount(3.1),
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            new Food
+            },
+            new Food
             {
                 Id = 5,
                 Name = "Arla Kvarg Vanilj",
@@ -62,8 +65,10 @@ public class SeedData
                 FatAmount = new FatAmount(.2),
                 Quantity = 100,
                 QuantityInGrams = 100,
+                DefaultQuantity = 40,
                 UomId = Uom.Grams.Id
-            },            new Food
+            },
+            new Food
             {
                 Id = 6,
                 Name = "Banana",
@@ -73,7 +78,8 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            new Food
+            },
+            new Food
             {
                 Id = 7,
                 Name = "Basmati Rice",
@@ -83,7 +89,8 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            new Food
+            },
+            new Food
             {
                 Id = 8,
                 Name = "Blueberries",
@@ -93,7 +100,8 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            new Food
+            },
+            new Food
             {
                 Id = 9,
                 Name = "Bran Flakes",
@@ -103,7 +111,8 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            new Food
+            },
+            new Food
             {
                 Id = 10,
                 Name = "Bread",
@@ -111,9 +120,11 @@ public class SeedData
                 ProteinAmount = new ProteinAmount(10),
                 FatAmount = new FatAmount(4),
                 Quantity = 100,
+                DefaultQuantity = 80,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            new Food
+            },
+            new Food
             {
                 Id = 11,
                 Name = "Breggott",
@@ -123,7 +134,8 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            new Food
+            },
+            new Food
             {
                 Id = 12,
                 Name = "Bulgur",
@@ -133,7 +145,8 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            new Food
+            },
+            new Food
             {
                 Id = 13,
                 Name = "Chicken Breast",
@@ -143,7 +156,8 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            new Food
+            },
+            new Food
             {
                 Id = 14,
                 Name = "Chilli",
@@ -152,9 +166,10 @@ public class SeedData
                 FatAmount = new FatAmount(1.5),
                 Quantity = 100,
                 QuantityInGrams = 100,
+                DefaultQuantity = 255,
                 UomId = Uom.Grams.Id
             },
-            
+
             new Food
             {
                 Id = 15,
@@ -163,10 +178,10 @@ public class SeedData
                 ProteinAmount = new ProteinAmount(4.5),
                 FatAmount = new FatAmount(.8),
                 Quantity = 100,
-                DefaultQuantity = 37.5,
+                DefaultQuantity = 40,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            
+            },
             new Food
             {
                 Id = 16,
@@ -176,8 +191,9 @@ public class SeedData
                 FatAmount = new FatAmount(1.5),
                 Quantity = 100,
                 QuantityInGrams = 100,
+                DefaultQuantity = 170,
                 UomId = Uom.Grams.Id
-            },            
+            },
             new Food
             {
                 Id = 17,
@@ -188,7 +204,7 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            
+            },
             new Food
             {
                 Id = 18,
@@ -198,8 +214,9 @@ public class SeedData
                 FatAmount = new FatAmount(21),
                 Quantity = 100,
                 QuantityInGrams = 100,
+                DefaultQuantity = 40,
                 UomId = Uom.Grams.Id
-            },            
+            },
             new Food
             {
                 Id = 19,
@@ -210,7 +227,7 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            
+            },
             new Food
             {
                 Id = 20,
@@ -221,7 +238,7 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            
+            },
             new Food
             {
                 Id = 21,
@@ -232,7 +249,7 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            
+            },
             new Food
             {
                 Id = 22,
@@ -243,7 +260,7 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            
+            },
             new Food
             {
                 Id = 23,
@@ -265,7 +282,29 @@ public class SeedData
                 Quantity = 100,
                 QuantityInGrams = 100,
                 UomId = Uom.Grams.Id
-            },            
+            },
+            new Food
+            {
+                Id = 25,
+                Name = "Granola",
+                CarbohydrateAmount = new CarbohydrateAmount(50),
+                ProteinAmount = new ProteinAmount(0.7),
+                FatAmount = new FatAmount(15),
+                Quantity = 100,
+                QuantityInGrams = 100,
+                UomId = Uom.Grams.Id
+            },
+            new Food
+            {
+                Id = 26,
+                Name = "Kilmeaden",
+                CarbohydrateAmount = new CarbohydrateAmount(0.1),
+                ProteinAmount = new ProteinAmount(25.5),
+                FatAmount = new FatAmount(32),
+                Quantity = 100,
+                QuantityInGrams = 100,
+                UomId = Uom.Grams.Id
+            },
             // new Food
             // {
             //     Id = 14,
@@ -301,9 +340,9 @@ public class SeedData
                 Date1 = DateOnly.FromDateTime(DateTime.Now),
             }
         };
-        
+
     }
-    
+
     public static IReadOnlyList<Meal> Meals()
     {
         return new List<Meal>()

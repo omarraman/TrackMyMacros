@@ -9,7 +9,10 @@ public class GetDayDto
     public double Protein { get; set; }
     public double Carbohydrate { get; set; }
     public double Fat { get; set; }
-    
+    public int AllowedProtein { get; set; }
+    public int AllowedCarbohydrate { get; set; }
+    public int AllowedFat { get; set; }
+    public int MealCount { get; set; }
 }
 
 public class GetMealDto
@@ -21,6 +24,9 @@ public class GetMealDto
     public double Protein { get; set; }
     public double Carbohydrate { get; set; }
     public double Fat { get; set; }
+    public int AllowedProtein { get; set; }
+    public int AllowedCarbohydrate { get; set; }
+    public int AllowedFat { get; set; }
 }
 
 public class GetUomDto

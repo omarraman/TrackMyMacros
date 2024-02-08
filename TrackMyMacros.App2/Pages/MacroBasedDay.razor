@@ -1,0 +1,61 @@
+﻿@page "/MacrosDay"
+@using Microsoft.AspNetCore.Components.WebAssembly.Hosting
+@inject IWebAssemblyHostEnvironment env
+
+Environment is @env.Environment
+
+hello everyo
+
+<div>
+            <RadzenDatePicker DateFormat="MM/dd/yyyy" @bind-Value=@CurrentDate  Change="@(args => OnDateCHanged(args))"/>
+        </div>
+        
+        
+        @if (_day == null)
+        {
+            <p>
+                <em>Loading...</em>
+            </p>
+        }
+        else
+        {
+            @foreach (var meal in @_day.Meals)
+            {
+                <MealComponent2 OnMealMacrosChanged="OnMealMacrosChanged" @ref="ComponentRef" Meal="@meal" FoodList="@_foodList" AllowedProtein="meal.AllowedProtein"
+                               AllowedCarbohydrate="meal.AllowedCarbohydrate" AllowedFat="meal.AllowedFat" ></MealComponent2>
+            }
+        
+        
+        }
+        @if (_day != null)
+        {
+            <span>Total Protein : @Double.Round(@_day.Protein,2)</span>
+            <span>Total Carbs :  @Double.Round(@_day.Carbohydrate,2)</span>
+            <span>Total Fat :  @Double.Round(@_day.Fat,2)</span>
+            <span>Total Cals :  @Double.Round(@_day.Calories,2)</span>
+        
+            @* <div> *@
+            @*     <span>Remaining  Protein : @Double.Round((_day.AllowedProtein-@_day.Protein),2) / @_day.AllowedProtein</span> *@
+            @*     <span>Carbs : @Double.Round(_day.AllowedCarbohydrate-@_day.Carbohydrate,2) / @_day.AllowedCarbohydrate</span> *@
+            @*     <span>Fat : @Double.Round(_day.AllowedFat-@_day.Fat,2) / @_day.AllowedFat</span> *@
+            @*     <span>Cals : @Double.Round(_day.AllowedCalories-@_day.Calories,2) / @_day.AllowedCalories</span> *@
+            @* </div> *@
+            @* *@
+            <div>
+                <span>Remaining  Protein : @Double.Round((_day.AllowedProtein-@_day.Protein),2) / @_day.AllowedProtein</span>
+                <span>Carbs : @Double.Round(_day.AllowedCarbohydrate-@_day.Carbohydrate,2) / @_day.AllowedCarbohydrate</span>
+                <span>Fat : @Double.Round(_day.AllowedFat-@_day.Fat,2) / @_day.AllowedFat</span>
+                <span>Cals : @Double.Round(_day.AllowedCalories-@_day.Calories,2) / @_day.AllowedCalories</span>
+            </div>
+        
+        }
+        
+        <RadzenButton Click="@OnSave" Text="Save" ButtonStyle="ButtonStyle.Primary"/>
+        @* <RadzenButton Click="@OnAddMeal" Text="Add Meal" ButtonStyle="ButtonStyle.Primary"/> *@
+        
+        
+        @if (_noFoodIdSelectedOnOneOrMoreFoodItems)
+        {
+            <div>Please select a food before saving</div>
+        }
+

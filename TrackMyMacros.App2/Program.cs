@@ -28,6 +28,10 @@ builder.Services.AddScoped<DialogService>();
 
 builder.Services.AddSingleton<IFoodDataRepository, FoodDataRepository>();
 
+
+
+
+
 // builder.Services.AddMemoryCache();
 // builder.Services.AddSingleton<Polly.Caching.IAsyncCacheProvider, Polly.Caching.Memory.MemoryCacheProvider>();
 //

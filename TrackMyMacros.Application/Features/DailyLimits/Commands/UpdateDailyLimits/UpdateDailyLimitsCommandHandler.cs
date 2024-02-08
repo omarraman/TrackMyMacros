@@ -30,7 +30,7 @@ public class UpdateDailyLimitsCommandHandler:IRequestHandler<UpdateDailyLimitsCo
         Domain.Aggregates.DailyLimit.DailyLimits dailyLimits;
         try
         {
-            dailyLimits = new Domain.Aggregates.DailyLimit.DailyLimits(request.Calories, request.WeightInKg);
+            dailyLimits = new Domain.Aggregates.DailyLimit.DailyLimits(request.Calories, request.WeightInKg,request.WeekdaysMealsPerDay,request.WeekendMealsPerDay);
         }
         catch (ArgumentException e)
         {

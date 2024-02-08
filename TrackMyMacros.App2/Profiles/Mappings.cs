@@ -15,10 +15,16 @@ public class Mappings : Profile
         CreateMap<GetDayDto, DayViewModel>()
             .ForMember(m=>m.Meals,
                 opt=>opt.MapFrom(src=>src.GetMealDtos));
+        CreateMap<GetDayDto, MacroBasedDayViewModel>()
+            .ForMember(m=>m.Meals,
+                opt=>opt.MapFrom(src=>src.GetMealDtos));
         CreateMap<GetMealDto, MealViewModel>();
         CreateMap<GetFoodAmountDto, FoodAmountViewModel>();
         
         CreateMap<DayViewModel,UpdateDayDto>()
+            .ForMember(m=>m.Meals,
+                opt=>opt.MapFrom(src=>src.Meals));
+        CreateMap<MacroBasedDayViewModel,UpdateDayDto>()
             .ForMember(m=>m.Meals,
                 opt=>opt.MapFrom(src=>src.Meals));
         CreateMap<MealViewModel, UpdateDayDto.Meal>();

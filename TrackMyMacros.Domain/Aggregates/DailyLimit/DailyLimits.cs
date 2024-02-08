@@ -10,11 +10,17 @@ public class DailyLimits:Entity
 
     public double WeightInKg { get; set; }
 
-    public DailyLimits(int calories, double weightInKg)
+    public int WeekdaysMealsPerDay { get; set; }
+    public int WeekendMealsPerDay { get; set; }
+
+    public DailyLimits(int calories, double weightInKg, int weekdaysMealsPerDay,int weekendMealsPerDay)
     {
-        WeightInKg = Guard.Against.NegativeOrZero(weightInKg, nameof(weightInKg)); 
-        Calories=Guard.Against.NegativeOrZero(calories, nameof(calories));
+        Calories = Guard.Against.NegativeOrZero(calories, nameof(calories));
+        WeightInKg = Guard.Against.NegativeOrZero(weightInKg, nameof(weightInKg));
+        WeekdaysMealsPerDay = Guard.Against.NegativeOrZero(weekdaysMealsPerDay, nameof(weekdaysMealsPerDay));
+        WeekendMealsPerDay = Guard.Against.NegativeOrZero(weekendMealsPerDay, nameof(weekendMealsPerDay));
     }
+
     
     private DailyLimits()
     {

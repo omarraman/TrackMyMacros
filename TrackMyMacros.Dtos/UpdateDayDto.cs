@@ -9,7 +9,9 @@ public class UpdateDayDto
     public double Protein { get; set; }
     public double Carbohydrate { get; set; }
     public double Fat { get; set; }
-    
+    public int AllowedProtein { get; set; }
+    public int AllowedCarbohydrate { get; set; }
+    public int AllowedFat { get; set; }
     public class Meal
     {
         public List<FoodAmount> FoodAmounts {get; set; } 
@@ -17,6 +19,9 @@ public class UpdateDayDto
         public double Protein { get; set; }
         public double Carbohydrate { get; set; }
         public double Fat { get; set; }
+        public int AllowedProtein { get; set; }
+        public int AllowedCarbohydrate { get; set; }
+        public int AllowedFat { get; set; }
     }
     
     public class FoodAmount

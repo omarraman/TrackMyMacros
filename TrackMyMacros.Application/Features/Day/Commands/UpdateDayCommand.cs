@@ -7,12 +7,19 @@ public class UpdateDayCommand:RequestBase<Result>
 
     public List<UpdateMeal> Meals {get; set; }
     
+    public int AllowedProtein { get; set; }
+    public int AllowedCarbohydrate { get; set; }
+    public int AllowedFat { get; set; }
+    public int MealCount { get; set; }
     public class UpdateMeal
     {
         public List<UpdateFoodAmount> FoodAmounts {get; set; } 
         public double Protein { get; set; }
         public double Carbohydrate { get; set; }
         public double Fat { get; set; }
+        public int AllowedProtein { get; set; }
+        public int AllowedCarbohydrate { get; set; }
+        public int AllowedFat { get; set; }
         
     }
 
