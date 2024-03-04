@@ -19,8 +19,8 @@ public partial class MealFoodItemComponent
     public IReadOnlyList<FoodListItemViewModel> FoodList { get; set; }
 
     [Parameter] public FoodAmountViewModel FoodAmount { get; set; }
-    
-    
+
+    public bool SliderDisabled { get; set; } = true;
 
     [Parameter] public int SelectedFoodId  { get; set; }
 
@@ -32,6 +32,7 @@ public partial class MealFoodItemComponent
     {
         // SelectedFoodId = FoodAmount.FoodId;
         FoodList = await FoodDataRepository.GetFoodList();
+        SliderDisabled=SelectedFoodId!= -1;
 
         SelectedFood = FoodDataRepository.GetFood(FoodAmount.FoodId);
         StateHasChanged();

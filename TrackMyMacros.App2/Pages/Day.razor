@@ -1,6 +1,6 @@
 ﻿@page "/Day"
-
-        <div>
+<div class="container">
+    <div>
             <RadzenDatePicker DateFormat="MM/dd/yyyy" @bind-Value=@CurrentDate  Change="@(args => OnDateCHanged(args))"/>
         </div>
         
@@ -53,3 +53,6 @@
             <div>Please select a food before saving</div>
         }
 
+
+</div>
+    

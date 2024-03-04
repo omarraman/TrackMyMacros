@@ -1,0 +1,47 @@
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker compose reference guide at
+# https://docs.docker.com/compose/compose-file/
+
+# Here the instructions define your application as a service called "server".
+# This service is built from the Dockerfile in the current directory.
+# You can add other services your application may depend on here, such as a
+# database or a cache. For examples, see the Awesome Compose repository:
+# https://github.com/docker/awesome-compose
+services:
+  ui:
+    image: omarraman/macrotracker:ui
+    pull_policy: always
+    ports:
+      - "5149:80"
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Test
+  api:
+    image: omarraman/macrotracker:api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Test
+    ports:
+      - "7115:80"
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD", "pg_isready" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+volumes:
+  db:
+    driver: local

@@ -1,6 +1,8 @@
 ﻿
 using MediatR;
+using Microsoft.AspNetCore.Components;
 using Microsoft.OpenApi.Models;
+using Radzen;
 using Scrutor;
 using TrackMyMacros.Application;
 using TrackMyMacros.Application.Utils;
@@ -44,7 +46,8 @@ namespace TrackMyMacros.Api
 
             var connectionString = configuration.GetConnectionString("MacrosConnectionString");
             builder.Services.AddSingleton(new ConnectionString(connectionString));
-            
+
+
             return builder.Build();
 
         }

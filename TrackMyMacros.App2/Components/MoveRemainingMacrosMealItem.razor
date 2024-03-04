@@ -1,0 +1,57 @@
+﻿<RadzenCard Variant="IsDonatorMeal ? Variant.Filled : Variant.Flat">
+
+    <h4>Meal @(MealIndex+1)</h4>
+
+    @if (!IsDonatorMeal)
+    {
+        <div class="row py-1">
+            <div class="col-4">
+                <RadzenButton Icon="add" Click="OnBorrowProteinClick"></RadzenButton>
+            </div>
+            <div class="col-4">
+                <RadzenButton Icon="add" Click="OnBorrowCarbohydrateClick"></RadzenButton>
+            </div>
+            <div class="col-4">
+                <RadzenButton Icon="add" Click="OnBorrowFatClick"></RadzenButton>
+            </div>
+
+        </div>
+    }
+
+
+    <div class="row py-1">
+        <div class="col-4" style="background-color: greenyellow">
+            @Double.Round(Meal.Protein, 2)
+            <text>/</text>
+            @Meal.AllowedProtein
+        </div>
+        <div class="col-4" style="background-color: #0dcaf0">
+            @Double.Round(Meal.Carbohydrate, 2)
+            <text>/</text>
+            @Meal.AllowedCarbohydrate
+        </div>
+        <div class="col-4" style="background-color: yellow">
+            @Double.Round(Meal.Fat, 2)
+            <text>/</text>
+            @Meal.AllowedFat
+        </div>
+
+    </div>
+
+    @if (!IsDonatorMeal)
+    {
+        <div class="row py-1">
+            <div class="col-4">
+                <RadzenButton Icon="remove" Click="OnGiveBackProteinClick"></RadzenButton>
+            </div>
+            <div class="col-4">
+                <RadzenButton Icon="remove" Click="OnGiveBackCarbohydrateClick"></RadzenButton>
+            </div>
+            <div class="col-4">
+                <RadzenButton Icon="remove" Click="OnGiveBackFatClick"></RadzenButton>
+            </div>
+        </div>
+    }
+
+
+</RadzenCard>

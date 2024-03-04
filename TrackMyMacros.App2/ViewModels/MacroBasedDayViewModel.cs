@@ -24,7 +24,7 @@ public class MacroBasedDayViewModel
 
     public int MealCount { get; set; }
 
-    private MacroBasedDayViewModel()
+    public MacroBasedDayViewModel()
     {
         
     }
@@ -33,7 +33,7 @@ public class MacroBasedDayViewModel
     {
         Date = currentDate;
 
-        MealCount=Guard.Against.NegativeOrZero(mealCount, nameof(mealCount));
+        // MealCount=Guard.Against.NegativeOrZero(mealCount, nameof(mealCount));
         AllowedProtein=Guard.Against.NegativeOrZero(allowedProtein, nameof(allowedProtein));
         AllowedCarbohydrate=Guard.Against.NegativeOrZero(allowedCarbohydrate, nameof(allowedCarbohydrate)) + WorkoutCarbs();
         AllowedFat=Guard.Against.NegativeOrZero(allowedFat, nameof(allowedFat));
@@ -57,7 +57,7 @@ public class MacroBasedDayViewModel
     
 
     private int WorkoutCarbs() =>
-        Date.DayOfWeek == DayOfWeek.Monday || Date.DayOfWeek == DayOfWeek.Wednesday ||
+        Date.DayOfWeek == DayOfWeek.Monday || Date.DayOfWeek == DayOfWeek.Tuesday ||
         Date.DayOfWeek == DayOfWeek.Friday
             ? 50
             : 0;

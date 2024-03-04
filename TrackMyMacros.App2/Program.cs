@@ -28,6 +28,7 @@ builder.Services.AddScoped<DialogService>();
 
 builder.Services.AddSingleton<IFoodDataRepository, FoodDataRepository>();
 
+builder.Services.AddScoped<DialogService>();
 
 
 

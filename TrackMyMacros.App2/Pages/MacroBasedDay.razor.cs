@@ -60,6 +60,7 @@ public partial class MacroBasedDay
             _day = getDay.Value;
         }
         StateHasChanged();
+        
     }
     
     private async Task OnSave()
