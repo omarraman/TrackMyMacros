@@ -1,4 +1,5 @@
 ﻿using TrackMyMacros.Domain.Aggregates.Day;
+using TrackMyMacros.Domain.ValueObjects;
 using TrackMyMacros.Infrastructure;
 
 namespace TrackMyMacros.Application.Contracts.Persistence;

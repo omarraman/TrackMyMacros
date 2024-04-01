@@ -3,7 +3,11 @@ using TrackMyMacros.Application.Features.DailyLimits.Commands.UpdateDailyLimits;
 using TrackMyMacros.Application.Features.Day.Commands;
 using TrackMyMacros.Application.Features.Food.Commands.CreateFood;
 using TrackMyMacros.Application.Features.Food.Commands.UpdateFood;
+using TrackMyMacros.Application.Features.FoodCombo.Commands.Delete;
+using TrackMyMacros.Application.Features.FoodCombo.Commands.Update;
+using TrackMyMacros.Application.Features.FoodCombo.Commands.UpdateFood;
 using TrackMyMacros.Dtos;
+using TrackMyMacros.Dtos.FoodCombo;
 
 namespace TrackMyMacros.Api.Profiles;
 
@@ -19,5 +23,8 @@ public class MappingProfiles:Profile
         // CreateMap<CreateDailyLimitsDto, CreateDailyLimitsCommand>();
         CreateMap<UpdateDailyLimitsDto, UpdateDailyLimitsCommand>();
         CreateMap<UpdateFoodDto, UpdateFoodCommand>();
+        CreateMap<UpdateFoodComboDto, UpdateFoodComboCommand>();
+        CreateMap<UpdateFoodComboDto.UpdateFoodComboAmountDto, UpdateFoodComboCommand.UpdateFoodComboAmount>();
+        CreateMap<DeleteFoodComboDto, DeleteFoodComboCommand>();
     }
 }

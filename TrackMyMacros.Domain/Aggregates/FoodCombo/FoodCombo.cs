@@ -1,0 +1,17 @@
+﻿using TrackMyMacros.Domain.Common;
+using TrackMyMacros.Domain.ValueObjects;
+
+namespace TrackMyMacros.Domain.Aggregates.FoodCombo;
+
+public class FoodCombo:Entity
+{
+    private FoodCombo()
+    {
+        
+    }
+    public Guid Id { get; set; }
+
+    public string Name { get; set; }
+    public List<FoodComboAmount> FoodComboAmounts { get; } = new();
+}
+

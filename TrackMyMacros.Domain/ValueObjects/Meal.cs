@@ -1,7 +1,6 @@
 ﻿using TrackMyMacros.Domain.Common;
-using TrackMyMacros.Domain.ValueObjects;
 
-namespace TrackMyMacros.Domain.Aggregates.Day;
+namespace TrackMyMacros.Domain.ValueObjects;
 
 public class Meal : ValueObject<Meal>
 {

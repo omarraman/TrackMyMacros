@@ -1,6 +1,7 @@
 ﻿
 using MediatR;
 using Microsoft.AspNetCore.Components;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Radzen;
 using Scrutor;
@@ -128,21 +129,22 @@ namespace TrackMyMacros.Api
         public static async Task ResetDatabaseAsync(this WebApplication app)
         {
             using var scope = app.Services.CreateScope();
-            try
-            {
+            // try
+            // {
                 var context = scope.ServiceProvider.GetService<AppDbContext>();
                 if (context != null)
                 {
-                       
-                    // await context.Database.MigrateAsync();
-                    await context.Database.EnsureCreatedAsync();
+                    // await context.Database.EnsureDeletedAsync();
+                    await context.Database.MigrateAsync();
+                    
+                    // await context.Database.EnsureCreatedAsync();
                 }
-            }
-            catch (Exception ex)
-            {
-                var logger = scope.ServiceProvider.GetRequiredService<ILogger>();
-                logger.LogError(ex, "An error occurred while migrating the database.");
-            }
+            // }
+            // catch (Exception ex)
+            // {
+            //     var logger = scope.ServiceProvider.GetRequiredService<ILogger>();
+            //     logger.LogError(ex, "An error occurred while migrating the database.");
+            // }
         }
         
         public static void AddDecoratorServices(this IServiceCollection services,Type t)

@@ -1,4 +1,6 @@
-﻿namespace TrackMyMacros.Domain.Aggregates.Day;
+﻿using TrackMyMacros.Domain.ValueObjects;
+
+namespace TrackMyMacros.Domain.Aggregates.Day;
 
 public class Day
 {

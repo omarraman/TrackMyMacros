@@ -9,12 +9,20 @@
         <div class="col-2">
             <RadzenButton Click="@OnAddFood" Icon="add" ButtonStyle="ButtonStyle.Primary"/>
         </div>
-        <div class="col-5">
-            <RadzenButton Text="Move Macros" ButtonStyle="ButtonStyle.Secondary" Click=@ShowInlineDialog/>
+        <div class="col-2">
+            <RadzenButton icon = "trending_flat" ButtonStyle="ButtonStyle.Secondary" Click=@ShowInlineDialog/>
         </div>
-        <div class="col-5">
-            <RadzenButton Click="@OnSave" Text="Save" ButtonStyle="ButtonStyle.Primary"/>
-        
+        <div class="col-2">
+            <RadzenButton Click="ShowCopyMealsDialog" Icon="content_copy" ButtonStyle="ButtonStyle.Primary"/>
+        </div>
+        <div class="col-2">
+            <RadzenButton Click="CreateFoodCombo" Text="NFC" ButtonStyle="ButtonStyle.Primary"/>
+        </div>
+        <div class="col-2">
+            <RadzenButton Click="AddFoodCombo" Text="AFC" ButtonStyle="ButtonStyle.Primary"/>
+        </div>
+        <div class="col-2">
+            <RadzenButton Click="@OnSave" Icon="save" ButtonStyle="ButtonStyle.Primary"/>
         </div>
     </div>
 
@@ -34,7 +42,7 @@
             @Double.Round(Meal.Fat, 2)
             <text>/</text>
             @AllowedFat.Value
-        </div>
+        </div>d
         <div class="col-3" style="background-color: #babbbc">
             @Double.Round(Meal.Calories, 2)
 

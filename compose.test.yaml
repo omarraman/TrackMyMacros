@@ -14,3 +14,4 @@ services:
   api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Test
+      - BackendUrl=http://localhost:7115/

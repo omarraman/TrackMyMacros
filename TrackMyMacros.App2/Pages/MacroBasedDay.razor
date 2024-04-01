@@ -2,8 +2,6 @@
 @using Microsoft.AspNetCore.Components.WebAssembly.Hosting
 @inject IWebAssemblyHostEnvironment env
 
-Environment is @env.Environment
-
 
 <div class="container">
 
@@ -27,7 +25,8 @@ else
                 <h3>Meal @(i + 1)</h3>
 
                 <MealComponent2 OnMealMacrosChanged="OnMealMacrosChanged" @ref="ComponentRef" Meal="meal" FoodList="@_foodList" AllowedProtein="meal.AllowedProtein"
-                                AllowedCarbohydrate="meal.AllowedCarbohydrate" AllowedFat="meal.AllowedFat" ParentDayModel="_day" MealIndex="i" OnSaveDay="OnSave">
+                                AllowedCarbohydrate="meal.AllowedCarbohydrate" AllowedFat="meal.AllowedFat" ParentDayModel="_day" MealIndex="i" OnSaveDay="OnSave"
+                                OnCopyMeals="ShowCopyMealsDialog">
                 </MealComponent2>
                 <div class="row py-1">
                     <div class="col-3" style="background-color: greenyellow">

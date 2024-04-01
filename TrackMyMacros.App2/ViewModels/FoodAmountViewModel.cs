@@ -2,19 +2,6 @@
 
 public class FoodAmountViewModel
 {
-    private IFoodDataRepository _foodDataRepository;
-
-    // private Maybe<FoodListItemViewModel> SelectedFood { get; set; } = Maybe<FoodListItemViewModel>.None;
-    // public FoodAmountViewModel( IFoodDataRepository foodDataRepository)
-    // {
-    //     _foodDataRepository = foodDataRepository;
-    //     if (FoodId== -1)
-    //     {
-    //         Protein = "0";
-    //     }
-    //    SelectedFood = _foodDataRepository.GetFood(FoodId);
-    //    Protein= (Quantity/100 * SelectedFood.Value.ProteinAmount).ToString();
-    // }
     public int FoodId { get; set; }
     public double Quantity { get; set; }
 

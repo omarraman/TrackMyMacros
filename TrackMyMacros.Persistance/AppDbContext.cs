@@ -3,6 +3,7 @@ using TrackMyMacros.Domain;
 using TrackMyMacros.Domain.Aggregates;
 using TrackMyMacros.Domain.Aggregates.DailyLimit;
 using TrackMyMacros.Domain.Aggregates.Day;
+using TrackMyMacros.Domain.Aggregates.FoodCombo;
 
 namespace TrackMyMacros.Persistance;
 
@@ -12,6 +13,7 @@ public class AppDbContext:DbContext
     public DbSet<Uom> Uoms { get; set; }
     public DbSet<Day> Days { get; set; }
     public DbSet<DailyLimits> DailyLimits { get; set; }
+    public DbSet<FoodCombo> FoodCombos { get; set; }
 
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)

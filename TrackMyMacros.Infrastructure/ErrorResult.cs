@@ -15,7 +15,14 @@ public class ErrorResult : Result, IErrorResult
 
     public string Message { get; }
     public IReadOnlyCollection<Error> Errors { get; }
+    
+    public string GetErrorString()
+    {
+        return Message + " " + string.Join(", ", Errors.Select(e => e.Code + ": " + e.Details));
+    }
 }
+
+
 
 public class ErrorResult<T> : Result<T>, IErrorResult
 {
@@ -32,4 +39,11 @@ public class ErrorResult<T> : Result<T>, IErrorResult
 
     public string Message { get; set; }
     public IReadOnlyCollection<Error> Errors { get; }
+    
+    public string GetErrorString()
+    {
+        return Message + " " + string.Join(", ", Errors.Select(e => e.Code + ": " + e.Details));
+    }
 }
+
+

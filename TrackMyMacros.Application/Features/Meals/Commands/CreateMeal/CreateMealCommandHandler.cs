@@ -3,6 +3,7 @@
 using MediatR;
 using TrackMyMacros.Application.Contracts.Persistence;
 using TrackMyMacros.Domain.Aggregates.Day;
+using TrackMyMacros.Domain.ValueObjects;
 
 namespace TrackMyMacros.Application.Features.Meals.Commands.CreateMeal;
 

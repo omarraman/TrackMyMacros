@@ -41,12 +41,6 @@ public class MealViewModel
          AllowedFat = allowedFat;
 
          FoodAmounts = new List<FoodAmountViewModel>();
-         // {
-         //     new FoodAmountViewModel
-         //     {
-         //         FoodId = -1,
-         //         Quantity = 10
-         //     }
-         // };
+
      }
 }

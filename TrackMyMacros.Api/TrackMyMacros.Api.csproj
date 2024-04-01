@@ -16,6 +16,7 @@
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="12.0.1" />
       <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+      <PackageReference Include="FluentValidation" Version="11.9.0" />
       <PackageReference Include="MediatR" Version="12.2.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
         <PrivateAssets>all</PrivateAssets>
@@ -42,6 +43,10 @@
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="logs\" />
     </ItemGroup>
 
 </Project>

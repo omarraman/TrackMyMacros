@@ -1,29 +1,7 @@
 ﻿@using System.Xml
 @if (SelectedFood.HasValue)
 {
-    @* <div> *@
-    @*     <RadzenButton Click="@RemoveFood" Icon="remove" ButtonStyle="ButtonStyle.Primary"/> *@
-    @*     <RadzenDropDown Style="width:170px" @bind-Value=@SelectedFoodId Data=@FoodList TextProperty="Name" ValueProperty="Id" Change="@(o => OnChangeFood(o))" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" FilterOperator="StringFilterOperator.StartsWith" AllowFiltering="true" Placeholder="Select Food"/> *@
-    @*     <RadzenNumeric Change=@OnChangeQuantity TValue="double" @bind-Value=@FoodAmount.Quantity Style="width:75px "></RadzenNumeric> g *@
-    @*     <div> *@
-    @*         <div class="col-3" style="background-color: greenyellow"> *@
-    @*             @Double.Round(@FoodAmount.Protein, 1) *@
-    @*         </div> *@
-    @*         <div class="col-3" style="background-color: #0dcaf0"> *@
-    @*             @Double.Round(@FoodAmount.Carbohydrate, 1) *@
-    @*              *@
-    @*         </div> *@
-    @*         <div class="col-3" style="background-color: yellow"> *@
-    @*              *@
-    @*             @Double.Round(@FoodAmount.Fat, 1) *@
-    @*         </div> *@
-    @*         <div class="col-3" style="background-color: #babbbc"> *@
-    @*             @Double.Round(@FoodAmount.Calories, 1) *@
-    @*         </div> *@
-    @*     </div> *@
-    @* *@
-    @* </div> *@
-    @* <div class="container"> *@
+
 
     <div class="row g-0 py-1">
         <div class="col-2 col-sm-1"z>

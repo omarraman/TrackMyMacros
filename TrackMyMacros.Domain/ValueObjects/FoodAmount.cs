@@ -5,11 +5,14 @@ namespace TrackMyMacros.Domain.ValueObjects;
 
 public class FoodAmount:ValueObject<FoodAmount>
 {
+    private FoodAmount()
+    {
+        
+    }
     public double Quantity { get; }
     
     // public Food Food { get; set; }
-    public int FoodId { get;
-         }
+    public int FoodId { get; }
 
     public FoodAmount(int foodId, double quantity,double protein,double carbohydrate, double fat)
     {

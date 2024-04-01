@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using System.Runtime.InteropServices.JavaScript;
+using Microsoft.AspNetCore.Components;
+using Newtonsoft.Json;
+using Radzen;
 using TrackMyMacros.App2.Components;
 using TrackMyMacros.App2.Services;
 using TrackMyMacros.App2.Services.DailyLimitsDataService;
 using TrackMyMacros.App2.ViewModels;
 using TrackMyMacros.Infrastructure;
+using DateOnly = System.DateOnly;
 
 namespace TrackMyMacros.App2.Pages;
 
@@ -13,6 +17,7 @@ public partial class MacroBasedDay
 
     [Inject] public DayDataService DayDataService { get; set; }
     [Inject] public IDailyLimitsDataService DailyLimitsDataService { get; set; }
+    [Inject] public DialogService DialogService { get; set; }
 
     private IReadOnlyList<FoodListItemViewModel> _foodList;
     public MacroBasedDayViewModel _day;
@@ -103,7 +108,44 @@ public partial class MacroBasedDay
         CurrentDate = date?? DateTime.Now;
         await Refresh();
         StateHasChanged();
-    }   
+    }
+
+    public async Task ShowCopyMealsDialog()
+    {
+        await DialogService.OpenAsync<CopyMealsToDateDialog>("Copy Meals", new Dictionary<string, object>
+        {
+            { "DialogService", DialogService },
+            { "OnCopyMealsToDate", EventCallback.Factory.Create<DateOnly>(this,CopyMealsFromCurrentDayToAnother) }
+        });
+        // , new DialogOptions { Width = "400px" }
+    }
     
+    public async Task CopyMealsFromCurrentDayToAnother(DateOnly targetDate)
+    {
+        var getDay = await DayDataService.GetDay<MacroBasedDayViewModel>(targetDate);
+        MacroBasedDayViewModel targetDay;
+        if (getDay.HasNoValue)
+        {
+            targetDay = new MacroBasedDayViewModel(targetDate,
+                _dailyLimitsResult.Value.WeekdaysMealsPerDay,
+                _dailyLimitsResult.Value.Protein
+                , _dailyLimitsResult.Value.Carbohydrate
+                , _dailyLimitsResult.Value.Fat);
+        }
+        else
+        {
+            targetDay = getDay.Value;
+            targetDay.Meals.Clear();
+        }
+        foreach (var meal in _day.Meals)
+        {
+            targetDay.Meals.Add(meal);
+        }
+        await DayDataService.UpdateDay(targetDay);
+        // await Refresh();
+
+    }
     
+
+
 }
