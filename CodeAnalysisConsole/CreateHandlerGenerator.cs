@@ -5,7 +5,8 @@ namespace CodeGen;
 
 public class CreateHandlerGenerator : HandlerClassGenerator
 {
-    public CreateHandlerGenerator(ClassDeclarationSyntax classDeclarationSyntax) : base(classDeclarationSyntax)
+    public CreateHandlerGenerator(ClassDeclarationSyntax classDeclarationSyntax) : 
+        base(classDeclarationSyntax, HandlerType.Create)
     {
         HandlerMethodString.Append(
             $@"public class Test{{
@@ -24,10 +25,9 @@ public class CreateHandlerGenerator : HandlerClassGenerator
                         return new SuccessResult<Guid>(entity.Id);
                     }}
             }}");
-
-        _baseTypeString = $"IRequestHandler<{CommandOrQueryIdentifier.Create(BaseEntityClassName)},Result<Guid>>";
-        HandlerName = CommandOrQueryHandlerIdentifier.Create(BaseEntityClassName);
-        TargetClassName = CommandOrQueryHandlerIdentifier.Create(BaseEntityClassName);
+        //
+        // _baseTypeString = $"IRequestHandler<{CommandOrQueryIdentifier.Create(BaseEntityClassName)},Result<Guid>>";
+        // TargetClassName = CommandOrQueryHandlerIdentifier.Create(BaseEntityClassName);
     }
 
     protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)

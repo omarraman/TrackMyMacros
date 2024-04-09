@@ -7,7 +7,6 @@ using TrackMyMacros.Application.Features.Food.Queries.GetFoodList;
 using TrackMyMacros.Application.Features.FoodCombo.Commands.Create;
 using TrackMyMacros.Application.Features.FoodCombo.Commands.Delete;
 using TrackMyMacros.Application.Features.FoodCombo.Commands.Update;
-using TrackMyMacros.Application.Features.FoodCombo.Commands.UpdateFood;
 using TrackMyMacros.Application.Features.FoodCombo.Queries.GetFoodCombo;
 using TrackMyMacros.Dtos;
 using TrackMyMacros.Dtos.FoodCombo;

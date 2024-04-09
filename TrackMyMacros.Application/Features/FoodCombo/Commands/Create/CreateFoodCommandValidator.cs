@@ -10,15 +10,11 @@ public class CreateFoodComboCommandValidator:AbstractValidator<CreateFoodComboCo
         RuleFor(p => p.Name)
             .NotEmpty().WithMessage("{PropertyName} is required")
             .NotNull();
-        RuleFor(p => p.Name)
-            .NotEmpty().WithMessage("{PropertyName} is required")
-            .NotNull();
         //must have at least one food combo amount
         RuleFor(p => p.FoodComboAmounts)
             .NotEmpty().WithMessage("You must have at least one food combo amount")
             .NotNull();
         RuleForEach(m=>m.FoodComboAmounts).SetValidator(new CreateFoodComboAmountValidator());
-
     }
 
 

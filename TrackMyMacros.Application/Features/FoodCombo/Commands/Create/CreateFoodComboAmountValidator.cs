@@ -14,6 +14,7 @@ public class CreateFoodComboAmountValidator:AbstractValidator<CreateFoodComboAmo
             .NotEmpty()
             .NotNull()
             .GreaterThanOrEqualTo(0);
+
     }
 
 

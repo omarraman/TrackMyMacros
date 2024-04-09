@@ -1,5 +1,4 @@
 using FluentValidation;
-using TrackMyMacros.Application.Features.FoodCombo.Commands.UpdateFood;
 
 namespace TrackMyMacros.Application.Features.FoodCombo.Commands.Update;
 
@@ -7,9 +6,6 @@ public class UpdateFoodComboCommandValidator:AbstractValidator<UpdateFoodComboCo
 {
     public UpdateFoodComboCommandValidator()
     {
-        RuleFor(p => p.Name)
-            .NotEmpty().WithMessage("{PropertyName} is required")
-            .NotNull();
         RuleFor(p => p.Name)
             .NotEmpty().WithMessage("{PropertyName} is required")
             .NotNull();

@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
-using FluentValidation.Results;
 using MediatR;
 using TrackMyMacros.Application.Common;
 using TrackMyMacros.Application.Contracts.Persistence;
-using TrackMyMacros.Application.Features.FoodCombo.Commands.Update;
 
-namespace TrackMyMacros.Application.Features.FoodCombo.Commands.UpdateFood;
+namespace TrackMyMacros.Application.Features.FoodCombo.Commands.Update;
 
 public class UpdateFoodComboCommandHandler:IRequestHandler<UpdateFoodComboCommand,Result>
 {

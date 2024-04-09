@@ -9,7 +9,8 @@ namespace CodeGen;
 
 public class DeleteHandlerGenerator : HandlerClassGenerator
 {
-    public DeleteHandlerGenerator(ClassDeclarationSyntax classDeclarationSyntax) : base(classDeclarationSyntax)
+    public DeleteHandlerGenerator(ClassDeclarationSyntax classDeclarationSyntax) : base(classDeclarationSyntax, 
+         HandlerType.Delete)
     {
         HandlerMethodString.Append("public class Test{    " +
                   $@"public async Task<Result> Handle(Delete{BaseEntityClassName}Command request, CancellationToken cancellationToken)
@@ -18,10 +19,8 @@ public class DeleteHandlerGenerator : HandlerClassGenerator
                         return new SuccessResult();
                     }}" +
                   "}");
-        
-                _baseTypeString= $"IRequestHandler<{CommandOrQueryIdentifier.Delete(BaseEntityClassName)},Result>";        
-                HandlerName= CommandOrQueryHandlerIdentifier.Delete(BaseEntityClassName);
-                TargetClassName = CommandOrQueryHandlerIdentifier.Delete(BaseEntityClassName);
+        // _baseTypeString = $"IRequestHandler<{CommandOrQueryIdentifier.Delete(BaseEntityClassName)},Result>";
+
     }
     protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)
     {

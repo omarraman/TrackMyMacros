@@ -11,6 +11,9 @@ public class UpdateFoodCommandValidator:AbstractValidator<UpdateFoodCommand>
         RuleFor(p => p.Name)
             .NotEmpty().WithMessage("{PropertyName} is required")
             .NotNull();
+        RuleFor(p => p.Id)
+            .NotEmpty().WithMessage("{PropertyName} is required")
+            .NotNull();
     }
 
 
