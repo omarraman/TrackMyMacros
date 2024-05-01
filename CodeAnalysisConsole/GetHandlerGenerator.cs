@@ -11,6 +11,9 @@ public class GetHandlerGenerator : HandlerClassGenerator
 {
     public GetHandlerGenerator(ClassDeclarationSyntax classDeclarationSyntax) : base(classDeclarationSyntax,HandlerType.Get)
     {
+        BaseDirectory= "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
+        OutputDirectory= $"{BaseEntityClassName}\\queries\\Get\\";
+        
         HandlerMethodString.Append("public class Test{    " +
                   $"public async Task<Maybe<{DtoIdentifier.Get(BaseEntityClassName)}>> Handle({CommandOrQueryIdentifier.Get(BaseEntityClassName)} request, CancellationToken cancellationToken)" +
                   "{    " +
@@ -19,9 +22,6 @@ public class GetHandlerGenerator : HandlerClassGenerator
                   "        return mapped;    }" +
                   "}");
         
-                // _baseTypeString= $"IRequestHandler<{CommandOrQueryIdentifier.Get(BaseEntityClassName)},Maybe<{DtoIdentifier.Get(BaseEntityClassName)}>>";        
-                // HandlerName= CommandOrQueryHandlerIdentifier.Get(BaseEntityClassName);
-                // TargetClassName = CommandOrQueryHandlerIdentifier.Get(BaseEntityClassName);
     }
     protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)
     {

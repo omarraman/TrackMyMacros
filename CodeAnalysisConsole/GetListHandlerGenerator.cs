@@ -12,6 +12,8 @@ public class GetListHandlerGenerator : HandlerClassGenerator
     public GetListHandlerGenerator(ClassDeclarationSyntax classDeclarationSyntax) : base(classDeclarationSyntax, 
          HandlerType.GetList)
     {
+        BaseDirectory= "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
+        OutputDirectory= $"{BaseEntityClassName}\\queries\\Get\\";
         HandlerMethodString.Append("public class Test{    " +
                   $"public async Task<IReadOnlyList<{DtoIdentifier.Get(BaseEntityClassName)}>> Handle({CommandOrQueryIdentifier.GetList(BaseEntityClassName)} request, CancellationToken cancellationToken)" +
                   "{    " +
@@ -19,10 +21,6 @@ public class GetListHandlerGenerator : HandlerClassGenerator
                   $"     var mapped = _mapper.Map<IReadOnlyList<{DtoIdentifier.Get(BaseEntityClassName)}>>(results);" +
                   "        return mapped;    }" +
                   "}");
-        
-                // _baseTypeString= $"IRequestHandler<IReadOnlyList<{CommandOrQueryIdentifier.GetList(BaseEntityClassName)}>,{DtoIdentifier.Get(BaseEntityClassName)}>";        
-                // HandlerName= CommandOrQueryHandlerIdentifier.GetList(BaseEntityClassName);
-                // TargetClassName = CommandOrQueryHandlerIdentifier.GetList(BaseEntityClassName);
     }
     protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)
     {

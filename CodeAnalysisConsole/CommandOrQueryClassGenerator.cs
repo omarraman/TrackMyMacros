@@ -11,23 +11,43 @@ namespace CodeGen;
 public class CommandOrQueryGenerator : RecordTypeClassGenerator
 {
     private CommandOrQueryType _commandOrQueryType;
+    private List<ClassDeclarationSyntax> _valueObjects;
 
-    public static CommandOrQueryGenerator CreateCommandOrQueryGenerator(ClassDeclarationSyntax classDeclarationSyntax) =>
-        new CommandOrQueryGenerator(classDeclarationSyntax, CommandOrQueryType.Create);
+    public static CommandOrQueryGenerator CreateCommandOrQueryGenerator(ClassDeclarationSyntax classDeclarationSyntax,List<ClassDeclarationSyntax> valueObjects) =>
+        new CommandOrQueryGenerator(classDeclarationSyntax, CommandOrQueryType.Create, valueObjects );
     
-    public static CommandOrQueryGenerator GetCommandOrQueryGenerator(ClassDeclarationSyntax classDeclarationSyntax) =>
-        new CommandOrQueryGenerator(classDeclarationSyntax, CommandOrQueryType.Get);
+    public static CommandOrQueryGenerator GetCommandOrQueryGenerator(ClassDeclarationSyntax classDeclarationSyntax,List<ClassDeclarationSyntax> valueObjects) =>
+        new CommandOrQueryGenerator(classDeclarationSyntax, CommandOrQueryType.Get,valueObjects);
     
-    public static CommandOrQueryGenerator GetListCommandOrQueryGenerator(ClassDeclarationSyntax classDeclarationSyntax) =>
-        new CommandOrQueryGenerator(classDeclarationSyntax, CommandOrQueryType.GetList);
+    public static CommandOrQueryGenerator GetListCommandOrQueryGenerator(ClassDeclarationSyntax classDeclarationSyntax,List<ClassDeclarationSyntax> valueObjects) =>
+        new CommandOrQueryGenerator(classDeclarationSyntax, CommandOrQueryType.GetList,valueObjects);
     
-    public static CommandOrQueryGenerator UpdateCommandOrQueryGenerator(ClassDeclarationSyntax classDeclarationSyntax) =>
-        new CommandOrQueryGenerator(classDeclarationSyntax, CommandOrQueryType.Update);
+    public static CommandOrQueryGenerator UpdateCommandOrQueryGenerator(ClassDeclarationSyntax classDeclarationSyntax,List<ClassDeclarationSyntax> valueObjects) =>
+        new CommandOrQueryGenerator(classDeclarationSyntax, CommandOrQueryType.Update,valueObjects);
     
-    public static CommandOrQueryGenerator DeleteCommandOrQueryGenerator(ClassDeclarationSyntax classDeclarationSyntax) =>
-        new CommandOrQueryGenerator(classDeclarationSyntax, CommandOrQueryType.Delete);
+    public static CommandOrQueryGenerator DeleteCommandOrQueryGenerator(ClassDeclarationSyntax classDeclarationSyntax,List<ClassDeclarationSyntax> valueObjects) =>
+        new CommandOrQueryGenerator(classDeclarationSyntax, CommandOrQueryType.Delete,valueObjects);
 
 
+    protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)
+    {
+        if (!_commandOrQueryType.ToString().StartsWith("Get"))
+            return base.GetUsingNamespaces(baseEntityName);
+        
+        
+        var directives = new[]
+        {
+            UsingDirective(ParseName($"{UsingStrings.Dtos}.{BaseEntityClassName}")),
+        };
+        if (_commandOrQueryType == CommandOrQueryType.Get)
+        {
+            directives=directives.Append(UsingDirective(ParseName(UsingStrings.Infrastructure))).ToArray();
+        }
+
+
+        return base.GetUsingNamespaces(baseEntityName).Union(directives).ToArray();
+    }
+    
     protected override string BaseTypeString {
         get
         {
@@ -70,40 +90,35 @@ public class CommandOrQueryGenerator : RecordTypeClassGenerator
         
         }
     }
-    protected override List<FieldDeclarationSyntax> FieldDeclarationSyntaxList { get; }
-    protected override Maybe<ConstructorDeclarationSyntax> ConstructorDeclarationSyntax { get; }
-    protected override List<MethodDeclarationSyntax> MethodDeclarationSyntax { get; }
 
-    private CommandOrQueryGenerator(ClassDeclarationSyntax classDeclarationSyntax, CommandOrQueryType commandOrQueryType) : base(classDeclarationSyntax)
+
+    private CommandOrQueryGenerator(ClassDeclarationSyntax classDeclarationSyntax, CommandOrQueryType commandOrQueryType
+        ,List<ClassDeclarationSyntax> valueObjects
+        ) : base(classDeclarationSyntax,valueObjects)
     {
+        _valueObjects = valueObjects;
         _commandOrQueryType = commandOrQueryType;
-
+        
+        BaseDirectory =
+            "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
+        var subDir = _commandOrQueryType.ToString().StartsWith("Get")?"Queries":"Commands";
+        OutputDirectory = $"{BaseEntityClassName}\\{subDir}\\{_commandOrQueryType.ToString()}\\";
 
         switch (commandOrQueryType)
         {
             case CommandOrQueryType.Create:
-                // BaseTypeString= "RequestBase<Result<int>>";
-                // TargetClassName = CommandOrQueryIdentifier.Create(BaseEntityClassName);
                 MemberSelectionPredicate = _everythingApartFromIdPredicate;
                 break;
             case CommandOrQueryType.Update:
-                // BaseTypeString= "RequestBase<Result>";
-                // TargetClassName = CommandOrQueryIdentifier.Update(BaseEntityClassName);
                 MemberSelectionPredicate = _allMembersPredicate;
                 break;
             case CommandOrQueryType.Get:
-                // BaseTypeString= $"RequestBase<Maybe<{DtoIdentifier.Get(BaseEntityClassName)}>>";
-                // TargetClassName = CommandOrQueryIdentifier.Get(BaseEntityClassName);
                 MemberSelectionPredicate = _allMembersPredicate;
                 break;
             case CommandOrQueryType.Delete:
-                // BaseTypeString= "RequestBase<Result>";
-                // TargetClassName = CommandOrQueryIdentifier.Delete(BaseEntityClassName);
                 MemberSelectionPredicate = _onlyIdPredicate;
                 break;
             case CommandOrQueryType.GetList:
-                // BaseTypeString= $"RequestBase<IReadOnlyList<{DtoIdentifier.Get(classDeclarationSyntax.Identifier.Text)}>>";
-                // TargetClassName = CommandOrQueryIdentifier.GetList(BaseEntityClassName);
                 MemberSelectionPredicate = _allMembersPredicate;
                 break;
         }
@@ -118,31 +133,53 @@ public class CommandOrQueryGenerator : RecordTypeClassGenerator
         Delete
     }
     
-    // Func<PropertyDeclarationSyntax, bool> _everythingApartFromIdPredicate = syntax => syntax.Identifier.Text != "Id";
-    // Func<PropertyDeclarationSyntax, bool> _onlyIdPredicate = syntax => syntax.Identifier.Text == "Id";
-    // Func<PropertyDeclarationSyntax, bool> _allMembersPredicate = syntax => true;
-    
-    // protected Func<PropertyDeclarationSyntax, bool> MemberSelectionPredicate { get; set; } = p => true;
-    protected virtual UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)
+    // protected override List<MemberDeclarationSyntax> MemberDeclarationSyntaxes {
+    //     get
+    //     {
+    //         ///select all members from _classDeclarationSyntax that are properties
+    //         var propertiesMembersThatSatisfyPredicate =  ClassDeclaration.Members
+    //             .Where(m => m is PropertyDeclarationSyntax)
+    //             .Where(m=>ShouldIncludeMember((PropertyDeclarationSyntax)m, MemberSelectionPredicate))
+    //             .ToList();
+    //
+    //         var newList = new List<MemberDeclarationSyntax>();
+    //         foreach (var memberDeclarationSyntax in propertiesMembersThatSatisfyPredicate)
+    //         {
+    //             var propertyMember = (PropertyDeclarationSyntax) memberDeclarationSyntax;
+    //             var collectionTypeContainingValueObject = propertyMember.Type;
+    //             
+    //             if (collectionTypeContainingValueObject.ToString().Contains(BaseEntityClassName))
+    //             {
+    //                 
+    //                 var collectionTypeIdentifier=((GenericNameSyntax)collectionTypeContainingValueObject).Identifier.Value; //eg List
+    //
+    //                 var typeArgument=((GenericNameSyntax)collectionTypeContainingValueObject).TypeArgumentList.Arguments;
+    //                 var valueObject = _valueObjects.First(m => m.Identifier.ValueText==typeArgument.ToString());
+    //                 var replacementTypeArgument = GetNewTypeArgumentName(typeArgument);
+    //                 var newType = ParseTypeName(GetNewContainedTypeName(collectionTypeIdentifier, replacementTypeArgument));
+    //                 newList.Add(propertyMember.WithType(newType));
+    //                 newList.Add(GenerateNewClassDeclaration(valueObject, $"{_commandOrQueryType}{valueObject.Identifier}",
+    //                     m => m is PropertyDeclarationSyntax));
+    //
+    //             }
+    //             else
+    //             {
+    //                 newList.Add(propertyMember);
+    //             
+    //             }
+    //         }
+    //         
+    //         return newList;
+    //     }
+    // }
+
+    protected override string GetNewContainedTypeName(object? collectionTypeIdentifier, string replacementTypeArgument)
     {
-        return [];
+        return $"{collectionTypeIdentifier}<{replacementTypeArgument}>";
     }
 
-    private ClassDeclarationSyntax GenerateClassDeclarationSyntax(ClassDeclarationSyntax classDeclaration, string identifier) =>
-        ClassDeclaration(Identifier(identifier))
-            .AddModifiers(Token(SyntaxKind.PublicKeyword))
-            .AddBaseListTypes(GetBaseTypes())
-            .AddMembers(classDeclaration.Members.Where(m => ShouldIncludeMember((PropertyDeclarationSyntax)m,
-                MemberSelectionPredicate
-            )).ToArray());
-
-
-    public async  Task GenerateAndWriteCommandOrQueryCommandOrQuery()
+    protected override string GetNewTypeArgumentName(SeparatedSyntaxList<TypeSyntax> typeArgument)
     {
-        var classDeclarationSyntax = GenerateClassDeclarationSyntax(ClassDeclaration, TargetClassName);
-        await WriteClassToFile(classDeclarationSyntax,            GetUsingNamespaces(BaseEntityClassName), TargetClassName);
+        return $"{_commandOrQueryType}{typeArgument}";
     }
-
-
-
 }

@@ -4,6 +4,7 @@ using MediatR;
 using Npgsql;
 using TrackMyMacros.Application.Contracts.Persistence;
 using TrackMyMacros.Application.Features.Food.Queries.GetFoodList;
+using TrackMyMacros.Application.Features.FoodCombo.Queries.GetFoodComboList;
 using TrackMyMacros.Dtos;
 using TrackMyMacros.Dtos.FoodCombo;
 using TrackMyMacros.Infrastructure;

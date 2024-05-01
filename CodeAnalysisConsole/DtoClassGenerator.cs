@@ -10,28 +10,68 @@ namespace CodeGen;
 public class DtoClassGenerator : RecordTypeClassGenerator
 {
     private DtoType _dtoType;
-    private ClassDeclarationSyntax _classDeclarationSyntax;
+    // private ClassDeclarationSyntax _classDeclarationSyntax;
 
-    public static DtoClassGenerator CreateDtoClassGenerator(ClassDeclarationSyntax classDeclarationSyntax) =>
-        new DtoClassGenerator(classDeclarationSyntax, DtoType.Create);
+    public static DtoClassGenerator CreateDtoClassGenerator(ClassDeclarationSyntax classDeclarationSyntax,List<ClassDeclarationSyntax> valueObjects) =>
+        new DtoClassGenerator(classDeclarationSyntax, DtoType.Create,valueObjects);
     
-    public static DtoClassGenerator GetDtoClassGenerator(ClassDeclarationSyntax classDeclarationSyntax) =>
-        new DtoClassGenerator(classDeclarationSyntax, DtoType.Get);
+    public static DtoClassGenerator GetDtoClassGenerator(ClassDeclarationSyntax classDeclarationSyntax,List<ClassDeclarationSyntax> valueObjects) =>
+        new DtoClassGenerator(classDeclarationSyntax, DtoType.Get,valueObjects);
     
-    public static DtoClassGenerator UpdateDtoClassGenerator(ClassDeclarationSyntax classDeclarationSyntax) =>
-        new DtoClassGenerator(classDeclarationSyntax, DtoType.Update);
+    public static DtoClassGenerator UpdateDtoClassGenerator(ClassDeclarationSyntax classDeclarationSyntax,List<ClassDeclarationSyntax> valueObjects) =>
+        new DtoClassGenerator(classDeclarationSyntax, DtoType.Update,valueObjects);
     
-    public static DtoClassGenerator DeleteDtoClassGenerator(ClassDeclarationSyntax classDeclarationSyntax) =>
-        new DtoClassGenerator(classDeclarationSyntax, DtoType.Delete);
+    public static DtoClassGenerator DeleteDtoClassGenerator(ClassDeclarationSyntax classDeclarationSyntax,List<ClassDeclarationSyntax> valueObjects) =>
+        new DtoClassGenerator(classDeclarationSyntax, DtoType.Delete,valueObjects);
 
-    protected override List<MemberDeclarationSyntax> MemberDeclarationSyntaxes {
-        get
-        {
-            return _classDeclarationSyntax.Members.Where(m => ShouldIncludeMember((PropertyDeclarationSyntax)m,
-                MemberSelectionPredicate)).ToList();
-        }
+    // protected override List<MemberDeclarationSyntax> MemberDeclarationSyntaxes {
+    //     get
+    //     {
+    //         ///select all members from _classDeclarationSyntax that are properties
+    //         var x =  ClassDeclaration.Members
+    //             .Where(m => m is PropertyDeclarationSyntax)
+    //             .Where(m=>ShouldIncludeMember((PropertyDeclarationSyntax)m, MemberSelectionPredicate))
+    //             .ToList();
+    //
+    //         var newList = new List<MemberDeclarationSyntax>();
+    //         foreach (var memberDeclarationSyntax in x)
+    //         {
+    //             var y = (PropertyDeclarationSyntax) memberDeclarationSyntax;
+    //             var z = y.Type;
+    //             if (z.ToString().Contains(BaseEntityClassName))
+    //             {
+    //                 var containedType=((GenericNameSyntax)z).TypeArgumentList.Arguments;
+    //                 //containedType will be FoodComboAmount
+    //                 //we want to replace FoodComboAmount with GetFoodComboAmountDto
+    //                 var replacement = $"{_dtoType}{containedType}Dto"; 
+    //                 var newType = ParseTypeName(replacement);
+    //                 //change the type of the property to the new type
+    //                 //add y but with the new type to the new list
+    //                 // var p = y.WithType(newType);
+    //                 newList.Add(y.WithType(newType));
+    //                 
+    //             }
+    //             else
+    //             {
+    //                 newList.Add(y);
+    //             
+    //             }
+    //         }
+    //         
+    //         return newList;
+    //     }
+    // }
+
+    protected override string GetNewContainedTypeName(object? collectionTypeIdentifier, string replacementTypeArgument)
+    {
+        return $"{collectionTypeIdentifier}<{replacementTypeArgument}>";
     }
 
+    protected override string GetNewTypeArgumentName(SeparatedSyntaxList<TypeSyntax> typeArgument)
+    {
+        return $"{_dtoType}{typeArgument}Dto";
+    }
+    
     protected override string TargetClassName
     {
         get
@@ -52,9 +92,13 @@ public class DtoClassGenerator : RecordTypeClassGenerator
         }
     }
 
-    private DtoClassGenerator(ClassDeclarationSyntax classDeclarationSyntax, DtoType dtoType) : base(classDeclarationSyntax)
+    private DtoClassGenerator(ClassDeclarationSyntax classDeclarationSyntax, DtoType dtoType,List<ClassDeclarationSyntax> valueObjects) 
+        : base(classDeclarationSyntax,valueObjects)
     {
-        _classDeclarationSyntax = classDeclarationSyntax;
+        // _classDeclarationSyntax = classDeclarationSyntax;
+        BaseDirectory= "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Dtos\\";
+        OutputDirectory= BaseEntityClassName;
+
         _dtoType = dtoType;
         switch (dtoType)
         {
@@ -80,56 +124,4 @@ public class DtoClassGenerator : RecordTypeClassGenerator
         Get,
         Delete
     }
-    
-    // Func<PropertyDeclarationSyntax, bool> _everythingApartFromIdPredicate = syntax => syntax.Identifier.Text != "Id";
-    // Func<PropertyDeclarationSyntax, bool> _onlyIdPredicate = syntax => syntax.Identifier.Text == "Id";
-    // Func<PropertyDeclarationSyntax, bool> _allMembersPredicate = syntax => true;
-    //
-    // protected Func<PropertyDeclarationSyntax, bool> MemberSelectionPredicate { get; set; } = p => true;
-    protected virtual UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)
-    {
-        return [];
-    }
-
-    // protected ClassDeclarationSyntax GenerateClassDeclarationSyntax(ClassDeclarationSyntax classDeclaration, string identifier) =>
-    //     ClassDeclaration(Identifier(identifier))
-    //         .AddModifiers(Token(SyntaxKind.PublicKeyword))
-    //         .AddMembers(classDeclaration.Members.Where(m => ShouldIncludeMember((PropertyDeclarationSyntax)m,
-    //             MemberSelectionPredicate
-    //         )).ToArray());
-
-    // static bool ShouldIncludeMember(PropertyDeclarationSyntax propertyDeclaration,
-    //     Func<PropertyDeclarationSyntax, bool> predicate) =>
-    //     propertyDeclaration.AttributeLists.All(
-    //         a => a.Attributes.All(
-    //             attr => attr.Name.ToString() != "CodeGenIgnoreMember")) && predicate(propertyDeclaration);
-    // public async  Task GenerateAndWriteCommandOrQueryDtoClass()
-    // {
-    //     var classDeclarationSyntax = GenerateClassDeclarationSyntax(ClassDeclaration, TargetClassName);
-    //     await WriteClassToFile(classDeclarationSyntax,            GetUsingNamespaces(BaseEntityClassName), TargetClassName);
-    // }
-
-
-
-}
- 
-public abstract class RecordTypeClassGenerator:Generator
-{
-    protected bool ShouldIncludeMember(PropertyDeclarationSyntax propertyDeclaration,
-        Func<PropertyDeclarationSyntax, bool> predicate) =>
-        propertyDeclaration.AttributeLists.All(
-            a => a.Attributes.All(
-                attr => attr.Name.ToString() != "CodeGenIgnoreMember")) && predicate(propertyDeclaration);
-    
-    protected Func<PropertyDeclarationSyntax, bool> _everythingApartFromIdPredicate = syntax => syntax.Identifier.Text != "Id";
-    protected Func<PropertyDeclarationSyntax, bool> _onlyIdPredicate = syntax => syntax.Identifier.Text == "Id";
-    protected Func<PropertyDeclarationSyntax, bool> _allMembersPredicate = syntax => true;
-    
-    protected Func<PropertyDeclarationSyntax, bool> MemberSelectionPredicate { get; set; } = p => true;
-
-    public RecordTypeClassGenerator(ClassDeclarationSyntax classDeclarationSyntax) : base(classDeclarationSyntax)
-    {
-        
-    }
-
 }

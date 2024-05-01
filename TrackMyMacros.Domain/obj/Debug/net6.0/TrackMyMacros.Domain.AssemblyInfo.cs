@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrackMyMacros.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5372442bda769ce49c547d7d51a93c4af2be8a35")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80013967e28556dc36a272a160a6cb479685acdf")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrackMyMacros.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrackMyMacros.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

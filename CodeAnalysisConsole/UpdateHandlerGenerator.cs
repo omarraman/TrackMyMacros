@@ -7,6 +7,9 @@ public class UpdateHandlerGenerator : HandlerClassGenerator
 {
     public UpdateHandlerGenerator(ClassDeclarationSyntax classDeclarationSyntax) : base(classDeclarationSyntax, HandlerType.Update)
     {
+        BaseDirectory =
+            "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
+        OutputDirectory = $"{BaseEntityClassName}\\Commands\\Update\\";
         HandlerMethodString.Append(
             $@"public class Test{{
                                     public async Task<Result> Handle(Update{BaseEntityClassName}Command request, CancellationToken cancellationToken)
@@ -23,10 +26,6 @@ public class UpdateHandlerGenerator : HandlerClassGenerator
                                         return new SuccessResult();
                                     }}
             }}");
-
-        // _baseTypeString = $"IRequestHandler<{CommandOrQueryIdentifier.Update(BaseEntityClassName)},Result>";
-        // // HandlerName = CommandOrQueryHandlerIdentifier.Update(BaseEntityClassName);
-        // TargetClassName = CommandOrQueryHandlerIdentifier.Update(BaseEntityClassName);
     }
 
     protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)

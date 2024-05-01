@@ -1,8 +1,10 @@
 ﻿using Ardalis.GuardClauses;
+using TrackMyMacros.Attributes;
 using TrackMyMacros.Domain.Common;
 
 namespace TrackMyMacros.Domain.ValueObjects;
 
+[CodeGen]
 public class FoodComboAmount:ValueObject<FoodComboAmount>
 {
 

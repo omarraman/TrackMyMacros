@@ -52,9 +52,14 @@ public class MappingProfile:Profile
 
         CreateMap<CreateFoodComboDto, CreateFoodComboCommand>();
         CreateMap<CreateFoodComboAmount, FoodComboAmount>();
-        CreateMap<CreateFoodComboCommand, FoodCombo>()
-            .ForMember(m=>m.FoodComboAmounts,
-                o=>o.MapFrom(p=>p.FoodComboAmounts));
+        CreateMap<CreateFoodComboCommand, FoodCombo>();
+            // .ForMember(m=>m.FoodComboAmounts,
+            //     o=>o.MapFrom(p=>p.FoodComboAmounts));
+        // CreateMap<CreateFoodComboCommand, FoodCombo>()
+        //     .ForMember(m=>m.FoodComboAmounts,
+        //         o=>o.MapFrom(p=>p.FoodComboAmounts));
+
+        
         CreateMap<CreateFoodComboAmountDto, CreateFoodComboAmount>();
         
         
@@ -66,16 +71,5 @@ public class MappingProfile:Profile
             .ForMember(m=>m.Quantity,o=>o.MapFrom(p=>p.Quantity))
             ;
 
-
-        // CreateMap<FoodAmount, GetFoodAmountDto>().ForMember(gfad=>gfad.GetFoodDto,
-        //         opt=>opt.MapFrom(gfa=>gfa.Food)
-        //     );
-        // CreateMap<Food, GetFoodDto>()
-        //     .ForMember(gfd=>gfd.CarbohydrateAmount, 
-        //     opt=>opt.MapFrom(f=>f.CarbohydrateAmount.Quantity))
-        //     .ForMember(gfd=>gfd.ProteinAmount, 
-        //     opt=>opt.MapFrom(f=>f.ProteinAmount.Quantity))
-        //     .ForMember(gfd=>gfd.FatAmount, 
-        //         opt=>opt.MapFrom(f=>f.FatAmount.Quantity));
     }
 }

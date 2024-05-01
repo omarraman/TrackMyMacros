@@ -6,7 +6,7 @@ public class CreateFoodComboCommand:RequestBase<Result<Guid>>
     public string Name { get; set; }
     public List<CreateFoodComboAmount> FoodComboAmounts { get; set; }
     
-    
+
 
 }
 
@@ -19,3 +19,5 @@ public class CreateFoodComboAmount
     public double Carbohydrate { get; set; }
     public double Fat { get; set; }
 }
+
+

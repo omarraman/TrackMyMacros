@@ -1,7 +1,6 @@
-﻿using TrackMyMacros.Dtos;
-using TrackMyMacros.Dtos.FoodCombo;
+﻿using TrackMyMacros.Dtos.FoodCombo;
 
-namespace TrackMyMacros.Application.Features.Food.Queries.GetFoodList;
+namespace TrackMyMacros.Application.Features.FoodCombo.Queries.GetFoodComboList;
 
 public class GetFoodComboListQuery:RequestBase<IReadOnlyList<GetFoodComboDto>>
 {

@@ -2,7 +2,6 @@
 
 namespace TrackMyMacros.Domain.Aggregates;
 
-[CodeGen]
 public class Food 
 {
     public int Id { get; set; }

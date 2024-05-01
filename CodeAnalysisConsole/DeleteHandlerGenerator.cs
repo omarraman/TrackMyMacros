@@ -12,6 +12,9 @@ public class DeleteHandlerGenerator : HandlerClassGenerator
     public DeleteHandlerGenerator(ClassDeclarationSyntax classDeclarationSyntax) : base(classDeclarationSyntax, 
          HandlerType.Delete)
     {
+        BaseDirectory =
+            "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
+        OutputDirectory = $"{BaseEntityClassName}\\commands\\Delete\\";
         HandlerMethodString.Append("public class Test{    " +
                   $@"public async Task<Result> Handle(Delete{BaseEntityClassName}Command request, CancellationToken cancellationToken)
                     {{

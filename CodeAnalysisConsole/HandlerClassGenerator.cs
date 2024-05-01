@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -24,8 +24,8 @@ public abstract class HandlerClassGenerator : Generator
         HandlerType handlerType) : base(classDeclarationSyntax)
     {
         _handlerType = handlerType;
-        // BaseTypeString = GetBaseTypeString();
-        // TargetClassName = GetTargetClassName(handlerType);
+
+
     }
 
     
@@ -36,15 +36,15 @@ public abstract class HandlerClassGenerator : Generator
             switch (_handlerType)
             {
                 case HandlerType.Create:
-                    return "IRequestHandler<CreateBaseEntityClassName,Result<Guid>>";
+                    return $"IRequestHandler<{CommandOrQueryIdentifier.Create(BaseEntityClassName)},Result<Guid>>";
                 case HandlerType.Update:
-                    return "IRequestHandler<UpdateBaseEntityClassName,Result>";
+                    return $"IRequestHandler<{CommandOrQueryIdentifier.Update(BaseEntityClassName)},Result>";
                 case HandlerType.Get:
-                    return "IRequestHandler<GetBaseEntityClassName,Maybe<DtoBaseEntityClassName>>";
+                    return $"IRequestHandler<{CommandOrQueryIdentifier.Get(BaseEntityClassName)},Maybe<{DtoIdentifier.Get(BaseEntityClassName)}>>";
                 case HandlerType.Delete:
-                    return "IRequestHandler<DeleteBaseEntityClassName,Result>";
+                    return $"IRequestHandler<{CommandOrQueryIdentifier.Delete(BaseEntityClassName)},Result>";
                 case HandlerType.GetList:
-                    return "IRequestHandler<IReadOnlyList<GetListBaseEntityClassName>,DtoBaseEntityClassName>";
+                    return $"IRequestHandler<IReadOnlyList<{CommandOrQueryIdentifier.GetList(BaseEntityClassName)}>,{DtoIdentifier.Get(BaseEntityClassName)}>";
                 default:
                     throw new System.NotImplementedException();
             }
@@ -82,18 +82,7 @@ public abstract class HandlerClassGenerator : Generator
         }
     }
 
-    // protected override string GetTargetClassName()
-    // {
-    //     var extension = "CommandHandler";
-    //
-    //     if (_handlerType.ToString().StartsWith("Get"))
-    //         extension = "QueryHandler";
-    //
-    //     return _handlerType.ToString() + BaseEntityClassName + extension;
-    // }
-
     protected StringBuilder HandlerMethodString { get; set; } = new StringBuilder();
-    // protected string HandlerName { get; set; }
 
     protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)
     {
@@ -103,18 +92,6 @@ public abstract class HandlerClassGenerator : Generator
             UsingDirective(ParseName(UsingStrings.Mediatr)),
         };
     }
-
-    // protected ClassDeclarationSyntax GenerateClassDeclarationSyntax(ClassDeclarationSyntax classDeclaration,
-    //     FieldDeclarationSyntax[] fieldDeclarations,
-    //     ConstructorDeclarationSyntax constructor,
-    //     MethodDeclarationSyntax handlerMethodDeclaration,
-    //     // SimpleBaseTypeSyntax baseListTypes
-    //     ) =>
-    //     GenerateClassDeclarationSyntax2(classDeclaration)
-    //         // .AddBaseListTypes(baseListTypes)
-    //         .AddMembers(fieldDeclarations)
-    //         .AddMembers(constructor)
-    //         .AddMembers(handlerMethodDeclaration);
 
     protected override Maybe<ConstructorDeclarationSyntax> ConstructorDeclarationSyntax {
         get
@@ -137,53 +114,6 @@ public abstract class HandlerClassGenerator : Generator
         }
     }
 
-    // public ConstructorDeclarationSyntax GetConstructor(string baseEntityClassName)
-    // {
-    //
-    //     return ConstructorDeclaration(Identifier(TargetClassName))
-    //         .AddModifiers(Token(SyntaxKind.PublicKeyword))
-    //         .AddParameterListParameters(Parameter(Identifier("mapper")).WithType(ParseTypeName("IMapper")))
-    //         .AddParameterListParameters(Parameter(Identifier($"{BaseEntityClassNameInCamelCase}Repository"))
-    //             .WithType(ParseTypeName($"I{baseEntityClassName}Repository")))
-    //         .AddBodyStatements(
-    //             ExpressionStatement(
-    //                 AssignmentExpression(SyntaxKind.SimpleAssignmentExpression,
-    //                     IdentifierName($"_{BaseEntityClassNameInCamelCase}Repository"),
-    //                     IdentifierName($"{BaseEntityClassNameInCamelCase}Repository"))),
-    //             ExpressionStatement(
-    //                 AssignmentExpression(SyntaxKind.SimpleAssignmentExpression,
-    //                     IdentifierName("_mapper"),
-    //                     IdentifierName("mapper")))
-    //         );
-    // }
-
-
-
-    // public async Task GenerateAndWriteCommandOrQueryHandlerClass()
-    // {
-    //     SyntaxTree tree = CSharpSyntaxTree.ParseText(HandlerMethodString.ToString());
-    //
-    //     var classDeclarationSyntax = GenerateClassDeclarationSyntax(ClassDeclaration, TargetClassName,
-    //         [GetMapperFieldDeclaration(), GetRepositoryFieldDeclaration(BaseEntityClassName)],
-    //         GetConstructor(BaseEntityClassName),
-    //         tree.GetCompilationUnitRoot().DescendantNodes().OfType<MethodDeclarationSyntax>().First(),
-    //         GetBaseTypes());
-    //     await WriteClassToFile(classDeclarationSyntax,
-    //         GetUsingNamespaces(BaseEntityClassName),
-    //         TargetClassName);
-    // }
-
-    private FieldDeclarationSyntax GetFieldDeclaration(string fieldName, string typeName) =>
-        FieldDeclaration(
-            VariableDeclaration(ParseTypeName(typeName))
-                .AddVariables(VariableDeclarator(Identifier(fieldName)))
-        ).AddModifiers(Token(SyntaxKind.PrivateKeyword));
-
-    // private FieldDeclarationSyntax GetFieldDeclaration(string fieldName, TypeSyntax typeSyntax) =>
-    //     FieldDeclaration(
-    //         VariableDeclaration(typeSyntax)
-    //             .AddVariables(VariableDeclarator(Identifier(fieldName)))
-    //     ).AddModifiers(Token(SyntaxKind.PrivateKeyword));
 
     protected FieldDeclarationSyntax GetMapperFieldDeclaration() =>
         GetFieldDeclaration("_mapper", "IMapper");

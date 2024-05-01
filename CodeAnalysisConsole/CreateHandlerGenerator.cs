@@ -5,9 +5,14 @@ namespace CodeGen;
 
 public class CreateHandlerGenerator : HandlerClassGenerator
 {
-    public CreateHandlerGenerator(ClassDeclarationSyntax classDeclarationSyntax) : 
+    public CreateHandlerGenerator(ClassDeclarationSyntax classDeclarationSyntax) :
         base(classDeclarationSyntax, HandlerType.Create)
     {
+        BaseDirectory =
+            "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
+        OutputDirectory = $"{BaseEntityClassName}\\commands\\Create\\";
+
+
         HandlerMethodString.Append(
             $@"public class Test{{
                     public async Task<Result<Guid>> Handle(Create{BaseEntityClassName}Command request, CancellationToken cancellationToken)
@@ -25,9 +30,6 @@ public class CreateHandlerGenerator : HandlerClassGenerator
                         return new SuccessResult<Guid>(entity.Id);
                     }}
             }}");
-        //
-        // _baseTypeString = $"IRequestHandler<{CommandOrQueryIdentifier.Create(BaseEntityClassName)},Result<Guid>>";
-        // TargetClassName = CommandOrQueryHandlerIdentifier.Create(BaseEntityClassName);
     }
 
     protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)
@@ -41,11 +43,4 @@ public class CreateHandlerGenerator : HandlerClassGenerator
         };
         return base.GetUsingNamespaces(baseEntityName).Union(directives).ToArray();
     }
-
-    // private  SimpleBaseTypeSyntax GetBaseTypes(string className)
-    // {
-    //     return SimpleBaseType(
-    //         ParseTypeName(
-    //             $"IRequestHandler<Get{className}Query,Maybe<{DtoIdentifier.Get(className)}>>"));
-    // }
 }
