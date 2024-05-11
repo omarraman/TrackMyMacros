@@ -1,0 +1,19 @@
+﻿@if (FoodCombos != null)
+{
+    <RadzenDropDown Style="width: auto" @bind-Value=@SelectedFoodComboId Data=@FoodCombos TextProperty="Name" ValueProperty="Id" 
+                    FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" FilterOperator="StringFilterOperator.StartsWith" AllowFiltering="true"
+                    Placeholder="Select Food"/>
+    
+    <RadzenButton Text="Cancel" ButtonStyle="ButtonStyle.Secondary" Click="Cancel"/> 
+    <RadzenButton Text="Ok" ButtonStyle="ButtonStyle.Secondary" Click="SaveAndClose"/>
+}
+else{
+    <div>Loading...</div>
+}
+
+@foreach (var alert in AlertMessages)
+{
+    <RadzenAlert AlertStyle="AlertStyle.Warning" Variant="Variant.Flat" Shade="Shade.Lighter">
+        Record saved
+    </RadzenAlert>
+}

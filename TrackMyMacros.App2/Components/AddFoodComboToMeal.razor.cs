@@ -14,7 +14,7 @@ public partial class AddFoodComboToMeal
     [Inject] public DialogService DialogService { get; set; }
 
     [Parameter]
-    public EventCallback<MealViewModel> OnSaveAndClose { get; set; }
+    public EventCallback<FoodComboViewModel> OnSaveAndClose { get; set; }
 
     public IReadOnlyList<GetFoodComboDto> FoodCombos { get; set; }
     public Guid SelectedFoodComboId { get; set; }
@@ -43,9 +43,9 @@ public partial class AddFoodComboToMeal
             StateHasChanged();
             return;
         }
-        var mealViewModel = await _foodComboDataService.GetMealCombo2(SelectedFoodComboId);
+        var foodComboViewModel = await _foodComboDataService.GetMealCombo(SelectedFoodComboId);
         
-        await OnSaveAndClose.InvokeAsync(mealViewModel);
+        await OnSaveAndClose.InvokeAsync(foodComboViewModel);
         DialogService.Close();
     }
     

@@ -10,6 +10,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseSerilog((context, loggerConfiguration) => loggerConfiguration
      .WriteTo.Console()
+     .WriteTo.File
+     (
+         "log.txt", // <<<<<<<<<<<<<<<<<<<<<<
+         rollingInterval: RollingInterval.Day,
+         retainedFileCountLimit: 7
+     )
      .ReadFrom.Configuration(context.Configuration));
 
 var app = builder

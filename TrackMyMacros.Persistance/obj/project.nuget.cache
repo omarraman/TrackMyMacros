@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6eLAGYH7wWWfcooww8Uek/CA0E6ChnlzX4F4C4anwZFm1yjXCTfe0s6Q3HWT9el0zk4Yus+ITRbFQF/cSZ9S1Q==",
+  "dgSpecHash": "ttMPCFyNzMs94CxGLmVYs5iltk47x559NnGljaI503mEq9ykgF5rrxgkK4AVd1DUi1D0G9/3I2wiek+76IF4gA==",
   "success": true,
   "projectFilePath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Persistance\\TrackMyMacros.Persistance.csproj",
   "expectedPackageFiles": [
@@ -27,7 +27,11 @@
     "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\npgsql\\8.0.0-preview.4\\npgsql.8.0.0-preview.4.nupkg.sha512",
-    "C:\\Users\\OmarRaman\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.4\\npgsql.entityframeworkcore.postgresql.7.0.4.nupkg.sha512"
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.4\\npgsql.entityframeworkcore.postgresql.7.0.4.nupkg.sha512",
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.17\\microsoft.netcore.app.host.win-x64.7.0.17.nupkg.sha512"
   ],
   "logs": [
     {

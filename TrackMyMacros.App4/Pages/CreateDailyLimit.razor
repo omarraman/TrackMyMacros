@@ -1,0 +1,47 @@
+﻿@page "/CreateOrUpdateDailyLimits"
+<h3>Add Food</h3>
+@* *@
+@* *@
+
+@if (DailyLimits != null)
+{
+    <EditForm Model="@DailyLimits" OnValidSubmit="@HandleValidSubmit" id="test">
+
+        <RadzenCard>
+            Calories <RadzenNumeric TValue="int" @bind-Value="DailyLimits.Calories">Calories</RadzenNumeric>
+        </RadzenCard>
+        <RadzenCard>
+            Weight (kg) <RadzenNumeric TValue="double" @bind-Value="DailyLimits.WeightInKg">Quantity</RadzenNumeric>
+        </RadzenCard>
+        <RadzenCard>
+            Protein @DailyLimits.Protein
+        </RadzenCard>
+        <RadzenCard>
+            Carbohydrate @DailyLimits.Carbohydrate
+        </RadzenCard>
+        <RadzenCard>
+            Fat @DailyLimits.Fat
+        </RadzenCard>
+        <RadzenCard>
+            Weekday meals per day <RadzenNumeric TValue="int" @bind-Value="DailyLimits.WeekdaysMealsPerDay">Quantity</RadzenNumeric>
+        </RadzenCard>
+        <RadzenCard>
+            Weekend meals per day <RadzenNumeric TValue="int" @bind-Value="DailyLimits.WeekendMealsPerDay">Quantity</RadzenNumeric>
+        </RadzenCard>
+        <ValidationSummary></ValidationSummary>
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+    </EditForm>
+
+    <button type="submit" class="btn btn-primary" form="test">Save changes</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    @foreach (var alert in AlertMessages)
+    {
+        <RadzenAlert AlertStyle="AlertStyle.Warning" Variant="Variant.Flat" Shade="Shade.Lighter">
+            @alert
+        </RadzenAlert>
+    }
+}
+else
+{
+    <p>Loading...</p>
+}

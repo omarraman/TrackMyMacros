@@ -33,8 +33,17 @@ public class FoodController:ControllerBase
     [ProducesResponseType(statusCode:StatusCodes.Status200OK)]
     public async Task<int> AddFood(CreateFoodDto createFoodDto)
     {
-       var result =  await _mediator.Send(_mapper.Map<CreateFoodCommand>(createFoodDto));
-         return result.Value;
+        try
+        {
+            var result =  await _mediator.Send(_mapper.Map<CreateFoodCommand>(createFoodDto));
+            return result.Value;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+
     }
     
     [HttpPut(Name = "UpdateFood")]

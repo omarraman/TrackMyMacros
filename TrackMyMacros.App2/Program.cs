@@ -24,6 +24,7 @@ builder.Services.AddSingleton<IFoodDataService,FoodDataService>();
 builder.Services.AddSingleton<IDailyLimitsDataService,DailyLimitsDataService>();
 builder.Services.AddScoped<IUomDataService, UomDataService>();
 builder.Services.AddScoped<IFoodComboDataService, FoodComboDataService>();
+builder.Services.AddScoped<ILogDataService, LogDataService>();
 
 builder.Services.AddScoped<DialogService>();
 

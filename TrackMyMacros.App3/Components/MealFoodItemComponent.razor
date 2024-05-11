@@ -1,0 +1,70 @@
+﻿@using System.Xml
+@if (SelectedFood.HasValue)
+{
+
+
+    <div class="row g-0 py-1">
+        <div class="col-2 col-sm-1"z>
+            <RadzenButton Style="padding-right: 0;padding-left: 0;margin-left: 0;margin-right: 0" Click="@RemoveFood" Icon="remove" ButtonStyle="ButtonStyle.Primary"/>
+        </div>
+        <div class="col-1 col-sm-1">
+            @FoodAmount.Quantity
+            @* <RadzenNumeric Style="width: auto" Change=@OnChangeQuantity TextAlign="TextAlign.Left" ShowUpDown="false" TValue="double" @bind-Value=@FoodAmount.Quantity></RadzenNumeric> *@
+        </div>
+        <div class="col-9  col-sm-10">
+            <RadzenDropDown Style="width: auto" @bind-Value=@SelectedFoodId Data=@FoodList TextProperty="Name" ValueProperty="Id" Change="@(o => OnChangeFood(o))"
+                            FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" FilterOperator="StringFilterOperator.StartsWith" AllowFiltering="true"
+                            Placeholder="Select Food"/>
+        </div>
+
+    </div>
+
+    <div class="row my-2">
+        <div class="col-1">
+            <RadzenCheckBox @bind-Value=@SliderDisabled/>
+        </div>
+        <div class="col-11 px-2">
+            <RadzenSlider @bind-Value=@FoodAmount.Quantity Change=@OnChangeQuantity TValue="double" Max="250" Step="5" style="width: 100%" Disabled="SliderDisabled"/>
+        </div>
+    </div>
+
+    <div class="row">
+        @* <div> *@
+            @* <div class="col-3" style="background-color: greenyellow"> *@
+            @*     @Double.Round(@FoodAmount.Protein, 1) *@
+            @* </div> *@
+            @* <div class="col-3" style="background-color: #0dcaf0"> *@
+            @*     @Double.Round(@FoodAmount.Carbohydrate, 1) *@
+            @* *@
+            @* </div> *@
+            @* <div class="col-3" style="background-color: yellow"> *@
+            @* *@
+            @*     @Double.Round(@FoodAmount.Fat, 1) *@
+            @* </div> *@
+            @* <div class="col-3" style="background-color: #babbbc"> *@
+            @*     @Double.Round(@FoodAmount.Calories, 1) *@
+            @* </div> *@
+            <div class="col-3" style="background-color: greenyellow">
+                @Double.Round(@FoodAmount.Protein, 1)
+            </div>
+            <div class="col-3" style="background-color: #0dcaf0">
+                @Double.Round(@FoodAmount.Carbohydrate, 1)
+
+            </div>
+            <div class="col-3" style="background-color: yellow">
+
+                @Double.Round(@FoodAmount.Fat, 1)
+            </div>
+            <div class="col-3" style="background-color: #babbbc">
+                @Double.Round(@FoodAmount.Calories, 1)
+            </div>
+        @* </div> *@
+
+    </div>
+}
+else
+{
+    <div>
+        N/A
+    </div>
+}

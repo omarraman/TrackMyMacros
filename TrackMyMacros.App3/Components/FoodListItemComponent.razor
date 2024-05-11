@@ -1,0 +1,39 @@
+﻿<RadzenCard Style="width: 100%; padding: 0;">
+    <div class="row">
+        <div class="col-2">
+            
+        </div>
+                <div class="col-2">
+                    
+                </div>
+        <div class="col-2">
+            
+        </div>
+        <div class="col-2">
+            
+        </div>
+        <div class="col-2">
+            
+        </div>
+        <div class="col-2">
+            
+        </div>
+
+        Name <RadzenTextBox @bind-Value="@FoodListItemViewModel.Name">Name</RadzenTextBox>
+        Fat : <RadzenNumeric TValue="double" @bind-Value=@FoodListItemViewModel.Fat></RadzenNumeric> g
+        Protein : <RadzenNumeric TValue="double" @bind-Value=@FoodListItemViewModel.Protein></RadzenNumeric> g
+        Carbs : <RadzenNumeric TValue="double" @bind-Value=@FoodListItemViewModel.Carbohydrate></RadzenNumeric> g
+        UOM : `
+        @if (Uoms != null)
+        {
+            <RadzenDropDown @bind-Value=@FoodListItemViewModel.UomId Data=@Uoms TextProperty="Name" ValueProperty="Id" Style="width: 100%; max-width: 400px;"/>
+        }
+        else
+        {
+            <div>Loading</div>
+        }
+
+        <RadzenButton Click="@OnSaveFood" Text="Save" ButtonStyle="ButtonStyle.Primary"/>
+    </div>
+
+</RadzenCard>

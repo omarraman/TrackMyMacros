@@ -1,0 +1,7 @@
+﻿@using System.Diagnostics
+@using TrackMyMacros.Dtos
+@foreach( var foodAmount in @Meal.FoodAmounts)
+{
+    Debug.WriteLine(foodAmount.Quantity);
+    <MealFoodItemComponent @Quantity="@foodAmount.Quantity" @FoodId="foodAmount"></MealFoodItemComponent>
+}

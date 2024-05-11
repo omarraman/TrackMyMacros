@@ -34,16 +34,16 @@ public partial class FoodComboList
 
     private async void EditFoodCombo(Guid id)
     {
-        var foodComboDto = await _foodComboDataService.GetMealCombo(id);
-        var meal= Mapper.Map<MealViewModel>(foodComboDto);
-        meal.RefreshTotals();
-        var json = JsonConvert.SerializeObject(meal);
-        var mealCopy = JsonConvert.DeserializeObject<MealViewModel>(json);
+        var viewModel = await _foodComboDataService.GetMealCombo(id);
+        // var meal= Mapper.Map<FoodComboViewModel>(foodComboDto);
+        viewModel.RefreshTotals();
+        var json = JsonConvert.SerializeObject(viewModel);
+        var viewModelCopy = JsonConvert.DeserializeObject<FoodComboViewModel>(json);
         await DialogService.OpenAsync<CreateFoodComboDialog>("Edit Food Combo", new Dictionary<string, object>
         {
-            { "Meal", mealCopy },
+            { "Meal", viewModelCopy },
             { "DialogService", DialogService },
-            {"FoodComboName", foodComboDto.Name},
+            {"FoodComboName", viewModel.Name},
             {"EditMode", true} ,
             {"Id", id},
             {"OnDialogClose", EventCallback.Factory.Create(this, OnDialogClose)}

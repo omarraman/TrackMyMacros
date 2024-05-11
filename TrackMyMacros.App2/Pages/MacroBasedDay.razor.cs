@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices.JavaScript;
+﻿using System.Diagnostics;
+using System.Runtime.InteropServices.JavaScript;
 using Microsoft.AspNetCore.Components;
 using Newtonsoft.Json;
 using Radzen;
@@ -112,21 +113,24 @@ public partial class MacroBasedDay
 
     public async Task ShowCopyMealsDialog()
     {
-        await DialogService.OpenAsync<CopyMealsToDateDialog>("Copy Meals", new Dictionary<string, object>
+        Debug.WriteLine("ShowCopyMealsDialog");
+        await DialogService.OpenAsync<CopyMealsToDateDialog>("Copy Meals1", new Dictionary<string, object>
         {
             { "DialogService", DialogService },
             { "OnCopyMealsToDate", EventCallback.Factory.Create<DateOnly>(this,CopyMealsFromCurrentDayToAnother) }
         });
         // , new DialogOptions { Width = "400px" }
     }
-    
-    public async Task CopyMealsFromCurrentDayToAnother(DateOnly targetDate)
+
+    private async Task CopyMealsFromCurrentDayToAnother(DateOnly targetDate)
     {
         var getDay = await DayDataService.GetDay<MacroBasedDayViewModel>(targetDate);
         MacroBasedDayViewModel targetDay;
         if (getDay.HasNoValue)
         {
-            targetDay = new MacroBasedDayViewModel(targetDate,
+            Console.WriteLine("CopyMealsFromCurrentDayToAnother2");
+            Debug.WriteLine("CopyMealsFromCurrentDayToAnother2");
+            targetDay = new MacroBasedDayViewModel(targetDate,  
                 _dailyLimitsResult.Value.WeekdaysMealsPerDay,
                 _dailyLimitsResult.Value.Protein
                 , _dailyLimitsResult.Value.Carbohydrate
@@ -134,9 +138,12 @@ public partial class MacroBasedDay
         }
         else
         {
+            Console.WriteLine("CopyMealsFromCurrentDayToAnother3");
+            Debug.WriteLine("CopyMealsFromCurrentDayToAnother3");
             targetDay = getDay.Value;
-            targetDay.Meals.Clear();
         }
+        targetDay.Meals.Clear();
+
         foreach (var meal in _day.Meals)
         {
             targetDay.Meals.Add(meal);

@@ -9,7 +9,6 @@
         </div>
         <div class="col-1 col-sm-1">
             @FoodAmount.Quantity
-            @* <RadzenNumeric Style="width: auto" Change=@OnChangeQuantity TextAlign="TextAlign.Left" ShowUpDown="false" TValue="double" @bind-Value=@FoodAmount.Quantity></RadzenNumeric> *@
         </div>
         <div class="col-9  col-sm-10">
             <RadzenDropDown Style="width: auto" @bind-Value=@SelectedFoodId Data=@FoodList TextProperty="Name" ValueProperty="Id" Change="@(o => OnChangeFood(o))"

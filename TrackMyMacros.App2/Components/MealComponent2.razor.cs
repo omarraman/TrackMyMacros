@@ -108,7 +108,7 @@ public partial class MealComponent2
     private async void CreateFoodCombo()
     {
         var json = JsonConvert.SerializeObject(Meal);
-        var mealCopy = JsonConvert.DeserializeObject<MealViewModel>(json);
+        var mealCopy = JsonConvert.DeserializeObject<FoodComboViewModel>(json);
         await DialogService.OpenAsync<CreateFoodComboDialog>("Create Food Combo", new Dictionary<string, object>
         {
             { "Meal", mealCopy },
@@ -122,12 +122,12 @@ public partial class MealComponent2
         await DialogService.OpenAsync<AddFoodComboToMeal>("Add Food Combo", new Dictionary<string, object>
         {
             // { "DialogService", DialogService },
-            { "OnSaveAndClose", EventCallback.Factory.Create<MealViewModel>(this, AddFoodComboToMeal) },
+            { "OnSaveAndClose", EventCallback.Factory.Create<FoodComboViewModel>(this, AddFoodComboToMeal) },
         });
         // , new DialogOptions { Width = "400px" }
     }
     
-    public async Task AddFoodComboToMeal(MealViewModel mealViewModel)
+    public async Task AddFoodComboToMeal(FoodComboViewModel mealViewModel)
     {
         Meal.FoodAmounts.AddRange(mealViewModel.FoodAmounts);
         Meal.RefreshTotals();

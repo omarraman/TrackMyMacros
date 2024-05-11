@@ -1,11 +1,15 @@
 C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\bin\Debug\net6.0\TrackMyMacros.Domain.deps.json
 C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\bin\Debug\net6.0\TrackMyMacros.Domain.dll
 C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\bin\Debug\net6.0\TrackMyMacros.Domain.pdb
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\bin\Debug\net6.0\TrackMyMacros.Attributes.dll
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\bin\Debug\net6.0\TrackMyMacros.Attributes.pdb
 C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\obj\Debug\net6.0\TrackMyMacros.Domain.csproj.AssemblyReference.cache
 C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\obj\Debug\net6.0\TrackMyMacros.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\obj\Debug\net6.0\TrackMyMacros.Domain.AssemblyInfoInputs.cache
 C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\obj\Debug\net6.0\TrackMyMacros.Domain.AssemblyInfo.cs
 C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\obj\Debug\net6.0\TrackMyMacros.Domain.csproj.CoreCompileInputs.cache
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\obj\Debug\net6.0\TrackMyMacros.Domain.sourcelink.json
+C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\obj\Debug\net6.0\TrackMyM.331B2FE8.Up2Date
 C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\obj\Debug\net6.0\TrackMyMacros.Domain.dll
 C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\obj\Debug\net6.0\refint\TrackMyMacros.Domain.dll
 C:\Users\OmarRaman\RiderProjects\TrackMyMacros\TrackMyMacros.Domain\obj\Debug\net6.0\TrackMyMacros.Domain.pdb

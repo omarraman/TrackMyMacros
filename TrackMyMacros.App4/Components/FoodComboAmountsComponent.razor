@@ -1,0 +1,32 @@
+﻿
+
+@using System.Diagnostics
+@using TrackMyMacros.Dtos
+
+<div class="container">
+    @foreach (var foodAmount in @Meal.FoodAmounts)
+    {
+        <MealFoodItemComponent SelectedFoodId="@foodAmount.FoodId" OnQuantitiesChanged="@OnQuantitiesChanged" OnRemove="RemoveFoodItem" FoodAmount="@foodAmount"></MealFoodItemComponent>
+    }
+
+    <RadzenButton Click="@OnAddFood" Icon="add" ButtonStyle="ButtonStyle.Primary"/>
+</div>
+
+<h4>Totals</h4>
+<div class="row py-1">
+    <div class="col-3" style="background-color: greenyellow">
+        @Double.Round(@Meal.Protein, 2)
+    </div>
+    <div class="col-3" style="background-color: #0dcaf0">
+        @Double.Round(@Meal.Carbohydrate, 2)
+    </div>
+    <div class="col-3" style="background-color: yellow">
+        @Double.Round(@Meal.Fat, 2)
+    </div>
+    <div class="col-3" style="background-color: #babbbc">
+        @Double.Round(@Meal.Calories, 2)
+
+    </div>
+</div>
+
+

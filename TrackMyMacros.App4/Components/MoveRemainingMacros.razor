@@ -1,0 +1,24 @@
+﻿<div class="container">
+    @* *@
+    @* @{ *@
+    @*     var i = 1; *@
+    @*     var addButtons = true; *@
+    @*     string border = ""; *@
+    @* } *@
+
+    @for (var n = 0; n < Day.Meals.Count; n++)
+    {
+        var meal = Day.Meals[n];
+        var donor = Day.Meals[IndexOfMacroDonatorMeal];
+
+        <MoveRemainingMacrosMealItem Meal="meal" MealIndex="n" IsDonatorMeal="n == IndexOfMacroDonatorMeal" OnBorrowProtein="(i) => OnBorrowProtein(i)"
+                                     OnBorrowCarbohydrate="(i) => OnBorrowCarbohydrate(i)" OnBorrowFat="(i) => OnBorrowFat(i)"
+                                     OnGiveBackProtein="(i) => OnGiveBackProtein(i)" OnGiveBackCarbohydrate="(i) => OnGiveBackCarbohydrate(i)" OnGiveBackFat="(i) => OnGiveBackFat(i)" DonorMeal="donor"/>
+    }
+
+    <div class="rz-p-12 rz-text-align-center">
+        <RadzenButton Text="Cancel" ButtonStyle="ButtonStyle.Secondary" Click="CloseDialog"/>
+        <RadzenButton Text="Save" ButtonStyle="ButtonStyle.Secondary" Click="SaveAndCloseDialog"/>
+    </div>
+
+</div>

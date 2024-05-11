@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "n6FOyT3b2B/tZBfRcg5cumTtrKGdoYHCinQpMYo7kc5F/7GAtvbKiTC0yEycjolejo+sg3oA+B3WAknQZeWbDQ==",
+  "dgSpecHash": "MUqaG1TU3tuqKBQHA55W/Gjug/ANu91Blh5w8K5+j7f/c8m5cyBfGZcZPHh1dm/HO21yPeHx23ynsrb7k5N5qA==",
   "success": true,
   "projectFilePath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Dtos\\TrackMyMacros.Dtos.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -13,7 +13,7 @@ public partial class CreateFoodComboDialog
     [Parameter]
     public DialogService DialogService { get; set; }
     
-    [Parameter] public MealViewModel Meal { get; set; }
+    [Parameter] public FoodComboViewModel Meal { get; set; }
     
     [Parameter]
     public EventCallback OnDialogClose { get; set; }
@@ -31,7 +31,7 @@ public partial class CreateFoodComboDialog
     {
         if (EditMode)
         {
-            await _foodComboDataService.UpdateMealCombo(Meal, FoodComboName, Id);
+            await _foodComboDataService.UpdateFoodCombo(Meal, FoodComboName, Id);
         }
         else
         {

@@ -9,6 +9,10 @@ public class FoodConfiguration : IEntityTypeConfiguration<Food>
 {
     public void Configure(EntityTypeBuilder<Food> builder)
     {
+        builder.Property(p => p.Id)
+            .IsRequired()
+            .HasIdentityOptions(startValue: 100);
+        
         builder.Property(p => p.Name)
             .IsRequired()
             .HasMaxLength(50);
@@ -34,6 +38,7 @@ public class FoodConfiguration : IEntityTypeConfiguration<Food>
         builder.Property(p => p.QuantityInGrams).IsRequired();
         builder.Property(p => p.UomId)
             .IsRequired();
+       
 
         var readOnlyList = SeedData.Foods();
         builder.HasData(readOnlyList);

@@ -1,0 +1,69 @@
+﻿@page "/MacrosDay"
+@using Microsoft.AspNetCore.Components.WebAssembly.Hosting
+@inject IWebAssemblyHostEnvironment env
+
+<div class="container">
+
+    <RadzenDatePicker DateFormat="MM/dd/yyyy" @bind-Value=@CurrentDate Change="@(args => OnDateCHanged(args))"/>
+</div>
+
+
+@if (_day == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    var i = 0;
+    <div class="container">
+        @foreach (var meal in @_day.Meals)
+        {
+            <div class="row py-3">
+                <h3>Meal @(i + 1)</h3>
+
+                <MealComponent2 OnMealMacrosChanged="OnMealMacrosChanged" Meal="meal" FoodList="@_foodList" AllowedProtein="meal.AllowedProtein"
+                                AllowedCarbohydrate="meal.AllowedCarbohydrate" AllowedFat="meal.AllowedFat" ParentDayModel="_day" MealIndex="i" OnSaveDay="OnSave"
+                                OnCopyMeals="ShowCopyMealsDialog">
+                </MealComponent2>
+                <div class="row py-1">
+                    <div class="col-3" style="background-color: greenyellow">
+                        @Double.Round(_day.Protein, 2)
+                        <text>/</text>
+                        @_day.AllowedProtein
+                    </div>
+                    <div class="col-3" style="background-color: #0dcaf0">
+                        @Double.Round(_day.Carbohydrate, 2)
+                        <text>/</text>
+                        @_day.AllowedCarbohydrate
+                    </div>
+                    <div class="col-3" style="background-color: yellow">
+                        @Double.Round(_day.Fat, 2)
+                        <text>/</text>
+                        @_day.AllowedFat
+                    </div>
+                    <div class="col-3" style="background-color: #babbbc">
+                        @Double.Round(_day.Calories, 2)
+
+                    </div>
+                </div>
+
+
+                @{ i += 1; }
+
+            </div>
+        }
+    </div>
+}
+
+<div>
+    <RadzenButton Click="@OnSave" Text="Save" ButtonStyle="ButtonStyle.Primary"/>
+
+</div>
+
+
+@if (_noFoodIdSelectedOnOneOrMoreFoodItems)
+{
+    <div>Please select a food before saving</div>
+}

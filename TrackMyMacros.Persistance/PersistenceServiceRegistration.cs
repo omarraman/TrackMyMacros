@@ -9,7 +9,9 @@ public static class PersistenceServiceRegistration
     public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<AppDbContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("MacrosConnectionString")));
+            options.EnableDetailedErrors()  
+                .EnableSensitiveDataLogging()
+                .UseNpgsql(configuration.GetConnectionString("MacrosConnectionString")));
 
         services.AddScoped<IFoodRepository, FoodRepository>();
         services.AddScoped<IMealRepository, MealRepository>();

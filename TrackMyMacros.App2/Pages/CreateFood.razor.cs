@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Components;
 using TrackMyMacros.App2.Interfaces;
 using TrackMyMacros.App2.Services;
+using TrackMyMacros.App2.TrackMyMacros.App2.Services;
 using TrackMyMacros.App2.ViewModels;
+using TrackMyMacros.Dtos;
 
 namespace TrackMyMacros.App2.Pages;
 
@@ -13,6 +15,7 @@ public partial class CreateFood
     public List<string> AlertMessages { get; set; } = new List<string>();
 
     [Inject] public IFoodDataService FoodDataService { get; set; }
+    [Inject] public IGenericDataService GenericDataService { get; set; }
     public CreateFoodViewModel NewFood { get; set; } = new CreateFoodViewModel();
 
     protected async override Task OnInitializedAsync()
@@ -25,7 +28,7 @@ public partial class CreateFood
 
     private async Task HandleValidSubmit()
     {
-        await FoodDataService.AddFood(NewFood);
+        await GenericDataService.Post<CreateFoodViewModel, CreateFoodDto>(NewFood, "/api/Food");
         NewFood = new CreateFoodViewModel();
         AlertMessages.Add("Food Added");
         StateHasChanged();

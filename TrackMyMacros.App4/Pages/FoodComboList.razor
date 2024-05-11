@@ -1,0 +1,17 @@
+﻿@page "/FoodComboList"
+
+
+@if (FoodCombos != null)
+{
+    @foreach (var foodCombo in FoodCombos)
+    {
+        <div>
+            @foodCombo.Name @foodCombo.Id <RadzenButton Text="Edit" ButtonStyle="ButtonStyle.Primary" Click="()=>EditFoodCombo(foodCombo.Id)"/> <RadzenButton Text="Delete" ButtonStyle="ButtonStyle.Primary" Click="()=>DeleteFoodCombo(foodCombo.Id)"/>
+        </div>
+    }
+}
+else
+{
+    <div>Loading...</div>
+}
+

@@ -57,7 +57,7 @@
           }
         }
       },
-      "FluentValidation/11.7.1": {
+      "FluentValidation/11.9.0": {
         "type": "package",
         "compile": {
           "lib/net7.0/FluentValidation.dll": {
@@ -1381,11 +1381,22 @@
           "bin/placeholder/TrackMyMacros.Application.dll": {}
         }
       },
+      "TrackMyMacros.Attributes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TrackMyMacros.Attributes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrackMyMacros.Attributes.dll": {}
+        }
+      },
       "TrackMyMacros.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Ardalis.GuardClauses": "4.1.1"
+          "Ardalis.GuardClauses": "4.1.1",
+          "TrackMyMacros.Attributes": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TrackMyMacros.Domain.dll": {}
@@ -1509,16 +1520,16 @@
         "lib/netstandard2.0/Dapper.xml"
       ]
     },
-    "FluentValidation/11.7.1": {
-      "sha512": "w9Al4gls6iVGFbTd/NPOPlwzqDTghH+ntL4c4FYUatc+LeybpIwhYArLykZJP/VjF2n3ihj3ws+1yd7KR5lQlg==",
+    "FluentValidation/11.9.0": {
+      "sha512": "VneVlTvwYDkfHV5av3QrQ0amALgrLX6LV94wlYyEsh0B/klJBW7C8y2eAtj5tOZ3jH6CAVpr4s1ZGgew/QWyig==",
       "type": "package",
-      "path": "fluentvalidation/11.7.1",
+      "path": "fluentvalidation/11.9.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
         "fluent-validation-icon.png",
-        "fluentvalidation.11.7.1.nupkg.sha512",
+        "fluentvalidation.11.9.0.nupkg.sha512",
         "fluentvalidation.nuspec",
         "lib/net5.0/FluentValidation.dll",
         "lib/net5.0/FluentValidation.xml",
@@ -1526,6 +1537,8 @@
         "lib/net6.0/FluentValidation.xml",
         "lib/net7.0/FluentValidation.dll",
         "lib/net7.0/FluentValidation.xml",
+        "lib/net8.0/FluentValidation.dll",
+        "lib/net8.0/FluentValidation.xml",
         "lib/netstandard2.0/FluentValidation.dll",
         "lib/netstandard2.0/FluentValidation.xml",
         "lib/netstandard2.1/FluentValidation.dll",
@@ -3550,6 +3563,11 @@
       "path": "../TrackMyMacros.Application/TrackMyMacros.Application.csproj",
       "msbuildProject": "../TrackMyMacros.Application/TrackMyMacros.Application.csproj"
     },
+    "TrackMyMacros.Attributes/1.0.0": {
+      "type": "project",
+      "path": "../TrackMyMacros.Attributes/TrackMyMacros.Attributes.csproj",
+      "msbuildProject": "../TrackMyMacros.Attributes/TrackMyMacros.Attributes.csproj"
+    },
     "TrackMyMacros.Domain/1.0.0": {
       "type": "project",
       "path": "../TrackMyMacros.Domain/TrackMyMacros.Domain.csproj",
@@ -3575,6 +3593,7 @@
     "net7.0": [
       "AutoMapper >= 12.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
+      "FluentValidation >= 11.9.0",
       "MediatR >= 12.2.0",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.10",
       "Microsoft.Extensions.Logging >= 8.0.0",
@@ -3606,12 +3625,14 @@
       "outputPath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\OmarRaman\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\OmarRaman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "c:\\local.nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -3635,6 +3656,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3648,6 +3674,10 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
             "version": "[12.0.1, )"
+          },
+          "FluentValidation": {
+            "target": "Package",
+            "version": "[11.9.0, )"
           },
           "MediatR": {
             "target": "Package",
@@ -3715,6 +3745,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.17, 7.0.17]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.17, 7.0.17]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.17, 7.0.17]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.17, 7.0.17]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -3723,7 +3771,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.406\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   },

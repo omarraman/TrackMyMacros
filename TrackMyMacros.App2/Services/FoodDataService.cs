@@ -42,16 +42,107 @@ public class FoodDataService :IFoodDataService
 
     }
 
+    public class ProblemDetails
+    {
+        public string? Type { get; set; }
+        public string? Title { get; set; }
+        public int? Status { get; set; }
+        public string? Detail { get; set; }
+        public string? Instance { get; set; }
+    }
+
+
     public async Task AddFood(CreateFoodViewModel model)
     {
-        var dto = _mapper.Map<CreateFoodDto>(model);
-        var uri =  _baseUrl + "/api/Food";
-         await uri
-            .PostJsonAsync(dto);
-        
+        try
+        {
+            var dto = _mapper.Map<CreateFoodDto>(model);
+            var uri = _baseUrl + "/api/Food";
+            await uri
+                .PostJsonAsync(dto);
+        }
+        catch (FlurlHttpException ex)
+        {
+            var string1 = await ex.GetResponseStringAsync();
+            throw new Exception(string1);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+
+
     }
 
     
+    public async Task Post<TModel,TDto>(TModel model,string endpoint)
+    {
+        try
+        {
+            var dto = _mapper.Map<TDto>(model);
+            var uri = _baseUrl + endpoint;
+            await uri
+                .PostJsonAsync(dto);
+        }
+        catch (FlurlHttpException ex)
+        {
+            var string1 = await ex.GetResponseStringAsync();
+            throw new Exception(string1);
+        }
+    }
+    
+    
+    public async Task Put<TModel,TDto>(TModel model,string endpoint)
+    {
+        try
+        {
+            var dto = _mapper.Map<TDto>(model);
+            var uri = _baseUrl + endpoint;
+            await uri
+                .PostJsonAsync(dto);
+        }
+        catch (FlurlHttpException ex)
+        {
+            var string1 = await ex.GetResponseStringAsync();
+            throw new Exception(string1);
+        }
+    }
+    
+    public async Task<IReadOnlyList<TModel>> GetList<TModel,TDto>(string endpoint )
+    {
+        try
+        {
+            var uri =  _baseUrl + endpoint;
+            var foods = await uri
+                .GetJsonAsync<IReadOnlyList<TDto>>();
+            return _mapper.Map<IReadOnlyList<TModel>>(foods);
+        }
+        catch (FlurlHttpException ex)
+        {
+            var string1 = await ex.GetResponseStringAsync();
+            throw new Exception(string1);
+        }
+
+    }
+    
+    public async Task<TModel> Get<TModel,TDto>(string endpoint )
+    {
+        try
+        {
+            var uri =  _baseUrl + endpoint;
+            var foods = await uri
+                .GetJsonAsync<TDto>();
+            return _mapper.Map<TModel>(foods);
+        }
+        catch (FlurlHttpException ex)
+        {
+            var string1 = await ex.GetResponseStringAsync();
+            throw new Exception(string1);
+        }
+
+    }
+
     public async Task UpdateFood(FoodListItemViewModel model)
     {
         var dto = _mapper.Map<UpdateFoodDto>(model);

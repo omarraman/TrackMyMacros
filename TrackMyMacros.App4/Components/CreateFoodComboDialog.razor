@@ -1,0 +1,38 @@
+﻿@using TrackMyMacros.Dtos
+
+<div class="container">
+<RadzenTextBox @bind-Value="FoodComboName">Name</RadzenTextBox>
+
+    <div class="container">
+        @foreach (var foodAmount in @Meal.FoodAmounts)
+        {
+            <MealFoodItemComponent SelectedFoodId="@foodAmount.FoodId" OnQuantitiesChanged="@OnQuantitiesChanged" OnRemove="RemoveFoodItem" FoodAmount="@foodAmount"></MealFoodItemComponent>
+        }
+    
+    </div>
+    
+    <RadzenButton Click="@OnAddFood" Icon="add" ButtonStyle="ButtonStyle.Primary"/>
+    
+    <h4>Totals</h4>
+    <div class="row py-1">
+        <div class="col-3" style="background-color: greenyellow">
+            @Double.Round(@Meal.Protein, 2)
+        </div>
+        <div class="col-3" style="background-color: #0dcaf0">
+            @Double.Round(@Meal.Carbohydrate, 2)
+        </div>
+        <div class="col-3" style="background-color: yellow">
+            @Double.Round(@Meal.Fat, 2)
+        </div>
+        <div class="col-3" style="background-color: #babbbc">
+            @Double.Round(@Meal.Calories, 2)
+    
+        </div>
+    </div>
+    
+    <div class="rz-p-12 rz-text-align-center">
+        <RadzenButton Text="Cancel" ButtonStyle="ButtonStyle.Secondary" Click="CancelClicked"/>
+        <RadzenButton Text="Ok" ButtonStyle="ButtonStyle.Secondary" Click="SaveAndClose"/>
+    </div>
+
+</div>

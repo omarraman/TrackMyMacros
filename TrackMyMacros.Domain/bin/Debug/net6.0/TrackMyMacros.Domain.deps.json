@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "TrackMyMacros.Domain/1.0.0": {
         "dependencies": {
-          "Ardalis.GuardClauses": "4.1.1"
+          "Ardalis.GuardClauses": "4.1.1",
+          "TrackMyMacros.Attributes": "1.0.0"
         },
         "runtime": {
           "TrackMyMacros.Domain.dll": {}
@@ -20,6 +21,11 @@
             "assemblyVersion": "4.1.1.0",
             "fileVersion": "4.1.1.0"
           }
+        }
+      },
+      "TrackMyMacros.Attributes/1.0.0": {
+        "runtime": {
+          "TrackMyMacros.Attributes.dll": {}
         }
       }
     }
@@ -36,6 +42,11 @@
       "sha512": "sha512-+UcJ2s+gf2wMNrwadCaHZV2DMcGgBU1t22A+jm40P4MHQRLy9hcleGy5xdVWd4dXZPa5Vlp4TG5xU2rhoDYrBA==",
       "path": "ardalis.guardclauses/4.1.1",
       "hashPath": "ardalis.guardclauses.4.1.1.nupkg.sha512"
+    },
+    "TrackMyMacros.Attributes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

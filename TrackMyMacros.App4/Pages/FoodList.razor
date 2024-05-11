@@ -1,0 +1,16 @@
+﻿@page "/foodlist"
+<h3>FoodList</h3>
+
+
+@if (Foods != null)
+{
+    foreach (var foodListItemViewModel in Foods)
+    {
+        <FoodListItemComponent FoodListItemViewModel="@foodListItemViewModel"></FoodListItemComponent>
+    }
+}
+else
+{
+    <div>Loading...</div>
+}
+

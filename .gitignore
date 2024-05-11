@@ -1,3 +1,5 @@
+*.dll
+
 ## JWT ###
 *.jwk
 
@@ -422,6 +424,7 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+*.gz
 
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio

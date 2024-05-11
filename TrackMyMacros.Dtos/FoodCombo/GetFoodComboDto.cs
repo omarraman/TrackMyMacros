@@ -6,4 +6,4 @@ public class GetFoodComboDto
     public string Name { get; set; }
 
     public List<GetFoodComboAmountDto> FoodComboAmounts { get; set; } 
-}
+}   

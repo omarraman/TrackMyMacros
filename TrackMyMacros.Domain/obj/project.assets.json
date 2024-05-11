@@ -14,6 +14,16 @@
             "related": ".pdb;.xml"
           }
         }
+      },
+      "TrackMyMacros.Attributes/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/TrackMyMacros.Attributes.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TrackMyMacros.Attributes.dll": {}
+        }
       }
     }
   },
@@ -37,11 +47,17 @@
         "lib/netstandard2.0/Ardalis.GuardClauses.pdb",
         "lib/netstandard2.0/Ardalis.GuardClauses.xml"
       ]
+    },
+    "TrackMyMacros.Attributes/1.0.0": {
+      "type": "project",
+      "path": "../TrackMyMacros.Attributes/TrackMyMacros.Attributes.csproj",
+      "msbuildProject": "../TrackMyMacros.Attributes/TrackMyMacros.Attributes.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Ardalis.GuardClauses >= 4.1.1"
+      "Ardalis.GuardClauses >= 4.1.1",
+      "TrackMyMacros.Attributes >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -57,25 +73,36 @@
       "outputPath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\OmarRaman\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\OmarRaman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "c:\\local.nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Attributes\\TrackMyMacros.Attributes.csproj": {
+              "projectPath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Attributes\\TrackMyMacros.Attributes.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -98,12 +125,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.28, 6.0.28]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.28, 6.0.28]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.28, 6.0.28]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.406\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
