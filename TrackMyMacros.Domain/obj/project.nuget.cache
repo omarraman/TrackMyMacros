@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "cUYuqIA8BZ/uoa3ZVjsrVXP53hDcT55RLjA/kioH8pxHT1hxYV5UqbPBTMH9ngouHpVyCUL8d0pCXaqfR4y4DA==",
+  "dgSpecHash": "j9VVA4Z2ndnFw8c7anrD1GrJQ0lO9F9sL49UWfiHLb7CHW0Is1Zi52bWvp9Xjnrebf/AwP6mlfvHcfnyvR71jA==",
   "success": true,
   "projectFilePath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Domain\\TrackMyMacros.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OmarRaman\\.nuget\\packages\\ardalis.guardclauses\\4.1.1\\ardalis.guardclauses.4.1.1.nupkg.sha512",
-    "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.28\\microsoft.windowsdesktop.app.ref.6.0.28.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.28\\microsoft.netcore.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.28\\microsoft.windowsdesktop.app.ref.6.0.28.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.28\\microsoft.aspnetcore.app.ref.6.0.28.nupkg.sha512"
   ],
   "logs": []

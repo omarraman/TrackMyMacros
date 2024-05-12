@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jXBIhnBQGHzFRaXSSTLORVVnWpwiizQkemI2tSb1IpRgjVyeAU8/lVdXtHSmqYakjZ5J7UzxGMibsoGMaNV4Kw==",
+  "dgSpecHash": "76sSNrkcgVjyU3Vv7zS9MCTNuLghf1G3+b54k4ea3JJtJsS0pazAK0I5SRvN5cGHTQhQD+6VEoqAaubt1VbaPQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Api\\TrackMyMacros.Api.csproj",
   "expectedPackageFiles": [
@@ -87,8 +87,8 @@
     "C:\\Users\\OmarRaman\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
-    "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512",
     "C:\\Users\\OmarRaman\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.17\\microsoft.netcore.app.host.win-x64.7.0.17.nupkg.sha512"
   ],
