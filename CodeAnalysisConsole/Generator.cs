@@ -35,7 +35,10 @@ public abstract class Generator
 
     protected virtual List<MethodDeclarationSyntax> MethodDeclarationSyntax => [];
     protected virtual List<MemberDeclarationSyntax> MemberDeclarationSyntaxes => [];
+    
+    protected virtual List<string> Comments => [];
 
+    protected virtual Maybe<AttributeListSyntax> AttributeListSyntax => Maybe.None;
     public ClassDeclarationSyntax ClassDeclaration { get; set; }
 
     public Generator(ClassDeclarationSyntax classDeclarationSyntax)
@@ -84,7 +87,10 @@ public abstract class Generator
             MemberDeclarationSyntaxes.ForEach(mds => classDeclarationSyntax = classDeclarationSyntax.AddMembers(mds));
         }
         
-
+        if (AttributeListSyntax != null)
+        {
+            classDeclarationSyntax = classDeclarationSyntax.AddAttributeLists(AttributeListSyntax.Value);
+        }
 
         return classDeclarationSyntax;
     }
@@ -119,9 +125,10 @@ public abstract class Generator
     {
         public const string Infrastructure = "TrackMyMacros.Infrastructure";
         public const string Application = "TrackMyMacros.Application";
+        public const string ApplicationFeatures = "TrackMyMacros.Application.Features";
         public const string Common = "TrackMyMacros.Application.Common";
         public const string Dtos = "TrackMyMacros.Dtos";
-        public const string Services = "TrackMyMacros.App2.Services";
+        public const string Services = "TrackMyMacros.App4.Services";
         public const string Persistance = "TrackMyMacros.Application.Contracts.Persistence";
         public const string Automapper = "AutoMapper";
         public const string Mediatr = "MediatR";
@@ -129,12 +136,13 @@ public abstract class Generator
         public const string FluentValidation = "FluentValidation";
         public const string Aggregates = "TrackMyMacros.Domain.Aggregates";
         public const string Mvc = "Microsoft.AspNetCore.Mvc";
-        public const string GetListQuery = "TrackMyMacros.Application.Features.{0}.Queries.Get{1}List";
+        public const string GetListQuery = "TrackMyMacros.Application.Features.{0}.Queries.GetList";
         public const string SystemNet = "System.Net";
         public const string Flurl = "Flurl.Http";
         public const string MicrosoftExtensionsOptions = "Microsoft.Extensions.Options";
         public const string MicrosoftAspNetCoreComponents = "Microsoft.AspNetCore.Components";
-        public const string ViewModels = "TrackMyMacros.App2.ViewModels";
+        public const string ViewModels = "TrackMyMacros.App4.ViewModels";
+        public const string EfCore = "Microsoft.EntityFrameworkCore";
 
         public const string CreateCommand = "TrackMyMacros.Application.Features.{0}.Commands.Create";
         public const string DeleteCommand = "TrackMyMacros.Application.Features.{0}.Commands.Delete";
@@ -195,12 +203,13 @@ public abstract class Generator
 //make each part of the namespace string start with a capital letter
         namespaceString = string.Join(".", namespaceParts.Select(s => char.ToUpper(s[0]) + s.Substring(1)));
         var ns = SyntaxFactory.NamespaceDeclaration(SyntaxFactory.ParseName(namespaceString))
-            .AddMembers(classDeclarationSyntax);
+            .AddMembers(classDeclarationSyntax).WithLeadingTrivia( Comments.Select(m => Comment(m)).ToArray());
         if (InterfaceDeclarationSyntax.HasValue)
         {
             ns= ns.AddMembers(InterfaceDeclarationSyntax.Value);
-        }
+        }   
 
+        
 
         compilationUnit = compilationUnit.AddMembers(ns);
 
@@ -211,7 +220,7 @@ public abstract class Generator
         }
 
         await using var streamWriter = new StreamWriter(
-            @$"{BaseDirectory}\{OutputDirectory}\g_{s}_{timestamp}.cs",
+            @$"{BaseDirectory}\{OutputDirectory}\{s}.cs",
             false);
         compilationUnit.NormalizeWhitespace().WriteTo(streamWriter);
     }
@@ -227,7 +236,7 @@ public abstract class Generator
         string identifier, Func<MemberDeclarationSyntax, bool> predicate, BaseTypeSyntax[] baseTypes)
     {
         var membersToAdd = classDeclaration.Members.Where(m => predicate(m)).ToArray();
-        ;
+
         return ClassDeclaration(Identifier(identifier))
             .AddModifiers(Token(SyntaxKind.PublicKeyword))
             // .AddBaseListTypes(baseTypes)

@@ -44,7 +44,7 @@ public abstract class HandlerClassGenerator : Generator
                 case HandlerType.Delete:
                     return $"IRequestHandler<{CommandOrQueryIdentifier.Delete(BaseEntityClassName)},Result>";
                 case HandlerType.GetList:
-                    return $"IRequestHandler<IReadOnlyList<{CommandOrQueryIdentifier.GetList(BaseEntityClassName)}>,{DtoIdentifier.Get(BaseEntityClassName)}>";
+                    return $"IRequestHandler<{CommandOrQueryIdentifier.GetList(BaseEntityClassName)},IReadOnlyList<{DtoIdentifier.Get(BaseEntityClassName)}>>";
                 default:
                     throw new System.NotImplementedException();
             }

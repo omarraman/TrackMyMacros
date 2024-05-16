@@ -19,6 +19,7 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IDayRepository, DayRepository>();
         services.AddScoped<IDailyLimitsRepository, DailyLimitsRepository>();
         services.AddScoped<IFoodComboRepository, FoodComboRepository>();
+        services.AddScoped<IWeightReadingRepository, WeightReadingRepository>();
 
         return services;    
     }

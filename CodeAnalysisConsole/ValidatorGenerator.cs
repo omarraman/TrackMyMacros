@@ -38,12 +38,15 @@ public class ValidatorGenerator : Generator
     public ValidatorGenerator(ClassDeclarationSyntax classDeclarationSyntax, ValidatorType validatorType) : base(
         classDeclarationSyntax)
     {
+        BaseDirectory =
+            "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
+        OutputDirectory = $"{BaseEntityClassName}\\Commands\\{validatorType.ToString()}\\";
         _validatorType = validatorType;
         try
         {
             ValidatiorMethodString.Append($@"
-public class {validatorType.ToString()}{BaseEntityClassName}Validator(){{
-    public {validatorType.ToString()}{BaseEntityClassName}Validator()
+public class {validatorType.ToString()}{BaseEntityClassName}CommandValidator(){{
+    public {validatorType.ToString()}{BaseEntityClassName}CommandValidator()
     {{
         RuleFor(p => p.Name)
             .NotEmpty().WithMessage(""{{PropertyName}} is required"")
@@ -75,7 +78,7 @@ public class {validatorType.ToString()}{BaseEntityClassName}Validator(){{
         $"AbstractValidator<{_validatorType.ToString()}{BaseEntityClassName}Command>";
 
 
-    protected override string TargetClassName => $"{_validatorType.ToString()}{BaseEntityClassName}Validator";
+    protected override string TargetClassName => $"{_validatorType.ToString()}{BaseEntityClassName}CommandValidator";
 
 
     protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)

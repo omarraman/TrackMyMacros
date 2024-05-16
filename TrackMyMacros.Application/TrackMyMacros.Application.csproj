@@ -26,6 +26,20 @@
     <ItemGroup>
       <Compile Remove="Features\Food\FoodListDto.cs" />
       <Compile Remove="Features\DailyLimits\Commands\CreateDailyLimits\**" />
+      <Compile Remove="Features\WeightReading\Queries\Get\g_GetWeightReadingQuery_20240512065022.cs" />
+      <Compile Remove="Features\WeightReading\Queries\Get\g_GetWeightReadingQueryHandler_20240512065022.cs" />
+      <Compile Remove="Features\WeightReading\Commands\Update\g_UpdateWeightReadingCommand_20240512065022.cs" />
+      <Compile Remove="Features\WeightReading\Commands\Delete\g_DeleteWeightReadingCommand_20240512065022.cs" />
+      <Compile Remove="Features\WeightReading\Commands\Create\g_CreateWeightReadingCommand_20240512065022.cs" />
+      <Compile Remove="Profiles\WeightReading\g_UpdateWeightReadingMappingProfile_20240512065520.cs" />
+      <Compile Remove="Profiles\WeightReading\g_GetWeightReadingMappingProfile_20240512065520.cs" />
+      <Compile Remove="Features\WeightReading\Queries\GetList\g_GetWeightReadingListQuery_20240512065520.cs" />
+      <Compile Remove="Features\WeightReading\Queries\Get\g_GetWeightReadingQuery_20240512065520.cs" />
+      <Compile Remove="Features\WeightReading\Queries\Get\g_GetWeightReadingQueryHandler_20240512065520.cs" />
+      <Compile Remove="Features\WeightReading\Commands\Update\g_UpdateWeightReadingCommand_20240512065520.cs" />
+      <Compile Remove="Features\WeightReading\Commands\Delete\g_DeleteWeightReadingCommand_20240512065520.cs" />
+      <Compile Remove="Features\WeightReading\Commands\Create\g_CreateWeightReadingCommandHandler_20240512065520.cs" />
+      <Compile Remove="Features\WeightReading\Queries\GetList\gg_GetWeightReadingListQuery.cs" />
     </ItemGroup>
 
     <ItemGroup>

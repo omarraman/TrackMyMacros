@@ -54,7 +54,7 @@ public class CommandOrQueryGenerator : RecordTypeClassGenerator
             switch (_commandOrQueryType)
             {
                 case CommandOrQueryType.Create:
-                    return "RequestBase<Result<int>>";
+                    return "RequestBase<Result<Guid>>";
                 case CommandOrQueryType.Update:
                     return "RequestBase<Result>";
                 case CommandOrQueryType.Get:

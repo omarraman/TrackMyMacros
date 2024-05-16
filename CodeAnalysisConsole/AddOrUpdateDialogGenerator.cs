@@ -36,7 +36,7 @@ public class AddOrUpdateDialogGenerator : Generator
             classDeclarationSyntax)
     {
 
-        BaseDirectory="C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.App2\\Components";
+        BaseDirectory="C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.App4\\Components";
         OutputDirectory = "";
         DialogClassDefinitionString = new StringBuilder();
         DialogClassDefinitionString.Append($@"

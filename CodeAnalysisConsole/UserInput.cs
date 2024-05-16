@@ -22,6 +22,7 @@ public class UserInput
     public bool ShouldGenerateValidators => _inputList.Contains("v") || ShouldGenerateAllLayers;
     public bool ShouldGenerateMappings => _inputList.Contains("m") || ShouldGenerateAllLayers;
     public bool ShouldGenerateDataServices => _inputList.Contains("ds") || ShouldGenerateAllLayers;
+    public bool ShouldGenerateRepositories => _inputList.Contains("r") || ShouldGenerateAllLayers;
     public bool ShouldGenerateDialog => _inputList.Contains("dlg") || ShouldGenerateAllLayers;
 
     // public bool ShouldGenerateQueryHandlers => _inputList.Contains("queryhandler");
@@ -58,7 +59,8 @@ get=get
 getlist=getlist
 delete=delete
 update=update
-dlg=dialog
+dlg=dialog,
+r=repository
 ");
         return sb.ToString();
     }

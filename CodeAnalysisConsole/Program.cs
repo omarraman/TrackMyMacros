@@ -76,6 +76,8 @@ if (!classes.Any())
 
 foreach (var classDeclarationSyntax in classes)
 {
+    await GenerateRepositories(classDeclarationSyntax);
+    
     await GenerateDataServiceClasses(classDeclarationSyntax);
     
     await GenerateControllerClasses(classDeclarationSyntax);
@@ -99,7 +101,7 @@ async Task GenerateValidatiorClasses(ClassDeclarationSyntax classDeclarationSynt
 
     if (userInputs.ShouldGenerateCreate)
     {
-        await ValidatorGenerator.CreateValidatorGenerator(classDeclarationSyntax).GenerateAndWriteClass();
+        await ValidatorGenerator.CreateValidatorGenerator(classDeclarationSyntax).GenerateAndWriteClass2();
     }
 
     if (userInputs.ShouldGenerateUpdate)
@@ -107,7 +109,7 @@ async Task GenerateValidatiorClasses(ClassDeclarationSyntax classDeclarationSynt
         var v = ValidatorGenerator.UpdateValidatorGenerator(classDeclarationSyntax);
         try
         {
-            await v.GenerateAndWriteClass();
+            await v.GenerateAndWriteClass2();
         }
         catch (Exception e)
         {
@@ -268,6 +270,17 @@ async Task GenerateDataServiceClasses(ClassDeclarationSyntax classDeclarationSyn
     
     var dataServiceGenerator = new DataServiceGenerator(classDeclarationSyntax);
     await dataServiceGenerator.GenerateAndWriteClass2();
+}
+
+async Task GenerateRepositories(ClassDeclarationSyntax classDeclarationSyntax)
+{
+    if (!userInputs.ShouldGenerateRepositories)
+    {
+        return;
+    }
+    
+    var generator = new RepositoryGenerator(classDeclarationSyntax);
+    await generator.GenerateAndWriteClass2();
 }
 
 async Task GenerateDialogClasses(ClassDeclarationSyntax classDeclarationSyntax)

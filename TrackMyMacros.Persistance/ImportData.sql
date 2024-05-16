@@ -1,4 +1,4 @@
-﻿INSERT INTO public."Uoms" ("Id", "Name", "CreatedBy", "CreatedDate", "LastModifiedBy", "LastModifiedDate") VALUES (1, 'Grams', null, '2024-02-13 17:52:22.476355 +00:00', null, '2024-02-13 17:52:22.476361 +00:00');
+﻿I0NSERT INTO public."Uoms" ("Id", "Name", "CreatedBy", "CreatedDate", "LastModifiedBy", "LastModifiedDate") VALUES (1, 'Grams', null, '2024-02-13 17:52:22.476355 +00:00', null, '2024-02-13 17:52:22.476361 +00:00');
 
 
 INSERT INTO public."Food" ("Id", "Name", "CarbohydrateAmount", "ProteinAmount", "FatAmount", "Quantity", "QuantityInGrams", "DefaultQuantity", "UomId") VALUES (2, 'Hovis', 40, 10, 8, 100, 100, null, 1);
