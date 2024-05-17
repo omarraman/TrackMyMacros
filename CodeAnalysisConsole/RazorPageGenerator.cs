@@ -1,0 +1,32 @@
+﻿using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+
+namespace CodeGen;
+
+public abstract class RazorPageGenerator:Generator
+{
+    public bool IsComponent { get; set; } = false;
+    protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)
+    {
+        return new[]
+        {
+            SyntaxFactory.UsingDirective(SyntaxFactory.ParseName(Generator.UsingStrings.MicrosoftAspNetCoreComponents)),
+            SyntaxFactory.UsingDirective(SyntaxFactory.ParseName(Generator.UsingStrings.Services)),
+            SyntaxFactory.UsingDirective(SyntaxFactory.ParseName(Generator.UsingStrings.ViewModels)),
+            SyntaxFactory.UsingDirective(SyntaxFactory.ParseName($"{Generator.UsingStrings.Dtos}.{baseEntityName}")),
+        };
+    }
+
+    public RazorPageGenerator(ClassDeclarationSyntax classDeclarationSyntax)
+        : base(
+            classDeclarationSyntax)
+    {
+        BaseDirectory = "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.App4\\";
+        OutputDirectory = "Pages";
+        if (IsComponent) OutputDirectory = "Components";
+        
+        IsPartial = true;
+        ExtensionModifier = "razor";
+    
+    }
+}

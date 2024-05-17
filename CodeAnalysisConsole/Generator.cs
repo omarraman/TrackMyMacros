@@ -27,19 +27,23 @@ public abstract class Generator
     }
 
     protected virtual List<FieldDeclarationSyntax> FieldDeclarationSyntaxList => [];
+    protected virtual List<PropertyDeclarationSyntax> PropertyDeclarationSyntaxes => [];
 
     protected virtual Maybe<ConstructorDeclarationSyntax> ConstructorDeclarationSyntax => Maybe.None;
-    
+
     protected virtual Maybe<InterfaceDeclarationSyntax> InterfaceDeclarationSyntax => Maybe.None;
     protected virtual Maybe<ClassDeclarationSyntax> EntireClassDeclarationSyntax => Maybe.None;
 
     protected virtual List<MethodDeclarationSyntax> MethodDeclarationSyntax => [];
     protected virtual List<MemberDeclarationSyntax> MemberDeclarationSyntaxes => [];
-    
+
     protected virtual List<string> Comments => [];
 
     protected virtual Maybe<AttributeListSyntax> AttributeListSyntax => Maybe.None;
     public ClassDeclarationSyntax ClassDeclaration { get; set; }
+    protected bool IsPartial { get; set; } = false;
+    public string ExtensionModifier { get; set; } = String.Empty;
+
 
     public Generator(ClassDeclarationSyntax classDeclarationSyntax)
     {
@@ -56,9 +60,8 @@ public abstract class Generator
     {
         if (EntireClassDeclarationSyntax.HasValue)
             return EntireClassDeclarationSyntax.Value;
-        
-        
-        
+
+
         var classDeclarationSyntax = ClassDeclaration(Identifier(TargetClassName))
             .AddModifiers(Token(SyntaxKind.PublicKeyword));
         if (BaseTypeString != String.Empty)
@@ -86,10 +89,20 @@ public abstract class Generator
         {
             MemberDeclarationSyntaxes.ForEach(mds => classDeclarationSyntax = classDeclarationSyntax.AddMembers(mds));
         }
-        
+
         if (AttributeListSyntax != null)
         {
             classDeclarationSyntax = classDeclarationSyntax.AddAttributeLists(AttributeListSyntax.Value);
+        }
+
+        if (PropertyDeclarationSyntaxes.Any())
+        {
+            PropertyDeclarationSyntaxes.ForEach(pds => classDeclarationSyntax = classDeclarationSyntax.AddMembers(pds));
+        }
+
+        if (IsPartial)
+        {
+            classDeclarationSyntax = classDeclarationSyntax.AddModifiers(Token(SyntaxKind.PartialKeyword));
         }
 
         return classDeclarationSyntax;
@@ -106,9 +119,13 @@ public abstract class Generator
     }
 
     // protected virtual string GetBaseTypeString()
+
     // {
+
     //     throw new NotImplementedException();
+
     // }
+
 
     protected Generator()
     {
@@ -177,7 +194,6 @@ public abstract class Generator
             .AddMembers(classDeclarationSyntax);
 
 
-
         compilationUnit = compilationUnit.AddMembers(ns);
 
         await using var streamWriter = new StreamWriter(
@@ -199,17 +215,18 @@ public abstract class Generator
         //if the last element is empty
         if (namespaceParts[^1] == "")
             namespaceParts = namespaceParts.Take(namespaceParts.Length - 1).ToArray();
-        
+
 //make each part of the namespace string start with a capital letter
         namespaceString = string.Join(".", namespaceParts.Select(s => char.ToUpper(s[0]) + s.Substring(1)));
         var ns = SyntaxFactory.NamespaceDeclaration(SyntaxFactory.ParseName(namespaceString))
-            .AddMembers(classDeclarationSyntax).WithLeadingTrivia( Comments.Select(m => Comment(m)).ToArray());
+            .AddMembers(classDeclarationSyntax).WithLeadingTrivia(Comments.Select(m => Comment(m)).ToArray());
+
+
         if (InterfaceDeclarationSyntax.HasValue)
         {
-            ns= ns.AddMembers(InterfaceDeclarationSyntax.Value);
-        }   
+            ns = ns.AddMembers(InterfaceDeclarationSyntax.Value);
+        }
 
-        
 
         compilationUnit = compilationUnit.AddMembers(ns);
 
@@ -220,9 +237,25 @@ public abstract class Generator
         }
 
         await using var streamWriter = new StreamWriter(
-            @$"{BaseDirectory}\{OutputDirectory}\{s}.cs",
-            false);
+                @$"{BaseDirectory}\{OutputDirectory}\{s}{GetExtensionString}.cs",
+ 
+        false);
         compilationUnit.NormalizeWhitespace().WriteTo(streamWriter);
+    }
+
+    public string GetExtensionString
+    {
+        get
+        {
+            if (ExtensionModifier == String.Empty)
+            {
+                return String.Empty;
+            }
+            else
+            {
+                return $".{ExtensionModifier}";
+            }
+        }
     }
 
 
@@ -231,7 +264,7 @@ public abstract class Generator
             VariableDeclaration(ParseTypeName(typeName))
                 .AddVariables(VariableDeclarator(Identifier(fieldName)))
         ).AddModifiers(Token(SyntaxKind.PrivateKeyword));
-    
+
     protected ClassDeclarationSyntax GenerateNewClassDeclaration(ClassDeclarationSyntax classDeclaration,
         string identifier, Func<MemberDeclarationSyntax, bool> predicate, BaseTypeSyntax[] baseTypes)
     {
@@ -241,6 +274,5 @@ public abstract class Generator
             .AddModifiers(Token(SyntaxKind.PublicKeyword))
             // .AddBaseListTypes(baseTypes)
             .AddMembers(membersToAdd);
-        
     }
 }

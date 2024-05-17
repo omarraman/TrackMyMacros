@@ -91,7 +91,10 @@ foreach (var classDeclarationSyntax in classes)
     
     await GenerateValidatiorClasses(classDeclarationSyntax);
     
-    await GenerateDialogClasses(classDeclarationSyntax);
+    await GenerateUiDialogClasses(classDeclarationSyntax);
+    await GenerateUiAddPageClasses(classDeclarationSyntax);
+    
+    await GenerateViewModels(classDeclarationSyntax);
 }
 
 async Task GenerateValidatiorClasses(ClassDeclarationSyntax classDeclarationSyntax)
@@ -283,7 +286,7 @@ async Task GenerateRepositories(ClassDeclarationSyntax classDeclarationSyntax)
     await generator.GenerateAndWriteClass2();
 }
 
-async Task GenerateDialogClasses(ClassDeclarationSyntax classDeclarationSyntax)
+async Task GenerateUiDialogClasses(ClassDeclarationSyntax classDeclarationSyntax)
 {
     if (!userInputs.ShouldGenerateDialog)
     {
@@ -293,6 +296,44 @@ async Task GenerateDialogClasses(ClassDeclarationSyntax classDeclarationSyntax)
     var dataServiceGenerator = new AddOrUpdateDialogGenerator(classDeclarationSyntax);
     await dataServiceGenerator.GenerateAndWriteClass2();
 }
+
+async Task GenerateUiAddPageClasses(ClassDeclarationSyntax classDeclarationSyntax)
+{
+    if (!userInputs.ShouldGenerateUiAddPage)
+    {
+        return;
+    }
+    
+    var dataServiceGenerator = new AddEntityPageCodeBehindGenerator(classDeclarationSyntax);
+    await dataServiceGenerator.GenerateAndWriteClass2();
+}
+
+async Task GenerateViewModels(ClassDeclarationSyntax classDeclarationSyntax)
+{
+    if (userInputs.ShouldGenerateViewModel == false)
+        return;
+
+    if (userInputs.ShouldGenerateGet)
+    {
+        await ViewModelGenerator.GetViewModelGenerator(classDeclarationSyntax,valueObjects).GenerateAndWriteClass2();
+    }
+
+    if (userInputs.ShouldGenerateCreate)
+    {
+        await ViewModelGenerator.CreateViewModelGenerator(classDeclarationSyntax,valueObjects).GenerateAndWriteClass2();
+    }
+
+    if (userInputs.ShouldGenerateDelete)
+    {
+        await ViewModelGenerator.DeleteViewModelGenerator(classDeclarationSyntax,valueObjects).GenerateAndWriteClass2();
+    }
+
+    if (userInputs.ShouldGenerateUpdate)
+    {
+        await ViewModelGenerator.UpdateViewModelGenerator(classDeclarationSyntax,valueObjects).GenerateAndWriteClass2();
+    }
+}
+
 
 class ClassVirtualizationVisitor : CSharpSyntaxRewriter
 {

@@ -24,6 +24,8 @@ public class UserInput
     public bool ShouldGenerateDataServices => _inputList.Contains("ds") || ShouldGenerateAllLayers;
     public bool ShouldGenerateRepositories => _inputList.Contains("r") || ShouldGenerateAllLayers;
     public bool ShouldGenerateDialog => _inputList.Contains("dlg") || ShouldGenerateAllLayers;
+    public bool ShouldGenerateUiAddPage => _inputList.Contains("ui_add") || ShouldGenerateAllLayers;
+    public bool ShouldGenerateViewModel => _inputList.Contains("vm") || ShouldGenerateAllLayers;
 
     // public bool ShouldGenerateQueryHandlers => _inputList.Contains("queryhandler");
     public bool ShouldGenerateAllLayers => _inputList.Contains("layers");
@@ -60,7 +62,8 @@ getlist=getlist
 delete=delete
 update=update
 dlg=dialog,
-r=repository
+r=repository,
+ui_add=ui add entity page,
 ");
         return sb.ToString();
     }

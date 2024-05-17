@@ -64,6 +64,13 @@
       <Compile Remove="Services\WeightReadingDataService.cs" />
       <Compile Remove="Components\AddOrUpdateWeightReadingDialog.cs" />
       <Compile Remove="GenericDataService.cs" />
+      <Compile Remove="Pages\CreateWeightReading.cs" />
+      <Compile Remove="Pages\CreateWeightReading.razor.cs" />
+      <Compile Remove="Pages\CreateWeightReadingrazor.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="ViewModels\WeightReading\" />
     </ItemGroup>
 
 

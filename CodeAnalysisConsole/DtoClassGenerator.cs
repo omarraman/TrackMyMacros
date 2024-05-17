@@ -24,43 +24,6 @@ public class DtoClassGenerator : RecordTypeClassGenerator
     public static DtoClassGenerator DeleteDtoClassGenerator(ClassDeclarationSyntax classDeclarationSyntax,List<ClassDeclarationSyntax> valueObjects) =>
         new DtoClassGenerator(classDeclarationSyntax, DtoType.Delete,valueObjects);
 
-    // protected override List<MemberDeclarationSyntax> MemberDeclarationSyntaxes {
-    //     get
-    //     {
-    //         ///select all members from _classDeclarationSyntax that are properties
-    //         var x =  ClassDeclaration.Members
-    //             .Where(m => m is PropertyDeclarationSyntax)
-    //             .Where(m=>ShouldIncludeMember((PropertyDeclarationSyntax)m, MemberSelectionPredicate))
-    //             .ToList();
-    //
-    //         var newList = new List<MemberDeclarationSyntax>();
-    //         foreach (var memberDeclarationSyntax in x)
-    //         {
-    //             var y = (PropertyDeclarationSyntax) memberDeclarationSyntax;
-    //             var z = y.Type;
-    //             if (z.ToString().Contains(BaseEntityClassName))
-    //             {
-    //                 var containedType=((GenericNameSyntax)z).TypeArgumentList.Arguments;
-    //                 //containedType will be FoodComboAmount
-    //                 //we want to replace FoodComboAmount with GetFoodComboAmountDto
-    //                 var replacement = $"{_dtoType}{containedType}Dto"; 
-    //                 var newType = ParseTypeName(replacement);
-    //                 //change the type of the property to the new type
-    //                 //add y but with the new type to the new list
-    //                 // var p = y.WithType(newType);
-    //                 newList.Add(y.WithType(newType));
-    //                 
-    //             }
-    //             else
-    //             {
-    //                 newList.Add(y);
-    //             
-    //             }
-    //         }
-    //         
-    //         return newList;
-    //     }
-    // }
 
     protected override string GetNewContainedTypeName(object? collectionTypeIdentifier, string replacementTypeArgument)
     {
