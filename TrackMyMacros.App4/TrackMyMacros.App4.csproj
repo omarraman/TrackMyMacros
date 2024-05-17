@@ -63,6 +63,7 @@
     <ItemGroup>
       <Compile Remove="Services\WeightReadingDataService.cs" />
       <Compile Remove="Components\AddOrUpdateWeightReadingDialog.cs" />
+      <Compile Remove="GenericDataService.cs" />
     </ItemGroup>
 
 

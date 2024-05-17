@@ -1,0 +1,27 @@
+﻿@page "/AddNewWeightReading"
+@using global::TrackMyMacros.App4.ViewModels
+
+<div class="container">
+
+    <div class="row py-1">
+        <div class="col">
+            <RadzenDatePicker DateFormat="dd/MM/yyyy" @bind-Value="WeightReadingViewModel.Date"/>
+        </div>
+    </div>
+    <div class="row py-1">
+        <div class="col">
+            <RadzenNumeric TValue="double" @bind-Value="WeightReadingViewModel.Weight" Min="65" Max="85"></RadzenNumeric>
+        </div>
+    </div>
+    <div class="rz-p-12 rz-text-align-center">
+        <RadzenButton Text="Save" ButtonStyle="ButtonStyle.Secondary" Click="SaveAndClose"/>
+    </div>
+
+</div>
+
+@foreach (var alert in AlertMessages)
+{
+    <RadzenAlert AlertStyle="AlertStyle.Warning" Variant="Variant.Flat" Shade="Shade.Lighter">
+        Record saved
+    </RadzenAlert>
+}

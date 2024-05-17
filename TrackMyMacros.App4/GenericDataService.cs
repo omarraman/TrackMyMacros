@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Flurl.Http;
-using TrackMyMacros.App2.TrackMyMacros.App2.Services;
+using TrackMyMacros.App4.TrackMyMacros.App2.Services;
 using IGenericDataService = TrackMyMacros.App4.Services.IGenericDataService;
 
 namespace TrackMyMacros.App2
@@ -11,7 +11,7 @@ namespace TrackMyMacros.App2
 
 namespace TrackMyMacros.App2.TrackMyMacros.App2.Services
 {
-    public interface IGenericDataService
+    public interface IGenericDataServicex
     {
         Task Post<TModel,TDto>(TModel model,string endpoint);
         Task Put<TModel,TDto>(TModel model,string endpoint);
@@ -22,12 +22,18 @@ namespace TrackMyMacros.App2.TrackMyMacros.App2.Services
 
 namespace TrackMyMacros.App2.Services
 {
-    public class GenericDataService :IGenericDataService
+    public class GenericDataServicex :IGenericDataServicex
     {
         private readonly IMapper _mapper;
         private readonly string? _baseUrl;
 
-        public GenericDataService( IMapper mapper,IConfiguration configuration)
+        public static class Endpoints
+        {
+            public const string WeightReading = "WeightReading";
+            public const string FoodCombo = "FoodCombo";
+        }
+
+        public GenericDataServicex( IMapper mapper,IConfiguration configuration)
         {
             _baseUrl = configuration["BackendUrl"];
             if (_baseUrl==null)
@@ -35,6 +41,7 @@ namespace TrackMyMacros.App2.Services
                 throw new ArgumentNullException(nameof(_baseUrl));
             }
          
+            _baseUrl= _baseUrl +  "api/";
             _mapper = mapper;
         }
 
@@ -44,7 +51,7 @@ namespace TrackMyMacros.App2.Services
             try
             {
                 var dto = _mapper.Map<TDto>(model);
-                var uri = _baseUrl + endpoint;
+                var uri = _baseUrl + "/" + endpoint;
                 await uri
                     .PostJsonAsync(dto);
             }

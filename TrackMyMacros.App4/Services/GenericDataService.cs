@@ -14,6 +14,12 @@ namespace TrackMyMacros.App4.Services
     {
         private readonly IMapper _mapper;
         private readonly string? _baseUrl;
+        
+        public static class Endpoints
+        {
+            public const string WeightReading = "WeightReading";
+            public const string FoodCombo = "FoodCombo";
+        }
 
         public GenericDataService( IMapper mapper,IConfiguration configuration)
         {
@@ -22,7 +28,7 @@ namespace TrackMyMacros.App4.Services
             {
                 throw new ArgumentNullException(nameof(_baseUrl));
             }
-         
+            _baseUrl= _baseUrl +  "/api/";
             _mapper = mapper;
         }
 
