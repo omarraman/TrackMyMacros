@@ -21,6 +21,7 @@ public class UserInput
     public bool ShouldGenerateControllers => _inputList.Contains("ctl") || ShouldGenerateAllLayers;
     public bool ShouldGenerateValidators => _inputList.Contains("v") || ShouldGenerateAllLayers;
     public bool ShouldGenerateMappings => _inputList.Contains("m") || ShouldGenerateAllLayers;
+    public bool ShouldGenerateViewModelMappings => _inputList.Contains("vmm") || ShouldGenerateAllLayers;
     public bool ShouldGenerateDataServices => _inputList.Contains("ds") || ShouldGenerateAllLayers;
     public bool ShouldGenerateRepositories => _inputList.Contains("r") || ShouldGenerateAllLayers;
     public bool ShouldGenerateDialog => _inputList.Contains("dlg") || ShouldGenerateAllLayers;
@@ -52,6 +53,7 @@ c=command or query
 h=command or query handler
 v=validator
 m=mapping
+vmm=view model mapping,
 ctl=controller,
 ds=data service,
 layers=all layers

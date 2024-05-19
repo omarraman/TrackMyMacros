@@ -83,6 +83,8 @@ foreach (var classDeclarationSyntax in classes)
     await GenerateControllerClasses(classDeclarationSyntax);
 
     await GenerateMappingClasses(classDeclarationSyntax);
+    await GenerateViewModelMappingClasses(classDeclarationSyntax);
+    
     await GenerateDtoClasses(classDeclarationSyntax);
     
     await GenerateCommandOrQueryClasses(classDeclarationSyntax);
@@ -249,6 +251,37 @@ async Task GenerateMappingClasses(ClassDeclarationSyntax classDeclarationSyntax)
     if (userInputs.ShouldGenerateUpdate)
     {
         await MappingProfileGenerator.UpdateMappingProfileGenerator(classDeclarationSyntax).GenerateAndWriteClass2();
+    }
+
+}
+
+async Task GenerateViewModelMappingClasses(ClassDeclarationSyntax classDeclarationSyntax)
+{
+    // MappingProfileGenerator mappingGenerator =
+    //     new MappingProfileGenerator(classDeclarationSyntax, MappingProfileGenerator.MappingProfileType.Update,valueObjects);
+    // await mappingGenerator.GenerateAndWriteClass();
+    // // if (userInputs.ShouldGenerateDtos==false)
+    // //     return;
+    // //
+
+    if (!userInputs.ShouldGenerateViewModelMappings)
+    {
+        return;
+    }
+    
+    if (userInputs.ShouldGenerateGet)
+    {
+        await ViewModelMappingProfileGenerator.GetViewModelMappingProfileGenerator(classDeclarationSyntax).GenerateAndWriteClass2();
+    }
+
+    if (userInputs.ShouldGenerateCreate)
+    {
+        await ViewModelMappingProfileGenerator.CreateViewModelMappingProfileGenerator(classDeclarationSyntax).GenerateAndWriteClass2();
+    }
+    
+    if (userInputs.ShouldGenerateUpdate)
+    {
+        await ViewModelMappingProfileGenerator.UpdateViewModelMappingProfileGenerator(classDeclarationSyntax).GenerateAndWriteClass2();
     }
 
 }
