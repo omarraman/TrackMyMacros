@@ -35,13 +35,14 @@ namespace TrackMyMacros.App4.Components
 
         public async Task SaveAndClose()
         {
+           
             if (EditMode)
             {
-                await _foodComboDataService.Put<WeightReadingViewModel,CreateWeightReadingDto>(WeightReading , GenericDataService.Endpoints.WeightReading);
+                await _foodComboDataService.Put<WeightReadingViewModel,UpdateWeightReadingDto>(WeightReading , GenericDataService.Endpoints.WeightReading);
             }
             else
             {
-                await _foodComboDataService.Post<WeightReadingViewModel,UpdateWeightReadingDto>(WeightReading, GenericDataService.Endpoints.WeightReading);
+                await _foodComboDataService.Post<WeightReadingViewModel,CreateWeightReadingDto>(WeightReading, GenericDataService.Endpoints.WeightReading);
             }
 
             await OnDialogClose.InvokeAsync();

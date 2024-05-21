@@ -96,6 +96,8 @@ foreach (var classDeclarationSyntax in classes)
     await GenerateUiDialogClasses(classDeclarationSyntax);
     await GenerateUiAddPageClasses(classDeclarationSyntax);
     
+    await GenerateUiListPageClasses(classDeclarationSyntax);
+    
     await GenerateViewModels(classDeclarationSyntax);
 }
 
@@ -339,6 +341,17 @@ async Task GenerateUiAddPageClasses(ClassDeclarationSyntax classDeclarationSynta
     
     var dataServiceGenerator = new AddEntityPageCodeBehindGenerator(classDeclarationSyntax);
     await dataServiceGenerator.GenerateAndWriteClass2();
+}
+
+async Task GenerateUiListPageClasses(ClassDeclarationSyntax classDeclarationSyntax)
+{
+    if (!userInputs.ShouldGenerateUiListPage)
+    {
+        return;
+    }
+    
+    var generator = new ListUiPageGenerator(classDeclarationSyntax);
+    await generator.GenerateAndWriteClass2();
 }
 
 async Task GenerateViewModels(ClassDeclarationSyntax classDeclarationSyntax)

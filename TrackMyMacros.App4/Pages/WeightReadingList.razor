@@ -1,0 +1,19 @@
+﻿@page "/WeightReadingList"
+
+
+@if (WeightReadings != null)
+{
+    @foreach (var weightReadingViewModel in WeightReadings)
+    {
+        <div>
+            @weightReadingViewModel.Date @weightReadingViewModel.Weight
+            <RadzenButton Text="Edit" ButtonStyle="ButtonStyle.Primary" Click="()=>Edit(weightReadingViewModel.Id)"/>
+            <RadzenButton Text="Delete" ButtonStyle="ButtonStyle.Primary" Click="()=>Delete(weightReadingViewModel.Id)"/>
+        </div>
+    }
+}
+else
+{
+    <div>Loading...</div>
+}
+

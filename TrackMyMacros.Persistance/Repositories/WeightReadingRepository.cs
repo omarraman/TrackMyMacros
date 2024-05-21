@@ -49,7 +49,8 @@ public class WeightReadingRepository : IWeightReadingRepository
         {
 
             var foodInDb= await _dbContext.Set<WeightReading>().FindAsync(entity.Id);
-            _dbContext.Entry(foodInDb).CurrentValues.SetValues(entity);
+            foodInDb.Weight = entity.Weight;
+            // _dbContext.Entry(foodInDb).CurrentValues.SetValues(entity);
 
             await _dbContext.SaveChangesAsync();
 

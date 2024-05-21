@@ -9,6 +9,7 @@ namespace TrackMyMacros.App4.Services
         Task Put<TModel,TDto>(TModel model,string endpoint);
         Task<IReadOnlyList<TModel>> GetList<TModel,TDto>(string endpoint );
         Task<TModel> Get<TModel,TDto>(string endpoint );
+        Task Delete(string endpoint );
     }
     public class GenericDataService :IGenericDataService
     {
@@ -57,7 +58,7 @@ namespace TrackMyMacros.App4.Services
                 var dto = _mapper.Map<TDto>(model);
                 var uri = _baseUrl + endpoint;
                 await uri
-                    .PostJsonAsync(dto);
+                    .PutJsonAsync(dto);
             }
             catch (FlurlHttpException ex)
             {
@@ -100,5 +101,20 @@ namespace TrackMyMacros.App4.Services
 
         }
 
+        public async Task Delete(string endpoint )
+        {
+            try
+            {
+                var uri =  _baseUrl + endpoint;
+                await uri
+                    .DeleteAsync();
+            }
+            catch (FlurlHttpException ex)
+            {
+                var string1 = await ex.GetResponseStringAsync();
+                throw new Exception(string1);
+            }
+
+        }
     }
 }
