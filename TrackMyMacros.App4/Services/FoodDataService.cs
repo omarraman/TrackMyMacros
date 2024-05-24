@@ -14,7 +14,7 @@ namespace TrackMyMacros.App4.Services
 
         public FoodDataService( IMapper mapper,IConfiguration configuration)
         {
-            _baseUrl = configuration["BackendUrl"];
+                _baseUrl = configuration["BackendUrl"];
             if (_baseUrl==null)
             {
                 throw new ArgumentNullException(nameof(_baseUrl));
@@ -57,7 +57,7 @@ namespace TrackMyMacros.App4.Services
             try
             {
                 var dto = _mapper.Map<CreateFoodDto>(model);
-                var uri = _baseUrl + "/api/Food";
+                var uri = _baseUrl + "/Food";
                 await uri
                     .PostJsonAsync(dto);
             }

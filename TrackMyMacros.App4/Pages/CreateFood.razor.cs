@@ -28,7 +28,7 @@ namespace TrackMyMacros.App4.Pages
 
         private async Task HandleValidSubmit()
         {
-            await GenericDataService.Post<CreateFoodViewModel, CreateFoodDto>(NewFood, "/api/Food");
+            await GenericDataService.Post<CreateFoodViewModel, CreateFoodDto>(NewFood, "Food");
             NewFood = new CreateFoodViewModel();
             AlertMessages.Add("Food Added");
             StateHasChanged();

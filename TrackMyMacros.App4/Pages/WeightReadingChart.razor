@@ -1,0 +1,39 @@
+﻿@page "/WeightReadingChart"
+
+@if (WeightReadings != null)
+{
+        <div>
+            <RadzenCheckBox @bind-Value="@ShowDataLabels" Name="dataLabels"></RadzenCheckBox>
+            <RadzenLabel Component="dataLabels" Text="Show Labels" Style="margin-right: 1rem;"/>
+            
+        </div>
+        <div>
+            <RadzenDatePicker DateFormat="dd/MM/yyyy" @bind-Value="From"/>
+            <RadzenDatePicker DateFormat="dd/MM/yyyy" @bind-Value="To"/>
+        </div>
+
+        <div>
+            <RadzenDropDown Style="width: auto" @bind-Value="SelectedChartGranularity" Data=ChartGranularity TextProperty="Value" ValueProperty="Key"/>
+        </div>
+        <div>
+            <RadzenButton Click="Refresh" Icon="refresh" ButtonStyle="ButtonStyle.Primary"/>
+        </div>
+    
+    <RadzenChart>
+        <RadzenLineSeries Smooth="@Smooth" Title="" Data="WeightReadings" CategoryProperty="Date"  LineType="LineType.Solid" ValueProperty="Weight">
+                <RadzenSeriesDataLabels  Visible="@ShowDataLabels"  />
+        </RadzenLineSeries>
+
+        <RadzenCategoryAxis Padding="20" />
+        <RadzenValueAxis >
+            <RadzenGridLines Visible="true" />
+            <RadzenAxisTitle Text="Weight" />
+        </RadzenValueAxis>
+    </RadzenChart>
+
+}
+else
+{
+    <div>Loading...</div>
+}
+
