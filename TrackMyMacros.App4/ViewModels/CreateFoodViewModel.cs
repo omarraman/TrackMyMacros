@@ -18,6 +18,9 @@ namespace TrackMyMacros.App4.ViewModels
 
         [Range(0, double.MaxValue, ErrorMessage = "Please enter a value bigger than {1}")]
         public double Quantity { get; set; }
+        
+        [Range(0, double.MaxValue, ErrorMessage = "Please enter a value bigger than {1}")]
+        public double DefaultQuantity { get; set; }
 
         [Required]
         [Range(0, double.MaxValue, ErrorMessage = "Please select a unit of measure")]

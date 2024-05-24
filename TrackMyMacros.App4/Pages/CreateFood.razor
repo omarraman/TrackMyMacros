@@ -19,7 +19,9 @@
     <RadzenCard>
         Quantity <RadzenNumeric TValue="double" @bind-Value="NewFood.Quantity">Quantity</RadzenNumeric>
     </RadzenCard>
-
+    <RadzenCard>
+        Quantity <RadzenNumeric TValue="double" @bind-Value="NewFood.DefaultQuantity">Default Quantity</RadzenNumeric>
+    </RadzenCard>
     <RadzenCard>
         UOM :
         @if (Uoms != null)
