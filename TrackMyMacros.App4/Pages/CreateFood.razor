@@ -2,7 +2,7 @@
 <h3>Add Food</h3>
 
 
-<EditForm Model="@NewFood" OnValidSubmit="@HandleValidSubmit" id="test">
+<EditForm Model="@NewFood" OnValidSubmit="@HandleValidSubmit"  id="test">
     <RadzenCard>
         Name <RadzenTextBox @bind-Value="NewFood.Name" TextStyle="TextStyle.Subtitle2" TagName="TagName.H3">Name</RadzenTextBox>
     </RadzenCard>
@@ -21,6 +21,12 @@
     </RadzenCard>
     <RadzenCard>
         Quantity <RadzenNumeric TValue="double" @bind-Value="NewFood.DefaultQuantity">Default Quantity</RadzenNumeric>
+    </RadzenCard>
+    <RadzenCard>
+        Quantity <RadzenNumeric TValue="double" @bind-Value="NewFood.Min">Min Quantity</RadzenNumeric>
+    </RadzenCard>
+    <RadzenCard>
+        Quantity <RadzenNumeric TValue="double" @bind-Value="NewFood.Max">Max Quantity</RadzenNumeric>
     </RadzenCard>
     <RadzenCard>
         UOM :

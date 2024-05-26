@@ -10,6 +10,8 @@ public class CreateFoodCommand:RequestBase<Result<int>>
 
     public double Quantity { get; set; }
     public double DefaultQuantity { get; set; }
+    public double? Min { get; set; }
+    public double? Max { get; set; }
     public int UomId { get; set; }
 
 }
