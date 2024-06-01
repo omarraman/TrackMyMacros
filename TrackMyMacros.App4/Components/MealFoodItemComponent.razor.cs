@@ -20,6 +20,9 @@ namespace TrackMyMacros.App4.Components
 
         public bool SliderDisabled { get; set; } = true;
 
+        public decimal SliderMin { get; set; } = 0;
+        public decimal SliderMax { get; set; } = 250;
+
         [Parameter] public int SelectedFoodId  { get; set; }
 
         public MealFoodItemComponent()
@@ -28,14 +31,25 @@ namespace TrackMyMacros.App4.Components
 
         protected override async Task<Task> OnInitializedAsync()
         {
-            // SelectedFoodId = FoodAmount.FoodId;
             FoodList = await FoodDataRepository.GetFoodList();
             SliderDisabled=SelectedFoodId!= -1;
 
             SelectedFood = FoodDataRepository.GetFood(FoodAmount.FoodId);
+            HandleSelectedFoodDefaults();
             StateHasChanged();
 
             return base.OnInitializedAsync();
+        }
+
+        private void HandleSelectedFoodDefaults()
+        {
+            if (SelectedFood.HasValue)
+            {
+                if (SelectedFood.Value.Min.HasValue) SliderMin = new decimal(SelectedFood.Value.Min.Value);
+                if (SelectedFood.Value.Max.HasValue) SliderMax = new decimal(SelectedFood.Value.Max.Value);
+                if (SelectedFood.Value.DefaultQuantity.HasValue) FoodAmount.SetQuantity(SelectedFood.Value.DefaultQuantity.Value, SelectedFood.Value);
+                
+            }
         }
 
 
@@ -57,6 +71,7 @@ namespace TrackMyMacros.App4.Components
         public async Task OnChangeFood(object args)
         {
             SelectedFood = FoodDataRepository.GetFood(SelectedFoodId);
+            HandleSelectedFoodDefaults();
             FoodAmount.SetMacros(SelectedFood.Value);
             await OnQuantitiesChanged.InvokeAsync();
 

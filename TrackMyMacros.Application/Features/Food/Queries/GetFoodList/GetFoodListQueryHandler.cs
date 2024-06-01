@@ -25,7 +25,7 @@ public class GetFoodListQueryHandler: IRequestHandler<GetFoodListQuery,IReadOnly
     {
         using var connection = new NpgsqlConnection(_connectionString.Value);
 
-        var sql = "SELECT f.\"Id\", f.\"Name\",f.\"ProteinAmount\" as Protein,f.\"FatAmount\" as Fat,f.\"CarbohydrateAmount\" as Carbohydrate,f.\"Quantity\",f.\"DefaultQuantity\",u.\"Id\"  as UomId ,u.\"Name\" as UOM FROM public.\"Food\" f join public.\"Uoms\" u on u.\"Id\" = f.\"UomId\"";
+        var sql = "SELECT f.\"Id\", f.\"Name\",f.\"ProteinAmount\" as Protein,f.\"FatAmount\" as Fat,f.\"CarbohydrateAmount\" as Carbohydrate,f.\"Quantity\",f.\"DefaultQuantity\",f.\"Min\",f.\"Max\",u.\"Id\"  as UomId ,u.\"Name\" as UOM FROM public.\"Food\" f join public.\"Uoms\" u on u.\"Id\" = f.\"UomId\"";
 
          IReadOnlyList<FoodListItemDto> list = connection.Query<FoodListItemDto>(sql).ToList().AsReadOnly();
 

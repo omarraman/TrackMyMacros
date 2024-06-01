@@ -25,7 +25,7 @@
             <RadzenCheckBox @bind-Value=@SliderDisabled/>
         </div>
         <div class="col-11 px-2">
-            <RadzenSlider @bind-Value=@FoodAmount.Quantity Change=@OnChangeQuantity TValue="double" Max="250" Step="5" style="width: 100%" Disabled="SliderDisabled"/>
+            <RadzenSlider @bind-Value=@FoodAmount.Quantity Change=@OnChangeQuantity TValue="double" Max="SliderMax" Min="SliderMin" Step="5" style="width: 100%" Disabled="SliderDisabled"/>
         </div>
     </div>
 

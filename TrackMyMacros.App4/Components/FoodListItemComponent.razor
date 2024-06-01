@@ -24,6 +24,9 @@
         Fat : <RadzenNumeric TValue="double" @bind-Value=@FoodListItemViewModel.Fat></RadzenNumeric> g
         Protein : <RadzenNumeric TValue="double" @bind-Value=@FoodListItemViewModel.Protein></RadzenNumeric> g
         Carbs : <RadzenNumeric TValue="double" @bind-Value=@FoodListItemViewModel.Carbohydrate></RadzenNumeric> g
+        Default : <RadzenNumeric TValue="double?" @bind-Value=@FoodListItemViewModel.DefaultQuantity></RadzenNumeric> g
+        Min : <RadzenNumeric TValue="double?" @bind-Value=@FoodListItemViewModel.Min></RadzenNumeric> g
+        Max : <RadzenNumeric TValue="double?" @bind-Value=@FoodListItemViewModel.Max></RadzenNumeric> g
         UOM : `
         @if (Uoms != null)
         {
