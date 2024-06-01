@@ -1,4 +1,6 @@
-﻿using TrackMyMacros.Attributes;
+﻿using Ardalis.GuardClauses;
+using TrackMyMacros.Attributes;
+using TrackMyMacros.Domain.ValueObjects;
 
 namespace TrackMyMacros.Domain.Aggregates;
 
@@ -17,6 +19,8 @@ public class Food
     public int QuantityInGrams { get; set; }
 
     public double? DefaultQuantity { get; set; }
+    public double? Min { get; set; }
+    public double? Max { get; set; }
 
     public int UomId { get; set; }
 
@@ -25,7 +29,4 @@ public class Food
                               ProteinAmount.MacroNutrient.CaloriesPerGram * QuantityInGrams +
                               FatAmount.MacroNutrient.CaloriesPerGram * QuantityInGrams;
 
-    //slice half a slice 2 slices
-    //bar
-    //100g 30 g 200g
 }

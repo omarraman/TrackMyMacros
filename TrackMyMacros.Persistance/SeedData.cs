@@ -1,5 +1,6 @@
 ﻿using TrackMyMacros.Domain;
 using TrackMyMacros.Domain.Aggregates;
+using TrackMyMacros.Domain.ValueObjects;
 
 namespace TrackMyMacros.Persistance;
 

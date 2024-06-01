@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TrackMyMacros.App4.Attributes;
 
 namespace TrackMyMacros.App4.ViewModels
 {
@@ -19,10 +20,10 @@ namespace TrackMyMacros.App4.ViewModels
         [Range(0, double.MaxValue, ErrorMessage = "Please enter a value bigger than {1}")]
         public double Quantity { get; set; }
         
+        [CompareDefaultToMinToMaxQuantity]
         [Range(0, double.MaxValue, ErrorMessage = "Please enter a value bigger than {1}")]
         public double DefaultQuantity { get; set; }
 
-        [Compare("Max", ErrorMessage = "Min must be less than Max")]
         [Range(0, double.MaxValue, ErrorMessage = "Please enter a value bigger than {1}")]
         public double Min { get; set; }
         

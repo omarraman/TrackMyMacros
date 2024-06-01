@@ -60,8 +60,8 @@ namespace TrackMyMacros.Persistance.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000000"),
                             Calories = 2400,
-                            CreatedDate = new DateTime(2024, 5, 16, 4, 35, 57, 821, DateTimeKind.Utc).AddTicks(1297),
-                            LastModifiedDate = new DateTime(2024, 5, 16, 4, 35, 57, 821, DateTimeKind.Utc).AddTicks(1413),
+                            CreatedDate = new DateTime(2024, 5, 31, 4, 22, 3, 915, DateTimeKind.Utc).AddTicks(2480),
+                            LastModifiedDate = new DateTime(2024, 5, 31, 4, 22, 3, 915, DateTimeKind.Utc).AddTicks(2600),
                             WeekdaysMealsPerDay = 5,
                             WeekendMealsPerDay = 5,
                             WeightInKg = 75.900000000000006
@@ -105,12 +105,12 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5ae5e9ad-10a9-4126-9412-06e00b8b7a59"),
+                            Id = new Guid("4c65d788-f4d4-46b7-83ab-4a52c12b7ae1"),
                             AllowedCarbohydrate = 100,
                             AllowedFat = 100,
                             AllowedProtein = 100,
                             Carbohydrate = 10.0,
-                            Date = new DateOnly(2024, 5, 16),
+                            Date = new DateOnly(2024, 5, 31),
                             Fat = 10.0,
                             MealCount = 1,
                             Protein = 10.0
@@ -133,6 +133,12 @@ namespace TrackMyMacros.Persistance.Migrations
                         .HasColumnType("double precision");
 
                     b.Property<double>("FatAmount")
+                        .HasColumnType("double precision");
+
+                    b.Property<double?>("Max")
+                        .HasColumnType("double precision");
+
+                    b.Property<double?>("Min")
                         .HasColumnType("double precision");
 
                     b.Property<string>("Name")
@@ -480,8 +486,8 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("410f7035-81d3-4d11-9148-3c6f6659d2ac"),
-                            CreatedDate = new DateTime(2024, 5, 16, 4, 35, 57, 828, DateTimeKind.Utc).AddTicks(9422),
+                            Id = new Guid("76ecf581-ed7e-436e-9870-d57ad7ae6353"),
+                            CreatedDate = new DateTime(2024, 5, 31, 4, 22, 3, 926, DateTimeKind.Utc).AddTicks(2498),
                             Name = "Test Food Combo"
                         });
                 });
@@ -533,8 +539,8 @@ namespace TrackMyMacros.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 5, 16, 4, 35, 57, 830, DateTimeKind.Utc).AddTicks(6230),
-                            LastModifiedDate = new DateTime(2024, 5, 16, 4, 35, 57, 830, DateTimeKind.Utc).AddTicks(6263),
+                            CreatedDate = new DateTime(2024, 5, 31, 4, 22, 3, 928, DateTimeKind.Utc).AddTicks(1761),
+                            LastModifiedDate = new DateTime(2024, 5, 31, 4, 22, 3, 928, DateTimeKind.Utc).AddTicks(1795),
                             Name = "Grams"
                         });
                 });
@@ -616,7 +622,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                     b2.HasData(
                                         new
                                         {
-                                            MealDayId = new Guid("5ae5e9ad-10a9-4126-9412-06e00b8b7a59"),
+                                            MealDayId = new Guid("4c65d788-f4d4-46b7-83ab-4a52c12b7ae1"),
                                             MealId = 1,
                                             Id = 1,
                                             Carbohydrate = 10.0,
@@ -632,7 +638,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    DayId = new Guid("5ae5e9ad-10a9-4126-9412-06e00b8b7a59"),
+                                    DayId = new Guid("4c65d788-f4d4-46b7-83ab-4a52c12b7ae1"),
                                     Id = 1,
                                     AllowedCarbohydrate = 10,
                                     AllowedFat = 10,
@@ -684,7 +690,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    FoodComboId = new Guid("410f7035-81d3-4d11-9148-3c6f6659d2ac"),
+                                    FoodComboId = new Guid("76ecf581-ed7e-436e-9870-d57ad7ae6353"),
                                     Id = 1,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,
@@ -694,7 +700,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                 },
                                 new
                                 {
-                                    FoodComboId = new Guid("410f7035-81d3-4d11-9148-3c6f6659d2ac"),
+                                    FoodComboId = new Guid("76ecf581-ed7e-436e-9870-d57ad7ae6353"),
                                     Id = 2,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,

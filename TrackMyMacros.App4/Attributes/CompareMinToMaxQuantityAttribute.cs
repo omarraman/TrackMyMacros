@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TrackMyMacros.App4.ViewModels;
 
-namespace TrackMyMacros.App4.ViewModels;
+namespace TrackMyMacros.App4.Attributes;
 
 public class CompareMinToMaxQuantityAttribute : ValidationAttribute
 {
@@ -12,14 +13,17 @@ public class CompareMinToMaxQuantityAttribute : ValidationAttribute
     protected override ValidationResult? IsValid(
         object? value, ValidationContext validationContext)
     {
-        var mission = (CreateFoodViewModel)validationContext.ObjectInstance;
-        var max = (int)value;
+        var model = (CreateFoodViewModel)validationContext.ObjectInstance;
+        var max = (double)value;
 
-        if (max < mission.Min)
+        if (max < model.Min)
         {
             return new ValidationResult(GetErrorMessage());
         }
 
         return ValidationResult.Success;
     }
-} 
+    
+    
+    
+}
