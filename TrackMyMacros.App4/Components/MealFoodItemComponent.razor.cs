@@ -35,19 +35,28 @@ namespace TrackMyMacros.App4.Components
             SliderDisabled=SelectedFoodId!= -1;
 
             SelectedFood = FoodDataRepository.GetFood(FoodAmount.FoodId);
-            HandleSelectedFoodDefaults();
+            HandleSelectedFoodDefaults(true);
             StateHasChanged();
 
             return base.OnInitializedAsync();
         }
 
-        private void HandleSelectedFoodDefaults()
+        private void HandleSelectedFoodDefaults(bool initializing = false)
         {
+            //selected food is the record selected from the dropdown which has defaultquantity, min max etc
             if (SelectedFood.HasValue)
             {
                 if (SelectedFood.Value.Min.HasValue) SliderMin = new decimal(SelectedFood.Value.Min.Value);
                 if (SelectedFood.Value.Max.HasValue) SliderMax = new decimal(SelectedFood.Value.Max.Value);
-                if (SelectedFood.Value.DefaultQuantity.HasValue) FoodAmount.SetQuantity(SelectedFood.Value.DefaultQuantity.Value, SelectedFood.Value);
+
+                if (initializing)
+                {
+                    FoodAmount.SetQuantity(FoodAmount.Quantity,SelectedFood.Value);
+                    return;
+                }
+
+                //apply default quantity f we are adding in a new item 
+                if ( SelectedFood.Value.DefaultQuantity.HasValue) FoodAmount.SetQuantity(SelectedFood.Value.DefaultQuantity.Value, SelectedFood.Value);
                 
             }
         }
