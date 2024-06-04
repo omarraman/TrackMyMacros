@@ -58,7 +58,7 @@ public class ViewModelGenerator : RecordTypeClassGenerator
         : base(classDeclarationSyntax,valueObjects)
     {
         // _classDeclarationSyntax = classDeclarationSyntax;
-        BaseDirectory= "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.App4\\ViewModels";
+        BaseDirectory= "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.App4\\ViewModels\\";
         OutputDirectory= BaseEntityClassName;
 
         _viewModelType = viewModelType;

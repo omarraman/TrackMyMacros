@@ -8,7 +8,7 @@ public class UserInput
 
     public UserInput(string userInput)
     {
-        _inputList = userInput.Split(",").ToList();
+        _inputList = userInput.Replace(" ","").Split(",").ToList();
     }
 
     public bool ShouldGenerateDtos => _inputList.Contains("d") || ShouldGenerateAllLayers;
