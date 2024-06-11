@@ -60,8 +60,8 @@ namespace TrackMyMacros.Persistance.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000000"),
                             Calories = 2400,
-                            CreatedDate = new DateTime(2024, 5, 31, 4, 22, 3, 915, DateTimeKind.Utc).AddTicks(2480),
-                            LastModifiedDate = new DateTime(2024, 5, 31, 4, 22, 3, 915, DateTimeKind.Utc).AddTicks(2600),
+                            CreatedDate = new DateTime(2024, 6, 9, 6, 37, 55, 106, DateTimeKind.Utc).AddTicks(1553),
+                            LastModifiedDate = new DateTime(2024, 6, 9, 6, 37, 55, 106, DateTimeKind.Utc).AddTicks(1643),
                             WeekdaysMealsPerDay = 5,
                             WeekendMealsPerDay = 5,
                             WeightInKg = 75.900000000000006
@@ -105,12 +105,12 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4c65d788-f4d4-46b7-83ab-4a52c12b7ae1"),
+                            Id = new Guid("8c8e1bd7-bcda-4385-a456-1db2d5ccfaa3"),
                             AllowedCarbohydrate = 100,
                             AllowedFat = 100,
                             AllowedProtein = 100,
                             Carbohydrate = 10.0,
-                            Date = new DateOnly(2024, 5, 31),
+                            Date = new DateOnly(2024, 6, 9),
                             Fat = 10.0,
                             MealCount = 1,
                             Protein = 10.0
@@ -486,10 +486,25 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("76ecf581-ed7e-436e-9870-d57ad7ae6353"),
-                            CreatedDate = new DateTime(2024, 5, 31, 4, 22, 3, 926, DateTimeKind.Utc).AddTicks(2498),
+                            Id = new Guid("1ecbfe22-7866-4967-a8cb-c8fe4d9ccdcc"),
+                            CreatedDate = new DateTime(2024, 6, 9, 6, 37, 55, 113, DateTimeKind.Utc).AddTicks(755),
                             Name = "Test Food Combo"
                         });
+                });
+
+            modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Recipe.Recipe", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Recipes");
                 });
 
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.WeightReading.WeightReading", b =>
@@ -539,10 +554,43 @@ namespace TrackMyMacros.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 5, 31, 4, 22, 3, 928, DateTimeKind.Utc).AddTicks(1761),
-                            LastModifiedDate = new DateTime(2024, 5, 31, 4, 22, 3, 928, DateTimeKind.Utc).AddTicks(1795),
+                            CreatedDate = new DateTime(2024, 6, 9, 6, 37, 55, 114, DateTimeKind.Utc).AddTicks(4201),
+                            LastModifiedDate = new DateTime(2024, 6, 9, 6, 37, 55, 114, DateTimeKind.Utc).AddTicks(4227),
                             Name = "Grams"
                         });
+                });
+
+            modelBuilder.Entity("TrackMyMacros.Domain.ValueObjects.RecipeFoodAmount", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("Carbohydrate")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("Fat")
+                        .HasColumnType("double precision");
+
+                    b.Property<int>("FoodId")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Protein")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("Quantity")
+                        .HasColumnType("double precision");
+
+                    b.Property<Guid?>("RecipeId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RecipeId");
+
+                    b.ToTable("RecipeFoodAmount");
                 });
 
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Day.Day", b =>
@@ -622,7 +670,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                     b2.HasData(
                                         new
                                         {
-                                            MealDayId = new Guid("4c65d788-f4d4-46b7-83ab-4a52c12b7ae1"),
+                                            MealDayId = new Guid("8c8e1bd7-bcda-4385-a456-1db2d5ccfaa3"),
                                             MealId = 1,
                                             Id = 1,
                                             Carbohydrate = 10.0,
@@ -638,7 +686,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    DayId = new Guid("4c65d788-f4d4-46b7-83ab-4a52c12b7ae1"),
+                                    DayId = new Guid("8c8e1bd7-bcda-4385-a456-1db2d5ccfaa3"),
                                     Id = 1,
                                     AllowedCarbohydrate = 10,
                                     AllowedFat = 10,
@@ -690,7 +738,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    FoodComboId = new Guid("76ecf581-ed7e-436e-9870-d57ad7ae6353"),
+                                    FoodComboId = new Guid("1ecbfe22-7866-4967-a8cb-c8fe4d9ccdcc"),
                                     Id = 1,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,
@@ -700,7 +748,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                 },
                                 new
                                 {
-                                    FoodComboId = new Guid("76ecf581-ed7e-436e-9870-d57ad7ae6353"),
+                                    FoodComboId = new Guid("1ecbfe22-7866-4967-a8cb-c8fe4d9ccdcc"),
                                     Id = 2,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,
@@ -711,6 +759,18 @@ namespace TrackMyMacros.Persistance.Migrations
                         });
 
                     b.Navigation("FoodComboAmounts");
+                });
+
+            modelBuilder.Entity("TrackMyMacros.Domain.ValueObjects.RecipeFoodAmount", b =>
+                {
+                    b.HasOne("TrackMyMacros.Domain.Aggregates.Recipe.Recipe", null)
+                        .WithMany("RecipeFoodAmounts")
+                        .HasForeignKey("RecipeId");
+                });
+
+            modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Recipe.Recipe", b =>
+                {
+                    b.Navigation("RecipeFoodAmounts");
                 });
 #pragma warning restore 612, 618
         }

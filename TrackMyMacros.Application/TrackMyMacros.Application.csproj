@@ -48,6 +48,7 @@
       <Folder Include="Features\FoodCombo\Commands\Get\" />
       <Folder Include="Features\FoodCombo\Queries\GetList\" />
       <Folder Include="Features\FoodCombo\Queries\Get\" />
+      <Folder Include="Profiles\Recipe\" />
     </ItemGroup>
 
     <ItemGroup>

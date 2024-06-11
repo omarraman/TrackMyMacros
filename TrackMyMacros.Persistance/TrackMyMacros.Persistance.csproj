@@ -15,9 +15,5 @@
       <ProjectReference Include="..\TrackMyMacros.Application\TrackMyMacros.Application.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Compile Remove="Repositories\MealConfiguration.cs" />
-    </ItemGroup>
-
 </Project>
     

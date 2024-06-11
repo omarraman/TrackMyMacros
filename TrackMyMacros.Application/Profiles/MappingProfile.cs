@@ -51,16 +51,11 @@ public class MappingProfile:Profile
 
 
         CreateMap<CreateFoodComboDto, CreateFoodComboCommand>();
-        CreateMap<CreateFoodComboAmount, FoodComboAmount>();
-        CreateMap<CreateFoodComboCommand, FoodCombo>();
-            // .ForMember(m=>m.FoodComboAmounts,
-            //     o=>o.MapFrom(p=>p.FoodComboAmounts));
-        // CreateMap<CreateFoodComboCommand, FoodCombo>()
-        //     .ForMember(m=>m.FoodComboAmounts,
-        //         o=>o.MapFrom(p=>p.FoodComboAmounts));
-
-        
         CreateMap<CreateFoodComboAmountDto, CreateFoodComboAmount>();
+
+        CreateMap<CreateFoodComboCommand, FoodCombo>();
+        CreateMap<CreateFoodComboAmount, FoodComboAmount>();
+
         
         
         
@@ -71,5 +66,7 @@ public class MappingProfile:Profile
             .ForMember(m=>m.Quantity,o=>o.MapFrom(p=>p.Quantity))
             ;
 
+        
+        CreateMap<FoodCombo, GetFoodComboDto>();
     }
 }

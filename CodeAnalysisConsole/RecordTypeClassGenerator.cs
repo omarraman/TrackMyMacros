@@ -50,17 +50,23 @@ public abstract class RecordTypeClassGenerator:Generator
                 var propertyMember = (PropertyDeclarationSyntax) memberDeclarationSyntax;
                 var collectionTypeContainingValueObject = propertyMember.Type;
                 
+                //if we have a property that contains the entity name eg List<RecipeFoodAmounts> when the entity is called Recipe
                 if (collectionTypeContainingValueObject.ToString().Contains(BaseEntityClassName))
                 {
-                    
+                    //identify the collection type eg List
                     var collectionTypeIdentifier=((GenericNameSyntax)collectionTypeContainingValueObject).Identifier.Value; //eg List
 
+                    //identify the type argument eg RecipeFoodAmounts
                     var typeArgument=((GenericNameSyntax)collectionTypeContainingValueObject).TypeArgumentList.Arguments;
                     var valueObject = _valueObjects.First(m => m.Identifier.ValueText==typeArgument.ToString());
+                    
+                    //generate the new type argument name eg CreateRecipeFoodAmountsDto
                     var replacementTypeArgument = GetNewTypeArgumentName(typeArgument);
                     var newType = ParseTypeName(GetNewContainedTypeName(collectionTypeIdentifier, replacementTypeArgument));
+                    //add it as a member
                     newList.Add(propertyMember.WithType(newType));
-                    newList.Add(GenerateNewClassDeclaration(valueObject, replacementTypeArgument, m => m is PropertyDeclarationSyntax, []));
+                    // newList.Add(GenerateNewClassDeclaration(valueObject, replacementTypeArgument, m => m is PropertyDeclarationSyntax p && p.Identifier.Text !="Id", []));
+                    newList.Add(GenerateNewClassDeclaration(valueObject, replacementTypeArgument, m => m is PropertyDeclarationSyntax p && MemberSelectionPredicate(p), [])); //so dont include Id in create
 
                 }
                 else

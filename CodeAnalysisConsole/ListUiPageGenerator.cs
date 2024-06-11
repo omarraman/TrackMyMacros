@@ -96,7 +96,7 @@ public class ListUiPageGenerator : RazorPageGenerator
                             await _dataService.Get<Get{BaseEntityClassName}ViewModel, Get{BaseEntityClassName}Dto>(
                                 $""{{GenericDataService.Endpoints.{BaseEntityClassName}}}/GetById/{{id}}"");
                         var json = JsonConvert.SerializeObject(viewModel);
-                        var viewModelCopy = JsonConvert.DeserializeObject<{BaseEntityClassName}ViewModel>(json);
+                        var viewModelCopy = JsonConvert.DeserializeObject<Update{BaseEntityClassName}ViewModel>(json);
                         await DialogService.OpenAsync<AddOrUpdate{BaseEntityClassName}Dialog>(""Edit {BaseEntityClassName}"",
                             new Dictionary<string, object>
                             {{

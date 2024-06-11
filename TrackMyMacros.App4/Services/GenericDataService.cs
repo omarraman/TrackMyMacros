@@ -20,6 +20,7 @@ namespace TrackMyMacros.App4.Services
         {
             public const string WeightReading = "WeightReading";
             public const string FoodCombo = "FoodCombo";
+            public const string Recipe = "Recipe";
         }
 
         public GenericDataService( IMapper mapper,IConfiguration configuration)
@@ -47,6 +48,10 @@ namespace TrackMyMacros.App4.Services
             {
                 var string1 = await ex.GetResponseStringAsync();
                 throw new Exception(string1);
+            }
+            catch (Exception e)
+            {
+                throw;
             }
         }
     

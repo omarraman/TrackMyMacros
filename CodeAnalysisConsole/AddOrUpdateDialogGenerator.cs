@@ -9,12 +9,39 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace CodeGen;
 
-public class AddOrUpdateDialogGenerator : Generator
+public class AddOrUpdateDialogGenerator : RazorPageGenerator
 {
 
     private StringBuilder DialogClassDefinitionString { get; set; }
 
+    protected override List<string> Comments {
+        get
+        {
+            return new List<string>
+            {
+                @$"
+/*
+                filename will be AddOrUpdate{BaseEntityClassName}Dialog.razor
 
+                <div class=""row py-1"">
+                    <div class=""col"">
+                        <RadzenDatePicker DateFormat=""MM/dd/yyyy"" @bind-Value=@WeightReading.Date/>
+                    </div>
+                </div>
+                <div class=""row py-1"">
+                    <div class=""col"">
+                        <RadzenNumeric TValue=""double"" @bind-Value=""WeightReading.Weight"" Min=""65"" Max=""85""></RadzenNumeric>
+                    </div>
+                </div>
+                <div class=""rz-p-12 rz-text-align-center"">
+                    <RadzenButton Text=""Ok"" ButtonStyle=""ButtonStyle.Secondary"" Click=""SaveAndClose""/>
+                    <RadzenButton Text=""Cancel"" ButtonStyle=""ButtonStyle.Secondary"" Click=""CancelClicked""/>
+                </div>
+            */
+                "
+            };
+        }
+    }
     protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)
     {
         return new[]
@@ -33,11 +60,8 @@ public class AddOrUpdateDialogGenerator : Generator
     public AddOrUpdateDialogGenerator(ClassDeclarationSyntax classDeclarationSyntax
     )
         : base(
-            classDeclarationSyntax)
+            classDeclarationSyntax, true)
     {
-
-        BaseDirectory="C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.App4\\Components";
-        OutputDirectory = "";
         DialogClassDefinitionString = new StringBuilder();
         DialogClassDefinitionString.Append($@"
         public class Test
@@ -47,12 +71,12 @@ public class AddOrUpdateDialogGenerator : Generator
                     [Parameter]
                     public DialogService DialogService {{ get; set; }}
                     
-                    [Parameter] public {BaseEntityClassName}ViewModel {BaseEntityClassName} {{ get; set; }}
+                    [Parameter] public Create{BaseEntityClassName}ViewModel {BaseEntityClassName} {{ get; set; }}
                     
                     [Parameter]
                     public EventCallback OnDialogClose {{ get; set; }}
                     
-                    [Inject] public I{BaseEntityClassName}DataService _foodComboDataService {{ get; set; }}
+                    [Inject] public IGenericDataService _dataService {{ get; set; }}
 
                     [Inject] public IMapper Mapper {{ get; set; }}
 
@@ -65,11 +89,11 @@ public class AddOrUpdateDialogGenerator : Generator
                     {{
                         if (EditMode)
                         {{
-                            await _foodComboDataService.Update{BaseEntityClassName}Combo({BaseEntityClassName}, {BaseEntityClassName}Name, Id);
+                            await _dataService.Put<Update{BaseEntityClassName}ViewModel,Update{BaseEntityClassName}Dto>({BaseEntityClassName}, Endpoints.{BaseEntityClassName});
                         }}
                         else
                         {{
-                            await _foodComboDataService.Create{BaseEntityClassName}Combo({BaseEntityClassName}, {BaseEntityClassName}Name);
+                            await _dataService.Post<Create{BaseEntityClassName}ViewModel,Create{BaseEntityClassName}Dto>({BaseEntityClassName}, {BaseEntityClassName}Name);
                         }}
 
                         await OnDialogClose.InvokeAsync();

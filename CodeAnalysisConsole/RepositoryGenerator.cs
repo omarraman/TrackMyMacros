@@ -29,11 +29,34 @@ public class RepositoryGenerator : Generator
 
     protected override List<string> Comments =>
     [
-        "//add this to PersistenceServiceRegistration",
-        "//services.AddScoped<IWeightReadingRepository, WeightReadingRepository>();",
-        "//add this to AppDbContext",
-        "//public DbSet<WeightReading> WeightReadings { get; set; }"
-
+        "//1 add this to PersistenceServiceRegistration",
+        "//services.AddScoped<I{BaseEntityClassName}Repository, {BaseEntityClassName}Repository>();",
+        "//2 add this to AppDbContext",
+        "//public DbSet<{BaseEntityClassName}> {BaseEntityClassName}s { get; set; }",
+        "//3 put the repository interface in the application layer",
+        "//4 create a new migration",
+        "//5 update the database",
+        "// 6 add the following to the persistance layer,",
+        "// using Microsoft.EntityFrameworkCore.Metadata.Builders;",
+        "// using TrackMyMacros.Domain.Aggregates.{BaseEntityClassName};",
+        "// namespace TrackMyMacros.Persistance.Repositories;",
+        "// public class {BaseEntityClassName}Configuration : IEntityTypeConfiguration<{BaseEntityClassName}>",
+        "// {",
+        "// public void Configure(EntityTypeBuilder<{BaseEntityClassName}> builder)",
+        "// {",
+        "// var {BaseEntityClassName}Id = Guid.NewGuid();",
+        "// builder.OwnsMany(m => m.{BaseEntityClassName}FoodAmounts, recipeAmount =>",
+        "// {",
+        "//     recipeAmount.WithOwner().HasForeignKey(\"{BaseEntityClassName}Id\");",
+        "//     recipeAmount.Property(m => m.Quantity)",
+        "//         .IsRequired();",
+        "//     recipeAmount.Property(m => m.FoodId)",
+        "//         .IsRequired();",
+        "// }",
+        "// );",
+        "//",
+        "// }",
+        "// }",
     ];
 
     public RepositoryGenerator(ClassDeclarationSyntax classDeclarationSyntax
@@ -57,7 +80,7 @@ public class RepositoryGenerator : Generator
                           _dbContext = dbContext;
 
                       //add this to PersistenceServiceRegistration
-                      //services.AddScoped<IWeightReadingRepository, WeightReadingRepository>();
+                      //services.AddScoped<I{BaseEntityClassName}Repository, {BaseEntityClassName}Repository>();
                       //add this to AppDbContext
                       //public DbSet<{BaseEntityClassName}> {BaseEntityClassName}s {{ get; set; }}
 
@@ -95,15 +118,15 @@ public class RepositoryGenerator : Generator
                       public async Task<Result> UpdateAsync({BaseEntityClassName} entity)
                       {{
 
-                          var foodInDb= await _dbContext.Set<{BaseEntityClassName}>().FindAsync(entity.Id);
-                          _dbContext.Entry(foodInDb).CurrentValues.SetValues(entity);
+                          var {BaseEntityClassNameInCamelCase}= await _dbContext.Set<{BaseEntityClassName}>().FindAsync(entity.Id);
+                          _dbContext.Entry({BaseEntityClassNameInCamelCase}).CurrentValues.SetValues(entity);
 
-                          foodInDb.{BaseEntityClassName}Amounts.Clear();
+                          //{BaseEntityClassNameInCamelCase}.{BaseEntityClassName}Amounts.Clear();
                           
-                          foreach (var {BaseEntityClassNameInCamelCase}Amount in entity.{BaseEntityClassName}Amounts)
-                          {{
-                              foodInDb.{BaseEntityClassName}Amounts.Add({BaseEntityClassNameInCamelCase}Amount);    
-                          }}
+                          //foreach (var {BaseEntityClassNameInCamelCase}Amount in entity.{BaseEntityClassName}Amounts)
+                          //{{
+                          //    {BaseEntityClassNameInCamelCase}.{BaseEntityClassName}Amounts.Add({BaseEntityClassNameInCamelCase}Amount);    
+                          //}}
                           
                           await _dbContext.SaveChangesAsync();
 

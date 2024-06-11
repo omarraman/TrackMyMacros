@@ -242,17 +242,17 @@ async Task GenerateMappingClasses(ClassDeclarationSyntax classDeclarationSyntax)
     
     if (userInputs.ShouldGenerateGet)
     {
-        await MappingProfileGenerator.GetMappingProfileGenerator(classDeclarationSyntax).GenerateAndWriteClass2();
+        await MappingProfileGenerator.GetMappingProfileGenerator(classDeclarationSyntax,valueObjects).GenerateAndWriteClass2();
     }
 
     if (userInputs.ShouldGenerateCreate)
     {
-        await MappingProfileGenerator.CreateMappingProfileGenerator(classDeclarationSyntax).GenerateAndWriteClass2();
+        await MappingProfileGenerator.CreateMappingProfileGenerator(classDeclarationSyntax,valueObjects).GenerateAndWriteClass2();
     }
     
     if (userInputs.ShouldGenerateUpdate)
     {
-        await MappingProfileGenerator.UpdateMappingProfileGenerator(classDeclarationSyntax).GenerateAndWriteClass2();
+        await MappingProfileGenerator.UpdateMappingProfileGenerator(classDeclarationSyntax,valueObjects).GenerateAndWriteClass2();
     }
 
 }

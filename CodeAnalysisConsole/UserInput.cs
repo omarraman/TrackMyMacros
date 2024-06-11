@@ -24,7 +24,7 @@ public class UserInput
     public bool ShouldGenerateViewModelMappings => _inputList.Contains("vmm") || ShouldGenerateAllLayers;
     public bool ShouldGenerateDataServices => _inputList.Contains("ds") || ShouldGenerateAllLayers;
     public bool ShouldGenerateRepositories => _inputList.Contains("r") || ShouldGenerateAllLayers;
-    public bool ShouldGenerateDialog => _inputList.Contains("dlg") || ShouldGenerateAllLayers;
+    public bool ShouldGenerateDialog => _inputList.Contains("ui_dlg") || ShouldGenerateAllLayers;
     public bool ShouldGenerateUiAddPage => _inputList.Contains("ui_add") || ShouldGenerateAllLayers;
     public bool ShouldGenerateUiListPage => _inputList.Contains("ui_list") || ShouldGenerateAllLayers;
     public bool ShouldGenerateViewModel => _inputList.Contains("vm") || ShouldGenerateAllLayers;
@@ -64,8 +64,8 @@ get=get
 getlist=getlist
 delete=delete
 update=update
-dlg=dialog,
 r=repository,
+ui_dlg=dialog,
 ui_add=ui add entity page,
 ui_list=ui list entity page,
 ");

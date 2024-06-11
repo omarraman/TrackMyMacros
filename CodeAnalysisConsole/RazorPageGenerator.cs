@@ -17,13 +17,14 @@ public abstract class RazorPageGenerator:Generator
         };
     }
 
-    public RazorPageGenerator(ClassDeclarationSyntax classDeclarationSyntax)
+    public RazorPageGenerator(ClassDeclarationSyntax classDeclarationSyntax, bool isComponent=false)
         : base(
             classDeclarationSyntax)
     {
         BaseDirectory = "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.App4\\";
         OutputDirectory = "Pages";
-        if (IsComponent) OutputDirectory = "Components";
+        IsComponent = isComponent;
+        if (isComponent) OutputDirectory = "Components";
         
         IsPartial = true;
         ExtensionModifier = "razor";

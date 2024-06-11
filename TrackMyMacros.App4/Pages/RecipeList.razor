@@ -1,0 +1,18 @@
+﻿@page "/RecipeList"
+
+
+@if (Recipes != null)
+{
+    @foreach (var recipe in Recipes)
+    {
+        <div>
+            @recipe.Name
+            <RadzenButton Text="Edit" ButtonStyle="ButtonStyle.Primary" Click="() => Edit(recipe.Id)"/>
+            <RadzenButton Text="Delete" ButtonStyle="ButtonStyle.Primary" Click="() => Delete(recipe.Id)"/>
+        </div>
+    }
+}
+else
+{
+    <div>Loading...</div>
+}

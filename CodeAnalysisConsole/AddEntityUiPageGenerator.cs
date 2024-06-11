@@ -26,12 +26,12 @@ public class AddEntityPageCodeBehindGenerator : RazorPageGenerator
 
                     <div class=""row py-1"">
                         <div class=""col"">
-                            <RadzenDatePicker DateFormat=""dd/MM/yyyy"" @bind-Value=""{BaseEntityClassName}ViewModel.Date""/>
+                            <RadzenDatePicker DateFormat=""dd/MM/yyyy"" @bind-Value=""Create{BaseEntityClassName}ViewModel.Date""/>
                         </div>
                     </div>
                     <div class=""row py-1"">
                         <div class=""col"">
-                            <RadzenNumeric TValue=""double"" @bind-Value=""{BaseEntityClassName}ViewModel.Weight"" Min=""65"" Max=""85""></RadzenNumeric>
+                            <RadzenNumeric TValue=""double"" @bind-Value=""Create{BaseEntityClassName}ViewModel.Weight"" Min=""65"" Max=""85""></RadzenNumeric>
                         </div>
                     </div>
                     <div class=""rz-p-12 rz-text-align-center"">
@@ -68,27 +68,12 @@ public class AddEntityPageCodeBehindGenerator : RazorPageGenerator
         }
     }
 
-    // protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)
-    // {
-    //     return new[]
-    //     {
-    //         UsingDirective(ParseName(UsingStrings.MicrosoftAspNetCoreComponents)),
-    //         UsingDirective(ParseName(UsingStrings.Services)),
-    //         UsingDirective(ParseName(UsingStrings.ViewModels)),
-    //         UsingDirective(ParseName($"{UsingStrings.Dtos}.{baseEntityName}")),
-    //     };
-    // }
-
     public AddEntityPageCodeBehindGenerator(ClassDeclarationSyntax classDeclarationSyntax
     )
         : base(
             classDeclarationSyntax)
     {
-        // BaseDirectory = "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.App4\\Pages\\";
-        // OutputDirectory = "";
         GetClassTemplateString = new StringBuilder();
-        // IsPartial = true;
-        // ExtensionModifier="razor";
         GetClassTemplateString.Append($@"
          public class ThisIsJustATemporaryContainerClass
          {{
@@ -96,13 +81,13 @@ public class AddEntityPageCodeBehindGenerator : RazorPageGenerator
             {{
                 [Inject] public IGenericDataService DataService {{ get; set; }}
 
-                public {BaseEntityClassName}ViewModel {BaseEntityClassName}ViewModel {{ get; set; }}
+                public Create{BaseEntityClassName}ViewModel Create{BaseEntityClassName}ViewModel {{ get; set; }}
 
                 private List<string> AlertMessages {{ get; set; }} = new();
 
                 public async Task SaveAndClose()
                 {{
-                    await DataService.Post<{BaseEntityClassName}ViewModel, Create{BaseEntityClassName}Dto>({BaseEntityClassName}ViewModel,
+                    await DataService.Post<Create{BaseEntityClassName}ViewModel, Create{BaseEntityClassName}Dto>(Create{BaseEntityClassName}ViewModel,
                         GenericDataService.Endpoints.{BaseEntityClassName});
                     
                     InitializeViewModel();
@@ -117,7 +102,7 @@ public class AddEntityPageCodeBehindGenerator : RazorPageGenerator
 
                 private void InitializeViewModel()
                 {{
-                    {BaseEntityClassName}ViewModel = new {BaseEntityClassName}ViewModel
+                    Create{BaseEntityClassName}ViewModel = new Create{BaseEntityClassName}ViewModel
                     {{
 
                     }};
