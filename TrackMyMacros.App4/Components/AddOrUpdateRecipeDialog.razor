@@ -1,9 +1,8 @@
-﻿@page "/AddNewRecipe"
-<div class="container">
-    <RadzenTextBox @bind-Value="CreateRecipeViewModel.Name">Name</RadzenTextBox>
+﻿<div class="container">
+    <RadzenTextBox @bind-Value="UpdateRecipeViewModel.Name">Name</RadzenTextBox>
 
     <div class="container">
-        @foreach (var foodAmount in @CreateRecipeViewModel.FoodAmounts)
+        @foreach (var foodAmount in UpdateRecipeViewModel.FoodAmounts)
         {
         <MealFoodItemComponent SelectedFoodId="@foodAmount.FoodId" OnQuantitiesChanged="@OnQuantitiesChanged" OnRemove="RemoveFoodItem" FoodAmount="@foodAmount"></MealFoodItemComponent>
         }
@@ -15,16 +14,16 @@
     <h4>Totals</h4>
     <div class="row py-1">
         <div class="col-3" style="background-color: greenyellow">
-            @Double.Round(@CreateRecipeViewModel.Protein, 2)
+            @Double.Round(UpdateRecipeViewModel.Protein, 2)
         </div>
         <div class="col-3" style="background-color: #0dcaf0">
-            @Double.Round(@CreateRecipeViewModel.Carbohydrate, 2)
+            @Double.Round(UpdateRecipeViewModel.Carbohydrate, 2)
         </div>
         <div class="col-3" style="background-color: yellow">
-            @Double.Round(@CreateRecipeViewModel.Fat, 2)
+            @Double.Round(UpdateRecipeViewModel.Fat, 2)
         </div>
         <div class="col-3" style="background-color: #babbbc">
-            @Double.Round(@CreateRecipeViewModel.Calories, 2)
+            @Double.Round(UpdateRecipeViewModel.Calories, 2)
 
         </div>
     </div>

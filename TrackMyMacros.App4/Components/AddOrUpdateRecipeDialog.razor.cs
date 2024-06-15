@@ -10,37 +10,37 @@ namespace TrackMyMacros.App4.Components
     {
         public async Task SaveAndClose()
         {
-            if(!CreateRecipeViewModel.SavingIsPossible)
+            if(!UpdateRecipeViewModel.SavingIsPossible)
             {
                 AlertMessages.Add("Please add a valid food item");
                 return;
             }
 
-            if (string.IsNullOrEmpty(CreateRecipeViewModel.Name.Trim()))
+            if (string.IsNullOrEmpty(UpdateRecipeViewModel.Name.Trim()))
             {
                 AlertMessages.Add("Please add a valid recipe name");
 
                 return;
             }
-            await DataService.Post<CreateRecipeViewModel, CreateRecipeDto>(CreateRecipeViewModel, GenericDataService.Endpoints.Recipe);
-            InitializeViewModel();
-            AlertMessages.Add("Record Added");
+            await DataService.Put<UpdateRecipeViewModel, UpdateRecipeDto>(UpdateRecipeViewModel, GenericDataService.Endpoints.Recipe);
+            // InitializeViewModel();
+            AlertMessages.Add("Record Updated");
             StateHasChanged();
         }
 
-        protected async override Task OnInitializedAsync()
-        {
-            InitializeViewModel();
-        }
-
-        private void InitializeViewModel()
-        {
-            CreateRecipeViewModel = new();
-        }
+        // protected async override Task OnInitializedAsync()
+        // {
+        //     InitializeViewModel();
+        // }
+        //
+        // private void InitializeViewModel()
+        // {
+        //     UpdateRecipeViewModel = new();
+        // }
 
         [Inject]
         public IGenericDataService DataService { get; set; }
-        public CreateRecipeViewModel CreateRecipeViewModel { get; set; }
+        public UpdateRecipeViewModel UpdateRecipeViewModel { get; set; }
         private List<string> AlertMessages { get; set; } = new();
 
 
@@ -48,20 +48,20 @@ namespace TrackMyMacros.App4.Components
 
         private void OnAddFood()
         {
-            CreateRecipeViewModel.FoodAmounts.Add(new FoodAmountViewModel() { FoodId = -1, Quantity = 10 });
+            UpdateRecipeViewModel.FoodAmounts.Add(new FoodAmountViewModel() { FoodId = -1, Quantity = 10 });
             StateHasChanged();
         }
 
         private async Task RemoveFoodItem(FoodAmountViewModel foodAmount)
         {
-            CreateRecipeViewModel.FoodAmounts.Remove(foodAmount);
-            CreateRecipeViewModel.RefreshTotals();
+            UpdateRecipeViewModel.FoodAmounts.Remove(foodAmount);
+            UpdateRecipeViewModel.RefreshTotals();
             StateHasChanged();
         }
 
         private async Task OnQuantitiesChanged()
         {
-            CreateRecipeViewModel.RefreshTotals();
+            UpdateRecipeViewModel.RefreshTotals();
             StateHasChanged();
         }
         

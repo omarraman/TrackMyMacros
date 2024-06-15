@@ -50,7 +50,7 @@ namespace TrackMyMacros.App4.Pages
 
         private async void Edit(Guid id)
         {
-            var viewModel = await _dataService.Get<GetRecipeViewModel, GetRecipeDto>($"{GenericDataService.Endpoints.Recipe}/GetById/{id}");
+            var viewModel = await _dataService.Get<UpdateRecipeViewModel, GetRecipeDto>($"{GenericDataService.Endpoints.Recipe}/GetById/{id}");
             var json = JsonConvert.SerializeObject(viewModel);
             var viewModelCopy = JsonConvert.DeserializeObject<UpdateRecipeViewModel>(json);
             await DialogService.OpenAsync<AddOrUpdateRecipeDialog>("Edit Recipe", new Dictionary<string, object> { { "Recipe", viewModelCopy }, { "DialogService", DialogService }, { "EditMode", true }, { "Id", id }, { "OnDialogClose", EventCallback.Factory.Create(this, OnDialogClose) } });
