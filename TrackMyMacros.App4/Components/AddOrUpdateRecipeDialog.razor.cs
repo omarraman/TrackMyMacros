@@ -1,4 +1,6 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Components;
+using Radzen;
 using TrackMyMacros.App4.Services;
 using TrackMyMacros.App4.ViewModels;
 using TrackMyMacros.App4.ViewModels.Recipe;
@@ -10,58 +12,68 @@ namespace TrackMyMacros.App4.Components
     {
         public async Task SaveAndClose()
         {
-            if(!UpdateRecipeViewModel.SavingIsPossible)
+            if(!RecipeViewModel.SavingIsPossible)
             {
                 AlertMessages.Add("Please add a valid food item");
                 return;
             }
 
-            if (string.IsNullOrEmpty(UpdateRecipeViewModel.Name.Trim()))
+            if (string.IsNullOrEmpty(RecipeViewModel.Name.Trim()))
             {
                 AlertMessages.Add("Please add a valid recipe name");
 
                 return;
             }
-            await DataService.Put<UpdateRecipeViewModel, UpdateRecipeDto>(UpdateRecipeViewModel, GenericDataService.Endpoints.Recipe);
+            await DataService.Put<RecipeViewModel, UpdateRecipeDto>(RecipeViewModel, GenericDataService.Endpoints.Recipe);
             // InitializeViewModel();
             AlertMessages.Add("Record Updated");
-            StateHasChanged();
+            await OnDialogClose.InvokeAsync();
+            DialogService.Close();
         }
 
-        // protected async override Task OnInitializedAsync()
-        // {
-        //     InitializeViewModel();
-        // }
+        protected async override Task OnInitializedAsync()
+        {
+            RecipeViewModel.RefreshTotals();
+        }
         //
         // private void InitializeViewModel()
         // {
         //     UpdateRecipeViewModel = new();
+
         // }
+        [Parameter]
+        public RecipeViewModel RecipeViewModel { get; set; }
+
+        [Parameter]
+        public DialogService DialogService { get; set; }
+
+        [Parameter]
+        public EventCallback OnDialogClose { get; set; }
 
         [Inject]
         public IGenericDataService DataService { get; set; }
-        public UpdateRecipeViewModel UpdateRecipeViewModel { get; set; }
+
         private List<string> AlertMessages { get; set; } = new();
 
 
-
-
+        
+        
         private void OnAddFood()
         {
-            UpdateRecipeViewModel.FoodAmounts.Add(new FoodAmountViewModel() { FoodId = -1, Quantity = 10 });
+            RecipeViewModel.FoodAmounts.Add(new FoodAmountViewModel() { FoodId = -1, Quantity = 10 });
             StateHasChanged();
         }
-
+        
         private async Task RemoveFoodItem(FoodAmountViewModel foodAmount)
         {
-            UpdateRecipeViewModel.FoodAmounts.Remove(foodAmount);
-            UpdateRecipeViewModel.RefreshTotals();
+            RecipeViewModel.FoodAmounts.Remove(foodAmount);
+            RecipeViewModel.RefreshTotals();
             StateHasChanged();
         }
-
+        
         private async Task OnQuantitiesChanged()
         {
-            UpdateRecipeViewModel.RefreshTotals();
+            RecipeViewModel.RefreshTotals();
             StateHasChanged();
         }
         

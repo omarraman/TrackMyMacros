@@ -68,6 +68,7 @@ public class AddOrUpdateDialogGenerator : RazorPageGenerator
         {{
             public partial class AddOrUpdate{BaseEntityClassName}Dialog
                 {{
+                    //note if a list page is invoking this as a dialog  then the paramters must match at the invocation site otherwise you get a blank dialog
                     [Parameter]
                     public DialogService DialogService {{ get; set; }}
                     

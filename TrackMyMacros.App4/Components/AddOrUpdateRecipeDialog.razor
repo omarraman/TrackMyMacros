@@ -1,42 +1,54 @@
-﻿<div class="container">
-    <RadzenTextBox @bind-Value="UpdateRecipeViewModel.Name">Name</RadzenTextBox>
+﻿this is a test
+
+
+@if(RecipeViewModel == null)
+{
+    <div>Loading..</div>
+}
+else
+{
+   
 
     <div class="container">
-        @foreach (var foodAmount in UpdateRecipeViewModel.FoodAmounts)
+        <RadzenTextBox @bind-Value="RecipeViewModel.Name">Name</RadzenTextBox>
+
+        <div class="container">
+            @foreach (var foodAmount in RecipeViewModel.FoodAmounts)
+            {
+                <MealFoodItemComponent SelectedFoodId="@foodAmount.FoodId" OnQuantitiesChanged="@OnQuantitiesChanged" OnRemove="RemoveFoodItem" FoodAmount="@foodAmount"></MealFoodItemComponent>
+            }
+
+        </div>
+
+        <RadzenButton Click="@OnAddFood" Icon="add" ButtonStyle="ButtonStyle.Primary"/>
+
+        <h4>Totals</h4>
+        <div class="row py-1">
+            <div class="col-3" style="background-color: greenyellow">
+                @Double.Round(RecipeViewModel.Protein, 2)
+            </div>
+            <div class="col-3" style="background-color: #0dcaf0">
+                @Double.Round(RecipeViewModel.Carbohydrate, 2)
+            </div>
+            <div class="col-3" style="background-color: yellow">
+                @Double.Round(RecipeViewModel.Fat, 2)
+            </div>
+            <div class="col-3" style="background-color: #babbbc">
+                @Double.Round(RecipeViewModel.Calories, 2)
+
+            </div>
+        </div>
+
+        <div class="rz-p-12 rz-text-align-center">
+            <RadzenButton Text="Ok" ButtonStyle="ButtonStyle.Secondary" Click="SaveAndClose"/>
+        </div>
+
+        @foreach (var alert in AlertMessages)
         {
-        <MealFoodItemComponent SelectedFoodId="@foodAmount.FoodId" OnQuantitiesChanged="@OnQuantitiesChanged" OnRemove="RemoveFoodItem" FoodAmount="@foodAmount"></MealFoodItemComponent>
+            <RadzenAlert AlertStyle="AlertStyle.Warning" Variant="Variant.Flat" Shade="Shade.Lighter">
+                @alert
+            </RadzenAlert>
         }
 
     </div>
-
-    <RadzenButton Click="@OnAddFood" Icon="add" ButtonStyle="ButtonStyle.Primary"/>
-
-    <h4>Totals</h4>
-    <div class="row py-1">
-        <div class="col-3" style="background-color: greenyellow">
-            @Double.Round(UpdateRecipeViewModel.Protein, 2)
-        </div>
-        <div class="col-3" style="background-color: #0dcaf0">
-            @Double.Round(UpdateRecipeViewModel.Carbohydrate, 2)
-        </div>
-        <div class="col-3" style="background-color: yellow">
-            @Double.Round(UpdateRecipeViewModel.Fat, 2)
-        </div>
-        <div class="col-3" style="background-color: #babbbc">
-            @Double.Round(UpdateRecipeViewModel.Calories, 2)
-
-        </div>
-    </div>
-
-    <div class="rz-p-12 rz-text-align-center">
-        <RadzenButton Text="Ok" ButtonStyle="ButtonStyle.Secondary" Click="SaveAndClose"/>
-    </div>
-
-    @foreach (var alert in AlertMessages)
-    {
-    <RadzenAlert AlertStyle="AlertStyle.Warning" Variant="Variant.Flat" Shade="Shade.Lighter">
-        @alert
-    </RadzenAlert>
-    }
-
-</div>
+}

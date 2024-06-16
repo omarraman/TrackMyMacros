@@ -15,12 +15,12 @@ using TrackMyMacros.Dtos.Recipe;
 
                     <div class="row py-1">
                         <div class="col">
-                            <RadzenDatePicker DateFormat="dd/MM/yyyy" @bind-Value="CreateRecipeViewModel.Date"/>
+                            <RadzenDatePicker DateFormat="dd/MM/yyyy" @bind-Value="RecipeViewModel.Date"/>
                         </div>
                     </div>
                     <div class="row py-1">
                         <div class="col">
-                            <RadzenNumeric TValue="double" @bind-Value="CreateRecipeViewModel.Weight" Min="65" Max="85"></RadzenNumeric>
+                            <RadzenNumeric TValue="double" @bind-Value="RecipeViewModel.Weight" Min="65" Max="85"></RadzenNumeric>
                         </div>
                     </div>
                     <div class="rz-p-12 rz-text-align-center">
@@ -43,19 +43,19 @@ namespace TrackMyMacros.App4.Pages
     {
         public async Task SaveAndClose()
         {
-            if(!CreateRecipeViewModel.SavingIsPossible)
+            if(!RecipeViewModel.SavingIsPossible)
             {
                 AlertMessages.Add("Please add a valid food item");
                 return;
             }
 
-            if (string.IsNullOrEmpty(CreateRecipeViewModel.Name.Trim()))
+            if (string.IsNullOrEmpty(RecipeViewModel.Name.Trim()))
             {
                 AlertMessages.Add("Please add a valid recipe name");
 
                 return;
             }
-            await DataService.Post<CreateRecipeViewModel, CreateRecipeDto>(CreateRecipeViewModel, GenericDataService.Endpoints.Recipe);
+            await DataService.Post<RecipeViewModel, CreateRecipeDto>(RecipeViewModel, GenericDataService.Endpoints.Recipe);
             InitializeViewModel();
             AlertMessages.Add("Record Added");
             StateHasChanged();
@@ -68,12 +68,12 @@ namespace TrackMyMacros.App4.Pages
 
         private void InitializeViewModel()
         {
-            CreateRecipeViewModel = new();
+            RecipeViewModel = new();
         }
 
         [Inject]
         public IGenericDataService DataService { get; set; }
-        public CreateRecipeViewModel CreateRecipeViewModel { get; set; }
+        public RecipeViewModel RecipeViewModel { get; set; }
         private List<string> AlertMessages { get; set; } = new();
 
 
@@ -81,20 +81,20 @@ namespace TrackMyMacros.App4.Pages
 
         private void OnAddFood()
         {
-            CreateRecipeViewModel.FoodAmounts.Add(new FoodAmountViewModel() { FoodId = -1, Quantity = 10 });
+            RecipeViewModel.FoodAmounts.Add(new FoodAmountViewModel() { FoodId = -1, Quantity = 10 });
             StateHasChanged();
         }
 
         private async Task RemoveFoodItem(FoodAmountViewModel foodAmount)
         {
-            CreateRecipeViewModel.FoodAmounts.Remove(foodAmount);
-            CreateRecipeViewModel.RefreshTotals();
+            RecipeViewModel.FoodAmounts.Remove(foodAmount);
+            RecipeViewModel.RefreshTotals();
             StateHasChanged();
         }
 
         private async Task OnQuantitiesChanged()
         {
-            CreateRecipeViewModel.RefreshTotals();
+            RecipeViewModel.RefreshTotals();
             StateHasChanged();
         }
         

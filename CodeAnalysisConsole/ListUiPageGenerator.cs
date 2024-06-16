@@ -92,6 +92,7 @@ public class ListUiPageGenerator : RazorPageGenerator
 
                     private async void Edit(Guid id)
                     {{
+                        //note the parameters must match the parameters in the dialog, otherwise you get a blank dialog
                         var viewModel =
                             await _dataService.Get<Get{BaseEntityClassName}ViewModel, Get{BaseEntityClassName}Dto>(
                                 $""{{GenericDataService.Endpoints.{BaseEntityClassName}}}/GetById/{{id}}"");

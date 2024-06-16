@@ -44,16 +44,15 @@ namespace TrackMyMacros.App4.Pages
 
         private async Task Refresh()
         {
-            var temp = await _dataService.GetList<GetRecipeViewModel, GetRecipeDto>(GenericDataService.Endpoints.Recipe);
-            // Recipes = temp.OrderByDescending(m => m.Date).ToList();
+            Recipes = await _dataService.GetList<RecipeViewModel, GetRecipeDto>(GenericDataService.Endpoints.Recipe);
         }
 
         private async void Edit(Guid id)
         {
-            var viewModel = await _dataService.Get<UpdateRecipeViewModel, GetRecipeDto>($"{GenericDataService.Endpoints.Recipe}/GetById/{id}");
+            var viewModel = await _dataService.Get<RecipeViewModel, GetRecipeDto>($"{GenericDataService.Endpoints.Recipe}/GetById/{id}");
             var json = JsonConvert.SerializeObject(viewModel);
-            var viewModelCopy = JsonConvert.DeserializeObject<UpdateRecipeViewModel>(json);
-            await DialogService.OpenAsync<AddOrUpdateRecipeDialog>("Edit Recipe", new Dictionary<string, object> { { "Recipe", viewModelCopy }, { "DialogService", DialogService }, { "EditMode", true }, { "Id", id }, { "OnDialogClose", EventCallback.Factory.Create(this, OnDialogClose) } });
+            var viewModelCopy = JsonConvert.DeserializeObject<RecipeViewModel>(json);
+            await DialogService.OpenAsync<AddOrUpdateRecipeDialog>("Edit Recipe", new Dictionary<string, object> { { "RecipeViewModel", viewModelCopy }, { "DialogService", DialogService },   { "OnDialogClose", EventCallback.Factory.Create(this, OnDialogClose) } });
         }
 
         private async void Delete(Guid id)
@@ -77,6 +76,6 @@ namespace TrackMyMacros.App4.Pages
 
         [Inject]
         public IMapper Mapper { get; set; }
-        public IReadOnlyList<GetRecipeViewModel> Recipes { get; set; }
+        public IReadOnlyList<RecipeViewModel> Recipes { get; set; }
     }
 }
