@@ -3,6 +3,8 @@ using TrackMyMacros.Domain.Aggregates.Recipe;
 using TrackMyMacros.Infrastructure;
 using TrackMyMacros.Application.Contracts.Persistence;
 using Microsoft.EntityFrameworkCore;
+using TrackMyMacros.Domain;
+using TrackMyMacros.Domain.ValueObjects;
 
 //add this to PersistenceServiceRegistration
 //services.AddScoped<IWeightReadingRepository, WeightReadingRepository>();
@@ -38,13 +40,21 @@ namespace TrackMyMacros.Persistance.Repositories
             return await _dbContext.Set<Recipe>().Skip((page - 1) * size).Take(size).AsNoTracking().ToListAsync();
         }
 
-        public async Task<Recipe> AddAsync(Recipe entity)
+        public async Task<Recipe> AddAsync(Recipe recipe)
         {
-            await _dbContext.Set<Recipe>().AddAsync(entity);
+            await _dbContext.Set<Recipe>().AddAsync(recipe);
             await _dbContext.SaveChangesAsync();
-            return entity;
+            return recipe;
         }
 
+        public async Task<Recipe> AddAsync(Recipe recipe,Food food)
+        {
+            await _dbContext.Set<Recipe>().AddAsync(recipe);
+            await _dbContext.Set<Food>().AddAsync(food);
+            await _dbContext.SaveChangesAsync();
+            return recipe;
+        }
+        //
         public async Task<Result> UpdateAsync(Recipe entity)
         {
             var recipe = await _dbContext.Set<Recipe>().FindAsync(entity.Id);
@@ -54,6 +64,19 @@ namespace TrackMyMacros.Persistance.Repositories
             {
                 recipe.RecipeFoodAmounts.Add(recipeAmount);    
             }
+
+            var food = await _dbContext.Food.SingleOrDefaultAsync(f => f.RecipeId == entity.Id);
+            if (food==null)
+            {
+                throw new Exception("Could not update recipe - reason: linked food not found");
+            }
+            food.CarbohydrateAmount = new CarbohydrateAmount(recipe.CarbohydratePer100G);
+            food.FatAmount = new FatAmount(recipe.FatPer100G);
+            food.ProteinAmount = new ProteinAmount(recipe.ProteinPer100G);
+            food.Name=recipe.Name + "(R)";
+            food.Quantity = 100;
+            food.RecipeId = recipe.Id;
+            food.UomId = 1;
             await _dbContext.SaveChangesAsync();
             return new SuccessResult();
         }
@@ -61,7 +84,13 @@ namespace TrackMyMacros.Persistance.Repositories
         public async Task DeleteAsync(Guid id)
         {
             var entity = await _dbContext.Set<Recipe>().FindAsync(id);
+            var food = await _dbContext.Food.SingleOrDefaultAsync(f => f.RecipeId == entity.Id);
+            if (food==null)
+            {
+                throw new Exception("Could not update recipe - reason: linked food not found");
+            }
             _dbContext.Set<Recipe>().Remove(entity);
+            _dbContext.Set<Food>().Remove(food);
             await _dbContext.SaveChangesAsync();
         }
     }

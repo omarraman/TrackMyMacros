@@ -7,6 +7,8 @@ namespace TrackMyMacros.Domain.Aggregates;
 public class Food 
 {
     public int Id { get; set; }
+
+    public Guid? Guid { get; set; }
     public string Name { get; set; }
     [CodeGenIgnoreMember]
     public CarbohydrateAmount CarbohydrateAmount { get; set; }
@@ -22,6 +24,7 @@ public class Food
     public double? Min { get; set; }
     public double? Max { get; set; }
 
+    public Guid RecipeId { get; set; }
     public int UomId { get; set; }
 
     [CodeGenIgnoreMember]

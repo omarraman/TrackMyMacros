@@ -60,8 +60,8 @@ namespace TrackMyMacros.Persistance.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000000"),
                             Calories = 2400,
-                            CreatedDate = new DateTime(2024, 6, 9, 6, 37, 55, 106, DateTimeKind.Utc).AddTicks(1553),
-                            LastModifiedDate = new DateTime(2024, 6, 9, 6, 37, 55, 106, DateTimeKind.Utc).AddTicks(1643),
+                            CreatedDate = new DateTime(2024, 6, 17, 9, 48, 31, 802, DateTimeKind.Utc).AddTicks(2312),
+                            LastModifiedDate = new DateTime(2024, 6, 17, 9, 48, 31, 802, DateTimeKind.Utc).AddTicks(2444),
                             WeekdaysMealsPerDay = 5,
                             WeekendMealsPerDay = 5,
                             WeightInKg = 75.900000000000006
@@ -105,12 +105,12 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8c8e1bd7-bcda-4385-a456-1db2d5ccfaa3"),
+                            Id = new Guid("30f58b50-de2d-454a-9a3e-8ea085d5cd24"),
                             AllowedCarbohydrate = 100,
                             AllowedFat = 100,
                             AllowedProtein = 100,
                             Carbohydrate = 10.0,
-                            Date = new DateOnly(2024, 6, 9),
+                            Date = new DateOnly(2024, 6, 17),
                             Fat = 10.0,
                             MealCount = 1,
                             Protein = 10.0
@@ -135,6 +135,9 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.Property<double>("FatAmount")
                         .HasColumnType("double precision");
 
+                    b.Property<Guid?>("Guid")
+                        .HasColumnType("uuid");
+
                     b.Property<double?>("Max")
                         .HasColumnType("double precision");
 
@@ -155,6 +158,9 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.Property<int>("QuantityInGrams")
                         .HasColumnType("integer");
 
+                    b.Property<Guid>("RecipeId")
+                        .HasColumnType("uuid");
+
                     b.Property<int>("UomId")
                         .HasColumnType("integer");
 
@@ -172,6 +178,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 20.0,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -183,6 +190,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 10.0,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -194,6 +202,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 0.29999999999999999,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -205,6 +214,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 1.3999999999999999,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -217,6 +227,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 9.6999999999999993,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -228,6 +239,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 1.0,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -239,6 +251,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 5.0,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -250,6 +263,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 0.5,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -261,6 +275,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 11.0,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -273,6 +288,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 10.0,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -284,6 +300,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 0.40000000000000002,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -295,6 +312,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 12.0,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -306,6 +324,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 23.0,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -318,6 +337,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 7.7999999999999998,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -330,6 +350,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 4.5,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -342,6 +363,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 3.2999999999999998,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -353,6 +375,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 2.5,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -365,6 +388,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 5.4000000000000004,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -376,6 +400,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 29.0,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -387,6 +412,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 23.0,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -398,6 +424,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 4.7999999999999998,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -409,6 +436,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 8.3000000000000007,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -420,6 +448,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 0.0,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -431,6 +460,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 0.5,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -442,6 +472,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 0.69999999999999996,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         },
                         new
@@ -453,6 +484,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             ProteinAmount = 25.5,
                             Quantity = 100.0,
                             QuantityInGrams = 100,
+                            RecipeId = new Guid("00000000-0000-0000-0000-000000000000"),
                             UomId = 1
                         });
                 });
@@ -486,8 +518,8 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1ecbfe22-7866-4967-a8cb-c8fe4d9ccdcc"),
-                            CreatedDate = new DateTime(2024, 6, 9, 6, 37, 55, 113, DateTimeKind.Utc).AddTicks(755),
+                            Id = new Guid("ad21a88d-35cc-40c5-9d69-c3d50fbadefd"),
+                            CreatedDate = new DateTime(2024, 6, 17, 9, 48, 31, 813, DateTimeKind.Utc).AddTicks(1924),
                             Name = "Test Food Combo"
                         });
                 });
@@ -496,6 +528,9 @@ namespace TrackMyMacros.Persistance.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("FoodId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("Name")
@@ -554,43 +589,10 @@ namespace TrackMyMacros.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 6, 9, 6, 37, 55, 114, DateTimeKind.Utc).AddTicks(4201),
-                            LastModifiedDate = new DateTime(2024, 6, 9, 6, 37, 55, 114, DateTimeKind.Utc).AddTicks(4227),
+                            CreatedDate = new DateTime(2024, 6, 17, 9, 48, 31, 818, DateTimeKind.Utc).AddTicks(921),
+                            LastModifiedDate = new DateTime(2024, 6, 17, 9, 48, 31, 818, DateTimeKind.Utc).AddTicks(971),
                             Name = "Grams"
                         });
-                });
-
-            modelBuilder.Entity("TrackMyMacros.Domain.ValueObjects.RecipeFoodAmount", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<double>("Carbohydrate")
-                        .HasColumnType("double precision");
-
-                    b.Property<double>("Fat")
-                        .HasColumnType("double precision");
-
-                    b.Property<int>("FoodId")
-                        .HasColumnType("integer");
-
-                    b.Property<double>("Protein")
-                        .HasColumnType("double precision");
-
-                    b.Property<double>("Quantity")
-                        .HasColumnType("double precision");
-
-                    b.Property<Guid?>("RecipeId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RecipeId");
-
-                    b.ToTable("RecipeFoodAmount");
                 });
 
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Day.Day", b =>
@@ -670,7 +672,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                     b2.HasData(
                                         new
                                         {
-                                            MealDayId = new Guid("8c8e1bd7-bcda-4385-a456-1db2d5ccfaa3"),
+                                            MealDayId = new Guid("30f58b50-de2d-454a-9a3e-8ea085d5cd24"),
                                             MealId = 1,
                                             Id = 1,
                                             Carbohydrate = 10.0,
@@ -686,7 +688,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    DayId = new Guid("8c8e1bd7-bcda-4385-a456-1db2d5ccfaa3"),
+                                    DayId = new Guid("30f58b50-de2d-454a-9a3e-8ea085d5cd24"),
                                     Id = 1,
                                     AllowedCarbohydrate = 10,
                                     AllowedFat = 10,
@@ -738,7 +740,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    FoodComboId = new Guid("1ecbfe22-7866-4967-a8cb-c8fe4d9ccdcc"),
+                                    FoodComboId = new Guid("ad21a88d-35cc-40c5-9d69-c3d50fbadefd"),
                                     Id = 1,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,
@@ -748,7 +750,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                 },
                                 new
                                 {
-                                    FoodComboId = new Guid("1ecbfe22-7866-4967-a8cb-c8fe4d9ccdcc"),
+                                    FoodComboId = new Guid("ad21a88d-35cc-40c5-9d69-c3d50fbadefd"),
                                     Id = 2,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,
@@ -761,15 +763,42 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.Navigation("FoodComboAmounts");
                 });
 
-            modelBuilder.Entity("TrackMyMacros.Domain.ValueObjects.RecipeFoodAmount", b =>
-                {
-                    b.HasOne("TrackMyMacros.Domain.Aggregates.Recipe.Recipe", null)
-                        .WithMany("RecipeFoodAmounts")
-                        .HasForeignKey("RecipeId");
-                });
-
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Recipe.Recipe", b =>
                 {
+                    b.OwnsMany("TrackMyMacros.Domain.ValueObjects.RecipeFoodAmount", "RecipeFoodAmounts", b1 =>
+                        {
+                            b1.Property<Guid>("RecipeId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("integer");
+
+                            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("Id"));
+
+                            b1.Property<double>("Carbohydrate")
+                                .HasColumnType("double precision");
+
+                            b1.Property<double>("Fat")
+                                .HasColumnType("double precision");
+
+                            b1.Property<int>("FoodId")
+                                .HasColumnType("integer");
+
+                            b1.Property<double>("Protein")
+                                .HasColumnType("double precision");
+
+                            b1.Property<double>("Quantity")
+                                .HasColumnType("double precision");
+
+                            b1.HasKey("RecipeId", "Id");
+
+                            b1.ToTable("RecipeFoodAmount");
+
+                            b1.WithOwner()
+                                .HasForeignKey("RecipeId");
+                        });
+
                     b.Navigation("RecipeFoodAmounts");
                 });
 #pragma warning restore 612, 618
