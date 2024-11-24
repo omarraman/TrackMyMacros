@@ -12,3 +12,6 @@ public class Exercise:Entity
     public BodyPart BodyPart { get; set; }
     public Guid BodyPartId { get; set; }
 }
+
+//a set can have an exercise, weight, reps and an index
+//does it have an inherent identity or is it just a collection of values

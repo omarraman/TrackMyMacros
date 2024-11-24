@@ -14,4 +14,8 @@
       <ProjectReference Include="..\TrackMyMacros.Attributes\TrackMyMacros.Attributes.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Aggregates\Mesocycle\" />
+    </ItemGroup>
+
 </Project>

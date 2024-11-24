@@ -5,8 +5,9 @@ namespace TrackMyMacros.Domain.Aggregates.Exercise;
 
 public class MicroCycle:ValueObject<MicroCycle>
 {
-    public Guid Id { get; set; }
-    public string Name { get; set; }
+    //public Guid Id { get; set; }
+    //public string Name { get; set; }
+    public int WeekIndex { get; set; }
     public List<ExerciseSet> ExerciseSets { get; set; }
     protected override bool EqualsCore(MicroCycle other)
     {
