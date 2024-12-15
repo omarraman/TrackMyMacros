@@ -3,12 +3,13 @@ using TrackMyMacros.Domain.Common;
 
 namespace TrackMyMacros.Domain.Aggregates.Exercise;
 
-public class MicroCycle:ValueObject<MicroCycle>
+public class MicroCycle : ValueObject<MicroCycle>
 {
     //public Guid Id { get; set; }
     //public string Name { get; set; }
     public int WeekIndex { get; set; }
-    public List<ExerciseSet> ExerciseSets { get; set; }
+    public List<NanoCycle> NanoCycles { get; set; }
+
     protected override bool EqualsCore(MicroCycle other)
     {
         throw new NotImplementedException();
@@ -16,6 +17,12 @@ public class MicroCycle:ValueObject<MicroCycle>
 
     protected override int GetHashCodeCore()
     {
-        throw new NotImplementedException();
+        int hashCode = WeekIndex;
+        foreach (var nanoCycle in NanoCycles)
+        {
+            hashCode = HashCode.Combine(hashCode, nanoCycle);
+        }
+
+        return hashCode;
     }
 }
