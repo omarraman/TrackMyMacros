@@ -16,6 +16,10 @@ public class BodyPartConfiguration : IEntityTypeConfiguration<BodyPart>
             .IsRequired()
             .HasMaxLength(30);
 
+        builder.Property(p => p.Size)
+            .HasConversion(p => p.Size
+                , w => new BodyPartSize(w));
+
         var bodyParts = SeedExerciseData.GetBodyParts();
         builder.HasData(bodyParts);
     }

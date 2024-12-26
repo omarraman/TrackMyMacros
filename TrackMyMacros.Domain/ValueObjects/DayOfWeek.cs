@@ -5,8 +5,11 @@ namespace TrackMyMacros.Domain.Aggregates.Exercise;
 public class DayOfWeek:ValueObject<DayOfWeek>
 {
     private readonly int _dayOfWeek;
-    private DayOfWeek(int dayOfWeek)
+    public DayOfWeek(int dayOfWeek)
     {
+        if (dayOfWeek < 1 || dayOfWeek > 7)
+            throw new ArgumentOutOfRangeException(nameof(dayOfWeek), "Day of week must be between 1 and 7");
+
         _dayOfWeek = dayOfWeek;
     }
 

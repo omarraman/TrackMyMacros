@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TrackMyMacros.Application.Features;
+using TrackMyMacros.Domain.Aggregates.Exercise;
 
 namespace TrackMyMacros.Persistance.Repositories;
 
@@ -14,11 +15,11 @@ public class ExerciseConfiguration : IEntityTypeConfiguration<Exercise>
 
         builder.Property(p => p.Name)
             .IsRequired()
-            .HasMaxLength(30);
-        
-        builder.Property(p => p.Description)
-            .IsRequired()
             .HasMaxLength(100);
+        
+        // builder.Property(p => p.Description)
+        //     .IsRequired()
+        //     .HasMaxLength(100);
         
         builder.Property(p=>p.BodyPartId)
             .IsRequired();
