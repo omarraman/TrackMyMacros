@@ -22,162 +22,6 @@ namespace TrackMyMacros.Persistance.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("TrackMyMacros.Application.Features.Exercise", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    NpgsqlPropertyBuilderExtensions.HasIdentityOptions(b.Property<Guid>("Id"), 50L, null, null, null, null, null);
-
-                    b.Property<Guid>("BodyPartId")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("character varying(30)");
-
-                    b.Property<string>("VideoUrl")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BodyPartId");
-
-                    b.ToTable("Exercises");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("a0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                            BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3584),
-                            Description = "Push-ups are a great bodyweight exercise for the upper body.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3601),
-                            Name = "Incline Dumbell Press",
-                            VideoUrl = "https://www.youtube.com/watch?v=Eh00_rniF8E"
-                        },
-                        new
-                        {
-                            Id = new Guid("11a34cfb-cabc-4dea-a0ef-f6e7803b2246"),
-                            BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3616),
-                            Description = "Push-ups are a great bodyweight exercise for the upper body.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3617),
-                            Name = "Bench Press",
-                            VideoUrl = "https://www.youtube.com/watch?v=Eh00_rniF8E"
-                        },
-                        new
-                        {
-                            Id = new Guid("54d2fd4e-4771-421d-ad4c-b9376b3aeed7"),
-                            BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3620),
-                            Description = "Push-ups are a great bodyweight exercise for the upper body.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3622),
-                            Name = "Flyes",
-                            VideoUrl = "https://www.youtube.com/watch?v=Eh00_rniF8E"
-                        },
-                        new
-                        {
-                            Id = new Guid("c6d5a37c-6f19-40d5-93ae-0be9a6a9b8d3"),
-                            BodyPartId = new Guid("6a10d667-3bae-4473-905f-8edf3d235522"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3625),
-                            Description = "A machine exercise that targets the latissimus dorsi muscles.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3626),
-                            Name = "Lat Pulldown",
-                            VideoUrl = "https://www.youtube.com/watch?v=CAwf7n6Luuc"
-                        },
-                        new
-                        {
-                            Id = new Guid("2a7b2787-5e1f-4a5d-8d84-0aca46d6052c"),
-                            BodyPartId = new Guid("4045f98f-21b0-4c61-8fd0-dd02a21547c4"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3630),
-                            Description = "An essential exercise for building leg strength.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3631),
-                            Name = "Squats",
-                            VideoUrl = "https://www.youtube.com/watch?v=Dy28eq2PjcM"
-                        },
-                        new
-                        {
-                            Id = new Guid("c7d8a457-41c5-4aa9-b47d-f33aa74d2772"),
-                            BodyPartId = new Guid("6a10d667-3bae-4473-905f-8edf3d235522"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3635),
-                            Description = "A great exercise to build a strong back.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3636),
-                            Name = "Rows",
-                            VideoUrl = "https://www.youtube.com/watch?v=GZbfZ033f74"
-                        },
-                        new
-                        {
-                            Id = new Guid("3c9d6d81-631f-4787-9135-3668f22cad6d"),
-                            BodyPartId = new Guid("4045f98f-21b0-4c61-8fd0-dd02a21547c4"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3640),
-                            Description = "An advanced exercise for building quad strength and mobility.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3641),
-                            Name = "Reverse Nordics",
-                            VideoUrl = "https://www.youtube.com/watch?v=hEZYIrEXA2M"
-                        },
-                        new
-                        {
-                            Id = new Guid("4f517cbd-a107-4c9a-8b9e-647f5310c0bb"),
-                            BodyPartId = new Guid("4045f98f-21b0-4c61-8fd0-dd02a21547c4"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3644),
-                            Description = "Targets and isolates the quadriceps.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3645),
-                            Name = "Sissy Squat",
-                            VideoUrl = "https://www.youtube.com/watch?v=3B-3Khbht5E"
-                        },
-                        new
-                        {
-                            Id = new Guid("5aad75e5-feaa-45d0-a34b-c7f413c621fc"),
-                            BodyPartId = new Guid("d1fce414-03cb-4a93-a203-7a55a0a20d88"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3650),
-                            Description = "An essential exercise for the hamstrings and glutes.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3651),
-                            Name = "Romanian Deadlift (RDL)",
-                            VideoUrl = "https://www.youtube.com/watch?v=2SHsk9Azd4M"
-                        },
-                        new
-                        {
-                            Id = new Guid("6bbe5654-2a23-4d19-b55a-d04024b18be3"),
-                            BodyPartId = new Guid("b96f38fd-1105-474d-a578-6cb661d9b882"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3655),
-                            Description = "A great exercise to target the calves.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3656),
-                            Name = "Calf Raises",
-                            VideoUrl = "https://www.youtube.com/watch?v=-M4-G8p8fmc"
-                        },
-                        new
-                        {
-                            Id = new Guid("7c00631d-77e2-4108-9f39-a6d48735bb90"),
-                            BodyPartId = new Guid("9b32d4d5-b7a2-4aa3-8862-eef026938e49"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3659),
-                            Description = "A simple but effective core exercise.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3661),
-                            Name = "Crunches",
-                            VideoUrl = "https://www.youtube.com/watch?v=Xyd_fa5zoEU"
-                        });
-                });
-
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.DailyLimit.DailyLimits", b =>
                 {
                     b.Property<Guid>("Id")
@@ -209,15 +53,15 @@ namespace TrackMyMacros.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DailyLimits");
+                    b.ToTable("DailyLimits", (string)null);
 
                     b.HasData(
                         new
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000000"),
                             Calories = 2400,
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(4052),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(4067),
+                            CreatedDate = new DateTime(2024, 6, 17, 9, 48, 31, 802, DateTimeKind.Utc).AddTicks(2312),
+                            LastModifiedDate = new DateTime(2024, 6, 17, 9, 48, 31, 802, DateTimeKind.Utc).AddTicks(2444),
                             WeekdaysMealsPerDay = 5,
                             WeekendMealsPerDay = 5,
                             WeightInKg = 75.900000000000006
@@ -256,122 +100,20 @@ namespace TrackMyMacros.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Days");
+                    b.ToTable("Days", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b89c3992-3325-4467-b084-6daf5677d127"),
+                            Id = new Guid("30f58b50-de2d-454a-9a3e-8ea085d5cd24"),
                             AllowedCarbohydrate = 100,
                             AllowedFat = 100,
                             AllowedProtein = 100,
                             Carbohydrate = 10.0,
-                            Date = new DateOnly(2024, 12, 8),
+                            Date = new DateOnly(2024, 6, 17),
                             Fat = 10.0,
                             MealCount = 1,
                             Protein = 10.0
-                        });
-                });
-
-            modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Exercise.BodyPart", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    NpgsqlPropertyBuilderExtensions.HasIdentityOptions(b.Property<Guid>("Id"), 50L, null, null, null, null, null);
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("character varying(30)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("BodyParts");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("b96f38fd-1105-474d-a578-6cb661d9b882"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2930),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2960),
-                            Name = "Calves"
-                        },
-                        new
-                        {
-                            Id = new Guid("a44e98fc-a6a1-4955-9a4f-0d68ef89c4ba"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2978),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2979),
-                            Name = "Triceps"
-                        },
-                        new
-                        {
-                            Id = new Guid("6a10d667-3bae-4473-905f-8edf3d235522"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2982),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2983),
-                            Name = "Back"
-                        },
-                        new
-                        {
-                            Id = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2985),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2986),
-                            Name = "Chest"
-                        },
-                        new
-                        {
-                            Id = new Guid("ff4fdfe9-9345-4152-85cf-58327a32af22"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2989),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2990),
-                            Name = "Shoulders"
-                        },
-                        new
-                        {
-                            Id = new Guid("d1fce414-03cb-4a93-a203-7a55a0a20d88"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2993),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2994),
-                            Name = "Hamstrings"
-                        },
-                        new
-                        {
-                            Id = new Guid("4045f98f-21b0-4c61-8fd0-dd02a21547c4"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2997),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2998),
-                            Name = "Quads"
-                        },
-                        new
-                        {
-                            Id = new Guid("5b73818b-2c0f-43a5-aa15-02df756ab481"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(3000),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(3001),
-                            Name = "Glutes"
-                        },
-                        new
-                        {
-                            Id = new Guid("81d308c8-5ce7-44a5-b9c1-00c610e79b5c"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(3005),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(3007),
-                            Name = "Neck"
-                        },
-                        new
-                        {
-                            Id = new Guid("9b32d4d5-b7a2-4aa3-8862-eef026938e49"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(3010),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(3012),
-                            Name = "Abdominals"
                         });
                 });
 
@@ -424,7 +166,7 @@ namespace TrackMyMacros.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Food");
+                    b.ToTable("Food", (string)null);
 
                     b.HasData(
                         new
@@ -771,13 +513,13 @@ namespace TrackMyMacros.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FoodCombos");
+                    b.ToTable("FoodCombos", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("043cac74-577c-4fa5-8e09-00c05b31b463"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 132, DateTimeKind.Utc).AddTicks(8907),
+                            Id = new Guid("ad21a88d-35cc-40c5-9d69-c3d50fbadefd"),
+                            CreatedDate = new DateTime(2024, 6, 17, 9, 48, 31, 813, DateTimeKind.Utc).AddTicks(1924),
                             Name = "Test Food Combo"
                         });
                 });
@@ -797,7 +539,7 @@ namespace TrackMyMacros.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Recipes");
+                    b.ToTable("Recipes", (string)null);
                 });
 
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.WeightReading.WeightReading", b =>
@@ -814,7 +556,7 @@ namespace TrackMyMacros.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("WeightReadings");
+                    b.ToTable("WeightReadings", (string)null);
                 });
 
             modelBuilder.Entity("TrackMyMacros.Domain.Uom", b =>
@@ -841,32 +583,21 @@ namespace TrackMyMacros.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Uoms");
+                    b.ToTable("Uoms", (string)null);
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 135, DateTimeKind.Utc).AddTicks(9485),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 135, DateTimeKind.Utc).AddTicks(9503),
+                            CreatedDate = new DateTime(2024, 6, 17, 9, 48, 31, 818, DateTimeKind.Utc).AddTicks(921),
+                            LastModifiedDate = new DateTime(2024, 6, 17, 9, 48, 31, 818, DateTimeKind.Utc).AddTicks(971),
                             Name = "Grams"
                         });
                 });
 
-            modelBuilder.Entity("TrackMyMacros.Application.Features.Exercise", b =>
-                {
-                    b.HasOne("TrackMyMacros.Domain.Aggregates.Exercise.BodyPart", "BodyPart")
-                        .WithMany()
-                        .HasForeignKey("BodyPartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BodyPart");
-                });
-
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Day.Day", b =>
                 {
-                    b.OwnsMany("TrackMyMacros.Domain.ValueObjects.Meal", "Meals", b1 =>
+                    b.OwnsMany("TrackMyMacros.Domain.Aggregates.Day.Day.Meals#TrackMyMacros.Domain.ValueObjects.Meal", "Meals", b1 =>
                         {
                             b1.Property<Guid>("DayId")
                                 .HasColumnType("uuid");
@@ -897,12 +628,12 @@ namespace TrackMyMacros.Persistance.Migrations
 
                             b1.HasKey("DayId", "Id");
 
-                            b1.ToTable("Meal");
+                            b1.ToTable("Meal", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("DayId");
 
-                            b1.OwnsMany("TrackMyMacros.Domain.ValueObjects.FoodAmount", "FoodAmounts", b2 =>
+                            b1.OwnsMany("TrackMyMacros.Domain.Aggregates.Day.Day.Meals#TrackMyMacros.Domain.ValueObjects.Meal.FoodAmounts#TrackMyMacros.Domain.ValueObjects.FoodAmount", "FoodAmounts", b2 =>
                                 {
                                     b2.Property<Guid>("MealDayId")
                                         .HasColumnType("uuid");
@@ -933,7 +664,7 @@ namespace TrackMyMacros.Persistance.Migrations
 
                                     b2.HasKey("MealDayId", "MealId", "Id");
 
-                                    b2.ToTable("FoodAmount");
+                                    b2.ToTable("FoodAmount", (string)null);
 
                                     b2.WithOwner()
                                         .HasForeignKey("MealDayId", "MealId");
@@ -941,7 +672,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                     b2.HasData(
                                         new
                                         {
-                                            MealDayId = new Guid("b89c3992-3325-4467-b084-6daf5677d127"),
+                                            MealDayId = new Guid("30f58b50-de2d-454a-9a3e-8ea085d5cd24"),
                                             MealId = 1,
                                             Id = 1,
                                             Carbohydrate = 10.0,
@@ -957,7 +688,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    DayId = new Guid("b89c3992-3325-4467-b084-6daf5677d127"),
+                                    DayId = new Guid("30f58b50-de2d-454a-9a3e-8ea085d5cd24"),
                                     Id = 1,
                                     AllowedCarbohydrate = 10,
                                     AllowedFat = 10,
@@ -973,7 +704,7 @@ namespace TrackMyMacros.Persistance.Migrations
 
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.FoodCombo.FoodCombo", b =>
                 {
-                    b.OwnsMany("TrackMyMacros.Domain.ValueObjects.FoodComboAmount", "FoodComboAmounts", b1 =>
+                    b.OwnsMany("TrackMyMacros.Domain.Aggregates.FoodCombo.FoodCombo.FoodComboAmounts#TrackMyMacros.Domain.ValueObjects.FoodComboAmount", "FoodComboAmounts", b1 =>
                         {
                             b1.Property<Guid>("FoodComboId")
                                 .HasColumnType("uuid");
@@ -1001,7 +732,7 @@ namespace TrackMyMacros.Persistance.Migrations
 
                             b1.HasKey("FoodComboId", "Id");
 
-                            b1.ToTable("FoodComboAmount");
+                            b1.ToTable("FoodComboAmount", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("FoodComboId");
@@ -1009,7 +740,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    FoodComboId = new Guid("043cac74-577c-4fa5-8e09-00c05b31b463"),
+                                    FoodComboId = new Guid("ad21a88d-35cc-40c5-9d69-c3d50fbadefd"),
                                     Id = 1,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,
@@ -1019,7 +750,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                 },
                                 new
                                 {
-                                    FoodComboId = new Guid("043cac74-577c-4fa5-8e09-00c05b31b463"),
+                                    FoodComboId = new Guid("ad21a88d-35cc-40c5-9d69-c3d50fbadefd"),
                                     Id = 2,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,
@@ -1034,7 +765,7 @@ namespace TrackMyMacros.Persistance.Migrations
 
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Recipe.Recipe", b =>
                 {
-                    b.OwnsMany("TrackMyMacros.Domain.ValueObjects.RecipeFoodAmount", "RecipeFoodAmounts", b1 =>
+                    b.OwnsMany("TrackMyMacros.Domain.Aggregates.Recipe.Recipe.RecipeFoodAmounts#TrackMyMacros.Domain.ValueObjects.RecipeFoodAmount", "RecipeFoodAmounts", b1 =>
                         {
                             b1.Property<Guid>("RecipeId")
                                 .HasColumnType("uuid");
@@ -1062,7 +793,7 @@ namespace TrackMyMacros.Persistance.Migrations
 
                             b1.HasKey("RecipeId", "Id");
 
-                            b1.ToTable("RecipeFoodAmount");
+                            b1.ToTable("RecipeFoodAmount", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("RecipeId");

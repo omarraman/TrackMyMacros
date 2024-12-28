@@ -18,7 +18,7 @@ public class BodyPartConfiguration : IEntityTypeConfiguration<BodyPart>
 
         builder.Property(p => p.Size)
             .HasConversion(p => p.Size
-                , w => new BodyPartSize(w));
+                , w => new SizeOfBodyPart(w));
 
         var bodyParts = SeedExerciseData.GetBodyParts();
         builder.HasData(bodyParts);

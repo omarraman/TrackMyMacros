@@ -3,20 +3,20 @@ using TrackMyMacros.Domain.Common;
 
 namespace TrackMyMacros.Domain.Aggregates.Exercise;
 
-public class ExerciseDay : ValueObject<ExerciseDay>
+public class WeekExerciseDay : ValueObject<WeekExerciseDay>
 {
     public DayOfWeek DayOfWeek { get; init; }
-    public List<ExerciseSet> ExerciseSets { get; init; }
+    public List<ExerciseDaySet> ExerciseDaySets { get; init; }
 
     public bool Complete { get; private set; }
 
-    private ExerciseDay()
+    private WeekExerciseDay()
     {
         
     }
-    public ExerciseDay(DayOfWeek dayOfWeek, List<ExerciseSet> exerciseSets)
+    public WeekExerciseDay(DayOfWeek dayOfWeek, List<ExerciseDaySet> exerciseDaySets)
     {
-        ExerciseSets = exerciseSets;
+        ExerciseDaySets = exerciseDaySets;
         DayOfWeek = dayOfWeek;
     }
 
@@ -25,17 +25,17 @@ public class ExerciseDay : ValueObject<ExerciseDay>
         Complete = true;
     }
     
-    protected override bool EqualsCore(ExerciseDay other)
+    protected override bool EqualsCore(WeekExerciseDay other)
     {
         if (DayOfWeek != other.DayOfWeek)
             return false;
 
-        if (ExerciseSets.Count != other.ExerciseSets.Count)
+        if (ExerciseDaySets.Count != other.ExerciseDaySets.Count)
             return false;
 
-        for (int i = 0; i < ExerciseSets.Count; i++)
+        for (int i = 0; i < ExerciseDaySets.Count; i++)
         {
-            if (!ExerciseSets[i].Equals(other.ExerciseSets[i]))
+            if (!ExerciseDaySets[i].Equals(other.ExerciseDaySets[i]))
                 return false;
         }
 
@@ -46,7 +46,7 @@ public class ExerciseDay : ValueObject<ExerciseDay>
     {
         int hashCode = DayOfWeek.GetHashCode();
 
-        foreach (var exerciseSet in ExerciseSets)
+        foreach (var exerciseSet in ExerciseDaySets)
         {
             hashCode = HashCode.Combine(hashCode, exerciseSet);
         }

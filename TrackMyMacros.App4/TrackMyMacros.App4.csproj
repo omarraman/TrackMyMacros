@@ -66,11 +66,21 @@
       <Compile Remove="Pages\CreateWeightReading.cs" />
       <Compile Remove="Pages\CreateWeightReading.razor.cs" />
       <Compile Remove="Pages\CreateWeightReadingrazor.cs" />
+      <Compile Remove="ViewModels\MesoCycle\GetMesoCycleViewModel.cs" />
+      <Compile Remove="ViewModels\MesoCycle\DeleteMesoCycleViewModel.cs" />
+      <Compile Remove="Services\MesoCycleDataService.cs" />
+      <Compile Remove="Services\BodyPartDataService.cs" />
+      <Compile Remove="Profiles\MesoCycle\UpdateMesoCycleMappingProfile.cs" />
+      <Compile Remove="Profiles\MesoCycle\GetMesoCycleMappingProfile.cs" />
+      <Compile Remove="Pages\MesoCycleList.razor.cs" />
+      <Compile Remove="Pages\CreateMesoCycle.razor.cs" />
+      <Compile Remove="Components\AddOrUpdateMesoCycleDialog.razor.cs" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="ViewModelsRecipe\" />
       <Folder Include="ViewModelsWeightReading\" />
+      <Folder Include="ViewModels\MesoCycle\" />
       <Folder Include="ViewModels\WeightReading\" />
     </ItemGroup>
 

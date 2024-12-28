@@ -15,5 +15,10 @@
       <ProjectReference Include="..\TrackMyMacros.Application\TrackMyMacros.Application.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Repositories\MesoCycleRepository.cs" />
+      <Compile Remove="Repositories\BodyPartRepository.cs" />
+    </ItemGroup>
+
 </Project>
     

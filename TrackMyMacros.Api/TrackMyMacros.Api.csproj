@@ -37,6 +37,11 @@
 
     <ItemGroup>
       <None Remove="logs\log-20230814.txt" />
+      <None Remove="log20241226.txt" />
+      <None Remove="log20241225.txt" />
+      <None Remove="log20241223.txt" />
+      <None Remove="log20240618.txt" />
+      <None Remove="log20240617.txt" />
     </ItemGroup>
 
     <ItemGroup>
@@ -47,6 +52,11 @@
 
     <ItemGroup>
       <Folder Include="logs\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Controllers\MesoCycleController.cs" />
+      <Compile Remove="Controllers\BodyPartController.cs" />
     </ItemGroup>
 
 </Project>

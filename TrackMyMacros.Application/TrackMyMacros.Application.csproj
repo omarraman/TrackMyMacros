@@ -40,6 +40,15 @@
       <Compile Remove="Features\WeightReading\Commands\Delete\g_DeleteWeightReadingCommand_20240512065520.cs" />
       <Compile Remove="Features\WeightReading\Commands\Create\g_CreateWeightReadingCommandHandler_20240512065520.cs" />
       <Compile Remove="Features\WeightReading\Queries\GetList\gg_GetWeightReadingListQuery.cs" />
+      <Compile Remove="Profiles\MesoCycle\UpdateMesoCycleMappingProfile.cs" />
+      <Compile Remove="Profiles\MesoCycle\GetMesoCycleMappingProfile.cs" />
+      <Compile Remove="Features\MesoCycle\Queries\GetList\GetMesoCycleListQuery.cs" />
+      <Compile Remove="Features\MesoCycle\Queries\Get\GetMesoCycleQueryHandler.cs" />
+      <Compile Remove="Features\MesoCycle\Commands\Update\UpdateMesoCycleCommandValidator.cs" />
+      <Compile Remove="Features\MesoCycle\Commands\Update\UpdateMesoCycleCommandHandler.cs" />
+      <Compile Remove="Features\MesoCycle\Commands\Delete\DeleteMesoCycleCommandHandler.cs" />
+      <Compile Remove="Features\MesoCycle\Commands\Create\CreateMesoCycleCommandValidator.cs" />
+      <Compile Remove="Features\MesoCycle\Commands\Create\CreateMesoCycleCommandHandler.cs" />
     </ItemGroup>
 
     <ItemGroup>
@@ -48,6 +57,9 @@
       <Folder Include="Features\FoodCombo\Commands\Get\" />
       <Folder Include="Features\FoodCombo\Queries\GetList\" />
       <Folder Include="Features\FoodCombo\Queries\Get\" />
+      <Folder Include="Features\MesoCycle\Commands\Create\" />
+      <Folder Include="Features\MesoCycle\Queries\Get\" />
+      <Folder Include="Profiles\MesoCycle\" />
       <Folder Include="Profiles\Recipe\" />
     </ItemGroup>
 

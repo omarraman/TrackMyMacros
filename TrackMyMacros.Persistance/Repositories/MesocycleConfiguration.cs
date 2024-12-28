@@ -8,9 +8,9 @@ using DayOfWeek = TrackMyMacros.Domain.Aggregates.Exercise.DayOfWeek;
 
 namespace TrackMyMacros.Persistance.Repositories;
 
-public class MesocycleConfiguration : IEntityTypeConfiguration<MesoCycle>
+public class MesocycleConfiguration : IEntityTypeConfiguration<Mesocycle>
 {
-    public void Configure(EntityTypeBuilder<MesoCycle> builder)
+    public void Configure(EntityTypeBuilder<Mesocycle> builder)
     {
         builder.Property(p => p.Id)
             .IsRequired()
@@ -27,18 +27,18 @@ public class MesocycleConfiguration : IEntityTypeConfiguration<MesoCycle>
         int fridayExerciseDayId = 3;
 
 
-        builder.OwnsMany(m => m.MicroCycles,
+        builder.OwnsMany(m => m.MesocycleWeeks,
             microcycle =>
             {
                 microcycle.WithOwner().HasForeignKey("MesocycleId");
                 microcycle.Property(m => m.WeekIndex);
-                microcycle.OwnsMany<ExerciseDay>(n => n.ExerciseDays,
+                microcycle.OwnsMany<WeekExerciseDay>(n => n.WeekExerciseDays,
                     ExerciseDay =>
                     {
                         ExerciseDay.Property(m => m.DayOfWeek)
                             .HasConversion(m => m.GetNumericEquivalent()
                                 , w => new DayOfWeek(w));
-                        ExerciseDay.OwnsMany<ExerciseSet>(m => m.ExerciseSets,
+                        ExerciseDay.OwnsMany<ExerciseDaySet>(m => m.ExerciseDaySets,
                             exerciseSet =>
                             {
                                 exerciseSet.Property(ex => ex.ExerciseId);
@@ -75,17 +75,18 @@ public class MesocycleConfiguration : IEntityTypeConfiguration<MesoCycle>
             new
             {
                 MicroCycleMesocycleId = mesoId,
-                MicroCycleId = microCycleId, Id = mondayExerciseDayId, DayOfWeek = DayOfWeek.Monday()
+                MicroCycleId = microCycleId, Id = mondayExerciseDayId, DayOfWeek = DayOfWeek.Monday(), Complete=false
             },
             new
             {
                 MicroCycleMesocycleId = mesoId,
-                MicroCycleId = microCycleId, Id = wednesdayExerciseDayId, DayOfWeek = DayOfWeek.Wednesday()
+                MicroCycleId = microCycleId, Id = wednesdayExerciseDayId, DayOfWeek = DayOfWeek.Wednesday(), Complete=false
             },
             new
             {
                 MicroCycleMesocycleId = mesoId,
-                MicroCycleId = microCycleId, Id = fridayExerciseDayId, DayOfWeek = DayOfWeek.Friday()
+                MicroCycleId = microCycleId, Id = fridayExerciseDayId, DayOfWeek = DayOfWeek.Friday(),
+                 Complete=false,
             }
         };
     }
