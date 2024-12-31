@@ -2,20 +2,20 @@ using TrackMyMacros.Domain.Common;
 
 namespace TrackMyMacros.Domain.Aggregates.Exercise;
 
-public class Week : ValueObject<Week>
+public class MesocycleWeek : ValueObject<MesocycleWeek>
 {
     public int WeekIndex { get; init; }
-    public List<WeekExerciseDay> WeekExerciseDays { get; init; }
+    public List<MesocycleWeekDay> MesocycleWeekDays { get; init; }
 
-    private Week()
+    private MesocycleWeek()
     {
         
     }
 
-    public Week(int weekIndex, List<WeekExerciseDay> weekExerciseDays)
+    public MesocycleWeek(int weekIndex, List<MesocycleWeekDay> mesocycleWeekDays)
     {
         WeekIndex = weekIndex;
-        WeekExerciseDays = weekExerciseDays;
+        MesocycleWeekDays = mesocycleWeekDays;
     }
 
     // public void CreateNewDefaultWeek(int weekIndex)
@@ -29,7 +29,7 @@ public class Week : ValueObject<Week>
     //
     // }
 
-    protected override bool EqualsCore(Week other)
+    protected override bool EqualsCore(MesocycleWeek other)
     {
         throw new NotImplementedException();
     }
@@ -37,7 +37,7 @@ public class Week : ValueObject<Week>
     protected override int GetHashCodeCore()
     {
         int hashCode = WeekIndex;
-        foreach (var nanoCycle in WeekExerciseDays)
+        foreach (var nanoCycle in MesocycleWeekDays)
         {
             hashCode = HashCode.Combine(hashCode, nanoCycle);
         }

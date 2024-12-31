@@ -24,6 +24,27 @@ public class ViewModelGenerator : RecordTypeClassGenerator
         new ViewModelGenerator(classDeclarationSyntax, ViewModelType.Delete,valueObjects);
 
 
+    protected override async Task GenerateChildForValueObject(ClassDeclarationSyntax valueObject,List<ClassDeclarationSyntax> valueObjects)
+    {
+        switch (_viewModelType)
+        {
+            case ViewModelType.Create:
+                await CreateViewModelGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            case ViewModelType.Update:
+                await UpdateViewModelGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            case ViewModelType.Get:
+                await GetViewModelGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            case ViewModelType.Delete:
+                await DeleteViewModelGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+
+        }
+    }
+
+    
     protected override string GetNewContainedTypeName(object? collectionTypeIdentifier, string replacementTypeArgument)
     {
         return $"{collectionTypeIdentifier}<{replacementTypeArgument}>";

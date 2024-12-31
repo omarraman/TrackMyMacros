@@ -32,7 +32,7 @@ public class MesocycleConfiguration : IEntityTypeConfiguration<Mesocycle>
             {
                 microcycle.WithOwner().HasForeignKey("MesocycleId");
                 microcycle.Property(m => m.WeekIndex);
-                microcycle.OwnsMany<WeekExerciseDay>(n => n.WeekExerciseDays,
+                microcycle.OwnsMany<MesocycleWeekDay>(n => n.MesocycleWeekDays,
                     ExerciseDay =>
                     {
                         ExerciseDay.Property(m => m.DayOfWeek)

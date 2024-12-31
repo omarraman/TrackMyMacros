@@ -7,4 +7,16 @@
         <LangVersion>11</LangVersion>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="ExerciseDaySet\" />
+      <Folder Include="MesocycleWeekDay\" />
+      <Folder Include="MesocycleWeek\" />
+      <Folder Include="Mesocycle\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="ExerciseDaySet\GetExerciseDaySetDto.cs" />
+      <Compile Remove="MesocycleWeek\GetMesocycleWeekDto.cs" />
+    </ItemGroup>
+
 </Project>

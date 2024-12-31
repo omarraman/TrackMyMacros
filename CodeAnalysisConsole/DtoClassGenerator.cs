@@ -87,4 +87,24 @@ public class DtoClassGenerator : RecordTypeClassGenerator
         Get,
         Delete
     }
+
+    protected override async Task GenerateChildForValueObject(ClassDeclarationSyntax valueObject,List<ClassDeclarationSyntax> valueObjects)
+    {
+        switch (_dtoType)
+        {
+            case DtoType.Create:
+                await CreateDtoClassGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            case DtoType.Update:
+                await UpdateDtoClassGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            case DtoType.Get:
+                await GetDtoClassGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            case DtoType.Delete:
+                await DeleteDtoClassGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+        }
+    }
+
 }

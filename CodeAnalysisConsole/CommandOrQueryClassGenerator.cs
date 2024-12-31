@@ -28,6 +28,27 @@ public class CommandOrQueryGenerator : RecordTypeClassGenerator
     public static CommandOrQueryGenerator DeleteCommandOrQueryGenerator(ClassDeclarationSyntax classDeclarationSyntax,List<ClassDeclarationSyntax> valueObjects) =>
         new CommandOrQueryGenerator(classDeclarationSyntax, CommandOrQueryType.Delete,valueObjects);
 
+    protected override async Task GenerateChildForValueObject(ClassDeclarationSyntax valueObject,List<ClassDeclarationSyntax> valueObjects)
+    {
+        switch (_commandOrQueryType)
+        {
+            case CommandOrQueryType.Create:
+                await CreateCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            case CommandOrQueryType.Update:
+                await UpdateCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            case CommandOrQueryType.Get:
+                await GetCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            case CommandOrQueryType.GetList:
+                await GetListCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            case CommandOrQueryType.Delete:
+                await DeleteCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+        }
+    }
 
     protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)
     {

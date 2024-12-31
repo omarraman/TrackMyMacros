@@ -1,4 +1,6 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using System.Diagnostics;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -48,35 +50,74 @@ public abstract class RecordTypeClassGenerator:Generator
             foreach (var memberDeclarationSyntax in propertiesMembersThatSatisfyPredicate)
             {
                 var propertyMember = (PropertyDeclarationSyntax) memberDeclarationSyntax;
-                var collectionTypeContainingValueObject = propertyMember.Type;
-                
-                //if we have a property that contains the entity name eg List<RecipeFoodAmounts> when the entity is called Recipe
-                if (collectionTypeContainingValueObject.ToString().Contains(BaseEntityClassName))
-                {
-                    //identify the collection type eg List
-                    var collectionTypeIdentifier=((GenericNameSyntax)collectionTypeContainingValueObject).Identifier.Value; //eg List
-
-                    //identify the type argument eg RecipeFoodAmounts
-                    var typeArgument=((GenericNameSyntax)collectionTypeContainingValueObject).TypeArgumentList.Arguments;
-                    var valueObject = _valueObjects.First(m => m.Identifier.ValueText==typeArgument.ToString());
-                    
-                    //generate the new type argument name eg CreateRecipeFoodAmountsDto
-                    var replacementTypeArgument = GetNewTypeArgumentName(typeArgument);
-                    var newType = ParseTypeName(GetNewContainedTypeName(collectionTypeIdentifier, replacementTypeArgument));
-                    //add it as a member
-                    newList.Add(propertyMember.WithType(newType));
-                    // newList.Add(GenerateNewClassDeclaration(valueObject, replacementTypeArgument, m => m is PropertyDeclarationSyntax p && p.Identifier.Text !="Id", []));
-                    newList.Add(GenerateNewClassDeclaration(valueObject, replacementTypeArgument, m => m is PropertyDeclarationSyntax p && MemberSelectionPredicate(p), [])); //so dont include Id in create
-
-                }
-                else
+                var propertyTypeSyntax = propertyMember.Type;
+                if (propertyTypeSyntax is not GenericNameSyntax)
                 {
                     newList.Add(propertyMember);
-                
+                    continue;
                 }
+                var propertyType=((GenericNameSyntax)propertyTypeSyntax).Identifier.Value; //eg List
+                Debug.WriteLine(propertyType.ToString());
+
+                if (propertyType.ToString()!="List" && propertyType.ToString()!="IList" && propertyType.ToString()!="IEnumerable" && propertyType.ToString()!="ICollection" && propertyType.ToString()!="IReadOnlyCollection" && propertyType.ToString()!="IReadOnlyList")
+                {
+                    newList.Add(propertyMember);
+                }
+                
+                ReplaceValueObjectWithChildDto(propertyTypeSyntax, propertyType.ToString(), propertyMember, newList);
+
             }
             
             return newList;
         }
+    }
+
+
+    private async Task ReplaceValueObjectWithChildDto(TypeSyntax propertyTypeSyntax,string propertyType, PropertyDeclarationSyntax propertyMember, List<MemberDeclarationSyntax> newList)
+    {
+        var typeArgument=((GenericNameSyntax)propertyTypeSyntax).TypeArgumentList.Arguments;
+        var valueObject = _valueObjects.First(m => m.Identifier.ValueText==typeArgument.ToString());
+                    
+        //generate the new type argument name eg CreateRecipeFoodAmountsDto
+        var replacementTypeArgument = GetNewTypeArgumentName(typeArgument);
+        var newType = ParseTypeName(GetNewContainedTypeName(propertyType, replacementTypeArgument));
+        //add it as a member
+        newList.Add(propertyMember.WithType(newType));
+        // newList.Add(GenerateNewClassDeclaration(valueObject, replacementTypeArgument, m => m is PropertyDeclarationSyntax p && p.Identifier.Text !="Id", []));
+
+        GenerateChildForValueObject(valueObject,_valueObjects); //create new class eg dto for the value object
+
+        //creates something like this
+        //GetMesocycleWeekDto is added to the list of members
+//         
+//     public class GetMesocycleDto
+//     {
+//         public Guid Id { get; set; }
+//         public string Name { get; set; }
+//         public List<GetMesocycleWeekDto> MesocycleWeeks { get; set; }
+//
+//         public class GetMesocycleWeekDto
+//         {
+//             public int WeekIndex { get; init; }
+//             
+//         }
+//     }
+// }
+        
+    }
+    
+    protected abstract Task GenerateChildForValueObject(ClassDeclarationSyntax valueObject,List<ClassDeclarationSyntax> valueObjects);
+
+    private ClassDeclarationSyntax GenerateNewClassDeclaration(ClassDeclarationSyntax classDeclaration,
+        string identifier, Func<MemberDeclarationSyntax, bool> predicate, BaseTypeSyntax[] baseTypes)
+    {
+        
+        
+        var membersToAdd = classDeclaration.Members.Where(m => predicate(m)).ToArray();
+
+        return ClassDeclaration(Identifier(identifier))
+            .AddModifiers(Token(SyntaxKind.PublicKeyword))
+            // .AddBaseListTypes(baseTypes)
+            .AddMembers(membersToAdd);
     }
 }

@@ -8,7 +8,7 @@ public class Mesocycle:Entity
 {
     public Guid Id { get; set; }
     public string Name { get; set; }
-    public List<Week> MesocycleWeeks { get; set; }
+    public List<MesocycleWeek> MesocycleWeeks { get; set; }
 
     // public void CreateNewDefault()
     // {

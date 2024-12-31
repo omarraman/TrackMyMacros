@@ -3,18 +3,18 @@ using TrackMyMacros.Domain.Common;
 
 namespace TrackMyMacros.Domain.Aggregates.Exercise;
 
-public class WeekExerciseDay : ValueObject<WeekExerciseDay>
+public class MesocycleWeekDay : ValueObject<MesocycleWeekDay>
 {
     public DayOfWeek DayOfWeek { get; init; }
     public List<ExerciseDaySet> ExerciseDaySets { get; init; }
 
     public bool Complete { get; private set; }
 
-    private WeekExerciseDay()
+    private MesocycleWeekDay()
     {
         
     }
-    public WeekExerciseDay(DayOfWeek dayOfWeek, List<ExerciseDaySet> exerciseDaySets)
+    public MesocycleWeekDay(DayOfWeek dayOfWeek, List<ExerciseDaySet> exerciseDaySets)
     {
         ExerciseDaySets = exerciseDaySets;
         DayOfWeek = dayOfWeek;
@@ -25,7 +25,7 @@ public class WeekExerciseDay : ValueObject<WeekExerciseDay>
         Complete = true;
     }
     
-    protected override bool EqualsCore(WeekExerciseDay other)
+    protected override bool EqualsCore(MesocycleWeekDay other)
     {
         if (DayOfWeek != other.DayOfWeek)
             return false;
