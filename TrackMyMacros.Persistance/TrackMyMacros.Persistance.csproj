@@ -18,6 +18,7 @@
     <ItemGroup>
       <Compile Remove="Repositories\MesoCycleRepository.cs" />
       <Compile Remove="Repositories\BodyPartRepository.cs" />
+      <Compile Include="Repositories\MesocycleRepository.cs" />
     </ItemGroup>
 
 </Project>

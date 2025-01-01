@@ -22,7 +22,7 @@ public class AppDbContext:DbContext
     public DbSet<Recipe> Recipes { get; set; }
     public DbSet<BodyPart> BodyParts { get; set; }
     public DbSet<Exercise> Exercises { get; set; }
-
+    public DbSet<Mesocycle> Mesocycles { get; set; }
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {
