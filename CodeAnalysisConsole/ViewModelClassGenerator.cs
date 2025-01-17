@@ -45,16 +45,20 @@ public class ViewModelGenerator : RecordTypeClassGenerator
     }
 
     
-    protected override string GetNewContainedTypeName(object? collectionTypeIdentifier, string replacementTypeArgument)
+    protected override string GetCollectionOfValueObjectTypeAsString(object? collectionTypeIdentifier, string replacementTypeArgument)
     {
         return $"{collectionTypeIdentifier}<{replacementTypeArgument}>";
     }
 
-    protected override string GetNewTypeArgumentName(SeparatedSyntaxList<TypeSyntax> typeArgument)
+    protected override string GetValueObjectTypeName(SeparatedSyntaxList<TypeSyntax> typeArgument)
     {
         return $"{_viewModelType}{typeArgument}ViewModel";
     }
     
+    protected override string GetValueObjectTypeName(string typeName)
+    {
+        return $"{_viewModelType}{typeName}ViewModel";
+    }
     protected override string TargetClassName
     {
         get

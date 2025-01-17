@@ -49,17 +49,23 @@
       <Compile Remove="Features\MesoCycle\Commands\Delete\DeleteMesoCycleCommandHandler.cs" />
       <Compile Remove="Features\MesoCycle\Commands\Create\CreateMesoCycleCommandValidator.cs" />
       <Compile Remove="Features\MesoCycle\Commands\Create\CreateMesoCycleCommandHandler.cs" />
+      <Compile Remove="Features\MesocycleWeekDay\Queries\Get\GetMesocycleWeekDayQuery.cs" />
+      <Compile Remove="Features\ExerciseDaySet\Queries\Get\GetExerciseDaySetQuery.cs" />
+      <Compile Include="Features\MesoCycle\Queries\Get\GetMesocycleQueryHandler.cs" />
+      <Compile Include="Profiles\MesoCycle\GetMesocycleMappingProfile.cs" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Aggregates" />
+      <Folder Include="Features\ExerciseDaySet\Queries\Get\" />
       <Folder Include="Features\FoodCombo\Commands\GetList\" />
       <Folder Include="Features\FoodCombo\Commands\Get\" />
       <Folder Include="Features\FoodCombo\Queries\GetList\" />
       <Folder Include="Features\FoodCombo\Queries\Get\" />
+      <Folder Include="Features\MesocycleWeekDay\Queries\Get\" />
+      <Folder Include="Features\MesocycleWeek\Queries\Get\" />
       <Folder Include="Features\MesoCycle\Commands\Create\" />
-      <Folder Include="Features\MesoCycle\Queries\Get\" />
-      <Folder Include="Profiles\MesoCycle\" />
+      <Folder Include="Profiles\ExerciseDaySet\" />
       <Folder Include="Profiles\Recipe\" />
     </ItemGroup>
 

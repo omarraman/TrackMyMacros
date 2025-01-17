@@ -25,14 +25,19 @@ public class DtoClassGenerator : RecordTypeClassGenerator
         new DtoClassGenerator(classDeclarationSyntax, DtoType.Delete,valueObjects);
 
 
-    protected override string GetNewContainedTypeName(object? collectionTypeIdentifier, string replacementTypeArgument)
+    protected override string GetCollectionOfValueObjectTypeAsString(object? collectionTypeIdentifier, string replacementTypeArgument)
     {
         return $"{collectionTypeIdentifier}<{replacementTypeArgument}>";
     }
 
-    protected override string GetNewTypeArgumentName(SeparatedSyntaxList<TypeSyntax> typeArgument)
+    protected override string GetValueObjectTypeName(SeparatedSyntaxList<TypeSyntax> typeArgument)
     {
-        return $"{_dtoType}{typeArgument}Dto";
+        return GetValueObjectTypeName(typeArgument[0].ToString());
+    }
+    
+    protected virtual string GetValueObjectTypeName(string typeName)
+    {
+        return $"{_dtoType}{typeName}Dto";
     }
     
     protected override string TargetClassName

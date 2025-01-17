@@ -1,28 +1,28 @@
 using TrackMyMacros.Domain.Aggregates;
+using TrackMyMacros.Domain.Aggregates.Mesocycle;
 using TrackMyMacros.Infrastructure;
 using TrackMyMacros.Application.Contracts.Persistence;
 using Microsoft.EntityFrameworkCore;
-using TrackMyMacros.Domain.Aggregates.Exercise;
 
 //1 add this to PersistenceServiceRegistration
-//services.AddScoped<IMesocycleRepository, MesocycleRepository>();
+//services.AddScoped<I{BaseEntityClassName}Repository, {BaseEntityClassName}Repository>();
 //2 add this to AppDbContext
-//public DbSet<Mesocycle> Mesocycles { get; set; }
+//public DbSet<{BaseEntityClassName}> {BaseEntityClassName}s { get; set; }
 //3 put the repository interface in the application layer
 //4 create a new migration
 //5 update the database
 // 6 add the following to the persistance layer,
 // using Microsoft.EntityFrameworkCore.Metadata.Builders;
-// using TrackMyMacros.Domain.Aggregates.Mesocycle;
+// using TrackMyMacros.Domain.Aggregates.{BaseEntityClassName};
 // namespace TrackMyMacros.Persistance.Repositories;
-// public class MesocycleConfiguration : IEntityTypeConfiguration<Mesocycle>
+// public class {BaseEntityClassName}Configuration : IEntityTypeConfiguration<{BaseEntityClassName}>
 // {
-// public void Configure(EntityTypeBuilder<Mesocycle> builder)
+// public void Configure(EntityTypeBuilder<{BaseEntityClassName}> builder)
 // {
-// var MesocycleId = Guid.NewGuid();
-// builder.OwnsMany(m => m.MesocycleFoodAmounts, recipeAmount =>
+// var {BaseEntityClassName}Id = Guid.NewGuid();
+// builder.OwnsMany(m => m.{BaseEntityClassName}FoodAmounts, recipeAmount =>
 // {
-//     recipeAmount.WithOwner().HasForeignKey("MesocycleId");
+//     recipeAmount.WithOwner().HasForeignKey("{BaseEntityClassName}Id");
 //     recipeAmount.Property(m => m.Quantity)
 //         .IsRequired();
 //     recipeAmount.Property(m => m.FoodId)
@@ -89,4 +89,14 @@ namespace TrackMyMacros.Persistance.Repositories
             await _dbContext.SaveChangesAsync();
         }
     }
+
+    // public interface IMesocycleRepository
+    // {
+    //     Task<Maybe<Mesocycle>> GetByIdAsync(Guid id);
+    //     Task<IReadOnlyList<Mesocycle>> ListAllAsync();
+    //     Task<IReadOnlyList<Mesocycle>> GetPagedReponseAsync(int page, int size);
+    //     Task<Mesocycle> AddAsync(Mesocycle entity);
+    //     Task<Result> UpdateAsync(Mesocycle entity);
+    //     Task DeleteAsync(Guid id);
+    // }
 }

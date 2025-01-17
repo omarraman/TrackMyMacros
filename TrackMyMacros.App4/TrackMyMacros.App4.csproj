@@ -32,6 +32,7 @@
     <ItemGroup>
         <ProjectReference Include="..\TrackMyMacros.Dtos\TrackMyMacros.Dtos.csproj" />
         <ProjectReference Include="..\TrackMyMacros.Infrastructure\TrackMyMacros.Infrastructure.csproj" />
+        <ProjectReference Include="..\TrackMyMacros.SharedKernel\TrackMyMacros.SharedKernel.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -78,9 +79,14 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Profiles\MesoCycle\" />
       <Folder Include="ViewModelsRecipe\" />
       <Folder Include="ViewModelsWeightReading\" />
+      <Folder Include="ViewModels\ExerciseDaySet\" />
+      <Folder Include="ViewModels\MesocycleWeekDay\" />
+      <Folder Include="ViewModels\MesocycleWeek\" />
       <Folder Include="ViewModels\MesoCycle\" />
+      <Folder Include="ViewModels\MyDayOfWeek\" />
       <Folder Include="ViewModels\WeightReading\" />
     </ItemGroup>
 

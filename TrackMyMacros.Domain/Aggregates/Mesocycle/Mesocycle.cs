@@ -1,7 +1,7 @@
 using TrackMyMacros.Attributes;
 using TrackMyMacros.Domain.Common;
 
-namespace TrackMyMacros.Domain.Aggregates.Exercise;
+namespace TrackMyMacros.Domain.Aggregates.Mesocycle;
 
 [CodeGen]
 public class Mesocycle:Entity

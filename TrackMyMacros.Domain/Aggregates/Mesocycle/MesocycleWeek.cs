@@ -1,6 +1,6 @@
 using TrackMyMacros.Domain.Common;
 
-namespace TrackMyMacros.Domain.Aggregates.Exercise;
+namespace TrackMyMacros.Domain.Aggregates.Mesocycle;
 
 public class MesocycleWeek : ValueObject<MesocycleWeek>
 {

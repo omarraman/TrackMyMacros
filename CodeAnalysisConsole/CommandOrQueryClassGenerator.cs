@@ -30,24 +30,7 @@ public class CommandOrQueryGenerator : RecordTypeClassGenerator
 
     protected override async Task GenerateChildForValueObject(ClassDeclarationSyntax valueObject,List<ClassDeclarationSyntax> valueObjects)
     {
-        switch (_commandOrQueryType)
-        {
-            case CommandOrQueryType.Create:
-                await CreateCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
-                break;
-            case CommandOrQueryType.Update:
-                await UpdateCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
-                break;
-            case CommandOrQueryType.Get:
-                await GetCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
-                break;
-            case CommandOrQueryType.GetList:
-                await GetListCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
-                break;
-            case CommandOrQueryType.Delete:
-                await DeleteCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
-                break;
-        }
+        return;
     }
 
     protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)
@@ -134,7 +117,7 @@ public class CommandOrQueryGenerator : RecordTypeClassGenerator
                 MemberSelectionPredicate = _allMembersPredicate;
                 break;
             case CommandOrQueryType.Get:
-                MemberSelectionPredicate = _allMembersPredicate;
+                MemberSelectionPredicate = _onlyIdPredicate;
                 break;
             case CommandOrQueryType.Delete:
                 MemberSelectionPredicate = _onlyIdPredicate;
@@ -194,13 +177,18 @@ public class CommandOrQueryGenerator : RecordTypeClassGenerator
     //     }
     // }
 
-    protected override string GetNewContainedTypeName(object? collectionTypeIdentifier, string replacementTypeArgument)
+    protected override string GetCollectionOfValueObjectTypeAsString(object? collectionTypeIdentifier, string replacementTypeArgument)
     {
         return $"{collectionTypeIdentifier}<{replacementTypeArgument}>";
     }
 
-    protected override string GetNewTypeArgumentName(SeparatedSyntaxList<TypeSyntax> typeArgument)
+    protected override string GetValueObjectTypeName(SeparatedSyntaxList<TypeSyntax> typeArgument)
     {
         return $"{_commandOrQueryType}{typeArgument}";
+    }
+    
+    protected virtual string GetValueObjectTypeName(string typeName)
+    {
+        return $"{_commandOrQueryType}{typeName}";
     }
 }

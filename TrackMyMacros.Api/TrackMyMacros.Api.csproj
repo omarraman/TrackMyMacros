@@ -58,6 +58,7 @@
     <ItemGroup>
       <Compile Remove="Controllers\MesoCycleController.cs" />
       <Compile Remove="Controllers\BodyPartController.cs" />
+      <Compile Include="Controllers\MesocycleController.cs" />
     </ItemGroup>
 
 </Project>

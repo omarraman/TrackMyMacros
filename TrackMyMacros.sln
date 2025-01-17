@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackMyMacros.Attributes", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackMyMacros.App4", "TrackMyMacros.App4\TrackMyMacros.App4.csproj", "{B9EB40AD-2072-4469-A882-00712C0D35FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackMyMacros.SharedKernel", "TrackMyMacros.SharedKernel\TrackMyMacros.SharedKernel.csproj", "{AD4E8D38-E60C-45C2-812A-97B5662F47BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,7 @@ Global
 		{7F13A489-75F9-4F6B-A0F0-9AFD69E91039} = {AAE72D3B-6B94-4227-AFB3-2DEE5DF44C4F}
 		{4C3130AB-FEA8-44C5-8AEB-E3ED08C26068} = {8C75B62B-E418-4BB2-8720-9D55B68F3D27}
 		{B9EB40AD-2072-4469-A882-00712C0D35FD} = {C701C5A5-F607-4BA9-A485-56F45C968744}
+		{AD4E8D38-E60C-45C2-812A-97B5662F47BE} = {8C75B62B-E418-4BB2-8720-9D55B68F3D27}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{987F9894-B7BA-4107-891A-30280CDA4022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -87,5 +90,9 @@ Global
 		{B9EB40AD-2072-4469-A882-00712C0D35FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9EB40AD-2072-4469-A882-00712C0D35FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9EB40AD-2072-4469-A882-00712C0D35FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD4E8D38-E60C-45C2-812A-97B5662F47BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD4E8D38-E60C-45C2-812A-97B5662F47BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD4E8D38-E60C-45C2-812A-97B5662F47BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD4E8D38-E60C-45C2-812A-97B5662F47BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

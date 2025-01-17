@@ -1,11 +1,11 @@
-﻿using System.Security.AccessControl;
-using TrackMyMacros.Domain.Common;
+﻿using TrackMyMacros.Domain.ValueObjects;
+using TrackMyMacros.SharedKernel;
 
-namespace TrackMyMacros.Domain.Aggregates.Exercise;
+namespace TrackMyMacros.Domain.Aggregates.Mesocycle;
 
-public class MesocycleWeekDay : ValueObject<MesocycleWeekDay>
+public class MesocycleWeekDay : Common.ValueObject<MesocycleWeekDay>
 {
-    public DayOfWeek DayOfWeek { get; init; }
+    public MyDayOfWeek DayOfWeek { get; init; }
     public List<ExerciseDaySet> ExerciseDaySets { get; init; }
 
     public bool Complete { get; private set; }
@@ -14,7 +14,7 @@ public class MesocycleWeekDay : ValueObject<MesocycleWeekDay>
     {
         
     }
-    public MesocycleWeekDay(DayOfWeek dayOfWeek, List<ExerciseDaySet> exerciseDaySets)
+    public MesocycleWeekDay(MyDayOfWeek dayOfWeek, List<ExerciseDaySet> exerciseDaySets)
     {
         ExerciseDaySets = exerciseDaySets;
         DayOfWeek = dayOfWeek;

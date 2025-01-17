@@ -1,6 +1,6 @@
 using TrackMyMacros.Domain.Common;
 
-namespace TrackMyMacros.Domain.Aggregates.Exercise;
+namespace TrackMyMacros.Domain.Aggregates.Mesocycle;
 public class ExerciseDaySet : ValueObject<ExerciseDaySet>
 {
     public ExerciseDaySet(int reps, int targetReps, double targetWeight, Guid exerciseId)

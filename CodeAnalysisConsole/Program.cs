@@ -5,6 +5,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.MSBuild;
+using TrackMyMacros.Infrastructure;
 
 string entityName = String.Empty;
 while (true)
@@ -47,9 +48,12 @@ var solution = await workspace.OpenSolutionAsync(sln);
 
 
 Project project = solution.Projects.First(x => x.Name == "TrackMyMacros.Domain");
+Project sharedKernalProject = solution.Projects.First(x => x.Name == "TrackMyMacros.SharedKernel");
 var compilation = await project.GetCompilationAsync();
+var compilationSharedKernal = await sharedKernalProject.GetCompilationAsync();
 
 var classVisitor = new ClassVirtualizationVisitor();
+var sharedKernalClassVisitor = new ClassVirtualizationVisitor();
 
 
 if (compilation?.SyntaxTrees != null)
@@ -58,12 +62,21 @@ if (compilation?.SyntaxTrees != null)
         classVisitor.Visit(syntaxTree.GetRoot());
     }
 
+if (compilationSharedKernal?.SyntaxTrees != null)
+    foreach (var syntaxTree in compilationSharedKernal?.SyntaxTrees!)
+    {
+        sharedKernalClassVisitor.Visit(syntaxTree.GetRoot());
+    }
+
 var classes =
     classVisitor.Classes
         .Where(a => a.Identifier.Text == entityName)
         .Where(m => m.AttributeLists.Any(m => m.Attributes.Any(a => a.Name.ToString() == "CodeGen")));
 
+
 var valueObjects = classVisitor.ValueObjects;
+//add valueObjects from sharedKernalClassVisitor to valueObjects
+valueObjects.AddRange(sharedKernalClassVisitor.ValueObjects);
 
 if (!classes.Any())
 {
@@ -240,17 +253,17 @@ async Task GenerateMappingClasses(ClassDeclarationSyntax classDeclarationSyntax)
     
     if (userInputs.ShouldGenerateGet)
     {
-        await MappingProfileGenerator.GetMappingProfileGenerator(classDeclarationSyntax,valueObjects).GenerateAndWriteClass2();
+        await MappingProfileGenerator.GetMappingProfileGenerator(classDeclarationSyntax,valueObjects, Maybe<string>.None,false).GenerateAndWriteClass2();
     }
 
     if (userInputs.ShouldGenerateCreate)
     {
-        await MappingProfileGenerator.CreateMappingProfileGenerator(classDeclarationSyntax,valueObjects).GenerateAndWriteClass2();
+        await MappingProfileGenerator.CreateMappingProfileGenerator(classDeclarationSyntax,valueObjects, Maybe<string>.None,false).GenerateAndWriteClass2();
     }
     
     if (userInputs.ShouldGenerateUpdate)
     {
-        await MappingProfileGenerator.UpdateMappingProfileGenerator(classDeclarationSyntax,valueObjects).GenerateAndWriteClass2();
+        await MappingProfileGenerator.UpdateMappingProfileGenerator(classDeclarationSyntax,valueObjects,Maybe<string>.None,false).GenerateAndWriteClass2();
     }
 
 }

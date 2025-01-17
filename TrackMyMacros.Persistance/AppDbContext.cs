@@ -6,6 +6,7 @@ using TrackMyMacros.Domain.Aggregates.DailyLimit;
 using TrackMyMacros.Domain.Aggregates.Day;
 using TrackMyMacros.Domain.Aggregates.Exercise;
 using TrackMyMacros.Domain.Aggregates.FoodCombo;
+using TrackMyMacros.Domain.Aggregates.Mesocycle;
 using TrackMyMacros.Domain.Aggregates.Recipe;
 using TrackMyMacros.Domain.Aggregates.WeightReading;
 
@@ -28,7 +29,6 @@ public class AppDbContext:DbContext
     {
         
     }
-
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
