@@ -10,6 +10,7 @@ public class SeedExerciseData
     {
         var exercises= new List<Exercise>
         {
+            Exercise.Flyes(),
             Exercise.BenchPress(),
             Exercise.Squat(),
             Exercise.Deadlift(),

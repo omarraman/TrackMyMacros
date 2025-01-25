@@ -2,9 +2,9 @@ using TrackMyMacros.Dtos.MesocycleWeekDay;
 
 namespace TrackMyMacros.Dtos.MesocycleWeek
 {
-    public class GetMesocycleWeekDto
+    public class GetWeekDto
     {
         public int WeekIndex { get; init; }
-        public List<GetMesocycleWeekDayDto> MesocycleWeekDays { get; init; }
+        public List<GetWorkoutDto> Workouts { get; init; }
     }
 }

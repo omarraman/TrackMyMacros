@@ -4,11 +4,11 @@ using TrackMyMacros.Domain.Aggregates.Mesocycle;
 
 namespace TrackMyMacros.Application.Profiles.MesocycleWeekDay
 {
-    public class GetMesocycleWeekDayMappingProfile : Profile
+    public class GetWorkoutMappingProfile : Profile
     {
-        public GetMesocycleWeekDayMappingProfile()
+        public GetWorkoutMappingProfile()
         {
-            CreateMap<TrackMyMacros.Domain.Aggregates.Mesocycle.MesocycleWeekDay, GetMesocycleWeekDayDto>().ForMember(m => m.DayOfWeek, 
+            CreateMap<TrackMyMacros.Domain.Aggregates.Mesocycle.Workout, GetWorkoutDto>().ForMember(m => m.DayOfWeek, 
                 opt => opt.MapFrom(src => (int)src.DayOfWeek.Value()));
         }
     }

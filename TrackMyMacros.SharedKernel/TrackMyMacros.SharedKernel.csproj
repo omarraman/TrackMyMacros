@@ -10,4 +10,8 @@
       <ProjectReference Include="..\TrackMyMacros.Attributes\TrackMyMacros.Attributes.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="7.0.14" />
+    </ItemGroup>
+
 </Project>

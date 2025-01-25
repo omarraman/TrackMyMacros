@@ -1,7 +1,9 @@
-﻿using TrackMyMacros.Attributes;
+﻿using Microsoft.EntityFrameworkCore;
+using TrackMyMacros.Attributes;
 
 namespace TrackMyMacros.SharedKernel;
 
+[Keyless]
 [PrimitiveWrapper(Type = "int")]
 public class MyDayOfWeek:ValueObject<MyDayOfWeek>
 {
@@ -12,6 +14,11 @@ public class MyDayOfWeek:ValueObject<MyDayOfWeek>
             throw new ArgumentOutOfRangeException(nameof(dayOfWeek), "Day of week must be between 1 and 7");
 
         _dayOfWeek = dayOfWeek;
+    }
+
+    private MyDayOfWeek()
+    {
+        
     }
 
     public static MyDayOfWeek Monday() => new(1);

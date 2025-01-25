@@ -2,10 +2,10 @@ using TrackMyMacros.Dtos.ExerciseDaySet;
 
 namespace TrackMyMacros.Dtos.MesocycleWeekDay
 {
-    public class GetMesocycleWeekDayDto
+    public class GetWorkoutDto
     {
         public int DayOfWeek { get; init; }
-        public List<GetExerciseDaySetDto> ExerciseDaySets { get; init; }
+        public List<GetSetDto> Sets { get; init; }
         public bool Complete { get; private set; }
     }
 }

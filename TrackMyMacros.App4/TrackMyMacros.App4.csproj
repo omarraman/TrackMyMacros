@@ -76,6 +76,7 @@
       <Compile Remove="Pages\MesoCycleList.razor.cs" />
       <Compile Remove="Pages\CreateMesoCycle.razor.cs" />
       <Compile Remove="Components\AddOrUpdateMesoCycleDialog.razor.cs" />
+      <Compile Include="ViewModels\MesoCycle\GetMesocycleViewModel.cs" />
     </ItemGroup>
 
     <ItemGroup>
@@ -85,7 +86,6 @@
       <Folder Include="ViewModels\ExerciseDaySet\" />
       <Folder Include="ViewModels\MesocycleWeekDay\" />
       <Folder Include="ViewModels\MesocycleWeek\" />
-      <Folder Include="ViewModels\MesoCycle\" />
       <Folder Include="ViewModels\MyDayOfWeek\" />
       <Folder Include="ViewModels\WeightReading\" />
     </ItemGroup>

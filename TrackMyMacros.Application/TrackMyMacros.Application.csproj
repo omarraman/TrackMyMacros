@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" Version="8.0.0" />
       <PackageReference Include="AutoMapper" Version="12.0.1" />
       <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
       <PackageReference Include="FluentValidation" Version="11.7.1" />
@@ -57,13 +58,10 @@
 
     <ItemGroup>
       <Folder Include="Aggregates" />
-      <Folder Include="Features\ExerciseDaySet\Queries\Get\" />
       <Folder Include="Features\FoodCombo\Commands\GetList\" />
       <Folder Include="Features\FoodCombo\Commands\Get\" />
       <Folder Include="Features\FoodCombo\Queries\GetList\" />
       <Folder Include="Features\FoodCombo\Queries\Get\" />
-      <Folder Include="Features\MesocycleWeekDay\Queries\Get\" />
-      <Folder Include="Features\MesocycleWeek\Queries\Get\" />
       <Folder Include="Features\MesoCycle\Commands\Create\" />
       <Folder Include="Profiles\ExerciseDaySet\" />
       <Folder Include="Profiles\Recipe\" />

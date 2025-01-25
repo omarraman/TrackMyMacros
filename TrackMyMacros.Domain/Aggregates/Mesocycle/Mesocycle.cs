@@ -1,5 +1,6 @@
 using TrackMyMacros.Attributes;
 using TrackMyMacros.Domain.Common;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Domain.Aggregates.Mesocycle;
 
@@ -8,8 +9,38 @@ public class Mesocycle:Entity
 {
     public Guid Id { get; set; }
     public string Name { get; set; }
-    public List<MesocycleWeek> MesocycleWeeks { get; set; }
+    public List<Week> Weeks { get; set; }
 
+    public int CurrentWeekIndex { get; set; } = 1;
+    public MyDayOfWeek CurrentDayOfWeek { get; set; } = MyDayOfWeek.Monday();
+
+    public void FinishWorkout()
+    {
+        if (CurrentDayOfWeek == MyDayOfWeek.Friday())
+        {
+            CurrentDayOfWeek = MyDayOfWeek.Monday();
+            CurrentWeekIndex++;
+        }
+        else if (CurrentDayOfWeek == MyDayOfWeek.Monday())
+        {
+            CurrentDayOfWeek = MyDayOfWeek.Wednesday();
+            CurrentWeekIndex++;
+        }
+        else
+        {
+            CurrentDayOfWeek = MyDayOfWeek.Friday();
+        }
+    }
+    
+    private Week GetCurrentWeek()
+    {
+        return Weeks.Single(m=>m.WeekIndex==CurrentWeekIndex);
+    }
+
+    public Workout GetCurrentWorkout()
+    {
+        return GetCurrentWeek().Workouts.Single(x => x.DayOfWeek == CurrentDayOfWeek);
+    }
     // public void CreateNewDefault()
     // {
     //     MicroCycles = new List<MicroCycle>();
