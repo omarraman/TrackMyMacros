@@ -1,0 +1,16 @@
+﻿@page "/Workout"
+<h3>Workout</h3>
+
+
+@if(CurrentWorkout.HasValue)
+{
+    foreach (var set in CurrentWorkout.Value.Sets)
+    {
+
+        <SetComponent Set="@set" />
+    }
+}
+else
+{
+    <p>Loading...</p>
+}

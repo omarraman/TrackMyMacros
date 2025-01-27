@@ -1,0 +1,17 @@
+﻿<div class="container">
+    <strong>@Set.ExerciseName</strong>
+    <div class="row py-1">
+        <div class="col-3">
+            <RadzenLabel Text="@Set.TargetWeight.ToString()"></RadzenLabel>
+        </div>
+        <div class="col-3">
+            <RadzenLabel Text="@Set.TargetReps.ToString()"></RadzenLabel>
+        </div>
+        <div class="col-3">
+            <RadzenNumeric TValue="double" @bind-Value="Set.Weight">Weight</RadzenNumeric>
+        </div>
+        <div class="col-3">
+            <RadzenNumeric TValue="int" @bind-Value="@Set.Reps">Reps</RadzenNumeric>
+        </div>
+    </div>
+</div>

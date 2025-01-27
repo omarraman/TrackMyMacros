@@ -9,8 +9,10 @@ namespace TrackMyMacros.App4.Services
         Task Put<TModel,TDto>(TModel model,string endpoint);
         Task<IReadOnlyList<TModel>> GetList<TModel,TDto>(string endpoint );
         Task<TModel> Get<TModel,TDto>(string endpoint );
+        Task<TModel> Get<TModel,TDto>(Endpoint endpoint ,Guid id);
         Task Delete(string endpoint );
     }
+
     public class GenericDataService :IGenericDataService
     {
         private readonly IMapper _mapper;
@@ -21,6 +23,7 @@ namespace TrackMyMacros.App4.Services
             public const string WeightReading = "WeightReading";
             public const string FoodCombo = "FoodCombo";
             public const string Recipe = "Recipe";
+            public const string Mesocycle = "Mesocycle";
         }
 
         public GenericDataService( IMapper mapper,IConfiguration configuration)
@@ -33,7 +36,22 @@ namespace TrackMyMacros.App4.Services
             _baseUrl= _baseUrl +  "/api/";
             _mapper = mapper;
         }
+        public async Task<TModel> Get<TModel,TDto>(Endpoint endpoint , Guid id)
+        {
+            try
+            {
+                var uri =  _baseUrl + endpoint.Value + "/GetById/" + id;
+                var foods = await uri
+                    .GetJsonAsync<TDto>();
+                return _mapper.Map<TModel>(foods);
+            }
+            catch (FlurlHttpException ex)
+            {
+                var string1 = await ex.GetResponseStringAsync();
+                throw new Exception(string1);
+            }
 
+        }
 
         public async Task Post<TModel,TDto>(TModel model,string endpoint)
         {
@@ -88,6 +106,8 @@ namespace TrackMyMacros.App4.Services
             }
 
         }
+        
+
     
         public async Task<TModel> Get<TModel,TDto>(string endpoint )
         {

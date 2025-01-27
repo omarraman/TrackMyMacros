@@ -76,11 +76,11 @@
       <Compile Remove="Pages\MesoCycleList.razor.cs" />
       <Compile Remove="Pages\CreateMesoCycle.razor.cs" />
       <Compile Remove="Components\AddOrUpdateMesoCycleDialog.razor.cs" />
+      <Compile Include="Profiles\MesoCycle\GetMesocycleMappingProfile.cs" />
       <Compile Include="ViewModels\MesoCycle\GetMesocycleViewModel.cs" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Profiles\MesoCycle\" />
       <Folder Include="ViewModelsRecipe\" />
       <Folder Include="ViewModelsWeightReading\" />
       <Folder Include="ViewModels\ExerciseDaySet\" />

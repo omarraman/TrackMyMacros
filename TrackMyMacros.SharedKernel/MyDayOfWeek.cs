@@ -30,6 +30,14 @@ public class MyDayOfWeek:ValueObject<MyDayOfWeek>
     public static MyDayOfWeek Sunday() => new(7);
     
     public int Value() => _dayOfWeek;
+    
+    public static MyDayOfWeek ConvertFromInt(int dayOfWeek)
+    {
+        if (dayOfWeek < 1 || dayOfWeek > 7)
+            throw new ArgumentOutOfRangeException(nameof(dayOfWeek), "Day of week must be between 1 and 7");
+
+        return new MyDayOfWeek(dayOfWeek);
+    }
 
     protected override bool EqualsCore(MyDayOfWeek other)
     {
