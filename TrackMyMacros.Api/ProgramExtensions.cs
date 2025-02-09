@@ -1,9 +1,6 @@
-﻿
-using MediatR;
-using Microsoft.AspNetCore.Components;
+﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using Radzen;
 using Scrutor;
 using TrackMyMacros.Application;
 using TrackMyMacros.Application.Utils;

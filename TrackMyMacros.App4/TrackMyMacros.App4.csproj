@@ -30,6 +30,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\TrackMyMacros.Domain\TrackMyMacros.Domain.csproj" />
         <ProjectReference Include="..\TrackMyMacros.Dtos\TrackMyMacros.Dtos.csproj" />
         <ProjectReference Include="..\TrackMyMacros.Infrastructure\TrackMyMacros.Infrastructure.csproj" />
         <ProjectReference Include="..\TrackMyMacros.SharedKernel\TrackMyMacros.SharedKernel.csproj" />
@@ -77,6 +78,7 @@
       <Compile Remove="Pages\CreateMesoCycle.razor.cs" />
       <Compile Remove="Components\AddOrUpdateMesoCycleDialog.razor.cs" />
       <Compile Include="Profiles\MesoCycle\GetMesocycleMappingProfile.cs" />
+      <Compile Include="Profiles\MesoCycle\UpdateMesocycleMappingProfile.cs" />
       <Compile Include="ViewModels\MesoCycle\GetMesocycleViewModel.cs" />
     </ItemGroup>
 

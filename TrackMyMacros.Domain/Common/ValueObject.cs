@@ -5,9 +5,7 @@ public abstract class ValueObject<T>
 {
     public override bool Equals(object obj)
     {
-        var valueObject = obj as T;
-
-        if (ReferenceEquals(valueObject, null))
+        if (obj is not T valueObject)
             return false;
 
         return EqualsCore(valueObject);

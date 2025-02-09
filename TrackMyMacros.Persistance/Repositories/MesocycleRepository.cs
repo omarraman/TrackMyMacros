@@ -37,6 +37,7 @@ namespace TrackMyMacros.Persistance.Repositories
     public class MesocycleRepository : IMesocycleRepository
     {
         private AppDbContext _dbContext;
+
         public MesocycleRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
@@ -71,14 +72,12 @@ namespace TrackMyMacros.Persistance.Repositories
 
         public async Task<Result> UpdateAsync(Mesocycle entity)
         {
-            var mesocycle = await _dbContext.Set<Mesocycle>().FindAsync(entity.Id);
-            _dbContext.Entry(mesocycle).CurrentValues.SetValues(entity);
-            //mesocycle.MesocycleAmounts.Clear();
-            //foreach (var mesocycleAmount in entity.MesocycleAmounts)
-            //{
-            //    mesocycle.MesocycleAmounts.Add(mesocycleAmount);    
-            //}
+            var mesoToRemove = _dbContext.Mesocycles.SingleOrDefault(m => m.Id == entity.Id);
+            _dbContext.Mesocycles.Remove(mesoToRemove!);
             await _dbContext.SaveChangesAsync();
+            _dbContext.Mesocycles.Add(entity!);
+            await _dbContext.SaveChangesAsync();
+
             return new SuccessResult();
         }
 
@@ -90,13 +89,13 @@ namespace TrackMyMacros.Persistance.Repositories
         }
     }
 
-    public interface IMesocycleRepository
-    {
-        Task<Maybe<Mesocycle>> GetByIdAsync(Guid id);
-        Task<IReadOnlyList<Mesocycle>> ListAllAsync();
-        Task<IReadOnlyList<Mesocycle>> GetPagedReponseAsync(int page, int size);
-        Task<Mesocycle> AddAsync(Mesocycle entity);
-        Task<Result> UpdateAsync(Mesocycle entity);
-        Task DeleteAsync(Guid id);
-    }
+//     public interface IMesocycleRepository
+//     {
+//         Task<Maybe<Mesocycle>> GetByIdAsync(Guid id);
+//         Task<IReadOnlyList<Mesocycle>> ListAllAsync();
+//         Task<IReadOnlyList<Mesocycle>> GetPagedReponseAsync(int page, int size);
+//         Task<Mesocycle> AddAsync(Mesocycle entity);
+//         Task<Result> UpdateAsync(Mesocycle entity);
+//         Task DeleteAsync(Guid id);
+//     }
 }

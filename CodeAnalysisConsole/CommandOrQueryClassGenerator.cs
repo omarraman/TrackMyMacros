@@ -28,11 +28,30 @@ public class CommandOrQueryGenerator : RecordTypeClassGenerator
     public static CommandOrQueryGenerator DeleteCommandOrQueryGenerator(ClassDeclarationSyntax classDeclarationSyntax,List<ClassDeclarationSyntax> valueObjects) =>
         new CommandOrQueryGenerator(classDeclarationSyntax, CommandOrQueryType.Delete,valueObjects);
 
+
     protected override async Task GenerateChildForValueObject(ClassDeclarationSyntax valueObject,List<ClassDeclarationSyntax> valueObjects)
     {
-        return;
+        switch (_commandOrQueryType)
+        {
+            case CommandOrQueryType.Create:
+                await CreateCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            case CommandOrQueryType.Update:
+                await UpdateCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            case CommandOrQueryType.Get:
+                await GetCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            case CommandOrQueryType.Delete:
+                await DeleteCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            case CommandOrQueryType.GetList:
+                await GetListCommandOrQueryGenerator(valueObject,valueObjects).GenerateAndWriteClass2();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
-
     protected override UsingDirectiveSyntax[] GetUsingNamespaces(string baseEntityName)
     {
         if (!_commandOrQueryType.ToString().StartsWith("Get"))
@@ -71,6 +90,15 @@ public class CommandOrQueryGenerator : RecordTypeClassGenerator
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+    }
+    
+    private  string Suffix {
+        get
+        {
+            if (_commandOrQueryType==CommandOrQueryType.Get || _commandOrQueryType==CommandOrQueryType.GetList)
+                return "Query";
+            return "Command";
         }
     }
     protected override string TargetClassName {
@@ -184,11 +212,11 @@ public class CommandOrQueryGenerator : RecordTypeClassGenerator
 
     protected override string GetValueObjectTypeName(SeparatedSyntaxList<TypeSyntax> typeArgument)
     {
-        return $"{_commandOrQueryType}{typeArgument}";
+        return $"{_commandOrQueryType}{typeArgument}{Suffix}";
     }
     
     protected virtual string GetValueObjectTypeName(string typeName)
     {
-        return $"{_commandOrQueryType}{typeName}";
+        return $"{_commandOrQueryType}{typeName}{Suffix}";
     }
 }

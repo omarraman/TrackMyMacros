@@ -4,13 +4,14 @@ using TrackMyMacros.Domain.Common;
 namespace TrackMyMacros.Domain.Aggregates.Exercise;
 
 [CodeGen]
-public class BodyPart:Entity
+public class BodyPart : Entity
 {
     public Guid Id { get; set; }
     public string Name { get; set; }
 
     public SizeOfBodyPart Size { get; set; }
-    
+
+
     public static BodyPart Chest()
     {
         return new BodyPart()
@@ -19,9 +20,8 @@ public class BodyPart:Entity
             Name = "Chest",
             Size = SizeOfBodyPart.Two()
         };
-        
     }
-    
+
     public static BodyPart Back()
     {
         return new BodyPart()
@@ -30,20 +30,18 @@ public class BodyPart:Entity
             Name = "Back",
             Size = SizeOfBodyPart.Four()
         };
-        
     }
-    
+
     public static BodyPart Shoulders()
     {
         return new BodyPart()
         {
             Id = new Guid("5492de93-6f0b-443c-8f63-1eeb90b90c78"),
             Name = "Shoulders",
-            Size = SizeOfBodyPart.One()            
+            Size = SizeOfBodyPart.One()
         };
-        
     }
-    
+
     public static BodyPart Biceps()
     {
         return new BodyPart()
@@ -52,9 +50,8 @@ public class BodyPart:Entity
             Name = "Biceps",
             Size = SizeOfBodyPart.One()
         };
-        
     }
-    
+
     public static BodyPart Triceps()
     {
         return new BodyPart()
@@ -63,9 +60,8 @@ public class BodyPart:Entity
             Name = "Triceps",
             Size = SizeOfBodyPart.Three()
         };
-        
     }
-    
+
     public static BodyPart Forearms()
     {
         return new BodyPart()
@@ -73,11 +69,9 @@ public class BodyPart:Entity
             Id = new Guid("18b68da4-f760-45cb-97c3-a216bf7f99b3"),
             Name = "Forearms",
             Size = SizeOfBodyPart.One()
-                
         };
-        
     }
-    
+
     public static BodyPart Abs()
     {
         return new BodyPart()
@@ -86,9 +80,8 @@ public class BodyPart:Entity
             Name = "Abs",
             Size = SizeOfBodyPart.Two()
         };
-        
     }
-    
+
     public static BodyPart Quads()
     {
         return new BodyPart()
@@ -97,9 +90,8 @@ public class BodyPart:Entity
             Name = "Quads",
             Size = SizeOfBodyPart.Four()
         };
-        
     }
-    
+
     public static BodyPart Hamstrings()
     {
         return new BodyPart()
@@ -108,9 +100,8 @@ public class BodyPart:Entity
             Name = "Hamstrings",
             Size = SizeOfBodyPart.Four()
         };
-        
     }
-    
+
     public static BodyPart Glutes()
     {
         return new BodyPart()
@@ -119,9 +110,8 @@ public class BodyPart:Entity
             Name = "Glutes",
             Size = SizeOfBodyPart.Three()
         };
-        
     }
-    
+
     public static BodyPart Calves()
     {
         return new BodyPart()
@@ -130,9 +120,8 @@ public class BodyPart:Entity
             Name = "Calves",
             Size = SizeOfBodyPart.Three()
         };
-        
     }
-    
+
     public static BodyPart Neck()
     {
         return new BodyPart()
@@ -141,9 +130,8 @@ public class BodyPart:Entity
             Name = "Neck",
             Size = SizeOfBodyPart.One()
         };
-        
     }
-    
+
     public static BodyPart Traps()
     {
         return new BodyPart()
@@ -152,9 +140,8 @@ public class BodyPart:Entity
             Name = "Traps",
             Size = SizeOfBodyPart.Three()
         };
-        
     }
-    
+
     public static BodyPart Lats()
     {
         return new BodyPart()
@@ -163,9 +150,8 @@ public class BodyPart:Entity
             Name = "Lats",
             Size = SizeOfBodyPart.Four()
         };
-        
     }
-    
+
     public static BodyPart LowerBack()
     {
         return new BodyPart()
@@ -174,9 +160,8 @@ public class BodyPart:Entity
             Name = "Lower Back",
             Size = SizeOfBodyPart.Three()
         };
-        
     }
-    
+
     public static BodyPart MiddleBack()
     {
         return new BodyPart()
@@ -184,9 +169,8 @@ public class BodyPart:Entity
             Id = new Guid("8bdad449-6456-4ba2-b558-cb0a68fea5e7"),
             Name = "Middle Back"
         };
-        
     }
-    
+
     public static BodyPart GluteMedius()
     {
         return new BodyPart()
@@ -194,7 +178,5 @@ public class BodyPart:Entity
             Id = new Guid("4cb86a7e-f5da-4101-9cfe-5cb8f293d438"),
             Name = "Glute Medius"
         };
-        
     }
-
 }

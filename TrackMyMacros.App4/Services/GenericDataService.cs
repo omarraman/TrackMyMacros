@@ -7,6 +7,7 @@ namespace TrackMyMacros.App4.Services
     {
         Task Post<TModel,TDto>(TModel model,string endpoint);
         Task Put<TModel,TDto>(TModel model,string endpoint);
+        Task Put<TModel, TDto>(Endpoint endpoint, TModel model);
         Task<IReadOnlyList<TModel>> GetList<TModel,TDto>(string endpoint );
         Task<TModel> Get<TModel,TDto>(string endpoint );
         Task<TModel> Get<TModel,TDto>(Endpoint endpoint ,Guid id);
@@ -90,6 +91,23 @@ namespace TrackMyMacros.App4.Services
             }
         }
     
+        public async Task Put<TModel,TDto>(Endpoint endpoint, TModel model)
+        {
+            try
+            {
+                var dto = _mapper.Map<TDto>(model);
+                var uri = _baseUrl + endpoint.Value;
+                await uri
+                    .PutJsonAsync(dto);
+            }
+            catch (FlurlHttpException ex)
+            {
+                var string1 = await ex.GetResponseStringAsync();
+                throw new Exception(string1);
+            }
+        }
+       
+        
         public async Task<IReadOnlyList<TModel>> GetList<TModel,TDto>(string endpoint )
         {
             try

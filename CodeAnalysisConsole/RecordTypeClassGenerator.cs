@@ -78,6 +78,7 @@ public abstract class RecordTypeClassGenerator : Generator
                             var typeOfThisObject = GetType();
                             if (typeOfThisObject.Name == "DtoClassGenerator")
                             {
+                                //Dto needs to be a primitive type
                                 var primitiveWrapperAttribute = attributeLists.First(m=>m.Attributes.Any(a=>a.Name.ToString() == "PrimitiveWrapper"));
                                 var typeArgument = primitiveWrapperAttribute.Attributes[0].ArgumentList.Arguments[0].Expression.GetText().ToString().Replace("\"","");
                                 newList.Add(propertyMember.WithType(ParseTypeName(typeArgument)));
