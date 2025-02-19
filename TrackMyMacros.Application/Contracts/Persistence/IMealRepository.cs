@@ -1,6 +1,7 @@
 ﻿using TrackMyMacros.Domain.Aggregates.Day;
 using TrackMyMacros.Domain.ValueObjects;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Application.Contracts.Persistence;
 

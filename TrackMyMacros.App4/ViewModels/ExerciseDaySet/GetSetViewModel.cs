@@ -8,5 +8,8 @@ namespace TrackMyMacros.App4.ViewModels.ExerciseDaySet
         public double TargetWeight { get; set; }
         public Guid ExerciseId { get; set; }
         public string ExerciseName { get; set; }
+        public bool BodyWeightExercise { get; set; }
+        public bool WeightIncrease { get; set; }
+        public bool RepIncrease { get; set; }
     }
 }

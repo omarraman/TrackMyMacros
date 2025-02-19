@@ -5,6 +5,7 @@ using TrackMyMacros.Application.Contracts.Persistence;
 using Microsoft.EntityFrameworkCore;
 using TrackMyMacros.Domain;
 using TrackMyMacros.Domain.ValueObjects;
+using TrackMyMacros.SharedKernel;
 
 //add this to PersistenceServiceRegistration
 //services.AddScoped<IWeightReadingRepository, WeightReadingRepository>();

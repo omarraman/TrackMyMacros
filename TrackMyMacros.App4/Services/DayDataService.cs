@@ -3,6 +3,7 @@ using AutoMapper;
 using Flurl.Http;
 using TrackMyMacros.Dtos;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.App4.Services
 {

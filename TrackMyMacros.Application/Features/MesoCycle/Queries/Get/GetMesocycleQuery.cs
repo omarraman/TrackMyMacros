@@ -1,5 +1,6 @@
 using TrackMyMacros.Dtos.Mesocycle;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Application.Features.Mesocycle.Queries.Get
 {

@@ -1,5 +1,6 @@
 using TrackMyMacros.Dtos.Recipe;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Application.Features.Recipe.Queries.Get
 {

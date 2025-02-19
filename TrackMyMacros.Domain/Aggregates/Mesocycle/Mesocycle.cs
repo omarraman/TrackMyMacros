@@ -1,12 +1,11 @@
 using TrackMyMacros.Attributes;
 using TrackMyMacros.Domain.Common;
-using TrackMyMacros.Infrastructure;
 using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Domain.Aggregates.Mesocycle;
 
 [CodeGen]
-public class Mesocycle:Entity
+public class Mesocycle : Entity
 {
     public Guid Id { get; set; }
     public string Name { get; set; }
@@ -15,7 +14,7 @@ public class Mesocycle:Entity
     public int CurrentWeekIndex { get; set; } = 1;
     public MyDayOfWeek CurrentDayOfWeek { get; set; } = MyDayOfWeek.Monday();
 
-    public void AdvanceMesocycleToNextWorkout()
+    public void AdvanceMesocycleToNextWorkout(IReadOnlyList<Exercise.Exercise> exercises)
     {
         if (CurrentDayOfWeek == MyDayOfWeek.Friday())
         {
@@ -30,22 +29,18 @@ public class Mesocycle:Entity
         {
             CurrentDayOfWeek = MyDayOfWeek.Friday();
         }
-        
+
         if (GetCurrentWeek().HasNoValue)
         {
-            DuplicatePreviousWeek(this, CurrentWeekIndex);
-           //create a new week
-        }
-        
-        if (GetCurrentWorkout().HasNoValue)
-        {
-            //create a new workout
+            var newWeek = CreateNewWeekBasedOnPreviousWeek(CurrentWeekIndex, exercises);
+            Weeks.Add(newWeek);
+            //create a new week
         }
     }
-    
+
     private Maybe<Week> GetCurrentWeek()
     {
-        return Weeks.SingleOrDefault(m=>m.WeekIndex==CurrentWeekIndex);
+        return Weeks.SingleOrDefault(m => m.WeekIndex == CurrentWeekIndex);
     }
 
     public Maybe<Workout> GetCurrentWorkout()
@@ -54,47 +49,73 @@ public class Mesocycle:Entity
         {
             return Maybe<Workout>.None;
         }
-        
+
         return GetCurrentWeek().Value.Workouts.SingleOrDefault(x => x.DayOfWeek == CurrentDayOfWeek);
     }
-    
-    public static Week DuplicatePreviousWeek(Mesocycle mesocycle, int weekIndex)
+
+    public  Week CreateNewWeekBasedOnPreviousWeek(int weekIndex,IReadOnlyList<Exercise.Exercise> exercises)
     {
-        var weekToDuplicate = mesocycle.Weeks.SingleOrDefault(w => w.WeekIndex == weekIndex-1);
+        var weekToDuplicate = Weeks.SingleOrDefault(w => w.WeekIndex == weekIndex - 1);
         if (weekToDuplicate == null)
         {
-            throw new InvalidOperationException("Week with WeekIndex 1 not found in the Mesocycle.");
+            throw new InvalidOperationException($"Week with WeekIndex {weekIndex} not found in the Mesocycle.");
         }
-        
-        var newWorkoutsForWeek =weekToDuplicate.Workouts.Select(workout => new Workout
+
+        var workoutsFromPreviousWeek = weekToDuplicate.Workouts.Select(workout => new Workout
         (
             workout.DayOfWeek,
             workout.Sets.Select(set => new Set
             {
-                Weight = set.Weight + set.Exercise.BodyPart.Size,
-                Reps = set.Reps,
-                TargetReps = set.TargetReps,
-                TargetWeight = set.TargetWeight,
+                Weight = set.Weight,
+                Reps = 0,
+                TargetReps = set.Reps, //based on the previous week
+                TargetWeight = set.Weight,
                 ExerciseId = set.ExerciseId
             }).ToList()
         )).ToList();
+        
+        var workoutsForNewWeek = new List<Workout>();
 
-        
-        
-        var newWeek = new Week(weekIndex,newWorkoutsForWeek);
+        foreach (var workout in workoutsFromPreviousWeek)
+        {
+            var newWorkout = new Workout(workout.DayOfWeek, new List<Set>());
+            foreach (var set in workout.Sets)
+            {
+                var exercise = exercises.SingleOrDefault(e => e.Id == set.ExerciseId);
+                if (exercise == null)
+                {
+                    throw new InvalidOperationException($"Exercise with Id {set.ExerciseId} not found in the list of exercises.");
+                }
+
+                var targetReps = set.TargetReps + (exercise.BodyWeightExercise ? exercise.RepIncrease : 0);
+                var targetWeight = set.TargetWeight + (exercise.BodyWeightExercise ? 0 : exercise.WeightIncrease);
+                var newSet = new Set
+                {
+                    Weight = targetWeight,
+                    Reps = targetReps,
+                    TargetReps = targetReps,
+                    TargetWeight = targetWeight,
+                    ExerciseId = set.ExerciseId
+                };
+                newWorkout.Sets.Add(newSet);
+            }
+            workoutsForNewWeek.Add(newWorkout);
+        }
+
+        var newWeek = new Week(weekIndex, workoutsForNewWeek);
 
         return newWeek;
     }
-    
+
     private double GetWeightIncrease(double weight, double size)
     {
         return weight + size;
     }
-    
-    
+
+
     //write a method to generate a new workout
-    
-    
+
+
     // public void CreateNewDefault()
     // {
     //     MicroCycles = new List<MicroCycle>();

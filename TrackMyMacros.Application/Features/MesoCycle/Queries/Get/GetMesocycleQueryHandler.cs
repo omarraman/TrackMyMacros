@@ -5,6 +5,7 @@ using TrackMyMacros.Application;
 using TrackMyMacros.Dtos;
 using TrackMyMacros.Application.Contracts.Persistence;
 using TrackMyMacros.Dtos.Mesocycle;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Application.Features.Mesocycle.Queries.Get
 {

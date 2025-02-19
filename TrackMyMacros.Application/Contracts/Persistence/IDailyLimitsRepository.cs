@@ -1,5 +1,6 @@
 ﻿using TrackMyMacros.Domain.Aggregates.DailyLimit;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Application.Contracts.Persistence;
 

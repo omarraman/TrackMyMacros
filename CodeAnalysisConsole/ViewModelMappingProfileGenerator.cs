@@ -5,6 +5,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.MSBuild;
 using TrackMyMacros.Domain.Common;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace CodeGen;

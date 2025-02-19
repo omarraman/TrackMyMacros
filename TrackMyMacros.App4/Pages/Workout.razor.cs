@@ -7,6 +7,7 @@ using TrackMyMacros.App4.ViewModels.Mesocycle;
 using TrackMyMacros.App4.ViewModels.MesocycleWeekDay;
 using TrackMyMacros.Dtos.Mesocycle;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.App4.Pages;
 
@@ -22,11 +23,16 @@ public partial class Workout
 
     protected override async Task OnInitializedAsync()
     {
-        _meso = await _dataService.Get<GetMesocycleViewModel, GetMesocycleDto>(Endpoint.Mesocycle,
-            new Guid("1d34e9b2-27ad-442f-9ab1-24964f2a5ff4"));
-        CurrentWorkout = _meso.GetCurrentWorkout();
+        await RefreshMeso();
 
         await base.OnInitializedAsync();
+    }
+
+    private async Task RefreshMeso()
+    {
+        _meso = await _dataService.Get<GetMesocycleViewModel, GetMesocycleDto>(Endpoint.Mesocycle,
+            new Guid("e1c5d850-e750-4742-9abf-9691f97c5fbd"));
+        CurrentWorkout = _meso.GetCurrentWorkout();
     }
 
     private async Task OnSave(MouseEventArgs obj)
@@ -39,12 +45,14 @@ public partial class Workout
         var updateViewModel = _mapper.Map<UpdateMesocycleViewModel>(_meso);
         updateViewModel.CurrentWorkoutComplete = CurrentWorkoutComplete;
         await _dataService.Put<UpdateMesocycleViewModel, UpdateMesocycleDto>(Endpoint.Mesocycle, updateViewModel);
+        await RefreshMeso();
     }
 
-    private async Task OnComplete(MouseEventArgs obj)
+    private void OnComplete(MouseEventArgs obj)
     {
         CurrentWorkoutComplete = true;
-        await Save();
+        // await Save();
+        // StateHasChanged();
     }
 
 }

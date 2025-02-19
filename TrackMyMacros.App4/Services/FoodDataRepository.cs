@@ -1,6 +1,7 @@
 ﻿using TrackMyMacros.App4.Interfaces;
 using TrackMyMacros.App4.ViewModels;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.App4.Services
 {

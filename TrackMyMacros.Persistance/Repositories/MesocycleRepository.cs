@@ -3,6 +3,7 @@ using TrackMyMacros.Domain.Aggregates.Mesocycle;
 using TrackMyMacros.Infrastructure;
 using TrackMyMacros.Application.Contracts.Persistence;
 using Microsoft.EntityFrameworkCore;
+using TrackMyMacros.SharedKernel;
 
 //1 add this to PersistenceServiceRegistration
 //services.AddScoped<I{BaseEntityClassName}Repository, {BaseEntityClassName}Repository>();

@@ -13,7 +13,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\TrackMyMacros.Attributes\TrackMyMacros.Attributes.csproj" />
-      <ProjectReference Include="..\TrackMyMacros.Infrastructure\TrackMyMacros.Infrastructure.csproj" />
       <ProjectReference Include="..\TrackMyMacros.SharedKernel\TrackMyMacros.SharedKernel.csproj" />
     </ItemGroup>
 

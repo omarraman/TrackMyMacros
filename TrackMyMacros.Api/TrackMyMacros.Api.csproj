@@ -43,6 +43,12 @@
       <None Remove="log20240618.txt" />
       <None Remove="log20240617.txt" />
       <None Remove="log20241228.txt" />
+      <None Remove="log20250218.txt" />
+      <None Remove="log20250217.txt" />
+      <None Remove="log20250216.txt" />
+      <None Remove="log20250210.txt" />
+      <None Remove="log20250209.txt" />
+      <None Remove="log20250208.txt" />
     </ItemGroup>
 
     <ItemGroup>

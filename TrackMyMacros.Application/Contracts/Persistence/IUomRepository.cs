@@ -1,6 +1,7 @@
 ﻿
 using TrackMyMacros.Domain;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Application.Contracts.Persistence;
 

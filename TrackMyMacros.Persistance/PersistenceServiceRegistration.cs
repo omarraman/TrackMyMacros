@@ -22,6 +22,7 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IWeightReadingRepository, WeightReadingRepository>();
         services.AddScoped<IRecipeRepository, RecipeRepository>();
         services.AddScoped<IMesocycleRepository, MesocycleRepository>();
+        services.AddScoped<IExerciseRepository, ExerciseRepository>();
         return services;    
     }
 }

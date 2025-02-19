@@ -3,6 +3,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace CodeGen;

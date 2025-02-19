@@ -6,6 +6,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.MSBuild;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 string entityName = String.Empty;
 while (true)

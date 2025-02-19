@@ -4,6 +4,7 @@ using MediatR;
 using TrackMyMacros.Application.Contracts.Persistence;
 using TrackMyMacros.Dtos;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Application.Features.Day.Queries;
 

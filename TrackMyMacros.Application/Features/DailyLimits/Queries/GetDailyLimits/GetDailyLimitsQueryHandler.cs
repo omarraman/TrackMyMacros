@@ -6,6 +6,7 @@ using Npgsql;
 using TrackMyMacros.Application.Utils;
 using TrackMyMacros.Dtos;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Application.Features.DailyLimits.Queries.GetDailyLimits;
 

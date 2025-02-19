@@ -1,5 +1,6 @@
 using TrackMyMacros.Dtos.WeightReading;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Application.Features.WeightReading.Queries.Get
 {

@@ -1,6 +1,7 @@
 ﻿using TrackMyMacros.Domain.Aggregates.Exercise;
 using TrackMyMacros.Domain.Aggregates.Mesocycle;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Application.Contracts.Persistence;
 

@@ -14,6 +14,9 @@ namespace TrackMyMacros.Dtos.Set
         public int TargetReps { get; init; }
         public double TargetWeight { get; init; }
         public Guid ExerciseId { get; init; }
+        public bool BodyWeightExercise { get; init; }
+        public bool WeightIncrease { get; init; }
+        public bool RepIncrease { get; init; }
         // public Exercise.Exercise Exercise { get; set; }
     }
 }

@@ -8,6 +8,8 @@ namespace TrackMyMacros.Dtos.ExerciseDaySet
         public double Weight { get; init; }
         public Guid ExerciseId { get; init; }
         public string ExerciseName { get; init; }
-        
+        public bool BodyWeightExercise { get; init; }
+        public bool WeightIncrease { get; init; }
+        public bool RepIncrease { get; init; }
     }
 }

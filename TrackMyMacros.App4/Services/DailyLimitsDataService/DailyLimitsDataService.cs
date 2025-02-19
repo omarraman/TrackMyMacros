@@ -4,6 +4,7 @@ using Flurl.Http;
 using TrackMyMacros.App4.ViewModels;
 using TrackMyMacros.Dtos;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.App4.Services.DailyLimitsDataService
 {

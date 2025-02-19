@@ -5,6 +5,7 @@ using TrackMyMacros.Application;
 using TrackMyMacros.Dtos;
 using TrackMyMacros.Application.Contracts.Persistence;
 using TrackMyMacros.Dtos.Recipe;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Application.Features.Recipe.Queries.Get
 {

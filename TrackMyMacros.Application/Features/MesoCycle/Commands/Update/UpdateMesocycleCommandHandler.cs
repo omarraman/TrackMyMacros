@@ -11,9 +11,12 @@ namespace TrackMyMacros.Application.Features.Mesocycle.Commands.Update
     {
         private IMapper _mapper;
         private IMesocycleRepository _mesocycleRepository;
+        private IExerciseRepository _exerciseRepository;
 
-        public UpdateMesocycleCommandHandler(IMapper mapper, IMesocycleRepository mesocycleRepository)
+        public UpdateMesocycleCommandHandler(IMapper mapper, IMesocycleRepository mesocycleRepository,
+            IExerciseRepository exerciseRepository)
         {
+            _exerciseRepository = exerciseRepository;
             _mesocycleRepository = mesocycleRepository;
             _mapper = mapper;
         }
@@ -26,8 +29,9 @@ namespace TrackMyMacros.Application.Features.Mesocycle.Commands.Update
                 return new ValidationErrorResult(validationResult);
             var mesocycle = _mapper.Map<Domain.Aggregates.Mesocycle.Mesocycle>(request);
 
-            if (request.CurrentWorkoutComplete) mesocycle.AdvanceMesocycleToNextWorkout();
-
+            var exercises = await _exerciseRepository.ListAllAsync();
+            if (request.CurrentWorkoutComplete) mesocycle.AdvanceMesocycleToNextWorkout(exercises);
+            
             await _mesocycleRepository.UpdateAsync(mesocycle);
             return new SuccessResult();
         }

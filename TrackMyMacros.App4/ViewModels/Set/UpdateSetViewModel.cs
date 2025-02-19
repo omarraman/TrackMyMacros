@@ -17,5 +17,8 @@ namespace TrackMyMacros.App4.ViewModels.Set
         public double TargetWeight { get; init; }
         public Guid ExerciseId { get; init; }
         public Exercise Exercise { get; set; }
+        public bool BodyWeightExercise { get; init; }
+        public bool WeightIncrease { get; init; }
+        public bool RepIncrease { get; init; }
     }
 }

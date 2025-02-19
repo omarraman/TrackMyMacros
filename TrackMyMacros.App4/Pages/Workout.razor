@@ -1,13 +1,12 @@
 ﻿@page "/Workout"
-<h3>Workout</h3>
+<h3>Workout @_meso?.CurrentDayOfWeek?.StringEquivalent()</h3>
 
 
 @if(CurrentWorkout.HasValue)
 {
     foreach (var set in CurrentWorkout.Value.Sets)
     {
-
-        <SetComponent Set="@set" />
+        <SetComponent Set="@set" OnSetUpdated="Save" />
     }
 }
 else

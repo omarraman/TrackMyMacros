@@ -4,6 +4,7 @@ using TrackMyMacros.Application.Contracts.Persistence;
 using TrackMyMacros.Domain.Aggregates;
 using TrackMyMacros.Domain.Aggregates.FoodCombo;
 using TrackMyMacros.Infrastructure;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Persistance.Repositories;
 
