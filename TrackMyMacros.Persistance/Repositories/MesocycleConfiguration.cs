@@ -70,6 +70,7 @@ public class MesocycleConfiguration : IEntityTypeConfiguration<Mesocycle>
         builder.HasData(new
         {
             Id = mesoId, Name = "Default Mesocycle", CurrentWeekIndex = 1, CurrentDayOfWeek = MyDayOfWeek.Monday(),
+             TotalWeeks = 5, Complete = false,
             CreatedDate = DateTime.Now.ToUniversalTime(),
             CreatedBy = "System", UpdatedDate = DateTime.Now.ToUniversalTime(), UpdatedBy = "System"
         });

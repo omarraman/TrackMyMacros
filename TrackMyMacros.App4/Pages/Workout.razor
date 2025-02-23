@@ -4,6 +4,15 @@
 
 @if(CurrentWorkout.HasValue)
 {
+    if (_meso.CurrentWeekIndex== _meso.TotalWeeks)
+    {
+        <p>Week {_meso.CurrentWeekIndex} of {_meso.totalWeeks} (Final Week)</p>
+    }
+    else 
+    {
+        <p>Week {_meso.CurrentWeekIndex} of {_meso.totalWeeks}</p>
+    }
+
     foreach (var set in CurrentWorkout.Value.Sets)
     {
         <SetComponent Set="@set" OnSetUpdated="Save" />

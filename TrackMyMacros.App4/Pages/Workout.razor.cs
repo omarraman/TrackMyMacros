@@ -30,8 +30,10 @@ public partial class Workout
 
     private async Task RefreshMeso()
     {
-        _meso = await _dataService.Get<GetMesocycleViewModel, GetMesocycleDto>(Endpoint.Mesocycle,
-            new Guid("e1c5d850-e750-4742-9abf-9691f97c5fbd"));
+        var mesos =await _dataService.GetList<GetMesocycleViewModel,GetMesocycleDto>(Endpoint.Mesocycle);
+        _meso = mesos.First(m=>m.Complete == false);
+        // _meso = await _dataService.Get<GetMesocycleViewModel, GetMesocycleDto>(Endpoint.Mesocycle,
+        //     new Guid("e1c5d850-e750-4742-9abf-9691f97c5fbd"));
         CurrentWorkout = _meso.GetCurrentWorkout();
     }
 

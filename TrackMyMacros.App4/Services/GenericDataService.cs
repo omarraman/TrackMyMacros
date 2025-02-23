@@ -5,20 +5,21 @@ namespace TrackMyMacros.App4.Services
 {
     public interface IGenericDataService
     {
-        Task Post<TModel,TDto>(TModel model,string endpoint);
-        Task Put<TModel,TDto>(TModel model,string endpoint);
+        Task Post<TModel, TDto>(TModel model, string endpoint);
+        Task Put<TModel, TDto>(TModel model, string endpoint);
         Task Put<TModel, TDto>(Endpoint endpoint, TModel model);
-        Task<IReadOnlyList<TModel>> GetList<TModel,TDto>(string endpoint );
-        Task<TModel> Get<TModel,TDto>(string endpoint );
-        Task<TModel> Get<TModel,TDto>(Endpoint endpoint ,Guid id);
-        Task Delete(string endpoint );
+        Task<IReadOnlyList<TModel>> GetList<TModel, TDto>(string endpoint);
+        Task<IReadOnlyList<TModel>> GetList<TModel, TDto>(Endpoint endpoint);
+        Task<TModel> Get<TModel, TDto>(string endpoint);
+        Task<TModel> Get<TModel, TDto>(Endpoint endpoint, Guid id);
+        Task Delete(string endpoint);
     }
 
-    public class GenericDataService :IGenericDataService
+    public class GenericDataService : IGenericDataService
     {
         private readonly IMapper _mapper;
         private readonly string? _baseUrl;
-        
+
         public static class Endpoints
         {
             public const string WeightReading = "WeightReading";
@@ -27,21 +28,23 @@ namespace TrackMyMacros.App4.Services
             public const string Mesocycle = "Mesocycle";
         }
 
-        public GenericDataService( IMapper mapper,IConfiguration configuration)
+        public GenericDataService(IMapper mapper, IConfiguration configuration)
         {
             _baseUrl = configuration["BackendUrl"];
-            if (_baseUrl==null)
+            if (_baseUrl == null)
             {
                 throw new ArgumentNullException(nameof(_baseUrl));
             }
-            _baseUrl= _baseUrl +  "/api/";
+
+            _baseUrl = _baseUrl + "/api/";
             _mapper = mapper;
         }
-        public async Task<TModel> Get<TModel,TDto>(Endpoint endpoint , Guid id)
+
+        public async Task<TModel> Get<TModel, TDto>(Endpoint endpoint, Guid id)
         {
             try
             {
-                var uri =  _baseUrl + endpoint.Value + "/GetById/" + id;
+                var uri = _baseUrl + endpoint.Value + "/GetById/" + id;
                 var foods = await uri
                     .GetJsonAsync<TDto>();
                 return _mapper.Map<TModel>(foods);
@@ -51,10 +54,9 @@ namespace TrackMyMacros.App4.Services
                 var string1 = await ex.GetResponseStringAsync();
                 throw new Exception(string1);
             }
-
         }
 
-        public async Task Post<TModel,TDto>(TModel model,string endpoint)
+        public async Task Post<TModel, TDto>(TModel model, string endpoint)
         {
             try
             {
@@ -73,9 +75,9 @@ namespace TrackMyMacros.App4.Services
                 throw;
             }
         }
-    
-    
-        public async Task Put<TModel,TDto>(TModel model,string endpoint)
+
+
+        public async Task Put<TModel, TDto>(TModel model, string endpoint)
         {
             try
             {
@@ -90,8 +92,8 @@ namespace TrackMyMacros.App4.Services
                 throw new Exception(string1);
             }
         }
-    
-        public async Task Put<TModel,TDto>(Endpoint endpoint, TModel model)
+
+        public async Task Put<TModel, TDto>(Endpoint endpoint, TModel model)
         {
             try
             {
@@ -106,13 +108,13 @@ namespace TrackMyMacros.App4.Services
                 throw new Exception(string1);
             }
         }
-       
-        
-        public async Task<IReadOnlyList<TModel>> GetList<TModel,TDto>(string endpoint )
+
+
+        public async Task<IReadOnlyList<TModel>> GetList<TModel, TDto>(string endpoint)
         {
             try
             {
-                var uri =  _baseUrl + endpoint;
+                var uri = _baseUrl + endpoint;
                 var foods = await uri
                     .GetJsonAsync<IReadOnlyList<TDto>>();
                 return _mapper.Map<IReadOnlyList<TModel>>(foods);
@@ -122,16 +124,30 @@ namespace TrackMyMacros.App4.Services
                 var string1 = await ex.GetResponseStringAsync();
                 throw new Exception(string1);
             }
-
         }
-        
 
-    
-        public async Task<TModel> Get<TModel,TDto>(string endpoint )
+        public async Task<IReadOnlyList<TModel>> GetList<TModel, TDto>(Endpoint endpoint)
         {
             try
             {
-                var uri =  _baseUrl + endpoint;
+                var uri = _baseUrl + endpoint.Value;
+                var foods = await uri
+                    .GetJsonAsync<IReadOnlyList<TDto>>();
+                return _mapper.Map<IReadOnlyList<TModel>>(foods);
+            }
+            catch (FlurlHttpException ex)
+            {
+                var string1 = await ex.GetResponseStringAsync();
+                throw new Exception(string1);
+            }
+        }
+
+
+        public async Task<TModel> Get<TModel, TDto>(string endpoint)
+        {
+            try
+            {
+                var uri = _baseUrl + endpoint;
                 var foods = await uri
                     .GetJsonAsync<TDto>();
                 return _mapper.Map<TModel>(foods);
@@ -141,14 +157,13 @@ namespace TrackMyMacros.App4.Services
                 var string1 = await ex.GetResponseStringAsync();
                 throw new Exception(string1);
             }
-
         }
 
-        public async Task Delete(string endpoint )
+        public async Task Delete(string endpoint)
         {
             try
             {
-                var uri =  _baseUrl + endpoint;
+                var uri = _baseUrl + endpoint;
                 await uri
                     .DeleteAsync();
             }
@@ -157,7 +172,6 @@ namespace TrackMyMacros.App4.Services
                 var string1 = await ex.GetResponseStringAsync();
                 throw new Exception(string1);
             }
-
         }
     }
 }

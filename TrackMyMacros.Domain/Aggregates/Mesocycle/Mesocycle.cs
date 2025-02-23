@@ -11,6 +11,9 @@ public class Mesocycle : Entity
     public string Name { get; set; }
     public List<Week> Weeks { get; set; }
 
+    public int  TotalWeeks { get; set; }
+
+    public bool Complete { get; set; }
     public int CurrentWeekIndex { get; set; } = 1;
     public MyDayOfWeek CurrentDayOfWeek { get; set; } = MyDayOfWeek.Monday();
 
@@ -30,11 +33,18 @@ public class Mesocycle : Entity
             CurrentDayOfWeek = MyDayOfWeek.Friday();
         }
 
-        if (GetCurrentWeek().HasNoValue)
+        if (CurrentWeekIndex > TotalWeeks)
         {
-            var newWeek = CreateNewWeekBasedOnPreviousWeek(CurrentWeekIndex, exercises);
-            Weeks.Add(newWeek);
-            //create a new week
+            Complete = true;
+        }
+        else
+        {
+            if (GetCurrentWeek().HasNoValue)
+            {
+                var newWeek = CreateNewWeekBasedOnPreviousWeek(CurrentWeekIndex, exercises);
+                Weeks.Add(newWeek);
+                //create a new week
+            }
         }
     }
 

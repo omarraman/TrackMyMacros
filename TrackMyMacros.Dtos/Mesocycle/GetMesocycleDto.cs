@@ -9,5 +9,7 @@ namespace TrackMyMacros.Dtos.Mesocycle
         public List<GetWeekDto> Weeks { get; set; }
         public int CurrentWeekIndex { get; set; } 
         public int CurrentDayOfWeek { get; set; } 
+        public int  TotalWeeks { get; set; }
+        public bool Complete { get; set; }
     }
 }
