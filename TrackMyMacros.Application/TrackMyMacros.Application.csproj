@@ -54,6 +54,7 @@
       <Compile Remove="Features\ExerciseDaySet\Queries\Get\GetExerciseDaySetQuery.cs" />
       <Compile Include="Features\MesoCycle\Commands\Update\UpdateMesocycleCommandHandler.cs" />
       <Compile Include="Features\MesoCycle\Commands\Update\UpdateMesocycleCommandValidator.cs" />
+      <Compile Include="Features\MesoCycle\Queries\GetList\GetMesocycleListQuery.cs" />
       <Compile Include="Features\MesoCycle\Queries\Get\GetMesocycleQueryHandler.cs" />
       <Compile Include="Profiles\MesoCycle\GetMesocycleMappingProfile.cs" />
       <Compile Include="Profiles\MesoCycle\UpdateMesocycleMappingProfile.cs" />

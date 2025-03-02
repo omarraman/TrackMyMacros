@@ -1,10 +1,11 @@
 using AutoMapper;
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
 using TrackMyMacros.Application.Common;
-using TrackMyMacros.Application.Features.Mesocycle.Commands.Update;
+using Microsoft.AspNetCore.Mvc;
 using TrackMyMacros.Dtos.Mesocycle;
+using TrackMyMacros.Application.Features.Mesocycle.Commands.Update;
 using TrackMyMacros.Application.Features.Mesocycle.Queries.Get;
+using TrackMyMacros.Application.Features.Mesocycle.Queries.GetList;
 
 namespace TrackMyMacros.Api.Controllers
 {
@@ -19,6 +20,14 @@ namespace TrackMyMacros.Api.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet()]
+        [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
+        public async Task<IReadOnlyList<GetMesocycleDto>> GetAll()
+        {
+            var mesocycleVms = await _mediator.Send(new GetMesocycleListQuery());
+            return mesocycleVms;
+        }
+
         [HttpGet("GetById/{id}")]
         [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
         public async Task<ActionResult<GetMesocycleDto>> GetMesocycle(Guid id)
@@ -26,6 +35,7 @@ namespace TrackMyMacros.Api.Controllers
             var mesocycle = await _mediator.Send(new GetMesocycleQuery { Id = id });
             return Ok(mesocycle.Value);
         }
+
         [HttpPut(Name = "UpdateMesocycle")]
         [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
         public async Task<IActionResult> UpdateMesocycle(UpdateMesocycleDto createMesocycleDto)
@@ -35,5 +45,23 @@ namespace TrackMyMacros.Api.Controllers
                 return BadRequest(((ErrorResult)result).GetErrorString());
             return Ok();
         }
+        //
+        // [HttpPost(Name = "CreateMesocycle")]
+        // [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
+        // public async Task<IActionResult> CreateMesocycle(CreateMesocycleDto createMesocycleDto)
+        // {
+        //     var result = await _mediator.Send(_mapper.Map<CreateMesocycleCommand>(createMesocycleDto));
+        //     if (result is ValidationErrorResult<Guid>)
+        //         return BadRequest(((ErrorResult<Guid>)result).GetErrorString());
+        //     return Ok();
+        // }
+
+        // [HttpDelete("{id}")]
+        // [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
+        // public async Task<IActionResult> DeleteMesocycle(Guid id)
+        // {
+        //     await _mediator.Send(new DeleteMesocycleCommand { Id = id });
+        //     return Ok();
+        // }
     }
 }

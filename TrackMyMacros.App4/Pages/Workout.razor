@@ -6,11 +6,11 @@
 {
     if (_meso.CurrentWeekIndex== _meso.TotalWeeks)
     {
-        <p>Week {_meso.CurrentWeekIndex} of {_meso.totalWeeks} (Final Week)</p>
+        <p>Week {@_meso.CurrentWeekIndex} of {@_meso.TotalWeeks} (Final Week)</p>
     }
     else 
     {
-        <p>Week {_meso.CurrentWeekIndex} of {_meso.totalWeeks}</p>
+        <p>Week {@_meso.CurrentWeekIndex} of {@_meso.TotalWeeks}</p>
     }
 
     foreach (var set in CurrentWorkout.Value.Sets)

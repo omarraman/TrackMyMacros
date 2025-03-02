@@ -1,8 +1,10 @@
 using TrackMyMacros.Domain.Aggregates.Exercise;
+using TrackMyMacros.Dtos.ExerciseDaySet;
+using TrackMyMacros.Dtos.Set;
 
-namespace TrackMyMacros.Application.Features.Set.Commands.Update
+namespace TrackMyMacros.Application.Features.Set.Queries.GetList
 {
-    public class UpdateSetCommand : RequestBase<Result>
+    public class GetSetListQuery : RequestBase<IReadOnlyList<GetSetDto>>
     {
         // public Set(int reps, int targetReps, double targetWeight, Guid exerciseId)
         // {
@@ -16,8 +18,6 @@ namespace TrackMyMacros.Application.Features.Set.Commands.Update
         public int TargetReps { get; init; }
         public double TargetWeight { get; init; }
         public Guid ExerciseId { get; init; }
-        public bool BodyWeightExercise { get; init; }
-        public bool WeightIncrease { get; init; }
-        public bool RepIncrease { get; init; }
+        public Exercise Exercise { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace TrackMyMacros.Dtos.Set
         //     ExerciseId = exerciseId;
         // }
         public int Reps { get; init; }
-        public int Weight { get; init; }
+        public double Weight { get; init; }
         public int TargetReps { get; init; }
         public double TargetWeight { get; init; }
         public Guid ExerciseId { get; init; }

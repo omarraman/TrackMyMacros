@@ -38,7 +38,6 @@ namespace TrackMyMacros.Persistance.Repositories
     public class MesocycleRepository : IMesocycleRepository
     {
         private AppDbContext _dbContext;
-
         public MesocycleRepository(AppDbContext dbContext)
         {
             _dbContext = dbContext;
@@ -90,13 +89,5 @@ namespace TrackMyMacros.Persistance.Repositories
         }
     }
 
-//     public interface IMesocycleRepository
-//     {
-//         Task<Maybe<Mesocycle>> GetByIdAsync(Guid id);
-//         Task<IReadOnlyList<Mesocycle>> ListAllAsync();
-//         Task<IReadOnlyList<Mesocycle>> GetPagedReponseAsync(int page, int size);
-//         Task<Mesocycle> AddAsync(Mesocycle entity);
-//         Task<Result> UpdateAsync(Mesocycle entity);
-//         Task DeleteAsync(Guid id);
-//     }
+
 }

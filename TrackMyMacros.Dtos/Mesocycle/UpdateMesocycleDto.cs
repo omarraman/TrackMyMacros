@@ -11,5 +11,6 @@ namespace TrackMyMacros.Dtos.Mesocycle
         public int CurrentDayOfWeek { get; set; } =1;
 
         public bool CurrentWorkoutComplete { get; set; } = false;
+        public int  TotalWeeks { get; set; }
     }
 }
