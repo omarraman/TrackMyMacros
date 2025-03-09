@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Radzen;
 using TrackMyMacros.App4.Services;
 using TrackMyMacros.App4.Services.DailyLimitsDataService;
+using TrackMyMacros.App4.ViewModels.ExerciseDaySet;
 using TrackMyMacros.App4.ViewModels.Mesocycle;
+using TrackMyMacros.App4.ViewModels.MesocycleWeek;
 using TrackMyMacros.App4.ViewModels.MesocycleWeekDay;
 using TrackMyMacros.Dtos.Mesocycle;
 using TrackMyMacros.Infrastructure;
@@ -17,10 +20,11 @@ public partial class Workout
     [Inject] public IGenericDataService _dataService { get; set; }
 
     [Inject] public IMapper _mapper { get; set; }
-    public Maybe<GetWorkoutViewModel> CurrentWorkout { get; set; }
+    public Maybe<GetWorkoutViewModel> WorkoutInFocus { get; set; }
 
     public bool CurrentWorkoutComplete { get; set; } = false;
 
+    object _treeNode;
     protected override async Task OnInitializedAsync()
     {
         await RefreshMeso();
@@ -34,7 +38,7 @@ public partial class Workout
         _meso = mesos.First(m=>m.Complete == false);
         // _meso = await _dataService.Get<GetMesocycleViewModel, GetMesocycleDto>(Endpoint.Mesocycle,
         //     new Guid("e1c5d850-e750-4742-9abf-9691f97c5fbd"));
-        CurrentWorkout = _meso.GetCurrentWorkout();
+        WorkoutInFocus = _meso.GetCurrentWorkout();
     }
 
     private async Task OnSave(MouseEventArgs obj)
@@ -53,8 +57,14 @@ public partial class Workout
     private void OnComplete(MouseEventArgs obj)
     {
         CurrentWorkoutComplete = true;
-        // await Save();
-        // StateHasChanged();
+    }
+
+    void OnChangeTreeNode(TreeEventArgs args)
+    {
+        if (_treeNode is GetWorkoutViewModel workout)
+        {
+            WorkoutInFocus = workout;
+        }
     }
 
 }

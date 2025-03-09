@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackMyMacros.App4", "Track
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackMyMacros.SharedKernel", "TrackMyMacros.SharedKernel\TrackMyMacros.SharedKernel.csproj", "{AD4E8D38-E60C-45C2-812A-97B5662F47BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp2", "BlazorApp2\BlazorApp2.csproj", "{11080072-5E79-4055-BFA5-08487B81DF82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,5 +96,9 @@ Global
 		{AD4E8D38-E60C-45C2-812A-97B5662F47BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD4E8D38-E60C-45C2-812A-97B5662F47BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD4E8D38-E60C-45C2-812A-97B5662F47BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11080072-5E79-4055-BFA5-08487B81DF82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11080072-5E79-4055-BFA5-08487B81DF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11080072-5E79-4055-BFA5-08487B81DF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11080072-5E79-4055-BFA5-08487B81DF82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

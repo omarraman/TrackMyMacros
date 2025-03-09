@@ -1,8 +1,9 @@
 ﻿@page "/Workout"
+@using TrackMyMacros.Domain.Aggregates.Mesocycle
 <h3>Workout @_meso?.CurrentDayOfWeek?.StringEquivalent()</h3>
 
 
-@if(CurrentWorkout.HasValue)
+@if(WorkoutInFocus.HasValue)
 {
     if (_meso.CurrentWeekIndex== _meso.TotalWeeks)
     {
@@ -13,7 +14,13 @@
         <p>Week {@_meso.CurrentWeekIndex} of {@_meso.TotalWeeks}</p>
     }
 
-    foreach (var set in CurrentWorkout.Value.Sets)
+
+    <RadzenTree Style="height: 300px" Data=@_meso.Weeks Change="@OnChangeTreeNode" bind-Value="_treeNode">
+        <RadzenTreeLevel TextProperty="WeekName" ChildrenProperty="Workouts"/>
+        <RadzenTreeLevel TextProperty="DayOfWeekName"  />
+    </RadzenTree>
+
+    foreach (var set in WorkoutInFocus.Value.Sets)
     {
         <SetComponent Set="@set" OnSetUpdated="Save" />
     }

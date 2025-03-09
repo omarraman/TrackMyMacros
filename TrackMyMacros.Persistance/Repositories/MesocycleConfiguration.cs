@@ -70,7 +70,7 @@ public class MesocycleConfiguration : IEntityTypeConfiguration<Mesocycle>
         builder.HasData(new
         {
             Id = mesoId, Name = "Default Mesocycle", CurrentWeekIndex = 1, CurrentDayOfWeek = MyDayOfWeek.Monday(),
-             TotalWeeks = 5, Complete = false,
+            TotalWeeks = 5, Complete = false,
             CreatedDate = DateTime.Now.ToUniversalTime(),
             CreatedBy = "System", UpdatedDate = DateTime.Now.ToUniversalTime(), UpdatedBy = "System"
         });
@@ -109,174 +109,193 @@ public class MesocycleConfiguration : IEntityTypeConfiguration<Mesocycle>
         int fridayExerciseDayId)
     {
         return new List<object>()
-        {
-            new
             {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = mondayExerciseDayId, Id = 1, Weight = 10D, Reps = 0, TargetReps = 14, TargetWeight = 21D,
-                ExerciseId = Exercise.InclineDumbbellPress().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = mondayExerciseDayId, Id = 2, Weight = 10D, Reps = 0, TargetReps = 12, TargetWeight = 51.5D,
-                ExerciseId = Exercise.PullDown().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = mondayExerciseDayId, Id = 3, Weight = 10D, Reps = 0, TargetReps = 8, TargetWeight = 52.5D,
-                ExerciseId = Exercise.Squat().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = mondayExerciseDayId, Id = 4, Weight = 10D, Reps = 0, TargetReps = 11, TargetWeight = 42D,
-                ExerciseId = Exercise.CalvesTwoSecondPause().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = mondayExerciseDayId, Id = 5, Weight = 10D, Reps = 0, TargetReps = 8, TargetWeight = 9D,
-                ExerciseId = Exercise.LyingDumbellBicepCurl().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = mondayExerciseDayId, Id = 6, Weight = 10D, Reps = 0, TargetReps = 8, TargetWeight = 14.5D,
-                ExerciseId = Exercise.LyingOverheadTricepsExtension().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = mondayExerciseDayId, Id = 7, Weight = 10D, Reps = 0, TargetReps = 5, TargetWeight = 100D,
-                ExerciseId = Exercise.ReverseNordics().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = mondayExerciseDayId, Id = 8, Weight = 10D, Reps = 0, TargetReps = 7, TargetWeight = 14.5D,
-                ExerciseId = Exercise.SingleArmCableLateralRaise().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = mondayExerciseDayId, Id = 9, Weight = 10D, Reps = 0, TargetReps = 6, TargetWeight = 14.5D,
-                ExerciseId = Exercise.CableCrunch().Id
-            },
-
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = wednesdayExerciseDayId, Id = 10, Weight = 16.75D, Reps = 0, TargetReps = 14,
-                TargetWeight = 16.75, ExerciseId = Exercise.Flyes().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = wednesdayExerciseDayId, Id = 11, Weight = 24.5D, Reps = 0, TargetReps = 10,
-                TargetWeight = 24.5D, ExerciseId = Exercise.DualCableRow().Id
-            },
-            
-            
-            
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = wednesdayExerciseDayId, Id = 12, Weight = 47.25D, Reps = 0, TargetReps = 9, TargetWeight = 47.25D,
-                ExerciseId = Exercise.RDL().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = wednesdayExerciseDayId, Id = 13, Weight = 10D, Reps = 0, TargetReps = 7,
-                TargetWeight = 47.25D, ExerciseId = Exercise.CalvesFourSecondEccentric().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = wednesdayExerciseDayId, Id = 14, Weight = 10.5D, Reps = 0, TargetReps = 8, TargetWeight =10.5D,
-                ExerciseId = Exercise.LyingDumbellBicepCurl().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = wednesdayExerciseDayId, Id = 15, Weight = 10D, Reps = 0, TargetReps = 8,
-                TargetWeight = 14.75D, ExerciseId = Exercise.LyingOverheadTricepsExtension().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = wednesdayExerciseDayId, Id = 16, Weight = 10D, Reps = 0, TargetReps = 5,
-                TargetWeight = 100D, ExerciseId = Exercise.ReverseNordics().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = wednesdayExerciseDayId, Id = 17, Weight = 10D, Reps = 0, TargetReps = 7, TargetWeight = 14.75D,
-                ExerciseId = Exercise.SingleArmCableLateralRaise().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = wednesdayExerciseDayId, Id = 18, Weight = 10D, Reps = 0, TargetReps = 6, TargetWeight = 14.75D,
-                ExerciseId = Exercise.CableCrunch().Id
-            },
-
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = fridayExerciseDayId, Id = 19, Weight = 10D, Reps = 0, TargetReps = 14, TargetWeight = 16.75D,
-                ExerciseId = Exercise.Flyes().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = fridayExerciseDayId, Id = 20, Weight = 10D, Reps = 0, TargetReps = 14, TargetWeight = 51.45D,
-                ExerciseId = Exercise.PullDown().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = fridayExerciseDayId, Id = 21, Weight = 10D, Reps = 0, TargetReps = 9, TargetWeight = 47.25D,
-                ExerciseId = Exercise.RDL().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = fridayExerciseDayId, Id = 22, Weight = 10D, Reps = 0, TargetReps = 10, TargetWeight = 47.25D,
-                ExerciseId = Exercise.CalvesTwoSecondPause().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = fridayExerciseDayId, Id = 23, Weight = 10D, Reps = 0, TargetReps = 8, TargetWeight = 10.5D,
-                ExerciseId = Exercise.LyingDumbellBicepCurl().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = fridayExerciseDayId, Id = 24, Weight = 10D, Reps = 0, TargetReps = 10, TargetWeight = 14.75D,
-                ExerciseId = Exercise.LyingOverheadTricepsExtension().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = fridayExerciseDayId, Id = 25, Weight = 10D, Reps = 0, TargetReps = 5, TargetWeight = 100D,
-                ExerciseId = Exercise.ReverseNordics().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = fridayExerciseDayId, Id = 26, Weight = 10D, Reps = 0, TargetReps = 7, TargetWeight = 14.75D,
-                ExerciseId = Exercise.SingleArmCableLateralRaise().Id
-            },
-            new
-            {
-                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-                WorkoutId = fridayExerciseDayId, Id = 27, Weight = 10D, Reps = 0, TargetReps = 6, TargetWeight = 14.75D,
-                ExerciseId = Exercise.CableCrunch().Id
-            },
-        };
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = mondayExerciseDayId, Id = 1, Weight = 10D, Reps = 0, TargetReps = 14,
+                    TargetWeight = 21D,
+                    ExerciseId = Exercise.InclineDumbbellPress().Id, Priority = 1, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = mondayExerciseDayId, Id = 2, Weight = 10D, Reps = 0, TargetReps = 12,
+                    TargetWeight = 51.5D,
+                    ExerciseId = Exercise.PullDown().Id, Priority = 2, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = mondayExerciseDayId, Id = 3, Weight = 10D, Reps = 0, TargetReps = 8,
+                    TargetWeight = 52.5D,
+                    ExerciseId = Exercise.Squat().Id, Priority = 3, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = mondayExerciseDayId, Id = 4, Weight = 10D, Reps = 0, TargetReps = 11,
+                    TargetWeight = 42D,
+                    ExerciseId = Exercise.CalvesTwoSecondPause().Id, Priority = 4, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = mondayExerciseDayId, Id = 5, Weight = 10D, Reps = 0, TargetReps = 8, TargetWeight = 9D,
+                    ExerciseId = Exercise.LyingDumbellBicepCurl().Id, Priority = 5, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = mondayExerciseDayId, Id = 6, Weight = 10D, Reps = 0, TargetReps = 8,
+                    TargetWeight = 14.5D,
+                    ExerciseId = Exercise.LyingOverheadTricepsExtension().Id, Priority = 6, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = mondayExerciseDayId, Id = 7, Weight = 10D, Reps = 0, TargetReps = 5,
+                    TargetWeight = 100D,
+                    ExerciseId = Exercise.ReverseNordics().Id, Priority = 7, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = mondayExerciseDayId, Id = 8, Weight = 10D, Reps = 0, TargetReps = 7,
+                    TargetWeight = 14.5D,
+                    ExerciseId = Exercise.SingleArmCableLateralRaise().Id, Priority = 8, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = mondayExerciseDayId, Id = 9, Weight = 10D, Reps = 0, TargetReps = 6,
+                    TargetWeight = 14.5D,
+                    ExerciseId = Exercise.CableCrunch().Id, Priority = 9, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = wednesdayExerciseDayId, Id = 10, Weight = 16.75D, Reps = 0, TargetReps = 14,
+                    TargetWeight = 16.75, ExerciseId = Exercise.Flyes().Id, Priority = 1, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = wednesdayExerciseDayId, Id = 11, Weight = 24.5D, Reps = 0, TargetReps = 10,
+                    TargetWeight = 24.5D, ExerciseId = Exercise.DualCableRow().Id, Priority = 2, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = wednesdayExerciseDayId, Id = 12, Weight = 47.25D, Reps = 0, TargetReps = 9,
+                    TargetWeight = 47.25D,
+                    ExerciseId = Exercise.RDL().Id, Priority = 3, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = wednesdayExerciseDayId, Id = 13, Weight = 10D, Reps = 0, TargetReps = 7,
+                    TargetWeight = 47.25D, ExerciseId = Exercise.CalvesFourSecondEccentric().Id, Priority = 4,
+                    Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = wednesdayExerciseDayId, Id = 14, Weight = 10.5D, Reps = 0, TargetReps = 8,
+                    TargetWeight = 10.5D,
+                    ExerciseId = Exercise.LyingDumbellBicepCurl().Id, Priority = 5, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = wednesdayExerciseDayId, Id = 15, Weight = 10D, Reps = 0, TargetReps = 8,
+                    TargetWeight = 14.75D, ExerciseId = Exercise.LyingOverheadTricepsExtension().Id, Priority = 6,
+                    Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = wednesdayExerciseDayId, Id = 16, Weight = 10D, Reps = 0, TargetReps = 5,
+                    TargetWeight = 100D, ExerciseId = Exercise.ReverseNordics().Id, Priority = 7, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = wednesdayExerciseDayId, Id = 17, Weight = 10D, Reps = 0, TargetReps = 7,
+                    TargetWeight = 14.75D,
+                    ExerciseId = Exercise.SingleArmCableLateralRaise().Id, Priority = 8, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = wednesdayExerciseDayId, Id = 18, Weight = 10D, Reps = 0, TargetReps = 6,
+                    TargetWeight = 14.75D,
+                    ExerciseId = Exercise.CableCrunch().Id, Priority = 9, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = fridayExerciseDayId, Id = 19, Weight = 10D, Reps = 0, TargetReps = 14,
+                    TargetWeight = 16.75D,
+                    ExerciseId = Exercise.Flyes().Id, Priority = 1, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = fridayExerciseDayId, Id = 20, Weight = 10D, Reps = 0, TargetReps = 14,
+                    TargetWeight = 51.45D,
+                    ExerciseId = Exercise.PullDown().Id, Priority = 2, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = fridayExerciseDayId, Id = 21, Weight = 10D, Reps = 0, TargetReps = 9,
+                    TargetWeight = 47.25D,
+                    ExerciseId = Exercise.RDL().Id, Priority = 3, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = fridayExerciseDayId, Id = 22, Weight = 10D, Reps = 0, TargetReps = 10,
+                    TargetWeight = 47.25D,
+                    ExerciseId = Exercise.CalvesTwoSecondPause().Id, Priority = 4, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = fridayExerciseDayId, Id = 23, Weight = 10D, Reps = 0, TargetReps = 8,
+                    TargetWeight = 10.5D,
+                    ExerciseId = Exercise.LyingDumbellBicepCurl().Id, Priority = 5, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = fridayExerciseDayId, Id = 24, Weight = 10D, Reps = 0, TargetReps = 10,
+                    TargetWeight = 14.75D,
+                    ExerciseId = Exercise.LyingOverheadTricepsExtension().Id, Priority = 6, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = fridayExerciseDayId, Id = 25, Weight = 10D, Reps = 0, TargetReps = 5,
+                    TargetWeight = 100D,
+                    ExerciseId = Exercise.ReverseNordics().Id, Priority = 7, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = fridayExerciseDayId, Id = 26, Weight = 10D, Reps = 0, TargetReps = 7,
+                    TargetWeight = 14.75D,
+                    ExerciseId = Exercise.SingleArmCableLateralRaise().Id, Priority = 8, Number = 1
+                },
+                new
+                {
+                    WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                    WorkoutId = fridayExerciseDayId, Id = 27, Weight = 10D, Reps = 0, TargetReps = 6,
+                    TargetWeight = 14.75D,
+                    ExerciseId = Exercise.CableCrunch().Id, Priority = 9, Number = 1
+                },
+            };
+            ```
     }
 }

@@ -16,6 +16,9 @@ public class Set : ValueObject<Set>
     public int TargetReps { get; init; }
     public double TargetWeight { get; init; }
 
+    public int Priority { get; set; }
+    public int Number { get; set; }
+
     public Guid ExerciseId { get; init; }
 
     public Exercise.Exercise Exercise { get; set; }
