@@ -1,7 +1,8 @@
 using AutoMapper;
 using TrackMyMacros.Dtos.Set;
+using TrackMyMacros.Domain.Aggregates.Mesocycle;
 
-namespace TrackMyMacros.Application.Profiles.ExerciseDaySet
+namespace TrackMyMacros.Application.Profiles.Set
 {
     public class GetSetMappingProfile : Profile
     {

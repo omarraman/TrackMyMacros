@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using Newtonsoft.Json;
 using Radzen;
-using TrackMyMacros.App4.ViewModels;
-using TrackMyMacros.App4.ViewModels.ExerciseDaySet;
-using TrackMyMacros.Infrastructure;
+using TrackMyMacros.App4.ViewModels.Set;
 
 namespace TrackMyMacros.App4.Components
 {

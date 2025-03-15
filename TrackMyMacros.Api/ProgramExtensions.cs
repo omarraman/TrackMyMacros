@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Scrutor;
@@ -11,10 +12,10 @@ namespace TrackMyMacros.Api
     public static class StartupExtensions
     {
         public static WebApplication ConfigureServices(
-        this WebApplicationBuilder builder, IConfiguration configuration)
+            this WebApplicationBuilder builder, IConfiguration configuration)
         {
             AddSwagger(builder.Services);
-            
+
             builder.Services.AddLogging(config =>
             {
                 config.AddDebug();
@@ -23,12 +24,12 @@ namespace TrackMyMacros.Api
             });
 
             // Additional code to register the ILogger as a ILogger<T> where T is the Startup class
-            builder.Services.AddSingleton(typeof(ILogger), typeof(Logger<Program>)); 
+            builder.Services.AddSingleton(typeof(ILogger), typeof(Logger<Program>));
             builder.Services.AddApplicationServices();
             // builder.Services.AddInfrastructureServices(builder.Configuration);
             builder.Services.AddPersistenceServices(builder.Configuration);
 
-            
+
             builder.Services.AddHttpContextAccessor();
 
             builder.Services.AddControllers();
@@ -37,7 +38,6 @@ namespace TrackMyMacros.Api
             {
                 options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
-            
 
 
             builder.Services.AddDecoratorServices(typeof(Program));
@@ -45,27 +45,21 @@ namespace TrackMyMacros.Api
             var connectionString = configuration.GetConnectionString("MacrosConnectionString");
             builder.Services.AddSingleton(new ConnectionString(connectionString));
 
-
             return builder.Build();
-
         }
 
         public static WebApplication ConfigurePipeline(this WebApplication app)
         {
-
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "TrackMyMacros API");
-                });
+                app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "TrackMyMacros API"); });
             }
 
             app.UseHttpsRedirection();
 
             //app.UseRouting();
-            
+
             app.UseAuthentication();
 
             // app.UseCustomExceptionHandler();
@@ -77,8 +71,8 @@ namespace TrackMyMacros.Api
             app.MapControllers();
 
             return app;
-
         }
+
         private static void AddSwagger(IServiceCollection services)
         {
             services.AddSwaggerGen(c =>
@@ -117,9 +111,7 @@ namespace TrackMyMacros.Api
                 {
                     Version = "v1",
                     Title = "TrackMyMacros API",
-
                 });
-
             });
         }
 
@@ -128,14 +120,14 @@ namespace TrackMyMacros.Api
             using var scope = app.Services.CreateScope();
             // try
             // {
-                var context = scope.ServiceProvider.GetService<AppDbContext>();
-                if (context != null)
-                {
-                    // await context.Database.EnsureDeletedAsync();
-                    // await context.Database.MigrateAsync();
-                    
-                    // await context.Database.EnsureCreatedAsync();
-                }
+            var context = scope.ServiceProvider.GetService<AppDbContext>();
+            if (context != null)
+            {
+                // await context.Database.EnsureDeletedAsync();
+                await context.Database.MigrateAsync();
+
+                // await context.Database.EnsureCreatedAsync();
+            }
             // }
             // catch (Exception ex)
             // {
@@ -143,8 +135,8 @@ namespace TrackMyMacros.Api
             //     logger.LogError(ex, "An error occurred while migrating the database.");
             // }
         }
-        
-        public static void AddDecoratorServices(this IServiceCollection services,Type t)
+
+        public static void AddDecoratorServices(this IServiceCollection services, Type t)
         {
             services.Scan(scan =>
             {
@@ -154,7 +146,7 @@ namespace TrackMyMacros.Api
 
             services.Decorate(typeof(IRequestHandler<,>), typeof(LoggingDecorator<,>));
         }
-        
+
         public static IImplementationTypeSelector RegisterHandlers(this IImplementationTypeSelector selector, Type type)
         {
             return selector.AddClasses(c =>

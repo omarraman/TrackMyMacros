@@ -1,4 +1,6 @@
-namespace TrackMyMacros.Dtos.ExerciseDaySet
+using TrackMyMacros.Domain.Aggregates.Exercise;
+
+namespace TrackMyMacros.Dtos.Set
 {
     public class GetSetDto
     {
@@ -11,5 +13,7 @@ namespace TrackMyMacros.Dtos.ExerciseDaySet
         public bool BodyWeightExercise { get; init; }
         public bool WeightIncrease { get; init; }
         public bool RepIncrease { get; init; }
+        public int Priority { get; set; }
+        public int Number { get; set; }
     }
 }

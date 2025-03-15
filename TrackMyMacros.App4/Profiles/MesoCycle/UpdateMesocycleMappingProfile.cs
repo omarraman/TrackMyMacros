@@ -1,9 +1,6 @@
 using AutoMapper;
 using TrackMyMacros.Dtos.Mesocycle;
-using TrackMyMacros.App4.ViewModels.ExerciseDaySet;
 using TrackMyMacros.App4.ViewModels.Mesocycle;
-using TrackMyMacros.App4.ViewModels.MesocycleWeek;
-using TrackMyMacros.App4.ViewModels.MesocycleWeekDay;
 using TrackMyMacros.App4.ViewModels.Set;
 using TrackMyMacros.App4.ViewModels.Week;
 using TrackMyMacros.App4.ViewModels.Workout;

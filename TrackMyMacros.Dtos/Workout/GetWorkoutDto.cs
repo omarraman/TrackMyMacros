@@ -1,6 +1,6 @@
 using TrackMyMacros.Dtos.Set;
 
-namespace TrackMyMacros.Dtos.MesocycleWeekDay
+namespace TrackMyMacros.Dtos.Workout
 {
     public class GetWorkoutDto
     {

@@ -1,5 +1,4 @@
 using TrackMyMacros.Domain.Aggregates.Exercise;
-using TrackMyMacros.Dtos.ExerciseDaySet;
 using TrackMyMacros.Dtos.Set;
 
 namespace TrackMyMacros.Application.Features.Set.Queries.GetList

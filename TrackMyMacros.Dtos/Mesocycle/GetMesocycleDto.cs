@@ -1,4 +1,5 @@
-using TrackMyMacros.Dtos.MesocycleWeek;
+using TrackMyMacros.Dtos.Week;
+using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Dtos.Mesocycle
 {

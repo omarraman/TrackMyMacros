@@ -1,4 +1,6 @@
-namespace TrackMyMacros.App4.ViewModels.ExerciseDaySet
+using TrackMyMacros.Domain.Aggregates.Exercise;
+
+namespace TrackMyMacros.App4.ViewModels.Set
 {
     public class GetSetViewModel
     {
@@ -11,5 +13,7 @@ namespace TrackMyMacros.App4.ViewModels.ExerciseDaySet
         public bool BodyWeightExercise { get; set; }
         public bool WeightIncrease { get; set; }
         public bool RepIncrease { get; set; }
+        public int Priority { get; set; }
+        public int Number { get; set; }
     }
 }

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Components;
 using TrackMyMacros.App4.Services;
 using TrackMyMacros.App4.ViewModels;
 using Radzen;
-using TrackMyMacros.Dtos;
 using TrackMyMacros.Dtos.WeightReading;
 using GenericDataService = TrackMyMacros.App4.Services.GenericDataService;
 

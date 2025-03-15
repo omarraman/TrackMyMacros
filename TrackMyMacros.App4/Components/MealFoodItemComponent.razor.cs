@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using TrackMyMacros.App4.Services;
 using TrackMyMacros.App4.ViewModels;
-using TrackMyMacros.Infrastructure;
 using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.App4.Components

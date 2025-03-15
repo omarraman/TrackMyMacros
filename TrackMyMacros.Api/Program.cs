@@ -1,3 +1,4 @@
+using AutoMapper;
 using Serilog;
 using TrackMyMacros.Api;
 
@@ -17,6 +18,8 @@ builder.Host.UseSerilog((context, loggerConfiguration) => loggerConfiguration
          retainedFileCountLimit: 7
      )
      .ReadFrom.Configuration(context.Configuration));
+
+
 
 var app = builder
     .ConfigureServices(builder.Configuration)

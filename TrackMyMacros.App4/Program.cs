@@ -32,4 +32,5 @@ builder.Services.AddSingleton<IFoodDataRepository, FoodDataRepository>();
 builder.Services.AddScoped<DialogService>();
 
 
+
 await builder.Build().RunAsync();

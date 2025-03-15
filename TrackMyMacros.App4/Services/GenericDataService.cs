@@ -133,7 +133,15 @@ namespace TrackMyMacros.App4.Services
                 var uri = _baseUrl + endpoint.Value;
                 var foods = await uri
                     .GetJsonAsync<IReadOnlyList<TDto>>();
-                return _mapper.Map<IReadOnlyList<TModel>>(foods);
+                try
+                {
+                    var mapped = _mapper.Map<IReadOnlyList<TModel>>(foods);
+                    return _mapper.Map<IReadOnlyList<TModel>>(foods);
+                }
+                catch (Exception e)
+                {
+                    throw;
+                }
             }
             catch (FlurlHttpException ex)
             {

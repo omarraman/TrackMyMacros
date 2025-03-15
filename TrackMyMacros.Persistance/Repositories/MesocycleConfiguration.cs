@@ -296,6 +296,5 @@ public class MesocycleConfiguration : IEntityTypeConfiguration<Mesocycle>
                     ExerciseId = Exercise.CableCrunch().Id, Priority = 9, Number = 1
                 },
             };
-            ```
     }
 }

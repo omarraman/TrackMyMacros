@@ -1,8 +1,8 @@
 using AutoMapper;
-using TrackMyMacros.Domain.Aggregates.Mesocycle;
 using TrackMyMacros.Dtos.Week;
+using TrackMyMacros.Domain.Aggregates.Mesocycle;
 
-namespace TrackMyMacros.Application.Profiles.MesocycleWeek
+namespace TrackMyMacros.Application.Profiles.Week
 {
     public class GetWeekMappingProfile : Profile
     {

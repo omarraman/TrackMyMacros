@@ -9,8 +9,11 @@
 
     <ItemGroup>
       <Folder Include="MesocycleWeekDay\" />
-      <Folder Include="MesocycleWeek\" />
       <Folder Include="Mesocycle\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\TrackMyMacros.Domain\TrackMyMacros.Domain.csproj" />
     </ItemGroup>
 
 </Project>

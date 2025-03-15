@@ -1,5 +1,4 @@
-﻿using TrackMyMacros.Infrastructure;
-using TrackMyMacros.SharedKernel;
+﻿using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.App4.ViewModels
 {

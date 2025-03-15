@@ -1,5 +1,5 @@
-using TrackMyMacros.App4.ViewModels.MesocycleWeek;
-using TrackMyMacros.App4.ViewModels.MesocycleWeekDay;
+using TrackMyMacros.App4.ViewModels.Week;
+using TrackMyMacros.App4.ViewModels.Workout;
 using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.App4.ViewModels.Mesocycle

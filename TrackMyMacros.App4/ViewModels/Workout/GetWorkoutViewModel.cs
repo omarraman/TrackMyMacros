@@ -1,7 +1,7 @@
 using TrackMyMacros.App4.ViewModels.Set;
 using TrackMyMacros.SharedKernel;
 
-namespace TrackMyMacros.App4.ViewModels.MesocycleWeekDay
+namespace TrackMyMacros.App4.ViewModels.Workout
 {
     public class GetWorkoutViewModel
     {

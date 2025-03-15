@@ -1,13 +1,12 @@
 using AutoMapper;
-using TrackMyMacros.Dtos.Mesocycle;
-using TrackMyMacros.App4.ViewModels;
-using TrackMyMacros.App4.ViewModels.ExerciseDaySet;
 using TrackMyMacros.App4.ViewModels.Mesocycle;
-using TrackMyMacros.App4.ViewModels.MesocycleWeek;
-using TrackMyMacros.App4.ViewModels.MesocycleWeekDay;
-using TrackMyMacros.Dtos.ExerciseDaySet;
-using TrackMyMacros.Dtos.MesocycleWeek;
-using TrackMyMacros.Dtos.MesocycleWeekDay;
+using TrackMyMacros.App4.ViewModels.Set;
+using TrackMyMacros.App4.ViewModels.Week;
+using TrackMyMacros.App4.ViewModels.Workout;
+using TrackMyMacros.Dtos.Mesocycle;
+using TrackMyMacros.Dtos.Set;
+using TrackMyMacros.Dtos.Week;
+using TrackMyMacros.Dtos.Workout;
 using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.App4.Profiles.Mesocycle
@@ -16,7 +15,8 @@ namespace TrackMyMacros.App4.Profiles.Mesocycle
     {
         public GetMesocycleMappingProfile()
         {
-            CreateMap<GetMesocycleDto, GetMesocycleViewModel>();
+            CreateMap<GetMesocycleDto, GetMesocycleViewModel>().ForMember(m=>m.CurrentDayOfWeek,
+                opt=>opt.MapFrom(src=>MyDayOfWeek.ConvertFromInt(src.CurrentDayOfWeek)));
             CreateMap<GetWeekDto, GetWeekViewModel>();
             CreateMap<GetWorkoutDto, GetWorkoutViewModel>().ForMember(m=>m.DayOfWeek,
                 opt=>opt.MapFrom(src=>MyDayOfWeek.ConvertFromInt(src.DayOfWeek)));

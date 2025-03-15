@@ -7,7 +7,6 @@ using TrackMyMacros.App4.Services;
 using TrackMyMacros.App4.ViewModels;
 using TrackMyMacros.App4.ViewModelsWeightReading;
 using TrackMyMacros.Dtos.WeightReading;
-using TrackMyMacros.Dtos.WeightReading;
 
 namespace TrackMyMacros.App4.Pages;
 

@@ -1,5 +1,4 @@
 using TrackMyMacros.Application.Features.Workout.Queries.GetList;
-using TrackMyMacros.Dtos.MesocycleWeek;
 using TrackMyMacros.Dtos.Week;
 
 namespace TrackMyMacros.Application.Features.Week.Queries.GetList

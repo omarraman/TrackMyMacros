@@ -1,6 +1,6 @@
 using TrackMyMacros.Dtos.MesocycleWeekDay;
 
-namespace TrackMyMacros.Dtos.MesocycleWeek
+namespace TrackMyMacros.Dtos.Week
 {
     public class GetWeekDto
     {
