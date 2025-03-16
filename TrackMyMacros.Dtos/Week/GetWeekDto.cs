@@ -1,4 +1,4 @@
-using TrackMyMacros.Dtos.MesocycleWeekDay;
+using TrackMyMacros.Dtos.Workout;
 
 namespace TrackMyMacros.Dtos.Week
 {

@@ -9,16 +9,19 @@ namespace TrackMyMacros.App4.Components
     {
         [Inject] public NavigationManager NavigationManager { get; set; }
         [Inject] public DialogService DialogService { get; set; }
-        
-        [Parameter]
-        public EventCallback OnSetUpdated { get; set; }
 
+        [Parameter] public EventCallback OnSetUpdated { get; set; }
+        [Parameter] public EventCallback<GetSetViewModel> OnSetAdded { get; set; }
         [Parameter] public GetSetViewModel Set { get; set; }
 
         public async Task OnSave(MouseEventArgs obj)
         {
             await OnSetUpdated.InvokeAsync();
-
+        }
+        
+        public async Task OnAddSet(MouseEventArgs obj)
+        {
+            await OnSetAdded.InvokeAsync(Set);
         }
     }
 }

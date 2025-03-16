@@ -67,7 +67,6 @@
       <Folder Include="Features\FoodCombo\Queries\GetList\" />
       <Folder Include="Features\FoodCombo\Queries\Get\" />
       <Folder Include="Features\MesoCycle\Commands\Create\" />
-      <Folder Include="Profiles\ExerciseDaySet\" />
       <Folder Include="Profiles\Recipe\" />
     </ItemGroup>
 

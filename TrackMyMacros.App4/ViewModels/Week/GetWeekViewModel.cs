@@ -7,5 +7,6 @@ namespace TrackMyMacros.App4.ViewModels.Week
     {
         public int WeekIndex { get; init; }
         public List<GetWorkoutViewModel> Workouts { get; init; }
+        public string WeekName => $"Week {WeekIndex}";
     }
 }

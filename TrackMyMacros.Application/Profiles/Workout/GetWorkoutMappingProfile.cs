@@ -8,7 +8,8 @@ namespace TrackMyMacros.Application.Profiles.Workout
     {
         public GetWorkoutMappingProfile()
         {
-            CreateMap<TrackMyMacros.Domain.Aggregates.Mesocycle.Workout, GetWorkoutDto>().ForMember(m => m.DayOfWeek, 
+            CreateMap<TrackMyMacros.Domain.Aggregates.Mesocycle.Workout, GetWorkoutDto>()
+                .ForMember(m => m.DayOfWeek, 
                 opt => opt.MapFrom(src => (int)src.DayOfWeek.Value()));
         }
     }

@@ -8,11 +8,11 @@ namespace TrackMyMacros.App4.ViewModels.Mesocycle
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public List<GetWeekViewModel> Weeks { get; set; }
-        public int CurrentWeekIndex { get; set; }
-        public MyDayOfWeek CurrentDayOfWeek { get; set; }
-        public int  TotalWeeks { get; set; }
-        public bool Complete { get; set; }
+         public List<GetWeekViewModel> Weeks { get; set; }
+         public int CurrentWeekIndex { get; set; }
+         public MyDayOfWeek CurrentDayOfWeek { get; set; }
+         public int  TotalWeeks { get; set; }
+         public bool Complete { get; set; }
         public GetWorkoutViewModel GetCurrentWorkout()
         {
             return Weeks.Single(week => week.WeekIndex == CurrentWeekIndex).Workouts

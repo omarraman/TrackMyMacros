@@ -1,9 +1,10 @@
 ﻿@page "/Workout"
-<h3>Workout @_meso?.CurrentDayOfWeek?.StringEquivalent()</h3>
 
 
 @if(WorkoutInFocus.HasValue)
 {
+    <h3>Workout @WorkoutInFocus.Value.DayOfWeekName</h3>
+
     if (_meso.CurrentWeekIndex== _meso.TotalWeeks)
     {
         <p>Week {@_meso.CurrentWeekIndex} of {@_meso.TotalWeeks} (Final Week)</p>
@@ -21,7 +22,7 @@
 
     foreach (var set in WorkoutInFocus.Value.Sets)
     {
-        <SetComponent Set="@set" OnSetUpdated="Save" />
+        <SetComponent Set="@set" OnSetUpdated="Save" OnSetAdded="AddSet" />
     }
 }
 else

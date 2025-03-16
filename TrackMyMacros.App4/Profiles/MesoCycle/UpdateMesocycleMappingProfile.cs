@@ -19,6 +19,8 @@ namespace TrackMyMacros.App4.Profiles.Mesocycle
             //needed in workout razor
             CreateMap<GetMesocycleViewModel, UpdateMesocycleViewModel>().ForMember(
                 m=>m.CurrentDayOfWeek, opt=>opt.MapFrom(src=>src.CurrentDayOfWeek.Value()));;
+            CreateMap<GetMesocycleViewModel, UpdateMesocycleViewModel>();
+
             CreateMap<GetWeekViewModel, UpdateWeekViewModel>();
             CreateMap<GetWorkoutViewModel, UpdateWorkoutViewModel>();
             CreateMap<GetSetViewModel, UpdateSetViewModel>();

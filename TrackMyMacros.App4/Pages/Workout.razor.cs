@@ -1,9 +1,11 @@
-﻿using AutoMapper;
+﻿using System.Diagnostics;
+using AutoMapper;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using TrackMyMacros.App4.Services;
 using TrackMyMacros.App4.ViewModels.Mesocycle;
+using TrackMyMacros.App4.ViewModels.Set;
 using TrackMyMacros.App4.ViewModels.Workout;
 using TrackMyMacros.Dtos.Mesocycle;
 using TrackMyMacros.SharedKernel;
@@ -41,6 +43,11 @@ public partial class Workout
     {
         await Save();
     }
+    
+    private void AddSet(GetSetViewModel set)
+    {
+        WorkoutInFocus.Value.Sets.Add(set.AddFollowingSet());
+    }
 
     private async Task Save()
     {
@@ -57,7 +64,7 @@ public partial class Workout
 
     void OnChangeTreeNode(TreeEventArgs args)
     {
-        if (_treeNode is GetWorkoutViewModel workout)
+        if (args.Value is GetWorkoutViewModel workout)
         {
             WorkoutInFocus = workout;
         }
