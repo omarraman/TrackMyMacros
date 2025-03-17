@@ -24,7 +24,7 @@ public abstract class ValueObject<T>
     protected abstract int GetHashCodeCore();
 
 
-    public static bool operator ==(ValueObject<T> a, ValueObject<T> b)
+    public static bool operator ==(ValueObject<T>? a, ValueObject<T>? b)
     {
         if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
             return true;

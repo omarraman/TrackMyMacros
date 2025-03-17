@@ -13,10 +13,11 @@
         <div class="col-3">
             <RadzenNumeric TValue="int" @bind-Value="@Set.Reps">Reps</RadzenNumeric>
         </div>
+        <div class="col-3">
+            <RadzenButton Click="@OnSave" Icon="save" ButtonStyle="ButtonStyle.Primary"/>
+        </div>  
 
 
-        <RadzenButton Click="@OnAddSet" Icon="add" ButtonStyle="ButtonStyle.Primary"/>
-        <RadzenButton Click="@OnSave" Icon="save" ButtonStyle="ButtonStyle.Primary"/>
 
     </div>
 </div>

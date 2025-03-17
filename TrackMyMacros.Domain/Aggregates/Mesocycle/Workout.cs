@@ -1,4 +1,5 @@
-﻿using TrackMyMacros.Domain.ValueObjects;
+﻿using System.Text.Json;
+using TrackMyMacros.Domain.ValueObjects;
 using TrackMyMacros.SharedKernel;
 
 namespace TrackMyMacros.Domain.Aggregates.Mesocycle;
@@ -6,18 +7,17 @@ namespace TrackMyMacros.Domain.Aggregates.Mesocycle;
 public class Workout : Common.ValueObject<Workout>
 {
     public MyDayOfWeek DayOfWeek { get; init; }
-    public List<Set> Sets { get; init; }
+    public List<SetGroup> SetGroups { get; init; }
 
     private Workout()
     {
-        
-    }
-    public Workout(MyDayOfWeek dayOfWeek, List<Set> sets)
-    {
-        Sets = sets;
-        DayOfWeek = dayOfWeek;
     }
 
+    public Workout(MyDayOfWeek dayOfWeek, List<SetGroup> set)
+    {
+        SetGroups = set;
+        DayOfWeek = dayOfWeek;
+    }
 
 
     protected override bool EqualsCore(Workout other)
@@ -25,14 +25,10 @@ public class Workout : Common.ValueObject<Workout>
         if (DayOfWeek != other.DayOfWeek)
             return false;
 
-        if (Sets.Count != other.Sets.Count)
+        var setGroupJson = JsonSerializer.Serialize(SetGroups);
+        var otherSetGroupJson = JsonSerializer.Serialize(other.SetGroups);
+        if (setGroupJson != otherSetGroupJson)
             return false;
-
-        for (int i = 0; i < Sets.Count; i++)
-        {
-            if (!Sets[i].Equals(other.Sets[i]))
-                return false;
-        }
 
         return true;
     }
@@ -41,7 +37,7 @@ public class Workout : Common.ValueObject<Workout>
     {
         int hashCode = DayOfWeek.GetHashCode();
 
-        foreach (var exerciseSet in Sets)
+        foreach (var exerciseSet in SetGroups)
         {
             hashCode = HashCode.Combine(hashCode, exerciseSet);
         }

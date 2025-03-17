@@ -13,19 +13,16 @@ public class Set : ValueObject<Set>
 
     public int Reps { get; init; }
     public double Weight { get; init; }
-    public int TargetReps { get; init; }
-    public double TargetWeight { get; init; }
-
-    public int Priority { get; set; }
+    public int TargetReps { get; set; }
+    public double TargetWeight { get; set; }
+    
     public int Number { get; set; }
 
-    public Guid ExerciseId { get; init; }
 
-    public Exercise.Exercise Exercise { get; set; }
     protected override bool EqualsCore(Set other)
     {
-        return TargetWeight == other.TargetWeight && Reps == other.Reps && TargetReps == other.TargetReps 
-            && Exercise.Id == other.Exercise.Id ;
+        return Math.Abs(TargetWeight - other.TargetWeight) < 0.1 && Reps == other.Reps && TargetReps == other.TargetReps 
+            ;
         }
 
     protected override int GetHashCodeCore()
