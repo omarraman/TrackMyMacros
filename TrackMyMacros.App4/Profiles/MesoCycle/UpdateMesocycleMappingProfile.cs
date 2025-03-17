@@ -2,9 +2,11 @@ using AutoMapper;
 using TrackMyMacros.Dtos.Mesocycle;
 using TrackMyMacros.App4.ViewModels.Mesocycle;
 using TrackMyMacros.App4.ViewModels.Set;
+using TrackMyMacros.App4.ViewModels.SetGroup;
 using TrackMyMacros.App4.ViewModels.Week;
 using TrackMyMacros.App4.ViewModels.Workout;
 using TrackMyMacros.Dtos.Set;
+using TrackMyMacros.Dtos.SetGroup;
 using TrackMyMacros.Dtos.Week;
 using TrackMyMacros.Dtos.Workout;
 
@@ -23,6 +25,7 @@ namespace TrackMyMacros.App4.Profiles.Mesocycle
 
             CreateMap<GetWeekViewModel, UpdateWeekViewModel>();
             CreateMap<GetWorkoutViewModel, UpdateWorkoutViewModel>();
+            CreateMap<GetSetGroupViewModel, UpdateSetGroupViewModel>();
             CreateMap<GetSetViewModel, UpdateSetViewModel>();
             
             
@@ -34,9 +37,9 @@ namespace TrackMyMacros.App4.Profiles.Mesocycle
                 .ForMember(dest => dest.DayOfWeek, 
                     opt => opt.MapFrom(src 
                         => src.DayOfWeek.Value()));
+            CreateMap<UpdateSetGroupViewModel, UpdateSetGroupDto>();
+            ;
             CreateMap<UpdateSetViewModel, UpdateSetDto>();
-            
-            
         }
     }
 }

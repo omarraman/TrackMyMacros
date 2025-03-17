@@ -123,8 +123,8 @@ namespace TrackMyMacros.Api
             var context = scope.ServiceProvider.GetService<AppDbContext>();
             if (context != null)
             {
-                await context.Database.EnsureDeletedAsync();
-                await context.Database.MigrateAsync();
+                // await context.Database.EnsureDeletedAsync();
+                // await context.Database.MigrateAsync();
 
                 // await context.Database.EnsureCreatedAsync();
             }
