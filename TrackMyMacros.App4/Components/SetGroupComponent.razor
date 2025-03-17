@@ -5,8 +5,19 @@
     <p>Loading...</p>
     return;
 }
+
+<strong>@SetGroup.ExerciseName</strong>
+
+<div class="container">
     
-@* @foreach (var group in SetGroup) *@
-@* { *@
-@*     <SetComponent Group="@group" /> *@
-@* } *@
+    @foreach (var set in SetGroup.Sets)
+    {
+        <SetComponent Set="@set" OnSetUpdated="Save"  />
+    }
+    <div class="row py-1">
+        <div class="col">
+            <RadzenButton Click="@AddSet" Icon="add" ButtonStyle="ButtonStyle.Primary"/>
+        </div>
+    </div>
+
+</div>

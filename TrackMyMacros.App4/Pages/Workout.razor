@@ -20,9 +20,9 @@
         <RadzenTreeLevel TextProperty="DayOfWeekName"  />
     </RadzenTree>
 
-    foreach (var set in WorkoutInFocus.Value.Sets)
+    foreach (var set in WorkoutInFocus.Value.SetGroups.OrderBy(m=>m.Priority))
     {
-        <SetComponent Set="@set" OnSetUpdated="Save" OnSetAdded="AddSet" />
+        <SetGroupComponent SetGroup="@set" OnSavePressed="Save" OnSetAdded="AddSet" />
     }
 }
 else

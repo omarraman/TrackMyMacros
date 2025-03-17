@@ -1,11 +1,10 @@
-using TrackMyMacros.Dtos.Set;
+using TrackMyMacros.Dtos.SetGroup;
 
 namespace TrackMyMacros.Dtos.Workout
 {
     public class GetWorkoutDto
     {
         public int DayOfWeek { get; init; }
-        public List<GetSetDto> Sets { get; init; }
-        public bool Complete { get; private set; }
+        public List<GetSetGroupDto> SetGroups { get; init; }
     }
 }

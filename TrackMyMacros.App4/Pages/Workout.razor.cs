@@ -6,6 +6,7 @@ using Radzen;
 using TrackMyMacros.App4.Services;
 using TrackMyMacros.App4.ViewModels.Mesocycle;
 using TrackMyMacros.App4.ViewModels.Set;
+using TrackMyMacros.App4.ViewModels.SetGroup;
 using TrackMyMacros.App4.ViewModels.Workout;
 using TrackMyMacros.Dtos.Mesocycle;
 using TrackMyMacros.SharedKernel;
@@ -44,9 +45,9 @@ public partial class Workout
         await Save();
     }
     
-    private void AddSet(GetSetViewModel set)
+    private void AddSet(GetSetGroupViewModel setGroup)
     {
-        WorkoutInFocus.Value.Sets.Add(set.AddFollowingSet());
+        setGroup.AddFollowingSet();
     }
 
     private async Task Save()

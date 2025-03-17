@@ -60,6 +60,7 @@
       <Content Update="wwwroot\appsettings.Production.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <Content Remove="Components\Component.razor" />
     </ItemGroup>
 
     <ItemGroup>
