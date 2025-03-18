@@ -47,7 +47,7 @@ public class MesocycleConfiguration : IEntityTypeConfiguration<Mesocycle>
                             {
                                 setGroup.Property(m => m.Priority);
                                 setGroup.Property(m => m.ExerciseId);
-                                    
+                                setGroup.Navigation(m => m.Exercise).AutoInclude();    
                                 setGroup.OwnsMany<Set>(m => m.Sets,
                                     set =>
                                     {

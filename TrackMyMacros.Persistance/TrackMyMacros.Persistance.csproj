@@ -28,6 +28,12 @@
       <Compile Remove="Repositories\MesoCycleRepository.cs" />
       <Compile Remove="Repositories\BodyPartRepository.cs" />
       <Compile Include="Repositories\MesocycleRepository.cs" />
+      <Compile Remove="Migrations\20241208072829_AddBodyPartAndExercise.cs" />
+      <Compile Remove="Migrations\20241208072829_AddBodyPartAndExercise.Designer.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Migrations\" />
     </ItemGroup>
 
 </Project>

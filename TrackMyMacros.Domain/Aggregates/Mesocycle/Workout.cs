@@ -13,9 +13,9 @@ public class Workout : Common.ValueObject<Workout>
     {
     }
 
-    public Workout(MyDayOfWeek dayOfWeek, List<SetGroup> set)
+    public Workout(MyDayOfWeek dayOfWeek, List<SetGroup> setGroups)
     {
-        SetGroups = set;
+        SetGroups = setGroups;
         DayOfWeek = dayOfWeek;
     }
 

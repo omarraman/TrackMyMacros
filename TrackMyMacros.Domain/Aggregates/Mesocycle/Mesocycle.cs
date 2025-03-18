@@ -78,29 +78,42 @@ public class Mesocycle : Entity
             throw new InvalidOperationException($"Week with WeekIndex {weekIndex} has no workouts.");
         }
 
-        var weekToDuplicateWorkoutsJson = JsonSerializer.Serialize(weekToDuplicate.Workouts);
+        
+        var workoutsForNewWeek = weekToDuplicate.Workouts.Select(workout => new Workout
+        (
+            workout.DayOfWeek,
+            workout.SetGroups.Select(setGroup => new SetGroup
+            {
+                Priority = setGroup.Priority,
+                ExerciseId = setGroup.ExerciseId,
+                Sets = setGroup.Sets.Select(set => new Set
+                {
+                    Weight = set.Weight,
+                    Reps = set.Reps,
+                    TargetReps = set.TargetReps,
+                    TargetWeight = set.TargetWeight,
+                }).ToList()
 
-        var newWeek = new Week(weekIndex, JsonSerializer.Deserialize<List<Workout>>(weekToDuplicateWorkoutsJson)!);
+            }).ToList())).ToList();
 
-        foreach (var workout in newWeek.Workouts)
+        foreach (var workout in workoutsForNewWeek)
         {
             foreach (var setGroup in workout.SetGroups)
             {
                 var exercise = exercises.SingleOrDefault(e => e.Id == setGroup.ExerciseId);
                 if (exercise == null)
                 {
-                    throw new InvalidOperationException(
-                        $"Exercise with Id {setGroup.ExerciseId} not found in the list of exercises.");
+                    throw new InvalidOperationException($"Exercise with Id {setGroup.ExerciseId} not found in the list of exercises.");
                 }
                 foreach (var set in setGroup.Sets)
                 {
-                    var targetReps = set.TargetReps + (exercise.BodyWeightExercise ? exercise.RepIncrease : 0);
-                    var targetWeight = set.TargetWeight + (exercise.BodyWeightExercise ? 0 : exercise.WeightIncrease);
-                    set.TargetReps = targetReps;
-                    set.TargetWeight = targetWeight;
+                    set.TargetWeight = set.TargetWeight + (exercise.BodyWeightExercise ? 0 : exercise.WeightIncrease);
+                    set.TargetReps = set.TargetReps + (exercise.BodyWeightExercise ? exercise.RepIncrease : 0);
                 }
             }
         }
+
+        var newWeek = new Week(weekIndex, workoutsForNewWeek);
 
         return newWeek;
     }

@@ -60,8 +60,8 @@ namespace TrackMyMacros.Persistance.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000000"),
                             Calories = 2400,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(5040),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(5070),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(8292),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(8311),
                             WeekdaysMealsPerDay = 5,
                             WeekendMealsPerDay = 5,
                             WeightInKg = 75.900000000000006
@@ -105,7 +105,7 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d74b49cb-bbd4-4555-bd4d-f0360185a3ff"),
+                            Id = new Guid("71a5c095-c291-45c5-ae00-6182c998166e"),
                             AllowedCarbohydrate = 100,
                             AllowedFat = 100,
                             AllowedProtein = 100,
@@ -153,112 +153,112 @@ namespace TrackMyMacros.Persistance.Migrations
                         new
                         {
                             Id = new Guid("2aa88079-b75d-417d-9eb2-6517fd2331c0"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2212),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2333),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6616),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6655),
                             Name = "Calves",
                             Size = 3.0
                         },
                         new
                         {
                             Id = new Guid("6610bfab-7248-4b7b-94cd-b9fd5e38290d"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2379),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2382),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6679),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6681),
                             Name = "Back",
                             Size = 4.0
                         },
                         new
                         {
                             Id = new Guid("e4232daf-15cc-40f3-ba6f-d29dc7e9ad2a"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2390),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2393),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6685),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6687),
                             Name = "Biceps",
                             Size = 1.0
                         },
                         new
                         {
                             Id = new Guid("6f639115-6ac7-48f9-8152-f08429bf7cd5"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2399),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2402),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6691),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6693),
                             Name = "Triceps",
                             Size = 3.0
                         },
                         new
                         {
                             Id = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2407),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2411),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6696),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6698),
                             Name = "Chest",
                             Size = 2.0
                         },
                         new
                         {
                             Id = new Guid("ec1f33a5-91e5-4de9-9b74-e0fe7255f883"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2418),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2422),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6704),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6705),
                             Name = "Abs",
                             Size = 2.0
                         },
                         new
                         {
                             Id = new Guid("5492de93-6f0b-443c-8f63-1eeb90b90c78"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2427),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2430),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6709),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6710),
                             Name = "Shoulders",
                             Size = 1.0
                         },
                         new
                         {
                             Id = new Guid("6dd13251-7a07-423d-920c-46fae6d2cdcc"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2435),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2438),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6715),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6717),
                             Name = "Hamstrings",
                             Size = 4.0
                         },
                         new
                         {
                             Id = new Guid("f87d2a54-ba1a-4dbc-a900-25531fdbfbeb"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2444),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2447),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6722),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6723),
                             Name = "Quads",
                             Size = 4.0
                         },
                         new
                         {
                             Id = new Guid("d0d8ea0f-c077-42be-b31f-14ed90353455"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2453),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2456),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6727),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6729),
                             Name = "Glutes",
                             Size = 3.0
                         },
                         new
                         {
                             Id = new Guid("ae834296-64ec-421a-ab40-d4a93dbbbe9f"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2463),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2466),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6733),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6735),
                             Name = "Neck",
                             Size = 1.0
                         },
                         new
                         {
                             Id = new Guid("18b68da4-f760-45cb-97c3-a216bf7f99b3"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2473),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2476),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6738),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6740),
                             Name = "Forearms",
                             Size = 1.0
                         },
                         new
                         {
                             Id = new Guid("d2be7249-479c-40e6-960e-ed906cd8c919"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2486),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2489),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6743),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6745),
                             Name = "Traps",
                             Size = 3.0
                         },
                         new
                         {
                             Id = new Guid("fb70b309-fd97-4d65-8705-e4b4c490b653"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2495),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 671, DateTimeKind.Utc).AddTicks(2498),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6748),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6750),
                             Name = "Lower Back",
                             Size = 3.0
                         });
@@ -313,8 +313,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("b0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5443),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5446),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1592),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1594),
                             Name = "Flyes",
                             RepIncrease = 0,
                             WeightIncrease = 0.5
@@ -324,8 +324,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5487),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5490),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1607),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1609),
                             Name = "Bench Press",
                             RepIncrease = 0,
                             WeightIncrease = 0.5
@@ -335,8 +335,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("c0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("f87d2a54-ba1a-4dbc-a900-25531fdbfbeb"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5515),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5518),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1618),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1619),
                             Name = "Squat",
                             RepIncrease = 0,
                             WeightIncrease = 1.25
@@ -346,8 +346,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("d0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("6dd13251-7a07-423d-920c-46fae6d2cdcc"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5531),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5534),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1627),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1628),
                             Name = "Deadlift",
                             RepIncrease = 0,
                             WeightIncrease = 1.25
@@ -357,8 +357,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("e0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5547),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5550),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1635),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1637),
                             Name = "Incline Dumbbell Press",
                             RepIncrease = 0,
                             WeightIncrease = 0.5
@@ -368,8 +368,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("f0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("6610bfab-7248-4b7b-94cd-b9fd5e38290d"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5572),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5576),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1645),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1647),
                             Name = "Pull Down",
                             RepIncrease = 0,
                             WeightIncrease = 1.25
@@ -379,8 +379,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4b8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("ec1f33a5-91e5-4de9-9b74-e0fe7255f883"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5593),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5596),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1656),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1658),
                             Name = "Cable Crunch",
                             RepIncrease = 0,
                             WeightIncrease = 0.25
@@ -390,8 +390,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4a8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("f87d2a54-ba1a-4dbc-a900-25531fdbfbeb"),
                             BodyWeightExercise = true,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5612),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5615),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1666),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1668),
                             Name = "Reverse Nordics",
                             RepIncrease = 1,
                             WeightIncrease = 0.0
@@ -401,8 +401,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4d8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("6610bfab-7248-4b7b-94cd-b9fd5e38290d"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5635),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5639),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1675),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1676),
                             Name = "DualCableRow",
                             RepIncrease = 0,
                             WeightIncrease = 1.0
@@ -412,8 +412,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4e8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5650),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5653),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1681),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1682),
                             Name = "RDL",
                             RepIncrease = 0,
                             WeightIncrease = 1.25
@@ -423,8 +423,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0b4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("2aa88079-b75d-417d-9eb2-6517fd2331c0"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5668),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5672),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1690),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1692),
                             Name = "Calves Four Second Eccentric",
                             RepIncrease = 0,
                             WeightIncrease = 1.0
@@ -434,8 +434,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0a4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("2aa88079-b75d-417d-9eb2-6517fd2331c0"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5684),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5687),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1698),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1699),
                             Name = "Calves Two Second Pause",
                             RepIncrease = 0,
                             WeightIncrease = 1.0
@@ -445,8 +445,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0c4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("e4232daf-15cc-40f3-ba6f-d29dc7e9ad2a"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5701),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5705),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1706),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1708),
                             Name = "Lying Dumbell Bicep Curl",
                             RepIncrease = 0,
                             WeightIncrease = 0.25
@@ -456,8 +456,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0e4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("6f639115-6ac7-48f9-8152-f08429bf7cd5"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5722),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5725),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1714),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1716),
                             Name = "Lying Overhead Triceps Extension",
                             RepIncrease = 0,
                             WeightIncrease = 0.25
@@ -467,8 +467,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0f4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("5492de93-6f0b-443c-8f63-1eeb90b90c78"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5742),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 676, DateTimeKind.Utc).AddTicks(5745),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1723),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1725),
                             Name = "Single Arm Cable Lateral Raise",
                             RepIncrease = 0,
                             WeightIncrease = 0.25
@@ -876,8 +876,8 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("034dfed7-e842-4560-8c08-f06881ed69b4"),
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 679, DateTimeKind.Utc).AddTicks(9121),
+                            Id = new Guid("37680512-b27f-4573-b890-610a9edf73b5"),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 857, DateTimeKind.Utc).AddTicks(1655),
                             Name = "Test Food Combo"
                         });
                 });
@@ -926,10 +926,10 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                            Id = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                             Complete = false,
                             CreatedBy = "System",
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 695, DateTimeKind.Utc).AddTicks(486),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 864, DateTimeKind.Utc).AddTicks(5980),
                             CurrentDayOfWeek = 1,
                             CurrentWeekIndex = 1,
                             Name = "Default Mesocycle",
@@ -1002,8 +1002,8 @@ namespace TrackMyMacros.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2025, 3, 17, 11, 25, 23, 701, DateTimeKind.Utc).AddTicks(9167),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 11, 25, 23, 701, DateTimeKind.Utc).AddTicks(9231),
+                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 866, DateTimeKind.Utc).AddTicks(9535),
+                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 866, DateTimeKind.Utc).AddTicks(9556),
                             Name = "Grams"
                         });
                 });
@@ -1085,7 +1085,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                     b2.HasData(
                                         new
                                         {
-                                            MealDayId = new Guid("d74b49cb-bbd4-4555-bd4d-f0360185a3ff"),
+                                            MealDayId = new Guid("71a5c095-c291-45c5-ae00-6182c998166e"),
                                             MealId = 1,
                                             Id = 1,
                                             Carbohydrate = 10.0,
@@ -1101,7 +1101,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    DayId = new Guid("d74b49cb-bbd4-4555-bd4d-f0360185a3ff"),
+                                    DayId = new Guid("71a5c095-c291-45c5-ae00-6182c998166e"),
                                     Id = 1,
                                     AllowedCarbohydrate = 10,
                                     AllowedFat = 10,
@@ -1164,7 +1164,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    FoodComboId = new Guid("034dfed7-e842-4560-8c08-f06881ed69b4"),
+                                    FoodComboId = new Guid("37680512-b27f-4573-b890-610a9edf73b5"),
                                     Id = 1,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,
@@ -1174,7 +1174,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                 },
                                 new
                                 {
-                                    FoodComboId = new Guid("034dfed7-e842-4560-8c08-f06881ed69b4"),
+                                    FoodComboId = new Guid("37680512-b27f-4573-b890-610a9edf73b5"),
                                     Id = 2,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,
@@ -1317,7 +1317,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                     b4.HasData(
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 1,
                                                             SetGroupId = 1,
@@ -1330,7 +1330,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 1,
                                                             SetGroupId = 2,
@@ -1343,7 +1343,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 1,
                                                             SetGroupId = 3,
@@ -1356,7 +1356,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 1,
                                                             SetGroupId = 4,
@@ -1369,7 +1369,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 1,
                                                             SetGroupId = 5,
@@ -1382,7 +1382,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 1,
                                                             SetGroupId = 6,
@@ -1395,7 +1395,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 1,
                                                             SetGroupId = 7,
@@ -1408,7 +1408,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 1,
                                                             SetGroupId = 8,
@@ -1421,7 +1421,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 1,
                                                             SetGroupId = 9,
@@ -1434,7 +1434,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 2,
                                                             SetGroupId = 10,
@@ -1447,7 +1447,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 2,
                                                             SetGroupId = 11,
@@ -1460,7 +1460,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 2,
                                                             SetGroupId = 12,
@@ -1473,7 +1473,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 2,
                                                             SetGroupId = 13,
@@ -1486,7 +1486,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 2,
                                                             SetGroupId = 14,
@@ -1499,7 +1499,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 2,
                                                             SetGroupId = 15,
@@ -1512,7 +1512,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 2,
                                                             SetGroupId = 16,
@@ -1525,7 +1525,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 2,
                                                             SetGroupId = 17,
@@ -1538,7 +1538,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 2,
                                                             SetGroupId = 18,
@@ -1551,7 +1551,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 3,
                                                             SetGroupId = 19,
@@ -1564,7 +1564,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 3,
                                                             SetGroupId = 20,
@@ -1577,7 +1577,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 3,
                                                             SetGroupId = 21,
@@ -1590,7 +1590,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 3,
                                                             SetGroupId = 22,
@@ -1603,7 +1603,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 3,
                                                             SetGroupId = 23,
@@ -1616,7 +1616,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 3,
                                                             SetGroupId = 24,
@@ -1629,7 +1629,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 3,
                                                             SetGroupId = 25,
@@ -1642,7 +1642,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 3,
                                                             SetGroupId = 26,
@@ -1655,7 +1655,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                         },
                                                         new
                                                         {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                             SetGroupWorkoutWeekId = 1,
                                                             SetGroupWorkoutId = 3,
                                                             SetGroupId = 27,
@@ -1675,7 +1675,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                             b3.HasData(
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 1,
                                                     Id = 1,
@@ -1684,7 +1684,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 1,
                                                     Id = 2,
@@ -1693,7 +1693,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 1,
                                                     Id = 3,
@@ -1702,7 +1702,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 1,
                                                     Id = 4,
@@ -1711,7 +1711,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 1,
                                                     Id = 5,
@@ -1720,7 +1720,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 1,
                                                     Id = 6,
@@ -1729,7 +1729,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 1,
                                                     Id = 7,
@@ -1738,7 +1738,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 1,
                                                     Id = 8,
@@ -1747,7 +1747,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 1,
                                                     Id = 9,
@@ -1756,7 +1756,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 2,
                                                     Id = 10,
@@ -1765,7 +1765,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 2,
                                                     Id = 11,
@@ -1774,7 +1774,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 2,
                                                     Id = 12,
@@ -1783,7 +1783,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 2,
                                                     Id = 13,
@@ -1792,7 +1792,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 2,
                                                     Id = 14,
@@ -1801,7 +1801,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 2,
                                                     Id = 15,
@@ -1810,7 +1810,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 2,
                                                     Id = 16,
@@ -1819,7 +1819,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 2,
                                                     Id = 17,
@@ -1828,7 +1828,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 2,
                                                     Id = 18,
@@ -1837,7 +1837,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 3,
                                                     Id = 19,
@@ -1846,7 +1846,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 3,
                                                     Id = 20,
@@ -1855,7 +1855,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 3,
                                                     Id = 21,
@@ -1864,7 +1864,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 3,
                                                     Id = 22,
@@ -1873,7 +1873,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 3,
                                                     Id = 23,
@@ -1882,7 +1882,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 3,
                                                     Id = 24,
@@ -1891,7 +1891,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 3,
                                                     Id = 25,
@@ -1900,7 +1900,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 3,
                                                     Id = 26,
@@ -1909,7 +1909,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                                 },
                                                 new
                                                 {
-                                                    WorkoutWeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                                     WorkoutWeekId = 1,
                                                     WorkoutId = 3,
                                                     Id = 27,
@@ -1923,21 +1923,21 @@ namespace TrackMyMacros.Persistance.Migrations
                                     b2.HasData(
                                         new
                                         {
-                                            WeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                            WeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                             WeekId = 1,
                                             Id = 1,
                                             DayOfWeek = 1
                                         },
                                         new
                                         {
-                                            WeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                            WeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                             WeekId = 1,
                                             Id = 2,
                                             DayOfWeek = 3
                                         },
                                         new
                                         {
-                                            WeekMesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                            WeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                             WeekId = 1,
                                             Id = 3,
                                             DayOfWeek = 5
@@ -1949,7 +1949,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    MesocycleId = new Guid("19fa9dc9-cc12-47dc-8e34-d5b765a77aa4"),
+                                    MesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
                                     Id = 1,
                                     WeekIndex = 1
                                 });

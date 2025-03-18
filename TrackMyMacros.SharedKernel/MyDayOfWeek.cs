@@ -1,8 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
 using TrackMyMacros.Attributes;
 
 namespace TrackMyMacros.SharedKernel;
 
+[JsonConverter(typeof(MyDayOfWeekConverter))]
 [Keyless]
 [PrimitiveWrapper(Type = "int")]
 public class MyDayOfWeek:ValueObject<MyDayOfWeek>
@@ -68,5 +71,19 @@ public class MyDayOfWeek:ValueObject<MyDayOfWeek>
     protected override int GetHashCodeCore()
     {
         throw new NotImplementedException();
+    }
+}
+
+public class MyDayOfWeekConverter : JsonConverter<MyDayOfWeek>
+{
+    public override MyDayOfWeek Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        int value = reader.GetInt32();
+        return MyDayOfWeek.ConvertFromInt(value);
+    }
+
+    public override void Write(Utf8JsonWriter writer, MyDayOfWeek value, JsonSerializerOptions options)
+    {
+        writer.WriteNumberValue(value.Value());
     }
 }

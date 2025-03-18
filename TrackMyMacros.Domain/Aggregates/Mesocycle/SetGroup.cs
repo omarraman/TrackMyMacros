@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using TrackMyMacros.Domain.Common;
 
 namespace TrackMyMacros.Domain.Aggregates.Mesocycle;
@@ -9,6 +10,7 @@ public class SetGroup : ValueObject<SetGroup>
     public int Priority { get; set; }
     public Guid ExerciseId { get; init; }
 
+    [JsonIgnore]
     public Exercise.Exercise Exercise { get; set; }
 
     protected override bool EqualsCore(SetGroup other)

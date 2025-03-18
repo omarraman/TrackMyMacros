@@ -3,9 +3,11 @@ using TrackMyMacros.Dtos.Mesocycle;
 using TrackMyMacros.Domain.Aggregates.Mesocycle;
 using TrackMyMacros.Application.Features.Mesocycle.Commands.Update;
 using TrackMyMacros.Application.Features.Set.Commands.Update;
+using TrackMyMacros.Application.Features.SetGroup.Commands.Update;
 using TrackMyMacros.Application.Features.Week.Commands.Update;
 using TrackMyMacros.Application.Features.Workout.Commands.Update;
 using TrackMyMacros.Dtos.Set;
+using TrackMyMacros.Dtos.SetGroup;
 using TrackMyMacros.Dtos.Week;
 using TrackMyMacros.Dtos.Workout;
 using TrackMyMacros.SharedKernel;
@@ -24,6 +26,8 @@ namespace TrackMyMacros.Application.Profiles.Mesocycle
             CreateMap<UpdateWorkoutDto, UpdateWorkoutCommand>().ForMember(m => m.DayOfWeek,
                 opt => opt.MapFrom(src =>
                     new MyDayOfWeek(src.DayOfWeek)));
+            CreateMap<UpdateSetGroupDto, UpdateSetGroupCommand>();
+            CreateMap<UpdateSetGroupCommand, Domain.Aggregates.Mesocycle.SetGroup>();
             CreateMap<UpdateSetDto, UpdateSetCommand>();
             CreateMap<UpdateMesocycleCommand, Domain.Aggregates.Mesocycle.Mesocycle>()
                 .ForMember(dest => dest.Weeks,
