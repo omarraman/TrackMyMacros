@@ -1,19 +1,25 @@
-﻿    @if(SetGroup == null)
+﻿@if (SetGroup == null)
 {
     <p>Loading...</p>
     return;
 }
 
-<strong>@SetGroup.ExerciseName</strong>
 
 <div class="container">
+
+    <div class="row py-1">
+        <div class="col text-center">
+            <RadzenLabel Text="@SetGroup.ExerciseName" />
+        </div>
+    </div>
     
     @foreach (var set in SetGroup.Sets)
     {
-        <SetComponent Set="@set" OnSetUpdated="Save"  />
+        <SetComponent Set="@set" OnSetUpdated="Save"/>
     }
+
     <div class="row py-1">
-        <div class="col">
+        <div class="col text-center">
             <RadzenButton Click="@AddSet" Icon="add" ButtonStyle="ButtonStyle.Primary"/>
         </div>
     </div>

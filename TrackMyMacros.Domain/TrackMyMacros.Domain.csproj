@@ -16,4 +16,8 @@
       <ProjectReference Include="..\TrackMyMacros.SharedKernel\TrackMyMacros.SharedKernel.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Aggregates\Mesocycle\Specifications\" />
+    </ItemGroup>
+
 </Project>

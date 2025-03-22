@@ -15,7 +15,7 @@
     }
 
 
-    <RadzenTree Style="height: 300px" Data=@_meso.Weeks Change="@OnChangeTreeNode" bind-Value="_treeNode">
+    <RadzenTree Data=@_meso.Weeks Change="@OnChangeTreeNode" bind-Value="_treeNode">
         <RadzenTreeLevel TextProperty="WeekName" ChildrenProperty="Workouts"/>
         <RadzenTreeLevel TextProperty="DayOfWeekName"  />
     </RadzenTree>

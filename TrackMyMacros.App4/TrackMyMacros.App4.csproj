@@ -86,6 +86,7 @@
     <ItemGroup>
       <Folder Include="ViewModelsRecipe\" />
       <Folder Include="ViewModelsWeightReading\" />
+      <Folder Include="ViewModels\Attributes\" />
       <Folder Include="ViewModels\MyDayOfWeek\" />
       <Folder Include="ViewModels\WeightReading\" />
     </ItemGroup>

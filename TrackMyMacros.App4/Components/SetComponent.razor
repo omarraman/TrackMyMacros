@@ -1,19 +1,20 @@
 ﻿<div class="container">
-    <div class="row py-1">
+    
+    <div class="row py-1 px-3">
+        @* <div class="col-3"> *@
+        @*     $1$ <RadzenLabel Text="@Set.TargetWeight.ToString()/@Set.TargetReps.ToString()"></RadzenLabel> #1# *@
+        @* </div> *@
         <div class="col-3">
-            <RadzenLabel Text="@Set.TargetWeight.ToString()"></RadzenLabel>
+            <RadzenLabel Text="@Set.Target"></RadzenLabel>
         </div>
-        <div class="col-2">
-            <RadzenLabel Text="@Set.TargetReps.ToString()"></RadzenLabel>
-        </div>
-        <div class="col-3">
+        <div class="col-4">
             <RadzenNumeric TValue="double" @bind-Value="Set.Weight">Weight</RadzenNumeric>
         </div>
-        <div class="col-3">
+        <div class="col-4">
             <RadzenNumeric TValue="int" @bind-Value="@Set.Reps">Reps</RadzenNumeric>
         </div>
         <div class="col-1">
             <RadzenButton Click="@OnSave" Icon="save" ButtonStyle="ButtonStyle.Primary"/>
-        </div>  
+        </div>
     </div>
 </div>

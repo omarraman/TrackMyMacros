@@ -15,4 +15,22 @@
       <ProjectReference Include="..\TrackMyMacros.Domain\TrackMyMacros.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="bin\Debug\net6.0\TrackMyMacros.Dtos.deps.json" />
+      <Content Include="bin\Debug\net6.0\TrackMyMacros.Dtos.dll" />
+      <Content Include="bin\Debug\net6.0\TrackMyMacros.Dtos.pdb" />
+      <Content Include="bin\Debug\net7.0\TrackMyMacros.Attributes.dll" />
+      <Content Include="bin\Debug\net7.0\TrackMyMacros.Attributes.pdb" />
+      <Content Include="bin\Debug\net7.0\TrackMyMacros.Domain.dll" />
+      <Content Include="bin\Debug\net7.0\TrackMyMacros.Domain.pdb" />
+      <Content Include="bin\Debug\net7.0\TrackMyMacros.Dtos.deps.json" />
+      <Content Include="bin\Debug\net7.0\TrackMyMacros.Dtos.dll" />
+      <Content Include="bin\Debug\net7.0\TrackMyMacros.Dtos.pdb" />
+      <Content Include="bin\Debug\net7.0\TrackMyMacros.SharedKernel.dll" />
+      <Content Include="bin\Debug\net7.0\TrackMyMacros.SharedKernel.pdb" />
+      <Content Include="bin\Release\net7.0\TrackMyMacros.Dtos.deps.json" />
+      <Content Include="bin\Release\net7.0\TrackMyMacros.Dtos.dll" />
+      <Content Include="bin\Release\net7.0\TrackMyMacros.Dtos.pdb" />
+    </ItemGroup>
+
 </Project>
