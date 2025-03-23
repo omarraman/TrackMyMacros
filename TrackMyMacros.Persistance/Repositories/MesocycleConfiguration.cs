@@ -30,6 +30,8 @@ public class MesocycleConfiguration : IEntityTypeConfiguration<Mesocycle>
         int wednesdayExerciseDayId = 2;
         int fridayExerciseDayId = 3;
 
+        var seedData = false;
+
 
         builder.OwnsMany(m => m.Weeks,
             Week =>
@@ -47,7 +49,7 @@ public class MesocycleConfiguration : IEntityTypeConfiguration<Mesocycle>
                             {
                                 setGroup.Property(m => m.Priority);
                                 setGroup.Property(m => m.ExerciseId);
-                                setGroup.Navigation(m => m.Exercise).AutoInclude();    
+                                setGroup.Navigation(m => m.Exercise).AutoInclude();
                                 setGroup.OwnsMany<Set>(m => m.Sets,
                                     set =>
                                     {
@@ -56,32 +58,36 @@ public class MesocycleConfiguration : IEntityTypeConfiguration<Mesocycle>
                                         set.Property(ex => ex.Reps);
                                         set.Property(ex => ex.TargetWeight);
 
-
-                                        set.HasData(SeedSets(mesoId, mondayExerciseDayId, wednesdayExerciseDayId,
-                                            fridayExerciseDayId));
+                                        if (seedData)
+                                            set.HasData(SeedSets(mesoId, mondayExerciseDayId, wednesdayExerciseDayId,
+                                                fridayExerciseDayId));
                                     });
-                                    
+
+                                if (seedData)
                                     setGroup.HasData(SeedSetGroups(mesoId, mondayExerciseDayId, wednesdayExerciseDayId,
                                         fridayExerciseDayId));
                             });
 
-                        workout.HasData(
-                            SeedWeekDays(mesoId, WeekId, mondayExerciseDayId, wednesdayExerciseDayId,
-                                fridayExerciseDayId));
+                        if (seedData)
+                            workout.HasData(
+                                SeedWeekDays(mesoId, WeekId, mondayExerciseDayId, wednesdayExerciseDayId,
+                                    fridayExerciseDayId));
                     });
 
-                Week.HasData(new { MesocycleId = mesoId, Id = 1, WeekIndex = 1 });
+                if (seedData)
+                    Week.HasData(new { MesocycleId = mesoId, Id = 1, WeekIndex = 1 });
             }
         );
 
         // Seed data
-        builder.HasData(new
-        {
-            Id = mesoId, Name = "Default Mesocycle", CurrentWeekIndex = 1, CurrentDayOfWeek = MyDayOfWeek.Monday(),
-            TotalWeeks = 5, Complete = false,
-            CreatedDate = DateTime.Now.ToUniversalTime(),
-            CreatedBy = "System", UpdatedDate = DateTime.Now.ToUniversalTime(), UpdatedBy = "System"
-        });
+        if (seedData)
+            builder.HasData(new
+            {
+                Id = mesoId, Name = "Default Mesocycle", CurrentWeekIndex = 1, CurrentDayOfWeek = MyDayOfWeek.Monday(),
+                TotalWeeks = 5, Complete = false,
+                CreatedDate = DateTime.Now.ToUniversalTime(),
+                CreatedBy = "System", UpdatedDate = DateTime.Now.ToUniversalTime(), UpdatedBy = "System"
+            });
 
 
         //
@@ -113,233 +119,233 @@ public class MesocycleConfiguration : IEntityTypeConfiguration<Mesocycle>
         };
     }
 
-private static int MondayInclineDumbbellPressSetGroupGuid = 1;
-private static int MondayPullDownSetGroupGuid = 2;
-private static int MondaySquatSetGroupGuid = 3;
-private static int MondayCalvesTwoSecondPauseSetGroupGuid = 4;
-private static int MondayLyingDumbellBicepCurlSetGroupGuid = 5;
-private static int MondayLyingOverheadTricepsExtensionSetGroupGuid = 6;
-private static int MondayReverseNordicsSetGroupGuid = 7;
-private static int MondaySingleArmCableLateralRaiseSetGroupGuid = 8;
-private static int MondayCableCrunchSetGroupGuid = 9;
-private static int WednesdayFlyesSetGroupGuid = 10;
-private static int WednesdayDualCableRowSetGroupGuid = 11;
-private static int WednesdayRDLSetGroupGuid = 12;
-private static int WednesdayCalvesFourSecondEccentricSetGroupGuid = 13;
-private static int WednesdayLyingDumbellBicepCurlSetGroupGuid = 14;
-private static int WednesdayLyingOverheadTricepsExtensionSetGroupGuid = 15;
-private static int WednesdayReverseNordicsSetGroupGuid = 16;
-private static int WednesdaySingleArmCableLateralRaiseSetGroupGuid = 17;
-private static int WednesdayCableCrunchSetGroupGuid = 18;
-private static int FridayFlyesSetGroupGuid = 19;
-private static int FridayPullDownSetGroupGuid = 20;
-private static int FridayRDLSetGroupGuid = 21;
-private static int FridayCalvesTwoSecondPauseSetGroupGuid = 22;
-private static int FridayLyingDumbellBicepCurlSetGroupGuid = 23;
-private static int FridayLyingOverheadTricepsExtensionSetGroupGuid = 24;
-private static int FridayReverseNordicsSetGroupGuid = 25;
-private static int FridaySingleArmCableLateralRaiseSetGroupGuid = 26;
-private static int FridayCableCrunchSetGroupGuid = 27;
+    private static int MondayInclineDumbbellPressSetGroupGuid = 1;
+    private static int MondayPullDownSetGroupGuid = 2;
+    private static int MondaySquatSetGroupGuid = 3;
+    private static int MondayCalvesTwoSecondPauseSetGroupGuid = 4;
+    private static int MondayLyingDumbellBicepCurlSetGroupGuid = 5;
+    private static int MondayLyingOverheadTricepsExtensionSetGroupGuid = 6;
+    private static int MondayReverseNordicsSetGroupGuid = 7;
+    private static int MondaySingleArmCableLateralRaiseSetGroupGuid = 8;
+    private static int MondayCableCrunchSetGroupGuid = 9;
+    private static int WednesdayFlyesSetGroupGuid = 10;
+    private static int WednesdayDualCableRowSetGroupGuid = 11;
+    private static int WednesdayRDLSetGroupGuid = 12;
+    private static int WednesdayCalvesFourSecondEccentricSetGroupGuid = 13;
+    private static int WednesdayLyingDumbellBicepCurlSetGroupGuid = 14;
+    private static int WednesdayLyingOverheadTricepsExtensionSetGroupGuid = 15;
+    private static int WednesdayReverseNordicsSetGroupGuid = 16;
+    private static int WednesdaySingleArmCableLateralRaiseSetGroupGuid = 17;
+    private static int WednesdayCableCrunchSetGroupGuid = 18;
+    private static int FridayFlyesSetGroupGuid = 19;
+    private static int FridayPullDownSetGroupGuid = 20;
+    private static int FridayRDLSetGroupGuid = 21;
+    private static int FridayCalvesTwoSecondPauseSetGroupGuid = 22;
+    private static int FridayLyingDumbellBicepCurlSetGroupGuid = 23;
+    private static int FridayLyingOverheadTricepsExtensionSetGroupGuid = 24;
+    private static int FridayReverseNordicsSetGroupGuid = 25;
+    private static int FridaySingleArmCableLateralRaiseSetGroupGuid = 26;
+    private static int FridayCableCrunchSetGroupGuid = 27;
 
 
-private static List<object> SeedSetGroups(Guid mesoId, int mondayExerciseDayId, int wednesdayExerciseDayId,
-    int fridayExerciseDayId)
-{
-    return new List<object>()
+    private static List<object> SeedSetGroups(Guid mesoId, int mondayExerciseDayId, int wednesdayExerciseDayId,
+        int fridayExerciseDayId)
     {
-        new
+        return new List<object>()
         {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = mondayExerciseDayId, Id = 1, Priority = 1,
-            SetGroupId = MondayInclineDumbbellPressSetGroupGuid,
-            ExerciseId = Exercise.InclineDumbbellPress().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = mondayExerciseDayId, Id = 2, Priority = 2,
-            SetGroupId = MondayPullDownSetGroupGuid,
-            ExerciseId = Exercise.PullDown().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = mondayExerciseDayId, Id = 3, Priority = 3,
-            SetGroupId = MondaySquatSetGroupGuid,
-            ExerciseId = Exercise.Squat().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = mondayExerciseDayId, Id = 4, Priority = 4,
-            SetGroupId = MondayCalvesTwoSecondPauseSetGroupGuid,
-            ExerciseId = Exercise.CalvesTwoSecondPause().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = mondayExerciseDayId, Id = 5, Priority = 5,
-            SetGroupId = MondayLyingDumbellBicepCurlSetGroupGuid,
-            ExerciseId = Exercise.LyingDumbellBicepCurl().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = mondayExerciseDayId, Id = 6, Priority = 6,
-            SetGroupId = MondayLyingOverheadTricepsExtensionSetGroupGuid,
-            ExerciseId = Exercise.LyingOverheadTricepsExtension().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = mondayExerciseDayId, Id = 7, Priority = 7,
-            SetGroupId = MondayReverseNordicsSetGroupGuid,
-            ExerciseId = Exercise.ReverseNordics().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = mondayExerciseDayId, Id = 8, Priority = 8,
-            SetGroupId = MondaySingleArmCableLateralRaiseSetGroupGuid,
-            ExerciseId = Exercise.SingleArmCableLateralRaise().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = mondayExerciseDayId, Id = 9, Priority = 9,
-            SetGroupId = MondayCableCrunchSetGroupGuid,
-            ExerciseId = Exercise.CableCrunch().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = wednesdayExerciseDayId, Id = 10, Priority = 1,
-            SetGroupId = WednesdayFlyesSetGroupGuid,
-            ExerciseId = Exercise.Flyes().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = wednesdayExerciseDayId, Id = 11, Priority = 2,
-            SetGroupId = WednesdayDualCableRowSetGroupGuid,
-            ExerciseId = Exercise.DualCableRow().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = wednesdayExerciseDayId, Id = 12, Priority = 3,
-            SetGroupId = WednesdayRDLSetGroupGuid,
-            ExerciseId = Exercise.RDL().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = wednesdayExerciseDayId, Id = 13, Priority = 4,
-            SetGroupId = WednesdayCalvesFourSecondEccentricSetGroupGuid,
-            ExerciseId = Exercise.CalvesFourSecondEccentric().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = wednesdayExerciseDayId, Id = 14, Priority = 5,
-            SetGroupId = WednesdayLyingDumbellBicepCurlSetGroupGuid,
-            ExerciseId = Exercise.LyingDumbellBicepCurl().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = wednesdayExerciseDayId, Id = 15, Priority = 6,
-            SetGroupId = WednesdayLyingOverheadTricepsExtensionSetGroupGuid,
-            ExerciseId = Exercise.LyingOverheadTricepsExtension().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = wednesdayExerciseDayId, Id = 16, Priority = 7,
-            SetGroupId = WednesdayReverseNordicsSetGroupGuid,
-            ExerciseId = Exercise.ReverseNordics().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = wednesdayExerciseDayId, Id = 17, Priority = 8,
-            SetGroupId = WednesdaySingleArmCableLateralRaiseSetGroupGuid,
-            ExerciseId = Exercise.SingleArmCableLateralRaise().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = wednesdayExerciseDayId, Id = 18, Priority = 9,
-            SetGroupId = WednesdayCableCrunchSetGroupGuid,
-            ExerciseId = Exercise.CableCrunch().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = fridayExerciseDayId, Id = 19, Priority = 1,
-            SetGroupId = FridayFlyesSetGroupGuid,
-            ExerciseId = Exercise.Flyes().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = fridayExerciseDayId, Id = 20, Priority = 2,
-            SetGroupId = FridayPullDownSetGroupGuid,
-            ExerciseId = Exercise.PullDown().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = fridayExerciseDayId, Id = 21, Priority = 3,
-            SetGroupId = FridayRDLSetGroupGuid,
-            ExerciseId = Exercise.RDL().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = fridayExerciseDayId, Id = 22, Priority = 4,
-            SetGroupId = FridayCalvesTwoSecondPauseSetGroupGuid,
-            ExerciseId = Exercise.CalvesTwoSecondPause().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = fridayExerciseDayId, Id = 23, Priority = 5,
-            SetGroupId = FridayLyingDumbellBicepCurlSetGroupGuid,
-            ExerciseId = Exercise.LyingDumbellBicepCurl().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = fridayExerciseDayId, Id = 24, Priority = 6,
-            SetGroupId = FridayLyingOverheadTricepsExtensionSetGroupGuid,
-            ExerciseId = Exercise.LyingOverheadTricepsExtension().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = fridayExerciseDayId, Id = 25, Priority = 7,
-            SetGroupId = FridayReverseNordicsSetGroupGuid,
-            ExerciseId = Exercise.ReverseNordics().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = fridayExerciseDayId, Id = 26, Priority = 8,
-            SetGroupId = FridaySingleArmCableLateralRaiseSetGroupGuid,
-            ExerciseId = Exercise.SingleArmCableLateralRaise().Id
-        },
-        new
-        {
-            WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
-            WorkoutId = fridayExerciseDayId, Id = 27, Priority = 9,
-            SetGroupId = FridayCableCrunchSetGroupGuid,
-            ExerciseId = Exercise.CableCrunch().Id
-        }
-    };
-}
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = mondayExerciseDayId, Id = 1, Priority = 1,
+                SetGroupId = MondayInclineDumbbellPressSetGroupGuid,
+                ExerciseId = Exercise.InclineDumbbellPress().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = mondayExerciseDayId, Id = 2, Priority = 2,
+                SetGroupId = MondayPullDownSetGroupGuid,
+                ExerciseId = Exercise.PullDown().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = mondayExerciseDayId, Id = 3, Priority = 3,
+                SetGroupId = MondaySquatSetGroupGuid,
+                ExerciseId = Exercise.Squat().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = mondayExerciseDayId, Id = 4, Priority = 4,
+                SetGroupId = MondayCalvesTwoSecondPauseSetGroupGuid,
+                ExerciseId = Exercise.CalvesTwoSecondPause().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = mondayExerciseDayId, Id = 5, Priority = 5,
+                SetGroupId = MondayLyingDumbellBicepCurlSetGroupGuid,
+                ExerciseId = Exercise.LyingDumbellBicepCurl().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = mondayExerciseDayId, Id = 6, Priority = 6,
+                SetGroupId = MondayLyingOverheadTricepsExtensionSetGroupGuid,
+                ExerciseId = Exercise.LyingOverheadTricepsExtension().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = mondayExerciseDayId, Id = 7, Priority = 7,
+                SetGroupId = MondayReverseNordicsSetGroupGuid,
+                ExerciseId = Exercise.ReverseNordics().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = mondayExerciseDayId, Id = 8, Priority = 8,
+                SetGroupId = MondaySingleArmCableLateralRaiseSetGroupGuid,
+                ExerciseId = Exercise.SingleArmCableLateralRaise().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = mondayExerciseDayId, Id = 9, Priority = 9,
+                SetGroupId = MondayCableCrunchSetGroupGuid,
+                ExerciseId = Exercise.CableCrunch().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = wednesdayExerciseDayId, Id = 10, Priority = 1,
+                SetGroupId = WednesdayFlyesSetGroupGuid,
+                ExerciseId = Exercise.Flyes().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = wednesdayExerciseDayId, Id = 11, Priority = 2,
+                SetGroupId = WednesdayDualCableRowSetGroupGuid,
+                ExerciseId = Exercise.DualCableRow().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = wednesdayExerciseDayId, Id = 12, Priority = 3,
+                SetGroupId = WednesdayRDLSetGroupGuid,
+                ExerciseId = Exercise.RDL().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = wednesdayExerciseDayId, Id = 13, Priority = 4,
+                SetGroupId = WednesdayCalvesFourSecondEccentricSetGroupGuid,
+                ExerciseId = Exercise.CalvesFourSecondEccentric().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = wednesdayExerciseDayId, Id = 14, Priority = 5,
+                SetGroupId = WednesdayLyingDumbellBicepCurlSetGroupGuid,
+                ExerciseId = Exercise.LyingDumbellBicepCurl().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = wednesdayExerciseDayId, Id = 15, Priority = 6,
+                SetGroupId = WednesdayLyingOverheadTricepsExtensionSetGroupGuid,
+                ExerciseId = Exercise.LyingOverheadTricepsExtension().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = wednesdayExerciseDayId, Id = 16, Priority = 7,
+                SetGroupId = WednesdayReverseNordicsSetGroupGuid,
+                ExerciseId = Exercise.ReverseNordics().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = wednesdayExerciseDayId, Id = 17, Priority = 8,
+                SetGroupId = WednesdaySingleArmCableLateralRaiseSetGroupGuid,
+                ExerciseId = Exercise.SingleArmCableLateralRaise().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = wednesdayExerciseDayId, Id = 18, Priority = 9,
+                SetGroupId = WednesdayCableCrunchSetGroupGuid,
+                ExerciseId = Exercise.CableCrunch().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = fridayExerciseDayId, Id = 19, Priority = 1,
+                SetGroupId = FridayFlyesSetGroupGuid,
+                ExerciseId = Exercise.Flyes().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = fridayExerciseDayId, Id = 20, Priority = 2,
+                SetGroupId = FridayPullDownSetGroupGuid,
+                ExerciseId = Exercise.PullDown().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = fridayExerciseDayId, Id = 21, Priority = 3,
+                SetGroupId = FridayRDLSetGroupGuid,
+                ExerciseId = Exercise.RDL().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = fridayExerciseDayId, Id = 22, Priority = 4,
+                SetGroupId = FridayCalvesTwoSecondPauseSetGroupGuid,
+                ExerciseId = Exercise.CalvesTwoSecondPause().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = fridayExerciseDayId, Id = 23, Priority = 5,
+                SetGroupId = FridayLyingDumbellBicepCurlSetGroupGuid,
+                ExerciseId = Exercise.LyingDumbellBicepCurl().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = fridayExerciseDayId, Id = 24, Priority = 6,
+                SetGroupId = FridayLyingOverheadTricepsExtensionSetGroupGuid,
+                ExerciseId = Exercise.LyingOverheadTricepsExtension().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = fridayExerciseDayId, Id = 25, Priority = 7,
+                SetGroupId = FridayReverseNordicsSetGroupGuid,
+                ExerciseId = Exercise.ReverseNordics().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = fridayExerciseDayId, Id = 26, Priority = 8,
+                SetGroupId = FridaySingleArmCableLateralRaiseSetGroupGuid,
+                ExerciseId = Exercise.SingleArmCableLateralRaise().Id
+            },
+            new
+            {
+                WorkoutWeekMesocycleId = mesoId, WorkoutWeekId = 1,
+                WorkoutId = fridayExerciseDayId, Id = 27, Priority = 9,
+                SetGroupId = FridayCableCrunchSetGroupGuid,
+                ExerciseId = Exercise.CableCrunch().Id
+            }
+        };
+    }
 
-private static List<object> SeedSets(Guid mesoId, int mondayExerciseDayId, int wednesdayExerciseDayId,
+    private static List<object> SeedSets(Guid mesoId, int mondayExerciseDayId, int wednesdayExerciseDayId,
         int fridayExerciseDayId)
     {
         return new List<object>()

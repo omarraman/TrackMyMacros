@@ -3,7 +3,7 @@
 
 @if(WorkoutInFocus.HasValue)
 {
-    <h3>Workout @WorkoutInFocus.Value.DayOfWeekName</h3>
+    <h3>@WorkoutInFocus.Value.DayOfWeekName</h3>
 
     if (_meso.CurrentWeekIndex== _meso.TotalWeeks)
     {

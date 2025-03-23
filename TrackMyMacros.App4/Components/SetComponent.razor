@@ -1,10 +1,10 @@
 ﻿<div class="container">
-    
-    <div class="row py-1 px-3">
-        @* <div class="col-3"> *@
-        @*     $1$ <RadzenLabel Text="@Set.TargetWeight.ToString()/@Set.TargetReps.ToString()"></RadzenLabel> #1# *@
-        @* </div> *@
-        <div class="col-3">
+
+    <div class="row py-1 px-3" T style="background-color:@(IsChecked ? "grey" : "transparent")">
+        <div class="col-1">
+            <input type="checkbox" @bind="IsChecked"/>
+        </div>
+        <div class="col-2 small-font">
             <RadzenLabel Text="@Set.Target"></RadzenLabel>
         </div>
         <div class="col-4">

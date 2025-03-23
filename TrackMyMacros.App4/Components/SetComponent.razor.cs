@@ -10,11 +10,17 @@ namespace TrackMyMacros.App4.Components
         [Parameter] public EventCallback OnSetUpdated { get; set; }
         [Parameter] public GetSetViewModel Set { get; set; }
 
+        public bool IsChecked { get; set; }
+
         public async Task OnSave(MouseEventArgs obj)
         {
             await OnSetUpdated.InvokeAsync();
         }
-        
 
+
+        private string GetRowStyle()
+        {
+            return IsChecked ? "color: gray;" : string.Empty;
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace TrackMyMacros.App4.ViewModels.Set
         public double TargetWeight { get; set; }
         public int Number { get; set; }
 
-        public string Target => $"{TargetReps} x {TargetWeight}kg";
+        public string Target => $"{TargetWeight} x {TargetReps}";
         
         public GetSetViewModel Clone()
         {
