@@ -135,7 +135,7 @@ public class MappingProfileGenerator : Generator
         _valueObjects = valueObjects;
         _mappingProfileType = mappingProfileType;
         BaseDirectory =
-            "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Profiles\\";
+            $"{Constants.RootDirectory}RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Profiles\\";
         OutputDirectory = $"{BaseEntityClassName}\\";
         // (string propertyIdentifier, string Text) childProperties = GetChildValueObjectName(classDeclarationSyntax, valueObjects);
         var childValueObject = GetChildValueObject(classDeclarationSyntax, valueObjects);

@@ -50,7 +50,7 @@ public class ViewModelMappingProfileGenerator : Generator
     {
         _viewModelMappingProfileType = viewModelMappingProfileType;
         BaseDirectory =
-            "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.App4\\Profiles\\";
+            $"{Constants.RootDirectory}RiderProjects\\TrackMyMacros\\TrackMyMacros.App4\\Profiles\\";
         OutputDirectory = $"{BaseEntityClassName}\\";
         
         //note if we want to map any navigation properties to valueobjects see the example in RecordTypeGenerator.cs

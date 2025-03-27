@@ -41,8 +41,10 @@ if (userInputs == null)
 }
 
 
+
 // var path = Path.GetDirectoryName(typeof (Program).Assembly.Location);
-var sln = Path.Combine("C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.sln");
+var sln = Path.Combine(Constants.RootDirectory,"RiderProjects\\TrackMyMacros\\TrackMyMacros.sln");
+//var sln = Path.Combine($"{Constants.RootDirectory}RiderProjects\\TrackMyMacros\\TrackMyMacros.sln");
 
 var workspace = MSBuildWorkspace.Create();
 var solution = await workspace.OpenSolutionAsync(sln);

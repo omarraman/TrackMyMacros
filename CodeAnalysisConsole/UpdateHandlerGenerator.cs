@@ -8,7 +8,7 @@ public class UpdateHandlerGenerator : HandlerClassGenerator
     public UpdateHandlerGenerator(ClassDeclarationSyntax classDeclarationSyntax) : base(classDeclarationSyntax, HandlerType.Update)
     {
         BaseDirectory =
-            "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
+            $"{Constants.RootDirectory}RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
         OutputDirectory = $"{BaseEntityClassName}\\Commands\\Update\\";
         HandlerMethodString.Append(
             $@"public class Test{{

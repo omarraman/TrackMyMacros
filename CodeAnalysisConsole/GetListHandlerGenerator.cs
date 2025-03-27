@@ -12,7 +12,7 @@ public class GetListHandlerGenerator : HandlerClassGenerator
     public GetListHandlerGenerator(ClassDeclarationSyntax classDeclarationSyntax) : base(classDeclarationSyntax, 
          HandlerType.GetList)
     {
-        BaseDirectory= "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
+        BaseDirectory= $"{Constants.RootDirectory}RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
         OutputDirectory= $"{BaseEntityClassName}\\queries\\GetList\\";
         HandlerMethodString.Append("public class Test{    " +
                   $"public async Task<IReadOnlyList<{DtoIdentifier.Get(BaseEntityClassName)}>> Handle({CommandOrQueryIdentifier.GetList(BaseEntityClassName)} request, CancellationToken cancellationToken)" +

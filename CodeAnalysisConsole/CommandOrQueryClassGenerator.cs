@@ -132,7 +132,7 @@ public class CommandOrQueryGenerator : RecordTypeClassGenerator
         _commandOrQueryType = commandOrQueryType;
         
         BaseDirectory =
-            "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
+            $"{Constants.RootDirectory}RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
         var subDir = _commandOrQueryType.ToString().StartsWith("Get")?"Queries":"Commands";
         OutputDirectory = $"{BaseEntityClassName}\\{subDir}\\{_commandOrQueryType.ToString()}\\";
 

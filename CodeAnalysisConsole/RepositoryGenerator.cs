@@ -66,7 +66,7 @@ public class RepositoryGenerator : Generator
             classDeclarationSyntax)
     {
 
-        BaseDirectory="C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Persistance\\Repositories";
+        BaseDirectory=$"{Constants.RootDirectory}RiderProjects\\TrackMyMacros\\TrackMyMacros.Persistance\\Repositories";
         OutputDirectory = "";
         GetRepositoryMethodsString = new StringBuilder();
           GetRepositoryMethodsString.Append($@"

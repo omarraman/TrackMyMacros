@@ -21,7 +21,7 @@ public abstract class RazorPageGenerator:Generator
         : base(
             classDeclarationSyntax)
     {
-        BaseDirectory = "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.App4\\";
+        BaseDirectory = $"{Constants.RootDirectory}RiderProjects\\TrackMyMacros\\TrackMyMacros.App4\\";
         OutputDirectory = "Pages";
         IsComponent = isComponent;
         if (isComponent) OutputDirectory = "Components";

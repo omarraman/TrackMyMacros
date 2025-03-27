@@ -68,7 +68,7 @@ public class DataServiceGenerator : Generator
             classDeclarationSyntax)
     {
 
-        BaseDirectory="C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.App4\\Services\\";
+        BaseDirectory=$"{Constants.RootDirectory}RiderProjects\\TrackMyMacros\\TrackMyMacros.App4\\Services\\";
         OutputDirectory = "";
         ClassDefinitionString = new StringBuilder();
         ClassDefinitionString.Append($@"

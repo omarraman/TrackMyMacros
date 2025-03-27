@@ -11,7 +11,7 @@ public class GetHandlerGenerator : HandlerClassGenerator
 {
     public GetHandlerGenerator(ClassDeclarationSyntax classDeclarationSyntax) : base(classDeclarationSyntax,HandlerType.Get)
     {
-        BaseDirectory= "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
+        BaseDirectory= $"{Constants.RootDirectory}RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
         OutputDirectory= $"{BaseEntityClassName}\\queries\\Get\\";
         
         HandlerMethodString.Append("public class Test{    " +

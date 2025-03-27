@@ -64,7 +64,7 @@ public class DtoClassGenerator : RecordTypeClassGenerator
         : base(classDeclarationSyntax,valueObjects)
     {
         // _classDeclarationSyntax = classDeclarationSyntax;
-        BaseDirectory= "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Dtos\\";
+        BaseDirectory= $"{Constants.RootDirectory}RiderProjects\\TrackMyMacros\\TrackMyMacros.Dtos\\";
         OutputDirectory= BaseEntityClassName;
 
         _dtoType = dtoType;

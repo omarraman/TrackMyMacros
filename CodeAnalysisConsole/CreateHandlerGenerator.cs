@@ -9,7 +9,7 @@ public class CreateHandlerGenerator : HandlerClassGenerator
         base(classDeclarationSyntax, HandlerType.Create)
     {
         BaseDirectory =
-            "C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
+            $"{Constants.RootDirectory}RiderProjects\\TrackMyMacros\\TrackMyMacros.Application\\Features\\";
         OutputDirectory = $"{BaseEntityClassName}\\commands\\Create\\";
 
 

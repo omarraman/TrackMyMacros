@@ -91,7 +91,7 @@ public class ControllerGenerator : Generator
             classDeclarationSyntax)
     {
 
-        BaseDirectory="C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\TrackMyMacros.Api\\Controllers\\";
+        BaseDirectory=$"{Constants.RootDirectory}RiderProjects\\TrackMyMacros\\TrackMyMacros.Api\\Controllers\\";
         OutputDirectory = "";
         GetActionMethodString = new StringBuilder();
          GetActionMethodString.Append($@"

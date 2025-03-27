@@ -198,7 +198,7 @@ public abstract class Generator
         compilationUnit = compilationUnit.AddMembers(ns);
 
         await using var streamWriter = new StreamWriter(
-            @$"C:\Users\OmarRaman\RiderProjects\TrackMyMacros\CodeAnalysisConsole\generated{s}.cs",
+            @$"C:\Users\omarr\RiderProjects\TrackMyMacros\CodeAnalysisConsole\generated{s}.cs",
             false);
         compilationUnit.NormalizeWhitespace().WriteTo(streamWriter);
     }
@@ -210,7 +210,7 @@ public abstract class Generator
             .AddUsings(usings);
 
         var namespaceString = $"{BaseDirectory}{OutputDirectory}"
-            .Replace("C:\\Users\\OmarRaman\\RiderProjects\\TrackMyMacros\\", "").Replace("\\", ".");
+            .Replace($"{Constants.RootDirectory}\\RiderProjects\\TrackMyMacros\\", "").Replace("\\", ".");
         var namespaceParts = namespaceString.Split(".");
         //remove the last array element
         //if the last element is empty
