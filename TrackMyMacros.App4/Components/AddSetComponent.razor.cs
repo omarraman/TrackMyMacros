@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using TrackMyMacros.App4.ViewModels.Exercise;
 
 namespace TrackMyMacros.App4.Components;
 

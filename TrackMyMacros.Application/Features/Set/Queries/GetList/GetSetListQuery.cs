@@ -17,6 +17,6 @@ namespace TrackMyMacros.Application.Features.Set.Queries.GetList
         public int TargetReps { get; init; }
         public double TargetWeight { get; init; }
         public Guid ExerciseId { get; init; }
-        public Exercise Exercise { get; set; }
+        public Domain.Aggregates.Exercise.Exercise Exercise { get; set; }
     }
 }

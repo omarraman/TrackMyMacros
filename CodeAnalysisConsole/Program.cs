@@ -220,7 +220,10 @@ async Task GenerateDtoClasses(ClassDeclarationSyntax classDeclarationSyntax)
     if (userInputs.ShouldGenerateDtos == false)
         return;
 
-    if (userInputs.ShouldGenerateGet)
+    if (userInputs.ShouldGenerateGet|| userInputs.ShouldGenerateGetList)
+    {
+        await DtoClassGenerator.GetDtoClassGenerator(classDeclarationSyntax,valueObjects).GenerateAndWriteClass2();
+    }
     {
         await DtoClassGenerator.GetDtoClassGenerator(classDeclarationSyntax,valueObjects).GenerateAndWriteClass2();
     }

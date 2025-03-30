@@ -8,6 +8,6 @@ namespace TrackMyMacros.Dtos.SetGroup
         public List<GetSetDto> Sets { get; init; }
         public int Priority { get; set; }
         public Guid ExerciseId { get; init; }
-        public Exercise Exercise { get; set; }
+        public Domain.Aggregates.Exercise.Exercise Exercise { get; set; }
     }
 }
