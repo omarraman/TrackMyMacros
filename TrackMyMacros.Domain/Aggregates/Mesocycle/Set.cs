@@ -12,7 +12,7 @@ public class Set : ValueObject<Set>
     // }
 
     public int Reps { get; init; }
-    public double Weight { get; init; }
+    public double Weight { get; set; }
     public int TargetReps { get; set; }
     public double TargetWeight { get; set; }
     
