@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using CodeAnalysisConsole;
 using CodeGen;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;

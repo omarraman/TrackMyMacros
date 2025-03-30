@@ -13,6 +13,19 @@ namespace TrackMyMacros.App4.ViewModels.Mesocycle
          public MyDayOfWeek CurrentDayOfWeek { get; set; }
          public int  TotalWeeks { get; set; }
          public bool Complete { get; set; }
+
+         public string Title
+         {
+             get
+             {
+                 if (CurrentWeekIndex== TotalWeeks)
+                 {
+                     return $"{CurrentWeekIndex}/{TotalWeeks}(Final)";
+                 }
+                 return $"{CurrentWeekIndex}/{TotalWeeks}";
+             }
+         }
+         
         public GetWorkoutViewModel GetCurrentWorkout()
         {
             return Weeks.Single(week => week.WeekIndex == CurrentWeekIndex).Workouts

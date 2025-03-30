@@ -18,7 +18,16 @@ public class Set : ValueObject<Set>
     
     public int Number { get; set; }
 
-
+    public Set Update(double targetWeight,int targetReps, double newWeight, int newReps)
+    {
+        return new Set
+        {
+            Weight = newWeight,
+            Reps = newReps,
+            TargetReps = targetReps,
+            TargetWeight = targetWeight
+        };
+    }
     protected override bool EqualsCore(Set other)
     {
         return Math.Abs(TargetWeight - other.TargetWeight) < 0.1 && Reps == other.Reps && TargetReps == other.TargetReps 

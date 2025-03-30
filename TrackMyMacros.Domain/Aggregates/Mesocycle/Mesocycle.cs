@@ -107,10 +107,9 @@ public class Mesocycle : Entity
                 }
                 foreach (var set in setGroup.Sets)
                 {
-                        set.TargetWeight = set.Weight + (exercise.BodyWeightExercise ? 0 : exercise.WeightIncrease);
-                    set.TargetReps = set.Reps + (exercise.BodyWeightExercise ? exercise.RepIncrease : 0);
-                    set.Weight = set.TargetWeight;
-                    set.TargetReps = set.Reps;
+                    var targetWeight = set.Weight + (exercise.BodyWeightExercise ? 0 : exercise.WeightIncrease);
+                    var targetReps = set.Reps + (exercise.BodyWeightExercise ? exercise.RepIncrease : 0);
+                    set.Update(targetWeight,targetReps, targetWeight,targetReps);
                 }
             }
         }
