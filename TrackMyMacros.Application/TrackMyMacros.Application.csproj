@@ -62,6 +62,7 @@
 
     <ItemGroup>
       <Folder Include="Aggregates" />
+      <Folder Include="Features\Exercise\Queries\GetList\" />
       <Folder Include="Features\FoodCombo\Commands\GetList\" />
       <Folder Include="Features\FoodCombo\Commands\Get\" />
       <Folder Include="Features\FoodCombo\Queries\GetList\" />
