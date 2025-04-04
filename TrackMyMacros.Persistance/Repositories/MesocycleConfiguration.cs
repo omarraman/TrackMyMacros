@@ -38,7 +38,7 @@ public class MesocycleConfiguration : IEntityTypeConfiguration<Mesocycle>
             {
                 Week.WithOwner().HasForeignKey("MesocycleId");
                 Week.Property(m => m.WeekIndex);
-                Week.OwnsMany<Workout>(n => n.Workouts,
+                Week.OwnsMany<Domain.Aggregates.Mesocycle.Workout>(n => n.Workouts,
                     workout =>
                     {
                         workout.Property(m => m.DayOfWeek)

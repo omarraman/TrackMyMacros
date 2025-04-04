@@ -8,7 +8,7 @@ namespace TrackMyMacros.App4.ViewModels.SetGroup
         public List<GetSetViewModel> Sets { get; init; }
         public int Priority { get; set; }
         public Guid ExerciseId { get; init; }
-        public Exercise Exercise { get; set; }
+        public Domain.Aggregates.Exercise.Exercise Exercise { get; set; }
         
         public string ExerciseName => Exercise.Name;
         
