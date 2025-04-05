@@ -210,8 +210,11 @@ public abstract class Generator
         var compilationUnit = SyntaxFactory.CompilationUnit()
             .AddUsings(usings);
 
-        var namespaceString = $"{BaseDirectory}{OutputDirectory}"
-            .Replace($"{Constants.RootDirectory}\\RiderProjects\\TrackMyMacros\\", "").Replace("\\", ".");
+        var namespaceString = $"{BaseDirectory}{OutputDirectory}";
+        var replaceString = $"{Constants.RootDirectory}RiderProjects\\TrackMyMacros\\";
+        namespaceString = namespaceString.Replace(replaceString,"");
+        namespaceString = namespaceString.Replace("\\", ".");
+        
         var namespaceParts = namespaceString.Split(".");
         //remove the last array element
         //if the last element is empty
@@ -239,9 +242,8 @@ public abstract class Generator
         }
 
         await using var streamWriter = new StreamWriter(
-                @$"{BaseDirectory}\{OutputDirectory}\{s}{GetExtensionString}.cs",
- 
-        false);
+            @$"{BaseDirectory}\{OutputDirectory}\{s}{GetExtensionString}.cs",
+            false);
         compilationUnit.NormalizeWhitespace().WriteTo(streamWriter);
     }
 
