@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using TrackMyMacros.Attributes;
+﻿using TrackMyMacros.Attributes;
 using TrackMyMacros.Domain.Common;
 
 namespace TrackMyMacros.Domain.Aggregates.Exercise;

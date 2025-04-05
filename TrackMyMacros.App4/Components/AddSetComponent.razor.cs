@@ -8,6 +8,9 @@ public partial class AddSetComponent
 {
     
     [Parameter] public List<GetExerciseViewModel> Exercises { get; set; } = new();
+
+    
+    
     ///**/public CreateSetV Type { get; set; }
     
 }
