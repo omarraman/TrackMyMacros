@@ -33,6 +33,16 @@ public class MyDayOfWeek:ValueObject<MyDayOfWeek>
     public static MyDayOfWeek Sunday() => new(7);
     
     public int Value() => _dayOfWeek;
+
+    public int Value2 {
+        get {return _dayOfWeek; }
+         }
+
+
+    public string StringEquiv
+    {
+        get { return StringEquivalent(); }
+    }
     
     public string StringEquivalent()
     {

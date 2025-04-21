@@ -9,8 +9,19 @@ namespace TrackMyMacros.App4.ViewModels.Set
         //     TargetWeight = targetWeight;
         //     ExerciseId = exerciseId;
         // }
-        public int Reps { get; init; }
-        public double Weight { get; set; }
+        public int Reps {
+            get
+            {
+                return TargetReps;
+            }
+        }
+        public double Weight {
+            get
+            {
+                return TargetWeight;
+                
+            }
+        } 
         public int TargetReps { get; set; }
         public double TargetWeight { get; set; }
         public int Number { get; set; }

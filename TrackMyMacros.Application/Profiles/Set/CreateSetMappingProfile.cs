@@ -1,5 +1,7 @@
 using AutoMapper;
-
+using TrackMyMacros.Dtos.Set;
+using TrackMyMacros.Domain.Aggregates.Mesocycle;
+using TrackMyMacros.Application.Features.Set.Commands.Create;
 
 namespace TrackMyMacros.Application.Profiles.Set
 {
@@ -7,8 +9,8 @@ namespace TrackMyMacros.Application.Profiles.Set
     {
         public CreateSetMappingProfile()
         {
-            // CreateMap<CreateSetDto, CreateSetCommand>();
-            // CreateMap<CreateSetCommand, Domain.Aggregates.Set.Set>();
+            CreateMap<CreateSetDto, CreateSetCommand>();
+            CreateMap<CreateSetCommand, Domain.Aggregates.Mesocycle.Set>();
         }
     }
 }

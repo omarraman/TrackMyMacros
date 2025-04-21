@@ -5,9 +5,9 @@ namespace TrackMyMacros.App4.ViewModels.SetGroup
 {
     public class CreateSetGroupViewModel
     {
-        public List<CreateSetViewModel> Sets { get; init; }
+        public List<CreateSetViewModel> Sets { get; set; }
         public int Priority { get; set; }
-        public Guid ExerciseId { get; init; }
+        public Guid ExerciseId { get; set; }
 
         [JsonIgnore]
         public Domain.Aggregates.Exercise.Exercise Exercise { get; set; }

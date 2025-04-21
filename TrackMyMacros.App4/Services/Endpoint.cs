@@ -13,5 +13,6 @@ public class Endpoint
     {
         _endpoint = endpoint;
     }
-    public static Endpoint Mesocycle = new("Mesocycle");
+    public static readonly Endpoint Mesocycle = new("Mesocycle");
+    public static readonly Endpoint Exercise = new("Exercise");
 }

@@ -55,6 +55,8 @@ namespace TrackMyMacros.Api.Controllers
             var result = await _mediator.Send(_mapper.Map<CreateMesocycleCommand>(createMesocycleDto));
             if (result is ValidationErrorResult<Guid>)
                 return BadRequest(((ErrorResult<Guid>)result).GetErrorString());
+            if (result is ErrorResult<Guid>)
+                return BadRequest(((ErrorResult<Guid>)result).GetErrorString());
             return Ok();
         }
 

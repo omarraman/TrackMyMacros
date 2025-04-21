@@ -1,5 +1,8 @@
 using AutoMapper;
-
+using TrackMyMacros.Dtos.Week;
+using TrackMyMacros.Domain.Aggregates.Mesocycle;
+using TrackMyMacros.Application.Features.Week.Commands.Create;
+using Week;
 
 namespace TrackMyMacros.Application.Profiles.Week
 {
@@ -7,8 +10,8 @@ namespace TrackMyMacros.Application.Profiles.Week
     {
         public CreateWeekMappingProfile()
         {
-            // CreateMap<CreateWeekDto, CreateWeekCommand>();
-            // CreateMap<CreateWeekCommand, Domain.Aggregates.Week.Week>();
+            CreateMap<CreateWeekDto, CreateWeekCommand>();
+            CreateMap<CreateWeekCommand, Domain.Aggregates.Mesocycle.Week>();
         }
     }
 }

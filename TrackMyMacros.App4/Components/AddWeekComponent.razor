@@ -1,0 +1,6 @@
+﻿@foreach( var workout in Week.Workouts)
+{
+    <AddWorkoutComponent Workout="workout" Exercises="@Exercises" />
+
+}
+<RadzenButton Text="Add Workout" Click="OnAddWorkout" Style="margin-top: 10px;" />

@@ -1,4 +1,5 @@
 ﻿using Blazored.LocalStorage;
+using Flurl.Http;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Radzen;
@@ -31,6 +32,9 @@ builder.Services.AddSingleton<IFoodDataRepository, FoodDataRepository>();
 
 builder.Services.AddScoped<DialogService>();
 
-
+FlurlHttp.Configure(settings =>
+{
+    settings.HttpClientFactory = new HttpClientFactoryForBlazor();
+});
 
 await builder.Build().RunAsync();

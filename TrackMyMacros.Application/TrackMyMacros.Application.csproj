@@ -52,6 +52,8 @@
       <Compile Remove="Features\MesoCycle\Commands\Create\CreateMesoCycleCommandHandler.cs" />
       <Compile Remove="Features\MesocycleWeekDay\Queries\Get\GetMesocycleWeekDayQuery.cs" />
       <Compile Remove="Features\ExerciseDaySet\Queries\Get\GetExerciseDaySetQuery.cs" />
+      <Compile Include="Features\MesoCycle\Commands\Create\CreateMesocycleCommandHandler.cs" />
+      <Compile Include="Features\MesoCycle\Commands\Create\CreateMesocycleCommandValidator.cs" />
       <Compile Include="Features\MesoCycle\Commands\Update\UpdateMesocycleCommandHandler.cs" />
       <Compile Include="Features\MesoCycle\Commands\Update\UpdateMesocycleCommandValidator.cs" />
       <Compile Include="Features\MesoCycle\Queries\GetList\GetMesocycleListQuery.cs" />
@@ -67,7 +69,6 @@
       <Folder Include="Features\FoodCombo\Commands\Get\" />
       <Folder Include="Features\FoodCombo\Queries\GetList\" />
       <Folder Include="Features\FoodCombo\Queries\Get\" />
-      <Folder Include="Features\MesoCycle\Commands\Create\" />
       <Folder Include="Profiles\Recipe\" />
     </ItemGroup>
 

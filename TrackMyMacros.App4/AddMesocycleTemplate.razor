@@ -1,0 +1,17 @@
+﻿@page "/AddMesocycleTemplate"
+<div class="container">
+    <RadzenTextBox @bind-Value="MesocycleViewModel.Name">Name</RadzenTextBox>
+
+    @foreach (var createWeekViewModel in MesocycleViewModel.Weeks)
+    {
+        <AddWeekComponent Week="createWeekViewModel" Exercises="Exercises"></AddWeekComponent>
+    }
+
+    <RadzenButton Text="Save" Click="OnSaveMesocycleTemplate" Style="margin-top: 10px;"/>
+
+    @if (!string.IsNullOrEmpty(ErrorMessage))
+    {
+        <RadzenLabel Text="@ErrorMessage" Style="color: red;"/>
+    }
+
+</div>

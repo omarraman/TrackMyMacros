@@ -5,7 +5,7 @@ namespace TrackMyMacros.App4.ViewModels.Workout
 {
     public class CreateWorkoutViewModel
     {
-        public MyDayOfWeek DayOfWeek { get; init; }
+        public MyDayOfWeek DayOfWeek { get; set; }
         public List<CreateSetGroupViewModel> SetGroups { get; init; }
     }
 }

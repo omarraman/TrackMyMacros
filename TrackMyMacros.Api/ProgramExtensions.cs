@@ -39,6 +39,7 @@ namespace TrackMyMacros.Api
                 options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
 
+            
 
             builder.Services.AddDecoratorServices(typeof(Program));
 
@@ -70,6 +71,9 @@ namespace TrackMyMacros.Api
 
             app.MapControllers();
 
+            app.UseMiddleware<RequestResponseLoggingMiddleware>();
+
+            app.UseDeveloperExceptionPage();
             return app;
         }
 

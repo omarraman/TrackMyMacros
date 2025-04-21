@@ -1,0 +1,23 @@
+﻿@using TrackMyMacros.SharedKernel
+<div class="container">
+
+    Workout
+    
+    <div class="col-4">
+        
+        <RadzenDropDown Style="width: auto" @bind-Value=@Workout.DayOfWeek Data=@Days
+                        TextProperty="StringEquiv" 
+                        FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                        FilterOperator="StringFilterOperator.StartsWith" AllowFiltering="true"
+
+                        Placeholder="Select Day"/>
+    </div>
+    
+    @foreach (var setGroup in Workout.SetGroups)
+    {
+        <AddSetGroupComponent SetGroup="setGroup" Exercises="@Exercises" />
+    }
+    
+    
+    <RadzenButton Text="Add Set1" Click="OnAddSet" Style="margin-top: 10px;" />
+</div>

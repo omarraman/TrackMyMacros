@@ -21,6 +21,8 @@ public class MesocycleConfiguration : IEntityTypeConfiguration<Mesocycle>
             .IsRequired()
             .HasMaxLength(50);
 
+        builder.HasIndex(p => p.Name).IsUnique();
+
 
         builder.Property(m => m.CurrentDayOfWeek).HasConversion(m => m.Value()
             , w => new MyDayOfWeek(w));

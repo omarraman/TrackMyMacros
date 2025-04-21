@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 using TrackMyMacros.Attributes;
 using TrackMyMacros.Domain.Common;
@@ -47,6 +48,18 @@ public class Mesocycle : Entity
                 //create a new week
             }
         }
+    }
+
+    public string IsValid()
+    {
+        //all the workouts within a week must be on separate days
+        //workout days are Monday, Tuesday,Wednesday etc
+        foreach (var weekValidationErrors in Weeks.Select(week => week.IsValid()).Where(weekValidationErrors => weekValidationErrors!=""))
+        {
+            return weekValidationErrors;
+        }
+
+        return "";
     }
 
     private Maybe<Week> GetCurrentWeek()

@@ -28,6 +28,20 @@ public class Set : ValueObject<Set>
             TargetWeight = targetWeight
         };
     }
+
+    public string IsValid()
+    {
+        if (Reps < 1)
+            return "Reps must be greater than 0";
+        if (TargetReps < 1)
+            return "Target Reps must be greater than 0";
+        if (TargetWeight < 0)
+            return "Target Weight must be greater than or equal to 0";
+        if (Weight < 0)
+            return "Weight must be greater than or equal to 0";
+        return string.Empty;
+    }
+
     protected override bool EqualsCore(Set other)
     {
         return Math.Abs(TargetWeight - other.TargetWeight) < 0.1 && Reps == other.Reps && TargetReps == other.TargetReps 

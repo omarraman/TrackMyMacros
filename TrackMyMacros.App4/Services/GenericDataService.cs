@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Diagnostics;
+using AutoMapper;
 using Flurl.Http;
 using TrackMyMacros.App4.ViewModels.Set;
 using TrackMyMacros.App4.ViewModels.Workout;
@@ -140,6 +141,7 @@ namespace TrackMyMacros.App4.Services
             try
             {
                 var uri = _baseUrl + endpoint.Value;
+                Debug.WriteLine(uri);
                 var foods = await uri
                     .GetJsonAsync<IReadOnlyList<TDto>>();
                 try
@@ -149,6 +151,8 @@ namespace TrackMyMacros.App4.Services
                 }
                 catch (Exception e)
                 {
+                    Console.WriteLine(e);
+                    Debug.WriteLine(e);
                     throw;
                 }
             }

@@ -1,0 +1,20 @@
+﻿@using TrackMyMacros.App4.ViewModels.SetGroup
+Set
+<div class="container">
+
+    <div class="row py-1 px-3" T >
+        <div class="col-4">
+            <RadzenDropDown Style="width: auto" @bind-Value=@SetGroup.ExerciseId Data=@Exercises 
+                            TextProperty="Name" ValueProperty="Id" 
+                            FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" 
+                            FilterOperator="StringFilterOperator.StartsWith" AllowFiltering="true"               
+                            Placeholder="Select Exercise"/>
+        </div>
+        <div class="col-4">
+            <RadzenNumeric TValue="int" @bind-Value="@SetGroup.Sets[0].TargetReps">Reps</RadzenNumeric>
+        </div>
+        <div class="col-4">
+            <RadzenNumeric TValue="double" @bind-Value="@SetGroup.Sets[0].TargetWeight">Reps</RadzenNumeric>
+        </div>
+    </div>
+</div>

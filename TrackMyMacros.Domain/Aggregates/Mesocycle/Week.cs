@@ -18,6 +18,23 @@ public class Week : ValueObject<Week>
         Workouts = workouts;
     }
 
+    public string IsValid()
+    {
+        var distinctDays = Workouts.Select(m=> m.DayOfWeek).Distinct().ToList();
+        if (distinctDays.Count != Workouts.Count)
+            return "Workouts in a week must be on separate days";
+        if (Workouts.Count==0)
+            return "A week must have at least one workout";
+        foreach (var workout in Workouts)
+        {
+            var workoutValidation = workout.IsValid();
+            if (!string.IsNullOrEmpty(workoutValidation))
+                return workoutValidation;
+        }
+        
+        return String.Empty;
+    }
+
     // public void CreateNewDefaultWeek(int weekIndex)
     // {
     //     WeekIndex = weekIndex;
