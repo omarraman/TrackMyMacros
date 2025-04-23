@@ -13,5 +13,6 @@ namespace TrackMyMacros.Application.Features.Mesocycle.Commands.Update
         public bool CurrentWorkoutComplete { get; set; } = false;
 
         public int TotalWeeks { get; set; }
+        public bool IsTemplate { get; set; }
     }
 }

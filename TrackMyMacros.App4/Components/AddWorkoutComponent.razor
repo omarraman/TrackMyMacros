@@ -1,23 +1,51 @@
 ﻿@using TrackMyMacros.SharedKernel
-<div class="container">
-
-    Workout
-    
-    <div class="col-4">
+<div class="container mb-3">
+    <RadzenCard>
         
-        <RadzenDropDown Style="width: auto" @bind-Value=@Workout.DayOfWeek Data=@Days
-                        TextProperty="StringEquiv" 
-                        FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
-                        FilterOperator="StringFilterOperator.StartsWith" AllowFiltering="true"
+    <div class="row py-1 px-3" T>
+        <div class="col-4">
+            <RadzenLabel>Day</RadzenLabel>
+        </div>
+        <div class="col-8">
 
-                        Placeholder="Select Day"/>
+            <RadzenDropDown Style="width: auto" @bind-Value=@Workout.DayOfWeek Data=@Days
+                            TextProperty="StringEquiv"
+                            FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
+                            FilterOperator="StringFilterOperator.StartsWith" AllowFiltering="true"
+
+                            Placeholder="Select Day"/>
+        </div>
     </div>
-    
-    @foreach (var setGroup in Workout.SetGroups)
+    <div class="row py-1 px-3" T>
+        <div class="col-4">
+            <RadzenLabel>Exercise</RadzenLabel>
+        </div>
+        <div class="col-4">
+            <RadzenLabel>Target Reps</RadzenLabel>
+        </div>
+        <div class="col-4">
+            <RadzenLabel>Target Weight</RadzenLabel>
+        </div>
+    </div>
+
+    @for (int i = 0; i < Workout.SetGroupsInPriorityOrder.Count; i++)
     {
-        <AddSetGroupComponent SetGroup="setGroup" Exercises="@Exercises" />
+        var hasPrior = i != 0;
+        var hasFollowing = i < Workout.SetGroupsInPriorityOrder.Count - 1;
+        <AddSetGroupComponent SetGroup="Workout.SetGroupsInPriorityOrder[i]" Exercises="@Exercises" HasPrior="hasPrior" HasFollowing="hasFollowing" 
+        SetGroupMovedDown="OnSetGroupMovedDown" SetGroupMovedUp="OnSetGroupMovedUp"/>
     }
     
     
-    <RadzenButton Text="Add Set1" Click="OnAddSet" Style="margin-top: 10px;" />
+    @*
+    @foreach (var setGroup in Workout.SetGroups)
+    {
+        
+        <AddSetGroupComponent SetGroup="setGroup" Exercises="@Exercises"  />
+    }*@
+
+
+    <RadzenButton Icon="add" Click="OnAddSet" Style="margin-top: 10px;"/>
+    </RadzenCard>
+    
 </div>

@@ -60,8 +60,8 @@ namespace TrackMyMacros.Persistance.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000000"),
                             Calories = 2400,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(8292),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(8311),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(3396),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(3413),
                             WeekdaysMealsPerDay = 5,
                             WeekendMealsPerDay = 5,
                             WeightInKg = 75.900000000000006
@@ -105,12 +105,12 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("71a5c095-c291-45c5-ae00-6182c998166e"),
+                            Id = new Guid("830f23d2-36eb-4242-b200-8ec698d4ab00"),
                             AllowedCarbohydrate = 100,
                             AllowedFat = 100,
                             AllowedProtein = 100,
                             Carbohydrate = 10.0,
-                            Date = new DateOnly(2025, 3, 17),
+                            Date = new DateOnly(2025, 4, 21),
                             Fat = 10.0,
                             MealCount = 1,
                             Protein = 10.0
@@ -153,112 +153,112 @@ namespace TrackMyMacros.Persistance.Migrations
                         new
                         {
                             Id = new Guid("2aa88079-b75d-417d-9eb2-6517fd2331c0"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6616),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6655),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2063),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2100),
                             Name = "Calves",
                             Size = 3.0
                         },
                         new
                         {
                             Id = new Guid("6610bfab-7248-4b7b-94cd-b9fd5e38290d"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6679),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6681),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2125),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2126),
                             Name = "Back",
                             Size = 4.0
                         },
                         new
                         {
                             Id = new Guid("e4232daf-15cc-40f3-ba6f-d29dc7e9ad2a"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6685),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6687),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2129),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2131),
                             Name = "Biceps",
                             Size = 1.0
                         },
                         new
                         {
                             Id = new Guid("6f639115-6ac7-48f9-8152-f08429bf7cd5"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6691),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6693),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2134),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2136),
                             Name = "Triceps",
                             Size = 3.0
                         },
                         new
                         {
                             Id = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6696),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6698),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2139),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2140),
                             Name = "Chest",
                             Size = 2.0
                         },
                         new
                         {
                             Id = new Guid("ec1f33a5-91e5-4de9-9b74-e0fe7255f883"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6704),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6705),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2144),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2146),
                             Name = "Abs",
                             Size = 2.0
                         },
                         new
                         {
                             Id = new Guid("5492de93-6f0b-443c-8f63-1eeb90b90c78"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6709),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6710),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2148),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2150),
                             Name = "Shoulders",
                             Size = 1.0
                         },
                         new
                         {
                             Id = new Guid("6dd13251-7a07-423d-920c-46fae6d2cdcc"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6715),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6717),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2153),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2155),
                             Name = "Hamstrings",
                             Size = 4.0
                         },
                         new
                         {
                             Id = new Guid("f87d2a54-ba1a-4dbc-a900-25531fdbfbeb"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6722),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6723),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2158),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2160),
                             Name = "Quads",
                             Size = 4.0
                         },
                         new
                         {
                             Id = new Guid("d0d8ea0f-c077-42be-b31f-14ed90353455"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6727),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6729),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2163),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2165),
                             Name = "Glutes",
                             Size = 3.0
                         },
                         new
                         {
                             Id = new Guid("ae834296-64ec-421a-ab40-d4a93dbbbe9f"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6733),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6735),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2167),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2169),
                             Name = "Neck",
                             Size = 1.0
                         },
                         new
                         {
                             Id = new Guid("18b68da4-f760-45cb-97c3-a216bf7f99b3"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6738),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6740),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2171),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2173),
                             Name = "Forearms",
                             Size = 1.0
                         },
                         new
                         {
                             Id = new Guid("d2be7249-479c-40e6-960e-ed906cd8c919"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6743),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6745),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2175),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2177),
                             Name = "Traps",
                             Size = 3.0
                         },
                         new
                         {
                             Id = new Guid("fb70b309-fd97-4d65-8705-e4b4c490b653"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6748),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 852, DateTimeKind.Utc).AddTicks(6750),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2179),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2181),
                             Name = "Lower Back",
                             Size = 3.0
                         });
@@ -313,8 +313,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("b0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1592),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1594),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2927),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2929),
                             Name = "Flyes",
                             RepIncrease = 0,
                             WeightIncrease = 0.5
@@ -324,8 +324,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1607),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1609),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2943),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2945),
                             Name = "Bench Press",
                             RepIncrease = 0,
                             WeightIncrease = 0.5
@@ -335,8 +335,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("c0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("f87d2a54-ba1a-4dbc-a900-25531fdbfbeb"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1618),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1619),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2953),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2955),
                             Name = "Squat",
                             RepIncrease = 0,
                             WeightIncrease = 1.25
@@ -346,8 +346,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("d0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("6dd13251-7a07-423d-920c-46fae6d2cdcc"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1627),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1628),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2961),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2963),
                             Name = "Deadlift",
                             RepIncrease = 0,
                             WeightIncrease = 1.25
@@ -357,8 +357,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("e0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1635),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1637),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2970),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2972),
                             Name = "Incline Dumbbell Press",
                             RepIncrease = 0,
                             WeightIncrease = 0.5
@@ -368,8 +368,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("f0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("6610bfab-7248-4b7b-94cd-b9fd5e38290d"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1645),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1647),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2981),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2983),
                             Name = "Pull Down",
                             RepIncrease = 0,
                             WeightIncrease = 1.25
@@ -379,8 +379,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4b8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("ec1f33a5-91e5-4de9-9b74-e0fe7255f883"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1656),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1658),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2990),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2992),
                             Name = "Cable Crunch",
                             RepIncrease = 0,
                             WeightIncrease = 0.25
@@ -390,8 +390,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4a8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("f87d2a54-ba1a-4dbc-a900-25531fdbfbeb"),
                             BodyWeightExercise = true,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1666),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1668),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2998),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3000),
                             Name = "Reverse Nordics",
                             RepIncrease = 1,
                             WeightIncrease = 0.0
@@ -401,8 +401,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4d8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("6610bfab-7248-4b7b-94cd-b9fd5e38290d"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1675),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1676),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3006),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3007),
                             Name = "DualCableRow",
                             RepIncrease = 0,
                             WeightIncrease = 1.0
@@ -412,8 +412,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4e8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1681),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1682),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3011),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3013),
                             Name = "RDL",
                             RepIncrease = 0,
                             WeightIncrease = 1.25
@@ -423,8 +423,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0b4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("2aa88079-b75d-417d-9eb2-6517fd2331c0"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1690),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1692),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3020),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3021),
                             Name = "Calves Four Second Eccentric",
                             RepIncrease = 0,
                             WeightIncrease = 1.0
@@ -434,8 +434,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0a4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("2aa88079-b75d-417d-9eb2-6517fd2331c0"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1698),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1699),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3027),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3029),
                             Name = "Calves Two Second Pause",
                             RepIncrease = 0,
                             WeightIncrease = 1.0
@@ -445,8 +445,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0c4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("e4232daf-15cc-40f3-ba6f-d29dc7e9ad2a"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1706),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1708),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3035),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3037),
                             Name = "Lying Dumbell Bicep Curl",
                             RepIncrease = 0,
                             WeightIncrease = 0.25
@@ -456,8 +456,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0e4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("6f639115-6ac7-48f9-8152-f08429bf7cd5"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1714),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1716),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3043),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3045),
                             Name = "Lying Overhead Triceps Extension",
                             RepIncrease = 0,
                             WeightIncrease = 0.25
@@ -467,8 +467,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0f4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("5492de93-6f0b-443c-8f63-1eeb90b90c78"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1723),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 855, DateTimeKind.Utc).AddTicks(1725),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3051),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3053),
                             Name = "Single Arm Cable Lateral Raise",
                             RepIncrease = 0,
                             WeightIncrease = 0.25
@@ -876,8 +876,8 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("37680512-b27f-4573-b890-610a9edf73b5"),
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 857, DateTimeKind.Utc).AddTicks(1655),
+                            Id = new Guid("f8ebe4d1-e58b-4d7f-bd32-f0c89968fa34"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 196, DateTimeKind.Utc).AddTicks(647),
                             Name = "Test Food Combo"
                         });
                 });
@@ -905,6 +905,9 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.Property<int>("CurrentWeekIndex")
                         .HasColumnType("integer");
 
+                    b.Property<bool>("IsTemplate")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("text");
 
@@ -921,20 +924,10 @@ namespace TrackMyMacros.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Mesocycles");
+                    b.HasIndex("Name")
+                        .IsUnique();
 
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                            Complete = false,
-                            CreatedBy = "System",
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 864, DateTimeKind.Utc).AddTicks(5980),
-                            CurrentDayOfWeek = 1,
-                            CurrentWeekIndex = 1,
-                            Name = "Default Mesocycle",
-                            TotalWeeks = 5
-                        });
+                    b.ToTable("Mesocycles");
                 });
 
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Recipe.Recipe", b =>
@@ -1002,8 +995,8 @@ namespace TrackMyMacros.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2025, 3, 17, 20, 51, 55, 866, DateTimeKind.Utc).AddTicks(9535),
-                            LastModifiedDate = new DateTime(2025, 3, 17, 20, 51, 55, 866, DateTimeKind.Utc).AddTicks(9556),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 207, DateTimeKind.Utc).AddTicks(1170),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 207, DateTimeKind.Utc).AddTicks(1189),
                             Name = "Grams"
                         });
                 });
@@ -1085,7 +1078,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                     b2.HasData(
                                         new
                                         {
-                                            MealDayId = new Guid("71a5c095-c291-45c5-ae00-6182c998166e"),
+                                            MealDayId = new Guid("830f23d2-36eb-4242-b200-8ec698d4ab00"),
                                             MealId = 1,
                                             Id = 1,
                                             Carbohydrate = 10.0,
@@ -1101,7 +1094,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    DayId = new Guid("71a5c095-c291-45c5-ae00-6182c998166e"),
+                                    DayId = new Guid("830f23d2-36eb-4242-b200-8ec698d4ab00"),
                                     Id = 1,
                                     AllowedCarbohydrate = 10,
                                     AllowedFat = 10,
@@ -1164,7 +1157,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    FoodComboId = new Guid("37680512-b27f-4573-b890-610a9edf73b5"),
+                                    FoodComboId = new Guid("f8ebe4d1-e58b-4d7f-bd32-f0c89968fa34"),
                                     Id = 1,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,
@@ -1174,7 +1167,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                 },
                                 new
                                 {
-                                    FoodComboId = new Guid("37680512-b27f-4573-b890-610a9edf73b5"),
+                                    FoodComboId = new Guid("f8ebe4d1-e58b-4d7f-bd32-f0c89968fa34"),
                                     Id = 2,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,
@@ -1313,646 +1306,17 @@ namespace TrackMyMacros.Persistance.Migrations
 
                                                     b4.WithOwner()
                                                         .HasForeignKey("SetGroupWorkoutWeekMesocycleId", "SetGroupWorkoutWeekId", "SetGroupWorkoutId", "SetGroupId");
-
-                                                    b4.HasData(
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 1,
-                                                            SetGroupId = 1,
-                                                            Id = 1,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 14,
-                                                            TargetWeight = 21.0,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 1,
-                                                            SetGroupId = 2,
-                                                            Id = 2,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 12,
-                                                            TargetWeight = 51.5,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 1,
-                                                            SetGroupId = 3,
-                                                            Id = 3,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 8,
-                                                            TargetWeight = 52.5,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 1,
-                                                            SetGroupId = 4,
-                                                            Id = 4,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 11,
-                                                            TargetWeight = 42.0,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 1,
-                                                            SetGroupId = 5,
-                                                            Id = 5,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 8,
-                                                            TargetWeight = 9.0,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 1,
-                                                            SetGroupId = 6,
-                                                            Id = 6,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 8,
-                                                            TargetWeight = 14.5,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 1,
-                                                            SetGroupId = 7,
-                                                            Id = 7,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 5,
-                                                            TargetWeight = 100.0,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 1,
-                                                            SetGroupId = 8,
-                                                            Id = 8,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 7,
-                                                            TargetWeight = 14.5,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 1,
-                                                            SetGroupId = 9,
-                                                            Id = 9,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 6,
-                                                            TargetWeight = 14.5,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 2,
-                                                            SetGroupId = 10,
-                                                            Id = 10,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 14,
-                                                            TargetWeight = 16.75,
-                                                            Weight = 16.75
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 2,
-                                                            SetGroupId = 11,
-                                                            Id = 11,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 10,
-                                                            TargetWeight = 24.5,
-                                                            Weight = 24.5
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 2,
-                                                            SetGroupId = 12,
-                                                            Id = 12,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 9,
-                                                            TargetWeight = 47.25,
-                                                            Weight = 47.25
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 2,
-                                                            SetGroupId = 13,
-                                                            Id = 13,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 7,
-                                                            TargetWeight = 47.25,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 2,
-                                                            SetGroupId = 14,
-                                                            Id = 14,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 8,
-                                                            TargetWeight = 10.5,
-                                                            Weight = 10.5
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 2,
-                                                            SetGroupId = 15,
-                                                            Id = 15,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 8,
-                                                            TargetWeight = 14.75,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 2,
-                                                            SetGroupId = 16,
-                                                            Id = 16,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 5,
-                                                            TargetWeight = 100.0,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 2,
-                                                            SetGroupId = 17,
-                                                            Id = 17,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 7,
-                                                            TargetWeight = 14.75,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 2,
-                                                            SetGroupId = 18,
-                                                            Id = 18,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 6,
-                                                            TargetWeight = 14.75,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 3,
-                                                            SetGroupId = 19,
-                                                            Id = 19,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 14,
-                                                            TargetWeight = 16.75,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 3,
-                                                            SetGroupId = 20,
-                                                            Id = 20,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 14,
-                                                            TargetWeight = 51.450000000000003,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 3,
-                                                            SetGroupId = 21,
-                                                            Id = 21,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 9,
-                                                            TargetWeight = 47.25,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 3,
-                                                            SetGroupId = 22,
-                                                            Id = 22,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 10,
-                                                            TargetWeight = 47.25,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 3,
-                                                            SetGroupId = 23,
-                                                            Id = 23,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 8,
-                                                            TargetWeight = 10.5,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 3,
-                                                            SetGroupId = 24,
-                                                            Id = 24,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 10,
-                                                            TargetWeight = 14.75,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 3,
-                                                            SetGroupId = 25,
-                                                            Id = 25,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 5,
-                                                            TargetWeight = 100.0,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 3,
-                                                            SetGroupId = 26,
-                                                            Id = 26,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 7,
-                                                            TargetWeight = 14.75,
-                                                            Weight = 10.0
-                                                        },
-                                                        new
-                                                        {
-                                                            SetGroupWorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                            SetGroupWorkoutWeekId = 1,
-                                                            SetGroupWorkoutId = 3,
-                                                            SetGroupId = 27,
-                                                            Id = 27,
-                                                            Number = 1,
-                                                            Reps = 0,
-                                                            TargetReps = 6,
-                                                            TargetWeight = 14.75,
-                                                            Weight = 10.0
-                                                        });
                                                 });
 
                                             b3.Navigation("Exercise");
 
                                             b3.Navigation("Sets");
-
-                                            b3.HasData(
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 1,
-                                                    Id = 1,
-                                                    ExerciseId = new Guid("e0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 1
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 1,
-                                                    Id = 2,
-                                                    ExerciseId = new Guid("f0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 2
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 1,
-                                                    Id = 3,
-                                                    ExerciseId = new Guid("c0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 3
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 1,
-                                                    Id = 4,
-                                                    ExerciseId = new Guid("a0a4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 4
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 1,
-                                                    Id = 5,
-                                                    ExerciseId = new Guid("a0c4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 5
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 1,
-                                                    Id = 6,
-                                                    ExerciseId = new Guid("a0e4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 6
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 1,
-                                                    Id = 7,
-                                                    ExerciseId = new Guid("a0d4a8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 7
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 1,
-                                                    Id = 8,
-                                                    ExerciseId = new Guid("a0f4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 8
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 1,
-                                                    Id = 9,
-                                                    ExerciseId = new Guid("a0d4b8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 9
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 2,
-                                                    Id = 10,
-                                                    ExerciseId = new Guid("b0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 1
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 2,
-                                                    Id = 11,
-                                                    ExerciseId = new Guid("a0d4d8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 2
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 2,
-                                                    Id = 12,
-                                                    ExerciseId = new Guid("a0d4e8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 3
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 2,
-                                                    Id = 13,
-                                                    ExerciseId = new Guid("a0b4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 4
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 2,
-                                                    Id = 14,
-                                                    ExerciseId = new Guid("a0c4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 5
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 2,
-                                                    Id = 15,
-                                                    ExerciseId = new Guid("a0e4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 6
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 2,
-                                                    Id = 16,
-                                                    ExerciseId = new Guid("a0d4a8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 7
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 2,
-                                                    Id = 17,
-                                                    ExerciseId = new Guid("a0f4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 8
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 2,
-                                                    Id = 18,
-                                                    ExerciseId = new Guid("a0d4b8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 9
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 3,
-                                                    Id = 19,
-                                                    ExerciseId = new Guid("b0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 1
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 3,
-                                                    Id = 20,
-                                                    ExerciseId = new Guid("f0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 2
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 3,
-                                                    Id = 21,
-                                                    ExerciseId = new Guid("a0d4e8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 3
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 3,
-                                                    Id = 22,
-                                                    ExerciseId = new Guid("a0a4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 4
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 3,
-                                                    Id = 23,
-                                                    ExerciseId = new Guid("a0c4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 5
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 3,
-                                                    Id = 24,
-                                                    ExerciseId = new Guid("a0e4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 6
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 3,
-                                                    Id = 25,
-                                                    ExerciseId = new Guid("a0d4a8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 7
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 3,
-                                                    Id = 26,
-                                                    ExerciseId = new Guid("a0f4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 8
-                                                },
-                                                new
-                                                {
-                                                    WorkoutWeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                                    WorkoutWeekId = 1,
-                                                    WorkoutId = 3,
-                                                    Id = 27,
-                                                    ExerciseId = new Guid("a0d4b8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                                                    Priority = 9
-                                                });
                                         });
 
                                     b2.Navigation("SetGroups");
-
-                                    b2.HasData(
-                                        new
-                                        {
-                                            WeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                            WeekId = 1,
-                                            Id = 1,
-                                            DayOfWeek = 1
-                                        },
-                                        new
-                                        {
-                                            WeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                            WeekId = 1,
-                                            Id = 2,
-                                            DayOfWeek = 3
-                                        },
-                                        new
-                                        {
-                                            WeekMesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                            WeekId = 1,
-                                            Id = 3,
-                                            DayOfWeek = 5
-                                        });
                                 });
 
                             b1.Navigation("Workouts");
-
-                            b1.HasData(
-                                new
-                                {
-                                    MesocycleId = new Guid("859679a6-1e25-4a53-9520-dad6e05db7c2"),
-                                    Id = 1,
-                                    WeekIndex = 1
-                                });
                         });
 
                     b.Navigation("Weeks");

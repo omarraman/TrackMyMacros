@@ -19,6 +19,8 @@ public class Mesocycle : Entity
     public int CurrentWeekIndex { get; set; } = 1;
     public MyDayOfWeek CurrentDayOfWeek { get; set; } = MyDayOfWeek.Monday();
 
+    public bool IsTemplate { get; set; }
+
     public void AdvanceMesocycleToNextWorkout(IReadOnlyList<Exercise.Exercise> exercises)
     {
         if (CurrentDayOfWeek == MyDayOfWeek.Friday())

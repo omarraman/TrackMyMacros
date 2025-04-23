@@ -34,6 +34,7 @@ public partial class AddMesocycleTemplate : ComponentBase
     {
         _isLoading = true;
 
+        MesocycleViewModel.IsTemplate = true;
         MesocycleViewModel.Weeks = new List<CreateWeekViewModel>();
         MesocycleViewModel.Weeks.Add(
             new CreateWeekViewModel

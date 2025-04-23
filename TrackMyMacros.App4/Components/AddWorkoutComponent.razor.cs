@@ -6,6 +6,7 @@ using TrackMyMacros.App4.ViewModels.SetGroup;
 using TrackMyMacros.App4.ViewModels.Workout;
 using TrackMyMacros.Domain.Aggregates.Exercise;
 using TrackMyMacros.SharedKernel;
+using Workout;
 
 namespace TrackMyMacros.App4.Components;
 
@@ -74,6 +75,21 @@ public partial class AddWorkoutComponent
         AddSet();
     }
 
+    public void OnSetGroupMovedUp(int priority)
+    {
+        var itemToMoveDown =Workout.SetGroups.Single(m=> m.Priority == priority-1);
+        var itemToMoveUp =Workout.SetGroups.Single(m => m.Priority == priority);
+        itemToMoveUp.Priority = priority-1;
+        itemToMoveDown.Priority = priority;
+    }
+    
+    public void OnSetGroupMovedDown(int priority)
+    {
+        var itemToMoveDown =Workout.SetGroups.Single(m=> m.Priority == priority);
+        var itemToMoveUp =Workout.SetGroups.Single(m => m.Priority == priority+1);
+        itemToMoveUp.Priority = priority;
+        itemToMoveDown.Priority = priority+1;
+    }
     private void AddSet()
     {
         var setGroup = new CreateSetGroupViewModel

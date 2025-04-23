@@ -10,5 +10,6 @@ namespace TrackMyMacros.Dtos.Mesocycle{
         public bool Complete { get; set; }
         public int CurrentWeekIndex { get; set; } = 1;
         public int CurrentDayOfWeek { get; set; } = 1;
+        public bool IsTemplate { get; set; }
     }
 }
