@@ -1,0 +1,21 @@
+﻿@page "/ViewMesocycle"
+
+@if (WorkoutInFocus.HasValue)
+{
+    <h3>@WorkoutInFocus.Value.DayOfWeekName</h3>
+
+
+    <RadzenTree Data=@_meso.Weeks Change="@OnChangeTreeNode" bind-Value="_treeNode">
+        <RadzenTreeLevel TextProperty="WeekName" ChildrenProperty="Workouts"/>
+        <RadzenTreeLevel TextProperty="DayOfWeekName"/>
+    </RadzenTree>
+
+    foreach (var set in WorkoutInFocus.Value.SetGroups.OrderBy(m => m.Priority))
+    {
+        <ViewSetGroupComponent SetGroup="@set"/>
+    }
+}
+else
+{
+    <p>Loading...</p>
+}

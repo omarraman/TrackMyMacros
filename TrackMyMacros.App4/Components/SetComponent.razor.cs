@@ -7,6 +7,7 @@ namespace TrackMyMacros.App4.Components
 {
     public partial class SetComponent
     {
+        [Parameter] public bool Readonly { get; set; }
         [Parameter] public EventCallback OnSetUpdated { get; set; }
         [Parameter] public GetSetViewModel Set { get; set; }
 

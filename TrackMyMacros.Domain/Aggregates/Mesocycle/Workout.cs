@@ -14,7 +14,7 @@ public class Workout : Common.ValueObject<Workout>
     private Workout()
     {
     }
-
+    
     public string IsValid()
     {
         //all the workouts within a week must be on separate days

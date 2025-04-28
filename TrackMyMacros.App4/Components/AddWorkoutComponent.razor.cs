@@ -30,7 +30,7 @@ public partial class AddWorkoutComponent
 
     protected override async Task OnInitializedAsync()
     {
-        AddSet();
+        //AddSet();
         //Workout = new CreateWorkoutViewModel
         //{
         //    DayOfWeek = MyDayOfWeek.Monday(),

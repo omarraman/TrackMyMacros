@@ -78,6 +78,7 @@
       <Compile Remove="Pages\MesoCycleList.razor.cs" />
       <Compile Remove="Pages\CreateMesoCycle.razor.cs" />
       <Compile Remove="Components\AddOrUpdateMesoCycleDialog.razor.cs" />
+      <Compile Include="Pages\MesocycleList.razor.cs" />
       <Compile Include="Profiles\MesoCycle\GetMesocycleMappingProfile.cs" />
       <Compile Include="Profiles\MesoCycle\UpdateMesocycleMappingProfile.cs" />
       <Compile Include="ViewModels\MesoCycle\GetMesocycleViewModel.cs" />

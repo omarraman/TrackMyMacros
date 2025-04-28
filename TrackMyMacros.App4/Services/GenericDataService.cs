@@ -51,12 +51,6 @@ namespace TrackMyMacros.App4.Services
                 var uri = _baseUrl + endpoint.Value + "/GetById/" + id;
                 var foods = await uri
                     .GetJsonAsync<TDto>();
-                // var meso = foods as GetMesocycleDto;
-                // var week = meso.Weeks.FirstOrDefault();
-                // var workout = week.Workouts.FirstOrDefault();
-                // var set = workout.Sets.FirstOrDefault();
-                // var setVm = _mapper.Map<GetSetViewModel>(set);
-                // var workoutVm = _mapper.Map<GetWorkoutViewModel>(workout);
                 return _mapper.Map<TModel>(foods);
             }
             catch (FlurlHttpException ex)

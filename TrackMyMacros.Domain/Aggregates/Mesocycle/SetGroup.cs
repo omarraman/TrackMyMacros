@@ -22,10 +22,12 @@ public class SetGroup : ValueObject<SetGroup>
     public string IsValid()
     {
         //count of priority must be the same as the count of sets
+        /*
         if (Sets.Count != Priority)
         {
             return "The number of sets must be equal to the priority";
         }
+        */
 
         foreach (var set in Sets)
         {

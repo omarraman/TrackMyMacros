@@ -1,0 +1,31 @@
+﻿@page "/MesocycleList"
+
+
+@if (Mesocycles != null)
+{
+    <RadzenAccordion Multiple="true">
+        <Items>
+            @foreach (var mesocycleViewModel in Mesocycles)
+            {
+                <RadzenAccordionItem Text="@mesocycleViewModel.Name">
+                    <ViewMesocycleComponent Mesocycle="@mesocycleViewModel"></ViewMesocycleComponent>
+                    <RadzenButton Text="Edit" ButtonStyle="ButtonStyle.Primary" Click="() => Edit(mesocycleViewModel.Id)"/>
+                    <RadzenButton Text="Delete" ButtonStyle="ButtonStyle.Primary" Click="() => Delete(mesocycleViewModel.Id)"/>
+                </RadzenAccordionItem>
+            }
+        </Items>
+    </RadzenAccordion>
+    
+    
+    @*@foreach (var MesocycleViewModel in Mesocycles)
+    {
+        <div>
+            <RadzenLabel Text="@MesocycleViewModel.Name" />
+
+        </div>
+    }*@
+}
+else
+{
+    <div>Loading...</div>
+}

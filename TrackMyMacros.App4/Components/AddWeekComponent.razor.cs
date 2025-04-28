@@ -11,7 +11,6 @@ namespace TrackMyMacros.App4.Components;
 
 public partial class AddWeekComponent : ComponentBase
 {
-    
     //[Parameter] public EventCallback OnWorkoutUpdated { get; set; }
     [Parameter] public CreateWeekViewModel Week { get; set; }
     [Parameter] public IReadOnlyList<GetExerciseViewModel> Exercises { get; set; }
@@ -24,6 +23,6 @@ public partial class AddWeekComponent : ComponentBase
                 DayOfWeek = MyDayOfWeek.Monday(),
                 SetGroups = new List<CreateSetGroupViewModel>()
             }
-            );
+        );
     }
 }

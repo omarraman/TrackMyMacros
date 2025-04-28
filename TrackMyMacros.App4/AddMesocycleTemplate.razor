@@ -1,25 +1,35 @@
-﻿@page "/AddMesocycleTemplate"
-<div class="container">
+﻿@page "/AddMesocycleTemplate/{id:guid?}"
 
-    <div class="row py-1 px-3" T>
-        <div class="col-4">
-            <RadzenLabel>Template Name</RadzenLabel>
+@if (_isLoading==false)
+{
+    <div class="container">
+
+        <div class="row py-1 px-3" T>
+            <div class="col-4">
+                <RadzenLabel>Template Name</RadzenLabel>
+            </div>
+            <div class="col-8">
+                <RadzenTextBox @bind-Value="MesocycleViewModel.Name">Name</RadzenTextBox>
+            </div>
         </div>
-        <div class="col-8">
-            <RadzenTextBox @bind-Value="MesocycleViewModel.Name">Name</RadzenTextBox>
-        </div>
-    </div>
 
-    @foreach (var createWeekViewModel in MesocycleViewModel.Weeks)
-    {
-        <AddWeekComponent Week="createWeekViewModel" Exercises="Exercises"></AddWeekComponent>
-    }
+        @foreach (var createWeekViewModel in MesocycleViewModel.Weeks)
+        {
+            <AddWeekComponent Week="createWeekViewModel" Exercises="Exercises"></AddWeekComponent>
+        }
 
-    <RadzenButton Text="Save" Click="OnSaveMesocycleTemplate" Style="margin-top: 10px;"/>
+        <RadzenButton Text="Save" Click="OnSaveMesocycleTemplate" Style="margin-top: 10px;"/>
 
-    @if (!string.IsNullOrEmpty(ErrorMessage))
-    {
-        <RadzenLabel Text="@ErrorMessage" Style="color: red;"/>
-    }
+        @if (!string.IsNullOrEmpty(ErrorMessage))
+        {
+            <RadzenLabel Text="@ErrorMessage" Style="color: red;"/>
+        }
 
-</div>
+    </div>    
+    
+}
+else
+{
+    <p>Loading...</p>
+}
+

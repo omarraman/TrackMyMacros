@@ -1,0 +1,21 @@
+﻿@if (SetGroup == null)
+{
+    <p>Loading...</p>
+    return;
+}
+
+
+<div class="container">
+
+    <div class="row py-1">
+        <div class="col text-center">
+            <RadzenLabel Text="@SetGroup.ExerciseName" />
+        </div>
+    </div>
+    
+    @foreach (var set in SetGroup.Sets)
+    {
+        <ViewSetComponent Set="@set"/>
+    }
+
+</div>
