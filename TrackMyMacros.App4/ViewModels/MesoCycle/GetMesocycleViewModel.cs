@@ -28,7 +28,7 @@ namespace TrackMyMacros.App4.ViewModels.Mesocycle
          
         public GetWorkoutViewModel GetCurrentWorkout()
         {
-            return Weeks.Single(week => week.WeekIndex == CurrentWeekIndex).Workouts
+                return Weeks.Single(week => week.WeekIndex == CurrentWeekIndex).Workouts
                 .Single(workout => workout.DayOfWeek == CurrentDayOfWeek);
         }
     }

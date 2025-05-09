@@ -24,6 +24,19 @@ namespace TrackMyMacros.App4.Profiles.Mesocycle
             CreateMap<GetWorkoutDto, GetWorkoutViewModel>().ForMember(m=>m.DayOfWeek,
                 opt=>opt.MapFrom(src=>MyDayOfWeek.ConvertFromInt(src.DayOfWeek)));
             CreateMap<GetSetDto, GetSetViewModel>();
+            
+            CreateMap<GetMesocycleViewModel, CreateMesocycleViewModel>();
+            CreateMap<GetWeekViewModel, CreateWeekViewModel>();
+            CreateMap<GetWorkoutViewModel, CreateWorkoutViewModel>();
+            CreateMap<GetSetGroupViewModel, CreateSetGroupViewModel>();
+            CreateMap<GetSetViewModel, CreateSetViewModel>();
+            
+            CreateMap<GetMesocycleViewModel, UpdateMesocycleViewModel>();
+            CreateMap<GetWeekViewModel, UpdateWeekViewModel>();
+            CreateMap<GetWorkoutViewModel, UpdateWorkoutViewModel>();
+            CreateMap<GetSetGroupViewModel, UpdateSetGroupViewModel>();
+            CreateMap<GetSetViewModel, UpdateSetViewModel>();
+            
         }
     }
 }

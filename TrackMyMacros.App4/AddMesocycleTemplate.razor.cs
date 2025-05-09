@@ -76,6 +76,8 @@ public partial class AddMesocycleTemplate : ComponentBase
         MesocycleViewModel = new CreateMesocycleViewModel
         {
             IsTemplate = true,
+            CurrentWeekIndex = 1,
+            TotalWeeks = 5,
             Name = existingMeso.Name,
             Weeks = existingMeso.Weeks.Select(week => new CreateWeekViewModel
             {
@@ -102,6 +104,8 @@ public partial class AddMesocycleTemplate : ComponentBase
     
     private void CreateMesoTemplate()
     {
+        MesocycleViewModel.CurrentWeekIndex = 1;
+        MesocycleViewModel.TotalWeeks = 5;
         MesocycleViewModel.IsTemplate = true;
         MesocycleViewModel.Weeks = new List<CreateWeekViewModel>();
         MesocycleViewModel.Weeks.Add(
@@ -122,7 +126,7 @@ public partial class AddMesocycleTemplate : ComponentBase
             if (EditMode)
             {
                 //delete the existing mesocycle with the same id
-                //await DataService.Delete(Endpoint.Mesocycle, Id.Value);
+                await DataService.Delete(Endpoint.Mesocycle, Id.Value);
                 //create a new one as below
             }
             ErrorMessage = string.Empty;

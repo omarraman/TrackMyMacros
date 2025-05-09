@@ -1,22 +1,49 @@
 ﻿@page "/MesocycleList"
+@using TrackMyMacros.Domain.Aggregates.Mesocycle
 
 
 @if (Mesocycles != null)
 {
+    //<RadzenCheckBox TValue="bool" Value=@value Change=@(args => value = args) Name="CheckBox2" />
+    <RadzenCheckBox TValue="bool" @bind-Value="ShowTemplates" Change="@OnChange" Style="margin-right: 10px;"/>
+    <label>Show Templates</label>
+
     <RadzenAccordion Multiple="true">
         <Items>
             @foreach (var mesocycleViewModel in Mesocycles)
             {
                 <RadzenAccordionItem Text="@mesocycleViewModel.Name">
+
+                    @if (ShowTemplates == false)
+                    {
+                        
+                        <RadzenCheckBox TValue="bool" @bind-Value="@mesocycleViewModel.Complete"
+                                        Change="@(arg => OnSetMesocycleComplete(@mesocycleViewModel.Id, arg))"
+                                        Style="margin-right: 10px;"/>
+                        <label>Complete</label>
+                    }
+
                     <ViewMesocycleComponent Mesocycle="@mesocycleViewModel"></ViewMesocycleComponent>
-                    <RadzenButton Text="Edit" ButtonStyle="ButtonStyle.Primary" Click="() => Edit(mesocycleViewModel.Id)"/>
-                    <RadzenButton Text="Delete" ButtonStyle="ButtonStyle.Primary" Click="() => Delete(mesocycleViewModel.Id)"/>
+
+                    @if (ShowTemplates)
+                    {
+                        <RadzenButton Text="Edit" ButtonStyle="ButtonStyle.Primary"
+                                      Click="() => Edit(mesocycleViewModel.Id)"/>
+
+                        <RadzenButton Text="Create" ButtonStyle="ButtonStyle.Primary"
+                                      Click="() => Clone(mesocycleViewModel.Id)"/>
+                    }
+                    else
+                    {
+                        <RadzenButton Text="Delete" ButtonStyle="ButtonStyle.Primary"
+                                      Click="() => Delete(mesocycleViewModel.Id)"/>
+                    }
                 </RadzenAccordionItem>
             }
         </Items>
     </RadzenAccordion>
-    
-    
+
+
     @*@foreach (var MesocycleViewModel in Mesocycles)
     {
         <div>

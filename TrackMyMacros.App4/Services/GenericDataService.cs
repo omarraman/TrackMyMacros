@@ -17,6 +17,7 @@ namespace TrackMyMacros.App4.Services
         Task<TModel> Get<TModel, TDto>(string endpoint);
         Task<TModel> Get<TModel, TDto>(Endpoint endpoint, Guid id);
         Task Delete(string endpoint);
+        Task Delete(Endpoint endpoint,Guid id);
     }
 
     public class GenericDataService : IGenericDataService
@@ -179,6 +180,21 @@ namespace TrackMyMacros.App4.Services
             try
             {
                 var uri = _baseUrl + endpoint;
+                await uri
+                    .DeleteAsync();
+            }
+            catch (FlurlHttpException ex)
+            {
+                var string1 = await ex.GetResponseStringAsync();
+                throw new Exception(string1);
+            }
+        }
+        
+        public async Task Delete(Endpoint endpoint,Guid id)
+        {
+            try
+            {
+                var uri = _baseUrl + endpoint.Value + "/" + id;
                 await uri
                     .DeleteAsync();
             }

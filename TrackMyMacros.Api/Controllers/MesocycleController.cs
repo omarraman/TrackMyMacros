@@ -4,6 +4,7 @@ using TrackMyMacros.Dtos;
 using TrackMyMacros.Application.Common;
 using Microsoft.AspNetCore.Mvc;
 using TrackMyMacros.Application.Features.MesoCycle.Commands.Create;
+using TrackMyMacros.Application.Features.Mesocycle.Commands.Delete;
 using TrackMyMacros.Dtos.Mesocycle;
 using TrackMyMacros.Application.Features.Mesocycle.Commands.Update;
 using TrackMyMacros.Application.Features.Mesocycle.Queries.Get;
@@ -16,6 +17,7 @@ namespace TrackMyMacros.Api.Controllers
     {
         private IMapper _mapper;
         private IMediator _mediator;
+
         public MesocycleController(IMapper mapper, IMediator mediator)
         {
             _mediator = mediator;
@@ -60,12 +62,13 @@ namespace TrackMyMacros.Api.Controllers
             return Ok();
         }
 
-        // [HttpDelete("{id}")]
-        // [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
-        // public async Task<IActionResult> DeleteMesocycle(Guid id)
-        // {
-        //     await _mediator.Send(new DeleteMesocycleCommand { Id = id });
-        //     return Ok();
-        // }
+        [HttpDelete("{id}")]
+        [ProducesResponseType(statusCode: StatusCodes.Status200OK)]
+        public async Task<IActionResult> DeleteMesocycle(Guid id)
+        {
+            await _mediator.Send(new DeleteMesocycleCommand { Id = id });
+
+            return Ok();
+        }
     }
 }

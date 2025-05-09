@@ -8,6 +8,6 @@ namespace TrackMyMacros.App4.ViewModels.Workout
         public MyDayOfWeek DayOfWeek { get; init; }
         public string DayOfWeekName => DayOfWeek.StringEquivalent();
         public List<GetSetGroupViewModel> SetGroups { get; init; }
-        public bool Complete { get; init; }
+        public bool Complete { get; set; }
     }
 }

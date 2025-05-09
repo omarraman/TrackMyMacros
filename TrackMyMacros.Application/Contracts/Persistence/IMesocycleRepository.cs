@@ -13,4 +13,5 @@ public interface IMesocycleRepository
     Task<Mesocycle> AddAsync(Mesocycle entity);
     Task<Result> UpdateAsync(Mesocycle entity);
     Task DeleteAsync(Guid id);
+    Task SetActiveMesocycle(Guid id);
 }

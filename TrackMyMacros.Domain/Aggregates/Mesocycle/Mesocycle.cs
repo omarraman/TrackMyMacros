@@ -15,6 +15,7 @@ public class Mesocycle : Entity
 
     public int TotalWeeks { get; set; }
 
+    public bool Active { get; set; } = false;
     public bool Complete { get; set; }
     public int CurrentWeekIndex { get; set; } = 1;
     public MyDayOfWeek CurrentDayOfWeek { get; set; } = MyDayOfWeek.Monday();

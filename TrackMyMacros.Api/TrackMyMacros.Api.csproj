@@ -49,6 +49,10 @@
       <None Remove="log20250210.txt" />
       <None Remove="log20250209.txt" />
       <None Remove="log20250208.txt" />
+      <None Remove="log20250426.txt" />
+      <None Remove="log20250423.txt" />
+      <None Remove="log20250422.txt" />
+      <None Remove="log20250421.txt" />
     </ItemGroup>
 
     <ItemGroup>

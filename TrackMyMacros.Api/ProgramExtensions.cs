@@ -128,7 +128,7 @@ namespace TrackMyMacros.Api
             if (context != null)
             {
                 // await context.Database.EnsureDeletedAsync();
-                 //await context.Database.MigrateAsync();
+                 await context.Database.MigrateAsync();
 
                 // await context.Database.EnsureCreatedAsync();
             }

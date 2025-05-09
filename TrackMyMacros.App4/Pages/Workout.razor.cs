@@ -34,7 +34,7 @@ public partial class Workout
     private async Task RefreshMeso()
     {
         var mesos =await _dataService.GetList<GetMesocycleViewModel,GetMesocycleDto>(Endpoint.Mesocycle);
-        _meso = mesos.First(m=>m.Complete == false);
+        _meso = mesos.First(m=>m is { Complete: false, IsTemplate: false });
         // _meso = await _dataService.Get<GetMesocycleViewModel, GetMesocycleDto>(Endpoint.Mesocycle,
         //     new Guid("e1c5d850-e750-4742-9abf-9691f97c5fbd"));
         WorkoutInFocus = _meso.GetCurrentWorkout();
@@ -60,6 +60,7 @@ public partial class Workout
 
     private void OnComplete(MouseEventArgs obj)
     {
+        WorkoutInFocus.Value.Complete= true;
         CurrentWorkoutComplete = true;
     }
 

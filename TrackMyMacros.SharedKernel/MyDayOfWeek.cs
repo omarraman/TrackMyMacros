@@ -34,11 +34,13 @@ public class MyDayOfWeek:ValueObject<MyDayOfWeek>
     
     public int Value() => _dayOfWeek;
 
+    
     public int Value2 {
         get {return _dayOfWeek; }
          }
 
 
+    [JsonIgnore]
     public string StringEquiv
     {
         get { return StringEquivalent(); }

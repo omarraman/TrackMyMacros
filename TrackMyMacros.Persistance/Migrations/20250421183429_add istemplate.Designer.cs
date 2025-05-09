@@ -12,174 +12,18 @@ using TrackMyMacros.Persistance;
 namespace TrackMyMacros.Persistance.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241208072829_AddBodyPartAndExercise")]
-    partial class AddBodyPartAndExercise
+    [Migration("20250421183429_add istemplate")]
+    partial class addistemplate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.10")
+                .HasAnnotation("ProductVersion", "7.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("TrackMyMacros.Application.Features.Exercise", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    NpgsqlPropertyBuilderExtensions.HasIdentityOptions(b.Property<Guid>("Id"), 50L, null, null, null, null, null);
-
-                    b.Property<Guid>("BodyPartId")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("character varying(30)");
-
-                    b.Property<string>("VideoUrl")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BodyPartId");
-
-                    b.ToTable("Exercises");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("a0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
-                            BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3584),
-                            Description = "Push-ups are a great bodyweight exercise for the upper body.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3601),
-                            Name = "Incline Dumbell Press",
-                            VideoUrl = "https://www.youtube.com/watch?v=Eh00_rniF8E"
-                        },
-                        new
-                        {
-                            Id = new Guid("11a34cfb-cabc-4dea-a0ef-f6e7803b2246"),
-                            BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3616),
-                            Description = "Push-ups are a great bodyweight exercise for the upper body.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3617),
-                            Name = "Bench Press",
-                            VideoUrl = "https://www.youtube.com/watch?v=Eh00_rniF8E"
-                        },
-                        new
-                        {
-                            Id = new Guid("54d2fd4e-4771-421d-ad4c-b9376b3aeed7"),
-                            BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3620),
-                            Description = "Push-ups are a great bodyweight exercise for the upper body.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3622),
-                            Name = "Flyes",
-                            VideoUrl = "https://www.youtube.com/watch?v=Eh00_rniF8E"
-                        },
-                        new
-                        {
-                            Id = new Guid("c6d5a37c-6f19-40d5-93ae-0be9a6a9b8d3"),
-                            BodyPartId = new Guid("6a10d667-3bae-4473-905f-8edf3d235522"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3625),
-                            Description = "A machine exercise that targets the latissimus dorsi muscles.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3626),
-                            Name = "Lat Pulldown",
-                            VideoUrl = "https://www.youtube.com/watch?v=CAwf7n6Luuc"
-                        },
-                        new
-                        {
-                            Id = new Guid("2a7b2787-5e1f-4a5d-8d84-0aca46d6052c"),
-                            BodyPartId = new Guid("4045f98f-21b0-4c61-8fd0-dd02a21547c4"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3630),
-                            Description = "An essential exercise for building leg strength.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3631),
-                            Name = "Squats",
-                            VideoUrl = "https://www.youtube.com/watch?v=Dy28eq2PjcM"
-                        },
-                        new
-                        {
-                            Id = new Guid("c7d8a457-41c5-4aa9-b47d-f33aa74d2772"),
-                            BodyPartId = new Guid("6a10d667-3bae-4473-905f-8edf3d235522"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3635),
-                            Description = "A great exercise to build a strong back.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3636),
-                            Name = "Rows",
-                            VideoUrl = "https://www.youtube.com/watch?v=GZbfZ033f74"
-                        },
-                        new
-                        {
-                            Id = new Guid("3c9d6d81-631f-4787-9135-3668f22cad6d"),
-                            BodyPartId = new Guid("4045f98f-21b0-4c61-8fd0-dd02a21547c4"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3640),
-                            Description = "An advanced exercise for building quad strength and mobility.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3641),
-                            Name = "Reverse Nordics",
-                            VideoUrl = "https://www.youtube.com/watch?v=hEZYIrEXA2M"
-                        },
-                        new
-                        {
-                            Id = new Guid("4f517cbd-a107-4c9a-8b9e-647f5310c0bb"),
-                            BodyPartId = new Guid("4045f98f-21b0-4c61-8fd0-dd02a21547c4"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3644),
-                            Description = "Targets and isolates the quadriceps.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3645),
-                            Name = "Sissy Squat",
-                            VideoUrl = "https://www.youtube.com/watch?v=3B-3Khbht5E"
-                        },
-                        new
-                        {
-                            Id = new Guid("5aad75e5-feaa-45d0-a34b-c7f413c621fc"),
-                            BodyPartId = new Guid("d1fce414-03cb-4a93-a203-7a55a0a20d88"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3650),
-                            Description = "An essential exercise for the hamstrings and glutes.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3651),
-                            Name = "Romanian Deadlift (RDL)",
-                            VideoUrl = "https://www.youtube.com/watch?v=2SHsk9Azd4M"
-                        },
-                        new
-                        {
-                            Id = new Guid("6bbe5654-2a23-4d19-b55a-d04024b18be3"),
-                            BodyPartId = new Guid("b96f38fd-1105-474d-a578-6cb661d9b882"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3655),
-                            Description = "A great exercise to target the calves.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3656),
-                            Name = "Calf Raises",
-                            VideoUrl = "https://www.youtube.com/watch?v=-M4-G8p8fmc"
-                        },
-                        new
-                        {
-                            Id = new Guid("7c00631d-77e2-4108-9f39-a6d48735bb90"),
-                            BodyPartId = new Guid("9b32d4d5-b7a2-4aa3-8862-eef026938e49"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3659),
-                            Description = "A simple but effective core exercise.",
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 129, DateTimeKind.Utc).AddTicks(3661),
-                            Name = "Crunches",
-                            VideoUrl = "https://www.youtube.com/watch?v=Xyd_fa5zoEU"
-                        });
-                });
 
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.DailyLimit.DailyLimits", b =>
                 {
@@ -219,8 +63,8 @@ namespace TrackMyMacros.Persistance.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000000"),
                             Calories = 2400,
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(4052),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(4067),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(3396),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(3413),
                             WeekdaysMealsPerDay = 5,
                             WeekendMealsPerDay = 5,
                             WeightInKg = 75.900000000000006
@@ -264,12 +108,12 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b89c3992-3325-4467-b084-6daf5677d127"),
+                            Id = new Guid("830f23d2-36eb-4242-b200-8ec698d4ab00"),
                             AllowedCarbohydrate = 100,
                             AllowedFat = 100,
                             AllowedProtein = 100,
                             Carbohydrate = 10.0,
-                            Date = new DateOnly(2024, 12, 8),
+                            Date = new DateOnly(2025, 4, 21),
                             Fat = 10.0,
                             MealCount = 1,
                             Protein = 10.0
@@ -301,6 +145,9 @@ namespace TrackMyMacros.Persistance.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("character varying(30)");
 
+                    b.Property<double>("Size")
+                        .HasColumnType("double precision");
+
                     b.HasKey("Id");
 
                     b.ToTable("BodyParts");
@@ -308,73 +155,326 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b96f38fd-1105-474d-a578-6cb661d9b882"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2930),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2960),
-                            Name = "Calves"
+                            Id = new Guid("2aa88079-b75d-417d-9eb2-6517fd2331c0"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2063),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2100),
+                            Name = "Calves",
+                            Size = 3.0
                         },
                         new
                         {
-                            Id = new Guid("a44e98fc-a6a1-4955-9a4f-0d68ef89c4ba"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2978),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2979),
-                            Name = "Triceps"
+                            Id = new Guid("6610bfab-7248-4b7b-94cd-b9fd5e38290d"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2125),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2126),
+                            Name = "Back",
+                            Size = 4.0
                         },
                         new
                         {
-                            Id = new Guid("6a10d667-3bae-4473-905f-8edf3d235522"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2982),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2983),
-                            Name = "Back"
+                            Id = new Guid("e4232daf-15cc-40f3-ba6f-d29dc7e9ad2a"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2129),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2131),
+                            Name = "Biceps",
+                            Size = 1.0
+                        },
+                        new
+                        {
+                            Id = new Guid("6f639115-6ac7-48f9-8152-f08429bf7cd5"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2134),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2136),
+                            Name = "Triceps",
+                            Size = 3.0
                         },
                         new
                         {
                             Id = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2985),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2986),
-                            Name = "Chest"
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2139),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2140),
+                            Name = "Chest",
+                            Size = 2.0
                         },
                         new
                         {
-                            Id = new Guid("ff4fdfe9-9345-4152-85cf-58327a32af22"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2989),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2990),
-                            Name = "Shoulders"
+                            Id = new Guid("ec1f33a5-91e5-4de9-9b74-e0fe7255f883"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2144),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2146),
+                            Name = "Abs",
+                            Size = 2.0
                         },
                         new
                         {
-                            Id = new Guid("d1fce414-03cb-4a93-a203-7a55a0a20d88"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2993),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2994),
-                            Name = "Hamstrings"
+                            Id = new Guid("5492de93-6f0b-443c-8f63-1eeb90b90c78"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2148),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2150),
+                            Name = "Shoulders",
+                            Size = 1.0
                         },
                         new
                         {
-                            Id = new Guid("4045f98f-21b0-4c61-8fd0-dd02a21547c4"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2997),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(2998),
-                            Name = "Quads"
+                            Id = new Guid("6dd13251-7a07-423d-920c-46fae6d2cdcc"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2153),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2155),
+                            Name = "Hamstrings",
+                            Size = 4.0
                         },
                         new
                         {
-                            Id = new Guid("5b73818b-2c0f-43a5-aa15-02df756ab481"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(3000),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(3001),
-                            Name = "Glutes"
+                            Id = new Guid("f87d2a54-ba1a-4dbc-a900-25531fdbfbeb"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2158),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2160),
+                            Name = "Quads",
+                            Size = 4.0
                         },
                         new
                         {
-                            Id = new Guid("81d308c8-5ce7-44a5-b9c1-00c610e79b5c"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(3005),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(3007),
-                            Name = "Neck"
+                            Id = new Guid("d0d8ea0f-c077-42be-b31f-14ed90353455"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2163),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2165),
+                            Name = "Glutes",
+                            Size = 3.0
                         },
                         new
                         {
-                            Id = new Guid("9b32d4d5-b7a2-4aa3-8862-eef026938e49"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(3010),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 127, DateTimeKind.Utc).AddTicks(3012),
-                            Name = "Abdominals"
+                            Id = new Guid("ae834296-64ec-421a-ab40-d4a93dbbbe9f"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2167),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2169),
+                            Name = "Neck",
+                            Size = 1.0
+                        },
+                        new
+                        {
+                            Id = new Guid("18b68da4-f760-45cb-97c3-a216bf7f99b3"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2171),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2173),
+                            Name = "Forearms",
+                            Size = 1.0
+                        },
+                        new
+                        {
+                            Id = new Guid("d2be7249-479c-40e6-960e-ed906cd8c919"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2175),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2177),
+                            Name = "Traps",
+                            Size = 3.0
+                        },
+                        new
+                        {
+                            Id = new Guid("fb70b309-fd97-4d65-8705-e4b4c490b653"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2179),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 192, DateTimeKind.Utc).AddTicks(2181),
+                            Name = "Lower Back",
+                            Size = 3.0
+                        });
+                });
+
+            modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Exercise.Exercise", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    NpgsqlPropertyBuilderExtensions.HasIdentityOptions(b.Property<Guid>("Id"), 50L, null, null, null, null, null);
+
+                    b.Property<Guid>("BodyPartId")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("BodyWeightExercise")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<int>("RepIncrease")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("WeightIncrease")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BodyPartId");
+
+                    b.ToTable("Exercises");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("b0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
+                            BodyWeightExercise = false,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2927),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2929),
+                            Name = "Flyes",
+                            RepIncrease = 0,
+                            WeightIncrease = 0.5
+                        },
+                        new
+                        {
+                            Id = new Guid("a0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
+                            BodyWeightExercise = false,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2943),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2945),
+                            Name = "Bench Press",
+                            RepIncrease = 0,
+                            WeightIncrease = 0.5
+                        },
+                        new
+                        {
+                            Id = new Guid("c0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("f87d2a54-ba1a-4dbc-a900-25531fdbfbeb"),
+                            BodyWeightExercise = false,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2953),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2955),
+                            Name = "Squat",
+                            RepIncrease = 0,
+                            WeightIncrease = 1.25
+                        },
+                        new
+                        {
+                            Id = new Guid("d0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("6dd13251-7a07-423d-920c-46fae6d2cdcc"),
+                            BodyWeightExercise = false,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2961),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2963),
+                            Name = "Deadlift",
+                            RepIncrease = 0,
+                            WeightIncrease = 1.25
+                        },
+                        new
+                        {
+                            Id = new Guid("e0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
+                            BodyWeightExercise = false,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2970),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2972),
+                            Name = "Incline Dumbbell Press",
+                            RepIncrease = 0,
+                            WeightIncrease = 0.5
+                        },
+                        new
+                        {
+                            Id = new Guid("f0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("6610bfab-7248-4b7b-94cd-b9fd5e38290d"),
+                            BodyWeightExercise = false,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2981),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2983),
+                            Name = "Pull Down",
+                            RepIncrease = 0,
+                            WeightIncrease = 1.25
+                        },
+                        new
+                        {
+                            Id = new Guid("a0d4b8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("ec1f33a5-91e5-4de9-9b74-e0fe7255f883"),
+                            BodyWeightExercise = false,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2990),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2992),
+                            Name = "Cable Crunch",
+                            RepIncrease = 0,
+                            WeightIncrease = 0.25
+                        },
+                        new
+                        {
+                            Id = new Guid("a0d4a8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("f87d2a54-ba1a-4dbc-a900-25531fdbfbeb"),
+                            BodyWeightExercise = true,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(2998),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3000),
+                            Name = "Reverse Nordics",
+                            RepIncrease = 1,
+                            WeightIncrease = 0.0
+                        },
+                        new
+                        {
+                            Id = new Guid("a0d4d8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("6610bfab-7248-4b7b-94cd-b9fd5e38290d"),
+                            BodyWeightExercise = false,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3006),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3007),
+                            Name = "DualCableRow",
+                            RepIncrease = 0,
+                            WeightIncrease = 1.0
+                        },
+                        new
+                        {
+                            Id = new Guid("a0d4e8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
+                            BodyWeightExercise = false,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3011),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3013),
+                            Name = "RDL",
+                            RepIncrease = 0,
+                            WeightIncrease = 1.25
+                        },
+                        new
+                        {
+                            Id = new Guid("a0b4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("2aa88079-b75d-417d-9eb2-6517fd2331c0"),
+                            BodyWeightExercise = false,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3020),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3021),
+                            Name = "Calves Four Second Eccentric",
+                            RepIncrease = 0,
+                            WeightIncrease = 1.0
+                        },
+                        new
+                        {
+                            Id = new Guid("a0a4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("2aa88079-b75d-417d-9eb2-6517fd2331c0"),
+                            BodyWeightExercise = false,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3027),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3029),
+                            Name = "Calves Two Second Pause",
+                            RepIncrease = 0,
+                            WeightIncrease = 1.0
+                        },
+                        new
+                        {
+                            Id = new Guid("a0c4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("e4232daf-15cc-40f3-ba6f-d29dc7e9ad2a"),
+                            BodyWeightExercise = false,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3035),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3037),
+                            Name = "Lying Dumbell Bicep Curl",
+                            RepIncrease = 0,
+                            WeightIncrease = 0.25
+                        },
+                        new
+                        {
+                            Id = new Guid("a0e4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("6f639115-6ac7-48f9-8152-f08429bf7cd5"),
+                            BodyWeightExercise = false,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3043),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3045),
+                            Name = "Lying Overhead Triceps Extension",
+                            RepIncrease = 0,
+                            WeightIncrease = 0.25
+                        },
+                        new
+                        {
+                            Id = new Guid("a0f4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
+                            BodyPartId = new Guid("5492de93-6f0b-443c-8f63-1eeb90b90c78"),
+                            BodyWeightExercise = false,
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3051),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 194, DateTimeKind.Utc).AddTicks(3053),
+                            Name = "Single Arm Cable Lateral Raise",
+                            RepIncrease = 0,
+                            WeightIncrease = 0.25
                         });
                 });
 
@@ -779,10 +879,58 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("043cac74-577c-4fa5-8e09-00c05b31b463"),
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 132, DateTimeKind.Utc).AddTicks(8907),
+                            Id = new Guid("f8ebe4d1-e58b-4d7f-bd32-f0c89968fa34"),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 196, DateTimeKind.Utc).AddTicks(647),
                             Name = "Test Food Combo"
                         });
+                });
+
+            modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Mesocycle.Mesocycle", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    NpgsqlPropertyBuilderExtensions.HasIdentityOptions(b.Property<Guid>("Id"), 100L, null, null, null, null, null);
+
+                    b.Property<bool>("Complete")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("CurrentDayOfWeek")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("CurrentWeekIndex")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsTemplate")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<int>("TotalWeeks")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Mesocycles");
                 });
 
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Recipe.Recipe", b =>
@@ -850,21 +998,10 @@ namespace TrackMyMacros.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 12, 8, 7, 28, 29, 135, DateTimeKind.Utc).AddTicks(9485),
-                            LastModifiedDate = new DateTime(2024, 12, 8, 7, 28, 29, 135, DateTimeKind.Utc).AddTicks(9503),
+                            CreatedDate = new DateTime(2025, 4, 21, 18, 34, 29, 207, DateTimeKind.Utc).AddTicks(1170),
+                            LastModifiedDate = new DateTime(2025, 4, 21, 18, 34, 29, 207, DateTimeKind.Utc).AddTicks(1189),
                             Name = "Grams"
                         });
-                });
-
-            modelBuilder.Entity("TrackMyMacros.Application.Features.Exercise", b =>
-                {
-                    b.HasOne("TrackMyMacros.Domain.Aggregates.Exercise.BodyPart", "BodyPart")
-                        .WithMany()
-                        .HasForeignKey("BodyPartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BodyPart");
                 });
 
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Day.Day", b =>
@@ -944,7 +1081,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                     b2.HasData(
                                         new
                                         {
-                                            MealDayId = new Guid("b89c3992-3325-4467-b084-6daf5677d127"),
+                                            MealDayId = new Guid("830f23d2-36eb-4242-b200-8ec698d4ab00"),
                                             MealId = 1,
                                             Id = 1,
                                             Carbohydrate = 10.0,
@@ -960,7 +1097,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    DayId = new Guid("b89c3992-3325-4467-b084-6daf5677d127"),
+                                    DayId = new Guid("830f23d2-36eb-4242-b200-8ec698d4ab00"),
                                     Id = 1,
                                     AllowedCarbohydrate = 10,
                                     AllowedFat = 10,
@@ -972,6 +1109,17 @@ namespace TrackMyMacros.Persistance.Migrations
                         });
 
                     b.Navigation("Meals");
+                });
+
+            modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Exercise.Exercise", b =>
+                {
+                    b.HasOne("TrackMyMacros.Domain.Aggregates.Exercise.BodyPart", "BodyPart")
+                        .WithMany()
+                        .HasForeignKey("BodyPartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BodyPart");
                 });
 
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.FoodCombo.FoodCombo", b =>
@@ -1012,7 +1160,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    FoodComboId = new Guid("043cac74-577c-4fa5-8e09-00c05b31b463"),
+                                    FoodComboId = new Guid("f8ebe4d1-e58b-4d7f-bd32-f0c89968fa34"),
                                     Id = 1,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,
@@ -1022,7 +1170,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                 },
                                 new
                                 {
-                                    FoodComboId = new Guid("043cac74-577c-4fa5-8e09-00c05b31b463"),
+                                    FoodComboId = new Guid("f8ebe4d1-e58b-4d7f-bd32-f0c89968fa34"),
                                     Id = 2,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,
@@ -1033,6 +1181,148 @@ namespace TrackMyMacros.Persistance.Migrations
                         });
 
                     b.Navigation("FoodComboAmounts");
+                });
+
+            modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Mesocycle.Mesocycle", b =>
+                {
+                    b.OwnsMany("TrackMyMacros.Domain.Aggregates.Mesocycle.Week", "Weeks", b1 =>
+                        {
+                            b1.Property<Guid>("MesocycleId")
+                                .HasColumnType("uuid");
+
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("integer");
+
+                            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b1.Property<int>("Id"));
+
+                            b1.Property<int>("WeekIndex")
+                                .HasColumnType("integer");
+
+                            b1.HasKey("MesocycleId", "Id");
+
+                            b1.ToTable("Week");
+
+                            b1.WithOwner()
+                                .HasForeignKey("MesocycleId");
+
+                            b1.OwnsMany("TrackMyMacros.Domain.Aggregates.Mesocycle.Workout", "Workouts", b2 =>
+                                {
+                                    b2.Property<Guid>("WeekMesocycleId")
+                                        .HasColumnType("uuid");
+
+                                    b2.Property<int>("WeekId")
+                                        .HasColumnType("integer");
+
+                                    b2.Property<int>("Id")
+                                        .ValueGeneratedOnAdd()
+                                        .HasColumnType("integer");
+
+                                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b2.Property<int>("Id"));
+
+                                    b2.Property<int>("DayOfWeek")
+                                        .HasColumnType("integer");
+
+                                    b2.HasKey("WeekMesocycleId", "WeekId", "Id");
+
+                                    b2.ToTable("Workout");
+
+                                    b2.WithOwner()
+                                        .HasForeignKey("WeekMesocycleId", "WeekId");
+
+                                    b2.OwnsMany("TrackMyMacros.Domain.Aggregates.Mesocycle.SetGroup", "SetGroups", b3 =>
+                                        {
+                                            b3.Property<Guid>("WorkoutWeekMesocycleId")
+                                                .HasColumnType("uuid");
+
+                                            b3.Property<int>("WorkoutWeekId")
+                                                .HasColumnType("integer");
+
+                                            b3.Property<int>("WorkoutId")
+                                                .HasColumnType("integer");
+
+                                            b3.Property<int>("Id")
+                                                .ValueGeneratedOnAdd()
+                                                .HasColumnType("integer");
+
+                                            NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b3.Property<int>("Id"));
+
+                                            b3.Property<Guid>("ExerciseId")
+                                                .HasColumnType("uuid");
+
+                                            b3.Property<int>("Priority")
+                                                .HasColumnType("integer");
+
+                                            b3.HasKey("WorkoutWeekMesocycleId", "WorkoutWeekId", "WorkoutId", "Id");
+
+                                            b3.HasIndex("ExerciseId");
+
+                                            b3.ToTable("SetGroup");
+
+                                            b3.HasOne("TrackMyMacros.Domain.Aggregates.Exercise.Exercise", "Exercise")
+                                                .WithMany()
+                                                .HasForeignKey("ExerciseId")
+                                                .OnDelete(DeleteBehavior.Cascade)
+                                                .IsRequired();
+
+                                            b3.WithOwner()
+                                                .HasForeignKey("WorkoutWeekMesocycleId", "WorkoutWeekId", "WorkoutId");
+
+                                            b3.OwnsMany("TrackMyMacros.Domain.Aggregates.Mesocycle.Set", "Sets", b4 =>
+                                                {
+                                                    b4.Property<Guid>("SetGroupWorkoutWeekMesocycleId")
+                                                        .HasColumnType("uuid");
+
+                                                    b4.Property<int>("SetGroupWorkoutWeekId")
+                                                        .HasColumnType("integer");
+
+                                                    b4.Property<int>("SetGroupWorkoutId")
+                                                        .HasColumnType("integer");
+
+                                                    b4.Property<int>("SetGroupId")
+                                                        .HasColumnType("integer");
+
+                                                    b4.Property<int>("Id")
+                                                        .ValueGeneratedOnAdd()
+                                                        .HasColumnType("integer");
+
+                                                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b4.Property<int>("Id"));
+
+                                                    b4.Property<int>("Number")
+                                                        .HasColumnType("integer");
+
+                                                    b4.Property<int>("Reps")
+                                                        .HasColumnType("integer");
+
+                                                    b4.Property<int>("TargetReps")
+                                                        .HasColumnType("integer");
+
+                                                    b4.Property<double>("TargetWeight")
+                                                        .HasColumnType("double precision");
+
+                                                    b4.Property<double>("Weight")
+                                                        .HasColumnType("double precision");
+
+                                                    b4.HasKey("SetGroupWorkoutWeekMesocycleId", "SetGroupWorkoutWeekId", "SetGroupWorkoutId", "SetGroupId", "Id");
+
+                                                    b4.ToTable("Set");
+
+                                                    b4.WithOwner()
+                                                        .HasForeignKey("SetGroupWorkoutWeekMesocycleId", "SetGroupWorkoutWeekId", "SetGroupWorkoutId", "SetGroupId");
+                                                });
+
+                                            b3.Navigation("Exercise");
+
+                                            b3.Navigation("Sets");
+                                        });
+
+                                    b2.Navigation("SetGroups");
+                                });
+
+                            b1.Navigation("Workouts");
+                        });
+
+                    b.Navigation("Weeks");
                 });
 
             modelBuilder.Entity("TrackMyMacros.Domain.Aggregates.Recipe.Recipe", b =>

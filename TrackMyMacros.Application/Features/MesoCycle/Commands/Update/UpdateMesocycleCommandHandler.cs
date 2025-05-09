@@ -31,8 +31,13 @@ namespace TrackMyMacros.Application.Features.Mesocycle.Commands.Update
 
             var exercises = await _exerciseRepository.ListAllAsync();
             if (request.CurrentWorkoutComplete) mesocycle.AdvanceMesocycleToNextWorkout(exercises);
-            
+
             await _mesocycleRepository.UpdateAsync(mesocycle);
+            if (mesocycle.Active)
+            {
+                await _mesocycleRepository.SetActiveMesocycle(mesocycle.Id);
+            }
+
             return new SuccessResult();
         }
     }

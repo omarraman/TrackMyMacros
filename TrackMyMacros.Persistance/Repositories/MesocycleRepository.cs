@@ -58,6 +58,13 @@ namespace TrackMyMacros.Persistance.Repositories
             return results;
         }
 
+        public async Task SetActiveMesocycle(Guid id)
+        {
+            var mesocycles = await _dbContext.Set<Mesocycle>().ToListAsync();
+            mesocycles.ForEach(mesocycle => mesocycle.Active = mesocycle.Id == id);
+            await _dbContext.SaveChangesAsync();
+        }
+        
         public async virtual Task<IReadOnlyList<Mesocycle>> GetPagedReponseAsync(int page, int size)
         {
             return await _dbContext.Set<Mesocycle>().Skip((page - 1) * size).Take(size).AsNoTracking().ToListAsync();

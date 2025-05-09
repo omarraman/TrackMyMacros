@@ -13,5 +13,6 @@ namespace TrackMyMacros.App4.ViewModels.Mesocycle
         public MyDayOfWeek CurrentDayOfWeek { get; set; } = MyDayOfWeek.Monday();
         public bool CurrentWorkoutComplete { get; set; } = false;
         public bool IsTemplate { get; set; }
+        public bool Complete { get; set; }
     }
 }
