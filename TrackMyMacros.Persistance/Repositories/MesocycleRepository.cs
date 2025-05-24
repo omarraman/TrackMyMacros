@@ -90,9 +90,7 @@ namespace TrackMyMacros.Persistance.Repositories
 
         public async Task DeleteAsync(Guid id)
         {
-            var entity = await _dbContext.Set<Mesocycle>().FindAsync(id);
-            _dbContext.Set<Mesocycle>().Remove(entity);
-            await _dbContext.SaveChangesAsync();
+            await _dbContext.Mesocycles.Where(m => m.Id == id).ExecuteDeleteAsync();
         }
     }
 

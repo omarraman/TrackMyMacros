@@ -14,5 +14,6 @@ namespace TrackMyMacros.App4.ViewModels.Mesocycle
         public bool CurrentWorkoutComplete { get; set; } = false;
         public bool IsTemplate { get; set; }
         public bool Complete { get; set; }
+        public bool Active { get; set; } = false;
     }
 }
