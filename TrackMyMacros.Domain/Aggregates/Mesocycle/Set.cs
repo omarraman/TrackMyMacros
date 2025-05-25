@@ -11,7 +11,7 @@ public class Set : ValueObject<Set>
     //     ExerciseId = exerciseId;
     // }
 
-    public int Reps { get; init; }
+    public int Reps { get; set; }
     public double Weight { get; set; }
     public int TargetReps { get; set; }
     public double TargetWeight { get; set; }

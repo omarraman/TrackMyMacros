@@ -60,8 +60,8 @@ namespace TrackMyMacros.Persistance.Migrations
                         {
                             Id = new Guid("00000000-0000-0000-0000-000000000000"),
                             Calories = 2400,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(9177),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(9192),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(6182),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(6198),
                             WeekdaysMealsPerDay = 5,
                             WeekendMealsPerDay = 5,
                             WeightInKg = 75.900000000000006
@@ -105,7 +105,7 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2fa0a05b-b2b9-40da-b505-2ffecf6a40dc"),
+                            Id = new Guid("fb19b812-c011-4da5-a7d7-e2ea70b193bb"),
                             AllowedCarbohydrate = 100,
                             AllowedFat = 100,
                             AllowedProtein = 100,
@@ -153,112 +153,112 @@ namespace TrackMyMacros.Persistance.Migrations
                         new
                         {
                             Id = new Guid("2aa88079-b75d-417d-9eb2-6517fd2331c0"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7875),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7906),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4851),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4887),
                             Name = "Calves",
                             Size = 3.0
                         },
                         new
                         {
                             Id = new Guid("6610bfab-7248-4b7b-94cd-b9fd5e38290d"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7926),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7928),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4907),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4909),
                             Name = "Back",
                             Size = 4.0
                         },
                         new
                         {
                             Id = new Guid("e4232daf-15cc-40f3-ba6f-d29dc7e9ad2a"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7932),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7934),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4911),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4913),
                             Name = "Biceps",
                             Size = 1.0
                         },
                         new
                         {
                             Id = new Guid("6f639115-6ac7-48f9-8152-f08429bf7cd5"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7941),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7942),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4916),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4917),
                             Name = "Triceps",
                             Size = 3.0
                         },
                         new
                         {
                             Id = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7947),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7948),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4920),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4922),
                             Name = "Chest",
                             Size = 2.0
                         },
                         new
                         {
                             Id = new Guid("ec1f33a5-91e5-4de9-9b74-e0fe7255f883"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7953),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7955),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4926),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4927),
                             Name = "Abs",
                             Size = 2.0
                         },
                         new
                         {
                             Id = new Guid("5492de93-6f0b-443c-8f63-1eeb90b90c78"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7959),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7960),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4930),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4931),
                             Name = "Shoulders",
                             Size = 1.0
                         },
                         new
                         {
                             Id = new Guid("6dd13251-7a07-423d-920c-46fae6d2cdcc"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7964),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7965),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4934),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4935),
                             Name = "Hamstrings",
                             Size = 4.0
                         },
                         new
                         {
                             Id = new Guid("f87d2a54-ba1a-4dbc-a900-25531fdbfbeb"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7969),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7970),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4938),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4940),
                             Name = "Quads",
                             Size = 4.0
                         },
                         new
                         {
                             Id = new Guid("d0d8ea0f-c077-42be-b31f-14ed90353455"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7974),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7976),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4943),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4944),
                             Name = "Glutes",
                             Size = 3.0
                         },
                         new
                         {
                             Id = new Guid("ae834296-64ec-421a-ab40-d4a93dbbbe9f"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7981),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7982),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4948),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4949),
                             Name = "Neck",
                             Size = 1.0
                         },
                         new
                         {
                             Id = new Guid("18b68da4-f760-45cb-97c3-a216bf7f99b3"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7989),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7991),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4952),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4953),
                             Name = "Forearms",
                             Size = 1.0
                         },
                         new
                         {
                             Id = new Guid("d2be7249-479c-40e6-960e-ed906cd8c919"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7994),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7996),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4956),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4958),
                             Name = "Traps",
                             Size = 3.0
                         },
                         new
                         {
                             Id = new Guid("fb70b309-fd97-4d65-8705-e4b4c490b653"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(7998),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 771, DateTimeKind.Utc).AddTicks(8000),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4961),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 750, DateTimeKind.Utc).AddTicks(4963),
                             Name = "Lower Back",
                             Size = 3.0
                         });
@@ -313,8 +313,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("b0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2577),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2579),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5875),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5877),
                             Name = "Flyes",
                             RepIncrease = 0,
                             WeightIncrease = 0.5
@@ -324,8 +324,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2592),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2594),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5890),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5891),
                             Name = "Bench Press",
                             RepIncrease = 0,
                             WeightIncrease = 0.5
@@ -335,8 +335,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("c0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("f87d2a54-ba1a-4dbc-a900-25531fdbfbeb"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2604),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2606),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5899),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5901),
                             Name = "Squat",
                             RepIncrease = 0,
                             WeightIncrease = 1.25
@@ -346,8 +346,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("d0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("6dd13251-7a07-423d-920c-46fae6d2cdcc"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2613),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2615),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5909),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5910),
                             Name = "Deadlift",
                             RepIncrease = 0,
                             WeightIncrease = 1.25
@@ -357,8 +357,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("e0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2622),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2623),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5918),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5919),
                             Name = "Incline Dumbbell Press",
                             RepIncrease = 0,
                             WeightIncrease = 0.5
@@ -368,8 +368,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("f0d4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("6610bfab-7248-4b7b-94cd-b9fd5e38290d"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2632),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2634),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5929),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5930),
                             Name = "Pull Down",
                             RepIncrease = 0,
                             WeightIncrease = 1.25
@@ -379,8 +379,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4b8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("ec1f33a5-91e5-4de9-9b74-e0fe7255f883"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2679),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2680),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5938),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5940),
                             Name = "Cable Crunch",
                             RepIncrease = 0,
                             WeightIncrease = 0.25
@@ -390,8 +390,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4a8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("f87d2a54-ba1a-4dbc-a900-25531fdbfbeb"),
                             BodyWeightExercise = true,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2688),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2690),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5947),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5949),
                             Name = "Reverse Nordics",
                             RepIncrease = 1,
                             WeightIncrease = 0.0
@@ -401,8 +401,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4d8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("6610bfab-7248-4b7b-94cd-b9fd5e38290d"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2698),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2700),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5956),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5957),
                             Name = "DualCableRow",
                             RepIncrease = 0,
                             WeightIncrease = 1.0
@@ -412,8 +412,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0d4e8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("8d68c9e3-f8b3-4d17-9446-1e188a1a4744"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2704),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2706),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5962),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5963),
                             Name = "RDL",
                             RepIncrease = 0,
                             WeightIncrease = 1.25
@@ -423,8 +423,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0b4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("2aa88079-b75d-417d-9eb2-6517fd2331c0"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2714),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2715),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5970),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5972),
                             Name = "Calves Four Second Eccentric",
                             RepIncrease = 0,
                             WeightIncrease = 1.0
@@ -434,8 +434,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0a4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("2aa88079-b75d-417d-9eb2-6517fd2331c0"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2721),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2723),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5978),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5979),
                             Name = "Calves Two Second Pause",
                             RepIncrease = 0,
                             WeightIncrease = 1.0
@@ -445,8 +445,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0c4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("e4232daf-15cc-40f3-ba6f-d29dc7e9ad2a"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2732),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2734),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5986),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5987),
                             Name = "Lying Dumbell Bicep Curl",
                             RepIncrease = 0,
                             WeightIncrease = 0.25
@@ -456,8 +456,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0e4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("6f639115-6ac7-48f9-8152-f08429bf7cd5"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2742),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2743),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5995),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(5996),
                             Name = "Lying Overhead Triceps Extension",
                             RepIncrease = 0,
                             WeightIncrease = 0.25
@@ -467,8 +467,8 @@ namespace TrackMyMacros.Persistance.Migrations
                             Id = new Guid("a0f4c8cd-e49a-49ca-88a5-2348fdc79f6d"),
                             BodyPartId = new Guid("5492de93-6f0b-443c-8f63-1eeb90b90c78"),
                             BodyWeightExercise = false,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2751),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 774, DateTimeKind.Utc).AddTicks(2752),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(6004),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 752, DateTimeKind.Utc).AddTicks(6005),
                             Name = "Single Arm Cable Lateral Raise",
                             RepIncrease = 0,
                             WeightIncrease = 0.25
@@ -876,8 +876,8 @@ namespace TrackMyMacros.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("bf146d36-c729-465e-a798-f565581f793e"),
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 776, DateTimeKind.Utc).AddTicks(2959),
+                            Id = new Guid("f2a9f6f5-acf6-447a-961e-37d8a96b7304"),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 754, DateTimeKind.Utc).AddTicks(5180),
                             Name = "Test Food Combo"
                         });
                 });
@@ -998,8 +998,8 @@ namespace TrackMyMacros.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2025, 5, 24, 6, 28, 31, 786, DateTimeKind.Utc).AddTicks(1664),
-                            LastModifiedDate = new DateTime(2025, 5, 24, 6, 28, 31, 786, DateTimeKind.Utc).AddTicks(1686),
+                            CreatedDate = new DateTime(2025, 5, 24, 7, 3, 41, 764, DateTimeKind.Utc).AddTicks(9855),
+                            LastModifiedDate = new DateTime(2025, 5, 24, 7, 3, 41, 764, DateTimeKind.Utc).AddTicks(9877),
                             Name = "Grams"
                         });
                 });
@@ -1081,7 +1081,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                     b2.HasData(
                                         new
                                         {
-                                            MealDayId = new Guid("2fa0a05b-b2b9-40da-b505-2ffecf6a40dc"),
+                                            MealDayId = new Guid("fb19b812-c011-4da5-a7d7-e2ea70b193bb"),
                                             MealId = 1,
                                             Id = 1,
                                             Carbohydrate = 10.0,
@@ -1097,7 +1097,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    DayId = new Guid("2fa0a05b-b2b9-40da-b505-2ffecf6a40dc"),
+                                    DayId = new Guid("fb19b812-c011-4da5-a7d7-e2ea70b193bb"),
                                     Id = 1,
                                     AllowedCarbohydrate = 10,
                                     AllowedFat = 10,
@@ -1160,7 +1160,7 @@ namespace TrackMyMacros.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    FoodComboId = new Guid("bf146d36-c729-465e-a798-f565581f793e"),
+                                    FoodComboId = new Guid("f2a9f6f5-acf6-447a-961e-37d8a96b7304"),
                                     Id = 1,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,
@@ -1170,7 +1170,7 @@ namespace TrackMyMacros.Persistance.Migrations
                                 },
                                 new
                                 {
-                                    FoodComboId = new Guid("bf146d36-c729-465e-a798-f565581f793e"),
+                                    FoodComboId = new Guid("f2a9f6f5-acf6-447a-961e-37d8a96b7304"),
                                     Id = 2,
                                     Carbohydrate = 10.0,
                                     Fat = 10.0,

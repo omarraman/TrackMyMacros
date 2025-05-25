@@ -125,7 +125,10 @@ public class Mesocycle : Entity
                 {
                     var targetWeight = set.Weight + (exercise.BodyWeightExercise ? 0 : exercise.WeightIncrease);
                     var targetReps = set.Reps + (exercise.BodyWeightExercise ? exercise.RepIncrease : 0);
-                    set.Update(targetWeight,targetReps, targetWeight,targetReps);
+                    set.TargetWeight= targetWeight;
+                    set.TargetReps = targetReps;
+                    set.Weight = targetWeight;
+                    set.Reps = targetReps;
                 }
             }
         }
